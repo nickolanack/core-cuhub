@@ -293,5 +293,10 @@
             "target": "rightDetail",
             "readAccess": "public"
         }
+    },
+    "widget.7": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {}
     }
 }
