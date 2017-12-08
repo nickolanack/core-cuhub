@@ -264,32 +264,27 @@
         "instance": "DetailView",
         "parameters": {
             "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": []
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
                 "positionList": [
                     "title",
                     "content",
                     "footer",
                     "menu"
                 ],
-                "positions": {
-                    "title": {
-                        "modules": [
-                            "rightDetail.metadata.positions.title.modules.0.json"
-                        ]
-                    },
-                    "content": {
-                        "modules": [
-                            "rightDetail.metadata.positions.content.modules.0.json"
-                        ]
-                    },
-                    "footer": {
-                        "modules": [
-                            "rightDetail.metadata.positions.footer.modules.0.json"
-                        ]
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                }
+                "_diagramState": []
             },
             "templateName": "rightDetail",
             "onRenderApplictionScript": "",
