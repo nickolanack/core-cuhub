@@ -1,0 +1,209 @@
+{
+    "plugin.1": {
+        "name": "Data Types",
+        "instance": "Data",
+        "parameters": {}
+    },
+    "plugin.2": {
+        "name": "Deploy",
+        "instance": "Deploy",
+        "parameters": "_Deploy.json"
+    },
+    "plugin.3": {
+        "name": "Email",
+        "instance": "Email",
+        "parameters": {}
+    },
+    "plugin.4": {
+        "name": "Events",
+        "instance": "Events",
+        "parameters": {}
+    },
+    "plugin.5": {
+        "name": "External Content",
+        "instance": "ExternalContent",
+        "parameters": {}
+    },
+    "plugin.6": {
+        "name": "Filesystem",
+        "instance": "Filesystem",
+        "parameters": {}
+    },
+    "plugin.7": {
+        "name": "Google Maps",
+        "instance": "GoogleMaps",
+        "parameters": {}
+    },
+    "plugin.8": {
+        "name": "Language",
+        "instance": "Language",
+        "parameters": {}
+    },
+    "plugin.9": {
+        "name": "Links",
+        "instance": "Links",
+        "parameters": {}
+    },
+    "plugin.10": {
+        "name": "Search Plugin",
+        "instance": "Search",
+        "parameters": {}
+    },
+    "plugin.11": {
+        "name": "System Parameters",
+        "instance": "SystemParameters",
+        "parameters": {
+            "JSFileObfuscationEnabled": false,
+            "JSInlineObfuscationEnabled": false,
+            "CSSFileObfuscationEnabled": false,
+            "CSSInlineObfuscationEnabled": false,
+            "PHPDebugEnabled": true,
+            "JSDebugEnabled": true,
+            "CachingEnabled": false,
+            "ExternalizeWidgetScripts": true,
+            "PrettyPrintJson": true,
+            "showFrontEndEditButtons": true,
+            "JSCacheObfuscationEnabled": false,
+            "phase": "production",
+            "ForceHTTPS": false,
+            "allowProxiesFrom": [
+                "*",
+                ""
+            ],
+            "pluginPaths": [
+                ""
+            ],
+            "widgetPaths": [
+                ""
+            ],
+            "modulePaths": [
+                ""
+            ],
+            "sandboxDomains": [
+                "*.z.geolive.ca",
+                "*.s22.ok.ubc.ca",
+                ""
+            ]
+        }
+    },
+    "plugin.12": {
+        "name": "Upgrade",
+        "instance": "Upgrade",
+        "parameters": {}
+    },
+    "plugin.13": {
+        "name": "User Interface",
+        "instance": "UserInterface",
+        "parameters": {
+            "defaultRoute": {
+                "view": "plugin",
+                "plugin": "UserInterface",
+                "pluginView": "front"
+            }
+        }
+    },
+    "plugin.14": {
+        "name": "Users",
+        "instance": "Users",
+        "parameters": {}
+    },
+    "plugin.15": {
+        "name": "Monolog Plugin",
+        "instance": "Monolog",
+        "parameters": {
+            "logPath": "{core}\/log",
+            "logToSentry": false
+        }
+    },
+    "plugin.16": {
+        "name": "Sentry IO Error reporting",
+        "instance": "SentryIO",
+        "parameters": {
+            "clientSecretUrl": "",
+            "clientPublicUrl": "",
+            "enabled": true
+        }
+    },
+    "widget.1": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "CUHub Main.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "cuhub",
+            "onRenderApplictionScript": "",
+            "requireTarget": false,
+            "widgetTitle": "CUHub Main",
+            "target": "cuhub",
+            "readAccess": "public"
+        }
+    },
+    "widget.3": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "layoutDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "layoutDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "layoutDetail",
+            "target": "layoutDetail",
+            "readAccess": "public"
+        }
+    },
+    "widget.4": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Some Content",
+            "widgetTitle": "module..text"
+        }
+    }
+}
