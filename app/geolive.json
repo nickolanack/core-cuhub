@@ -176,8 +176,8 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "",
-                                    "viewType": "bottom-detail",
+                                    "className": "bottom-detail",
+                                    "viewType": "view",
                                     "namedView": "bottomDetail",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
