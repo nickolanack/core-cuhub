@@ -178,7 +178,7 @@
                                 "config": {
                                     "className": "",
                                     "viewType": "bottom-detail",
-                                    "namedView": "leftDetail",
+                                    "namedView": "bottomDetail",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "showDeleteButton": false,
