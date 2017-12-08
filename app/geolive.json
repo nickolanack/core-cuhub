@@ -154,7 +154,7 @@
                 "_diagramState": []
             },
             "templateName": "cuhub",
-            "onRenderApplictionScript": "",
+            "onRenderApplictionScript": "CUHub Main.onRenderApplictionScript.js",
             "requireTarget": false,
             "widgetTitle": "CUHub Main",
             "target": "cuhub",
