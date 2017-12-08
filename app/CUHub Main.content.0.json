@@ -1,7 +1,7 @@
 {
     "type": "UIView",
     "config": {
-        "className": "",
+        "className": "root-container",
         "viewType": "view",
         "namedView": "layoutDetail",
         "showInlineEdit": false,
