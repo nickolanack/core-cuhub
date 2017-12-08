@@ -3,7 +3,7 @@
     "config": {
         "className": "",
         "viewType": "view",
-        "namedView": "leftDetail",
+        "namedView": "topDetail",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
         "showDeleteButton": false,
