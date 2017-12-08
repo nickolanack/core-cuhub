@@ -333,5 +333,45 @@
             "target": "topDetail",
             "readAccess": "public"
         }
+    },
+    "widget.8": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "bottomDetail.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "bottomDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "bottomDetail.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "templateName": "bottomDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "bottomDetail",
+            "target": "bottomDetail",
+            "readAccess": "public"
+        }
     }
 }
