@@ -216,14 +216,6 @@
             "readAccess": "public"
         }
     },
-    "widget.4": {
-        "name": "Template",
-        "instance": "Template",
-        "parameters": {
-            "contentTemplate": "Some Content",
-            "widgetTitle": "module..text"
-        }
-    },
     "widget.5": {
         "name": "Detail View",
         "instance": "DetailView",
