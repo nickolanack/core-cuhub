@@ -205,5 +205,10 @@
             "contentTemplate": "Some Content",
             "widgetTitle": "module..text"
         }
+    },
+    "widget.5": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {}
     }
 }
