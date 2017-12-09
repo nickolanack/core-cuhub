@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "https://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="3.1" type="template" client="site">
+	<name>plain</name>
+	<creationDate>Dec 8 2017</creationDate>
+	<author>Nick Blackwell</author>
+	<authorEmail>nickblackwell82@gmail.com</authorEmail>
+	<authorUrl>nickblackwell82@gmail.com</authorUrl>
+	<copyright>2017</copyright>
+	<license>MIT</license>
+	<version>1.1.1</version>
+	<description>Bare bones template</description>
+
+	<files>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>favicon.ico</filename>
+	</files>
+
+	<positions>
+	</positions>
+
+</extension>
