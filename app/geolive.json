@@ -379,6 +379,11 @@
     "widget.9": {
         "name": "Stylesheet",
         "instance": "CSS",
-        "parameters": {}
+        "parameters": {
+            "customCSS": "cuhubStyle.customCSS.css",
+            "widgetTitle": "cuhubStyle",
+            "target": "cuhubStyle",
+            "readAccess": "public"
+        }
     }
 }
