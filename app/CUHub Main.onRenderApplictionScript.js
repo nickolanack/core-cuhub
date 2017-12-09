@@ -12,5 +12,5 @@ TemplateModule.SetTemplate(\'default\',\'<div data-template="content" class="tem
  */
 
 
-//GetWidget('firelightDashboardTheme')->display($targetInstance);
+//GetWidget('cuhubStyle')->display($targetInstance);
 //GetWidget('firelightGeneratedStyles')->display($targetInstance);
