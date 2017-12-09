@@ -375,5 +375,10 @@
             "target": "bottomDetail",
             "readAccess": "public"
         }
+    },
+    "widget.9": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {}
     }
 }
