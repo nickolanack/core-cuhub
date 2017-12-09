@@ -1,9 +1,9 @@
 {
     "type": "UIView",
     "config": {
-        "className": "root-container",
+        "className": "left-detail",
         "viewType": "view",
-        "namedView": "layoutDetail",
+        "namedView": "leftDetail",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
         "showDeleteButton": false,

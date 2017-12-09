@@ -154,7 +154,7 @@
                 "_diagramState": []
             },
             "templateName": "cuhub",
-            "onRenderApplictionScript": "",
+            "onRenderApplictionScript": "CUHub Main.onRenderApplictionScript.js",
             "requireTarget": false,
             "widgetTitle": "CUHub Main",
             "target": "cuhub",
@@ -172,7 +172,25 @@
                     },
                     "content": {
                         "modules": [
-                            "layoutDetail.metadata.positions.content.modules.0.json"
+                            "layoutDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "bottom-detail",
+                                    "viewType": "view",
+                                    "namedView": "bottomDetail",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "itemButtonsScript": "return [];",
+                                    "namedViewScript": "return namedView",
+                                    "filterModulesScript": "return list",
+                                    "formOptions": "{}"
+                                }
+                            }
                         ]
                     },
                     "footer": {
@@ -198,12 +216,174 @@
             "readAccess": "public"
         }
     },
-    "widget.4": {
-        "name": "Template",
-        "instance": "Template",
+    "widget.5": {
+        "name": "Detail View",
+        "instance": "DetailView",
         "parameters": {
-            "contentTemplate": "Some Content",
-            "widgetTitle": "module..text"
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": []
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "leftDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "leftDetail",
+            "target": "leftDetail",
+            "readAccess": "public"
+        }
+    },
+    "widget.6": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": []
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "rightDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "rightDetail",
+            "target": "rightDetail",
+            "readAccess": "public"
+        }
+    },
+    "widget.7": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": []
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "topDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "topDetail",
+            "target": "topDetail",
+            "readAccess": "public"
+        }
+    },
+    "widget.8": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "bottomDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "right-detail",
+                                    "viewType": "view",
+                                    "namedView": "rightDetail",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "itemButtonsScript": "return [];",
+                                    "namedViewScript": "return namedView",
+                                    "filterModulesScript": "return list",
+                                    "formOptions": "{}"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "bottomDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "bottomDetail",
+            "target": "bottomDetail",
+            "readAccess": "public"
+        }
+    },
+    "widget.9": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {
+            "customCSS": "cuhubStyle.customCSS.css",
+            "widgetTitle": "cuhubStyle",
+            "target": "cuhubStyle",
+            "readAccess": "public"
         }
     }
 }
