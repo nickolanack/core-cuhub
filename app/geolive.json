@@ -397,7 +397,7 @@
                     },
                     "content": {
                         "modules": [
-                            "widget.DetailView.10.metadata.positions.content.modules.0.json"
+                            "navigationDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
@@ -415,11 +415,11 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "default",
+            "templateName": "navigationDetail",
             "onRenderApplictionScript": "",
             "requireTarget": true,
-            "widgetTitle": "",
-            "target": "none",
+            "widgetTitle": "navigationDetail",
+            "target": "navigationDetail",
             "readAccess": "public"
         }
     }
