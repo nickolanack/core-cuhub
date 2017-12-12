@@ -553,5 +553,10 @@
             "contentTemplate": "There is nothing to see here",
             "widgetTitle": "module..text"
         }
+    },
+    "widget.15": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {}
     }
 }
