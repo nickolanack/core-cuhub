@@ -9,7 +9,7 @@
         "namedFormView": "defaultFormView",
         "showDeleteButton": false,
         "deleteItemScript": "",
-        "getItemListScript": "return item;",
+        "getItemListScript": " EventList.SharedInstance(function(el){\n     callback(el.getEvents());\n })",
         "formatItemListScript": "return list;",
         "formatListItemModuleScript": "",
         "formatModuleScript": "",
