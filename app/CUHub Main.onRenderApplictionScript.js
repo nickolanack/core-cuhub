@@ -18,4 +18,4 @@ if(UrlVar('tpl',false)){
     GetWidget('cuhubDebugStyle')->display($targetInstance);
 }
 GetWidget('emptyListView')->display($targetInstance);
-//GetWidget('cuhubStyleGeneratedStyles')->display($targetInstance);
+GetWidget('cuhubGeneratedStyle')->display($targetInstance);
