@@ -30,6 +30,18 @@ body {
     min-height: 300px;
 }
 
+
+.ui-view.bottom-detail>.ui-template>.template-content>.ui-view {
+    min-height: 300px;
+    min-width: 200px;
+}
+
+.ui-view.left-detail {
+    width: 60%;
+}
+
+
+
 .ui-view {
     flex-grow: 1;
 }
