@@ -13,4 +13,5 @@ TemplateModule.SetTemplate(\'default\',\'<div data-template="content" class="tem
 
 
 GetWidget('cuhubStyle')->display($targetInstance);
-//GetWidget('firelightGeneratedStyles')->display($targetInstance);
+GetWidget('emptyListView')->display($targetInstance);
+//GetWidget('cuhubStyleGeneratedStyles')->display($targetInstance);

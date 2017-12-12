@@ -540,5 +540,13 @@
             "target": "emptyListView",
             "readAccess": "public"
         }
+    },
+    "widget.14": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "There is nothing to see here",
+            "widgetTitle": "module..text"
+        }
     }
 }
