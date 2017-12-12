@@ -424,5 +424,10 @@
             "target": "navigationDetail",
             "readAccess": "public"
         }
+    },
+    "widget.11": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {}
     }
 }
