@@ -449,15 +449,6 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return item.getDescription();",
-                                    "formatElementScript": ""
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"{item tags}\";",
                                     "formatElementScript": "el.addClass('feed-item-tags')"
                                 }
@@ -468,7 +459,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"{item actions}\";",
-                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
+                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             }
                         ]
