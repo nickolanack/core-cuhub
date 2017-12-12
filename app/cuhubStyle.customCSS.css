@@ -7,6 +7,9 @@
 
 body {
     margin: 0;
+    
+     font-family: sans-serif;
+     font-weight: 100;
 }
 
 .ui-view>.ui-template {
@@ -34,4 +37,25 @@ body {
     margin: 1px;
     padding: 2px;
     border-radius: 2px;
+}
+
+
+
+/*Menu*/
+
+span.ui-navigation-menu ul {display: inline-block;white-space: nowrap;}
+
+span.ui-navigation-menu ul li {
+    display: inline;
+}
+
+span.ui-navigation-menu ul li button {
+    margin: 5px;
+    height: 40px;
+    padding: 0 30px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    color: #555555;
+    font-size: 20px;
 }
