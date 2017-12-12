@@ -503,5 +503,10 @@
             "target": "feedItemsList",
             "readAccess": "public"
         }
+    },
+    "widget.13": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {}
     }
 }
