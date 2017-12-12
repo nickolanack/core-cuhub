@@ -22,6 +22,9 @@ body {
     display: flex;
     flex-direction: column;
 }
+.ui-view.bottom-detail>.ui-template>.template-content {
+    flex-direction: row;
+}
 
 .ui-view {
     flex-grow: 1;
