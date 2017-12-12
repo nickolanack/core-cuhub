@@ -464,5 +464,45 @@
             "target": "feedItemDetail",
             "readAccess": "public"
         }
+    },
+    "widget.12": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "feedItemsList.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "feedItemsList.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "feedItemsList.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "templateName": "feedItemsList",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "feedItemsList",
+            "target": "feedItemsList",
+            "readAccess": "public"
+        }
     }
 }
