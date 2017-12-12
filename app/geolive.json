@@ -124,6 +124,11 @@
             "enabled": true
         }
     },
+    "plugin.17": {
+        "name": "Project Hub Plugin",
+        "instance": "ProjectHub",
+        "parameters": {}
+    },
     "widget.1": {
         "name": "Detail View",
         "instance": "DetailView",

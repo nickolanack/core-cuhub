@@ -11,6 +11,7 @@ TemplateModule.SetTemplate(\'default\',\'<div data-template="content" class="tem
  * Add all views that wont be autoloaded. (any view that is rendered programatically and not by default) 
  */
 
+GetPlugin('ProjectHub')->includeScripts();
 
 GetWidget('cuhubStyle')->display($targetInstance);
 GetWidget('emptyListView')->display($targetInstance);
