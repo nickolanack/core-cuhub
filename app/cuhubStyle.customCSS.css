@@ -26,6 +26,10 @@ body {
     flex-direction: row;
 }
 
+.ui-view.bottom-detail>.ui-template>.template-content>.ui-view {
+    min-height: 300px;
+}
+
 .ui-view {
     flex-grow: 1;
 }
