@@ -82,3 +82,22 @@ span.ui-navigation-menu label {
     box-shadow: 0 0 4px rgba(0,0,0,0.2);
     margin: 5px;
 }
+
+
+.feed-item-label {
+    display: inline-block;
+    text-indent: 10px;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.feed-item-actions {
+    display: inline-block;
+    float: right;
+    margin: 5px;
+}
+
+.ui-view.event-feed-item>.ui-template>.template-content {
+    display: block;
+}
