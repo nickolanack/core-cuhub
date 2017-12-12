@@ -98,6 +98,11 @@ span.ui-navigation-menu label {
     margin: 5px;
 }
 
+.feed-item-tags {
+    text-align: center;
+    margin: 5px;
+}
+
 .ui-view.event-feed-item>.ui-template>.template-content {
     display: block;
 }
