@@ -60,3 +60,7 @@ span.ui-navigation-menu ul li button {
     font-size: 20px;
         font-weight: 200;
 }
+
+span.ui-navigation-menu label {
+    display: none;
+}
