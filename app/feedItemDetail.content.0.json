@@ -4,6 +4,6 @@
         "loadAsync": false,
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return '{name} - {description}'",
-        "formatElementScript": ""
+        "formatElementScript": "el.addClass('feed-item-label')"
     }
 }
