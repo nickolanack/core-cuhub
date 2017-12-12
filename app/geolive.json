@@ -567,6 +567,11 @@
     "widget.16": {
         "name": "Stylesheet",
         "instance": "CSS",
-        "parameters": {}
+        "parameters": {
+            "customCSS": "",
+            "widgetTitle": "cuhubGeneratedStyles",
+            "target": "none",
+            "readAccess": "public"
+        }
     }
 }
