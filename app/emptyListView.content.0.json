@@ -2,7 +2,7 @@
     "type": "InlineHtml",
     "config": {
         "className": "",
-        "text": "There is nothing to see here",
+        "text": "There is an empty list placeholder",
         "template": "",
         "templateVariablesScript": ""
     }
