@@ -557,6 +557,11 @@
     "widget.15": {
         "name": "Stylesheet",
         "instance": "CSS",
-        "parameters": {}
+        "parameters": {
+            "customCSS": "cuhubDebugStyle.customCSS.css",
+            "widgetTitle": "cuhubDebugStyle",
+            "target": "cuhubDebugStyle",
+            "readAccess": "public"
+        }
     }
 }
