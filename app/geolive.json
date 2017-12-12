@@ -563,5 +563,10 @@
             "target": "cuhubDebugStyle",
             "readAccess": "public"
         }
+    },
+    "widget.16": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {}
     }
 }
