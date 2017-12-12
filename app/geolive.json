@@ -385,5 +385,10 @@
             "target": "cuhubStyle",
             "readAccess": "public"
         }
+    },
+    "widget.10": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {}
     }
 }
