@@ -296,7 +296,9 @@
                         "modules": []
                     },
                     "content": {
-                        "modules": []
+                        "modules": [
+                            "topDetail.metadata.positions.content.modules.0.json"
+                        ]
                     },
                     "footer": {
                         "modules": []
