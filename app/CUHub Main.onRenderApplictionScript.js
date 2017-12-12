@@ -14,6 +14,8 @@ TemplateModule.SetTemplate(\'default\',\'<div data-template="content" class="tem
 GetPlugin('ProjectHub')->includeScripts();
 
 GetWidget('cuhubStyle')->display($targetInstance);
-GetWidget('cuhubDebugStyle')->display($targetInstance);
+if(UrlVar('tpl',false)){
+    GetWidget('cuhubDebugStyle')->display($targetInstance);
+}
 GetWidget('emptyListView')->display($targetInstance);
 //GetWidget('cuhubStyleGeneratedStyles')->display($targetInstance);
