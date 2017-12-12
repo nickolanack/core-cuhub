@@ -507,6 +507,41 @@
     "widget.13": {
         "name": "Detail View",
         "instance": "DetailView",
-        "parameters": {}
+        "parameters": {
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "emptyListView.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "emptyListView.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "emptyListView.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "templateName": "emptyListView",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "emptyListView",
+            "target": "emptyListView",
+            "readAccess": "public"
+        }
     }
 }
