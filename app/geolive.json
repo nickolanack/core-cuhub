@@ -568,9 +568,9 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "customCSS": "",
-            "widgetTitle": "cuhubGeneratedStyles",
-            "target": "none",
+            "customCSS": "cuhubGeneratedStyle.customCSS.css",
+            "widgetTitle": "cuhubGeneratedStyle",
+            "target": "cuhubGeneratedStyle",
             "readAccess": "public"
         }
     }

@@ -1,0 +1,7 @@
+.ui-view.event-feed-item {
+    border-left: 7px solid #00d8ff;
+}
+
+span.ui-navigation-menu ul li.menu-main-events>button {
+    border-left: 3px solid #00d8ff;
+}
