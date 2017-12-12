@@ -29,11 +29,11 @@ body {
 
 .ui-view.top-detail {
     flex-grow: 0;
-    height: 100px;
+
 }
 
 .ui-view {
-    border: 1px solid gray;
+    border: 1px solid lightgrey;
     margin: 1px;
     padding: 2px;
     border-radius: 2px;
