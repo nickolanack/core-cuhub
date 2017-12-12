@@ -452,6 +452,15 @@
                                     "fieldValueScript": "return item.getDescription();",
                                     "formatElementScript": ""
                                 }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return \"{item tags}\";",
+                                    "formatElementScript": ""
+                                }
                             }
                         ]
                     },
