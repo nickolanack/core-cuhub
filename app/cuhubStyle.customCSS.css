@@ -39,6 +39,11 @@ body {
 
 .ui-view.left-detail {
     width: 60%;
+    padding-left: 40px;
+}
+
+.ui-view.right-detail {
+    padding-right: 40px;
 }
 
 
