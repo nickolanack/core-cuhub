@@ -255,36 +255,9 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return \"Your Pinned Items\";",
+                                    "fieldLabelScript": "leftDetail.metadata.positions.content.modules.2.config.fieldLabelScript.js",
                                     "fieldValueScript": "return \"\";",
                                     "formatElementScript": "leftDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
-                                }
-                            },
-                            {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "pinned-items",
-                                    "viewType": "view",
-                                    "namedView": "pinnedItemsDetail",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "",
-                                    "itemButtonsScript": "return [];",
-                                    "namedViewScript": "return namedView",
-                                    "filterModulesScript": "return list",
-                                    "formOptions": "{}"
-                                }
-                            },
-                            {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "leftDetail.metadata.positions.content.modules.4.config.fieldLabelScript.js",
-                                    "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
                                 }
                             },
                             {
