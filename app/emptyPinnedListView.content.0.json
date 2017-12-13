@@ -3,7 +3,7 @@
     "config": {
         "loadAsync": false,
         "fieldLabelScript": "return \"\";",
-        "fieldValueScript": "return \"You can pin items here\";",
+        "fieldValueScript": "return \"Your `pinned` items will be here\";",
         "formatElementScript": "el.addClass('empty-pinned-item')"
     }
 }
