@@ -21,3 +21,6 @@ if(UrlVar('tpl',false)){
 GetWidget('emptyListView')->display($targetInstance);
 GetWidget('emptyPinnedListView')->display($targetInstance);
 GetWidget('cuhubGeneratedStyle')->display($targetInstance);
+
+
+GetWidget('guestExpandedDetail')->display($targetInstance);
