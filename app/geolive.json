@@ -889,5 +889,10 @@
             "target": "emptyPinnedListView",
             "readAccess": "public"
         }
+    },
+    "widget.24": {
+        "name": "Configuration",
+        "instance": "Configuration",
+        "parameters": {}
     }
 }
