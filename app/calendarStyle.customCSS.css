@@ -25,7 +25,8 @@
     text-align: center;
     display: inline-block;
     position: relative;
-    border-radius: 3px;
+    border-radius: 2px;
+    padding: 10px 0;
 }
 
 
@@ -33,14 +34,14 @@
     content: attr(data-day);
     display: inline-block;
 
-    margin-top: 20px;
+    margin-top: 25px;
     position: relative;
     z-index: 1;
 }
 
 
 .calendar .day:hover {
-    background: rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.05);
     
     cursor: pointer;
 }
