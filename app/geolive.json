@@ -816,5 +816,10 @@
             "target": "pinnedItemsDetail",
             "readAccess": "public"
         }
+    },
+    "widget.23": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {}
     }
 }
