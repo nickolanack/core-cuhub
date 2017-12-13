@@ -255,7 +255,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return \"Field Label Script\";",
+                                    "fieldLabelScript": "return \"Your Pinned Items\";",
                                     "fieldValueScript": "return \"\";",
                                     "formatElementScript": "el.addClass('feed-item-icon')"
                                 }
@@ -282,7 +282,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return \"Field Label Script\";",
+                                    "fieldLabelScript": "leftDetail.metadata.positions.content.modules.4.config.fieldLabelScript.js",
                                     "fieldValueScript": "return \"\";",
                                     "formatElementScript": "el.addClass('feed-item-icon')"
                                 }
