@@ -451,8 +451,17 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "feedItemDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
+                                    "formatElementScript": "el.addClass('feed-item-label')"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"{item actions}\";",
-                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             },
                             {
