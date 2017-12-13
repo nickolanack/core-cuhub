@@ -931,7 +931,7 @@
             "widgetTitle": "interfaceConfig",
             "target": "interfaceConfig",
             "readAccess": "public",
-            "color-for-request": "rgb(0,0,0)"
+            "color-for-request": "rgb(134, 0, 8)"
         }
     }
 }
