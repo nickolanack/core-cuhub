@@ -169,14 +169,15 @@ span.ui-navigation-menu label {
     position:relative;
 }
 
-section-item-icon {
-    
+.section-item-icon {
+    width: 20px;
+    height: 20px;
 }
 .section-item-icon .field-label {
     position: absolute;
     left: calc( 100% + 10px );
     white-space: nowrap;
-    top: calc( 50% - 7px );
+    top: calc( 50% - 6px );
 }
 
 
