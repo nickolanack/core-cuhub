@@ -13,6 +13,6 @@
         "itemButtonsScript": "return [];",
         "namedViewScript": "return namedView",
         "filterModulesScript": "return list",
-        "formOptions": "{}"
+        "formOptions": "{template:\"form\"}"
     }
 }
