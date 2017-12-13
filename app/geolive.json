@@ -463,6 +463,24 @@
                                     "fieldValueScript": "return \"{item tags}\";",
                                     "formatElementScript": "el.addClass('feed-item-tags')"
                                 }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "feedItemExpandedDetail",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "itemButtonsScript": "return [];",
+                                    "namedViewScript": "return namedView",
+                                    "filterModulesScript": "return list",
+                                    "formOptions": "{}"
+                                }
                             }
                         ]
                     },
