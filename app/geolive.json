@@ -257,7 +257,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Your Pinned Items\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "el.addClass('feed-item-icon')"
+                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -284,7 +284,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "leftDetail.metadata.positions.content.modules.4.config.fieldLabelScript.js",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "el.addClass('feed-item-icon')"
+                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
                                 }
                             },
                             {

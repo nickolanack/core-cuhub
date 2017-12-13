@@ -4,6 +4,6 @@
         "loadAsync": false,
         "fieldLabelScript": "return \"Your Profile\";",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": "el.addClass('feed-item-icon')"
+        "formatElementScript": "el.addClass('section-item-icon')"
     }
 }
