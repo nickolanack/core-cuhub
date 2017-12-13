@@ -636,6 +636,11 @@
     "widget.19": {
         "name": "Stylesheet",
         "instance": "CSS",
-        "parameters": {}
+        "parameters": {
+            "customCSS": "calendarStyle.customCSS.css",
+            "widgetTitle": "calendarStyle",
+            "target": "calendarStyle",
+            "readAccess": "public"
+        }
     }
 }

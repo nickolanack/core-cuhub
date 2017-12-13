@@ -1,0 +1,81 @@
+.calendar .nav {
+    text-align: center;
+    line-height: 70px;
+    height: 70px;
+}
+
+.calendar .nav label {
+    padding: 0 5px;
+}
+
+.calendar .month {
+    width: 100%;
+    min-height: 300px;
+    display: grid;
+}
+
+.calendar .week {
+    width: 100%;
+    height: 100%;
+}
+
+.calendar .day {
+    width: calc( 100% / 7 );
+    height: 100%;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    border-radius: 3px;
+}
+
+
+.calendar .day:before {
+    content: attr(data-day);
+    display: inline-block;
+
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+
+.calendar .day:hover {
+    background: rgba(0,0,0,0.1);
+    
+    cursor: pointer;
+}
+
+.nav>.next-btn, .nav>.prev-btn {
+    margin: 20px;
+    width: 28px;
+    height: 28px;
+}
+
+.nav>.prev-btn {
+    float: left;
+}
+
+.day.today:after {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 50px;
+    left: calc( 50% - 25px );
+    top: calc( 50% - 25px );
+    border-radius: 100%;
+}
+
+
+.day.active {
+     background-color: rgba(0, 0, 0, 0.1);
+}
+.calendar .day.active:hover{
+    background-color: #6A7CE9;
+}
+.day.today.active:after{
+    border: 1px solid rgba(0,0,0,0.4);
+}
+
+.day.next, .day.prev {
+    opacity: 0.2;
+}
