@@ -558,7 +558,7 @@
                                     "formatModuleScript": "",
                                     "resolveItemScript": "",
                                     "itemButtonsScript": "return [];",
-                                    "namedViewScript": "return namedView",
+                                    "namedViewScript": "feedItemDetail.metadata.positions.content.modules.4.config.namedViewScript.js",
                                     "filterModulesScript": "return list",
                                     "formOptions": "{}"
                                 }
