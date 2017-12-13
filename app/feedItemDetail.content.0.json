@@ -1,7 +1,7 @@
 {
     "type": "WizardScriptElement",
     "config": {
-        "script": "return new ElementModule('div',{\"class\":\"feed-item-logo\"});",
+        "script": "return new ElementModule('div',{\"class\":\"feed-item-icon\"});",
         "identifier": "customScriptElement"
     }
 }
