@@ -77,11 +77,15 @@ span.ui-navigation-menu label {
     display: none;
 }
 
-.ui-view.event-feed-item {
+.ui-view.event-feed-item, .ui-view.pinned-items, .ui-view.user-detail {
     min-height: 40px;
     border: 1px solid rgba(0,0,0,0.3);
     box-shadow: 0 0 4px rgba(0,0,0,0.2);
     margin: 5px;
+}
+
+.ui-view.pinned-items, .ui-view.user-detail{
+    margin-bottom:15px
 }
 
 
