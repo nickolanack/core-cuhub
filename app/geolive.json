@@ -588,5 +588,10 @@
             "target": "cuhubGeneratedStyle",
             "readAccess": "public"
         }
+    },
+    "widget.17": {
+        "name": "Javascript",
+        "instance": "CustomBehaviorScript",
+        "parameters": {}
     }
 }
