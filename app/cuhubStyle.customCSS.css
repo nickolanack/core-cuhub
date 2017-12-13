@@ -85,7 +85,9 @@ span.ui-navigation-menu label {
 }
 
 .ui-view.pinned-items, .ui-view.user-detail{
-    margin-bottom:15px
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding-bottom: 15px;
 }
 
 
