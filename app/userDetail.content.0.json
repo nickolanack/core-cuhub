@@ -1,7 +1,6 @@
 {
-    "type": "UIListView",
+    "type": "UIView",
     "config": {
-        "listClassName": "",
         "className": "",
         "viewType": "view",
         "namedView": "feedItemDetail",
@@ -9,13 +8,11 @@
         "namedFormView": "defaultFormView",
         "showDeleteButton": false,
         "deleteItemScript": "",
-        "getItemListScript": "return item;",
-        "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "",
         "formatModuleScript": "",
+        "resolveItemScript": "return new EventItem();",
         "itemButtonsScript": "return [];",
-        "emptyNamedView": "emptyListView",
         "namedViewScript": "return namedView",
-        "filterModulesScript": "return list"
+        "filterModulesScript": "return list",
+        "formOptions": "{}"
     }
 }
