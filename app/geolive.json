@@ -660,5 +660,10 @@
             "target": "calendarStyle",
             "readAccess": "public"
         }
+    },
+    "widget.20": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {}
     }
 }
