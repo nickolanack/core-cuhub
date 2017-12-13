@@ -8,17 +8,7 @@
     border-left: 7px solid #00d8ff;
 }
 
-.ui-view.connection-feed-item {
-    border-left-color: <?php echo $ui->getParameter('color-for-connection');?>;
-}
 
-.ui-view.profile-feed-item {
-    border-left-color: <?php echo $ui->getParameter('color-for-profile');?>;
-}
-
-.ui-view.project-feed-item {
-    border-left-color: <?php echo $ui->getParameter('color-for-project');?>;
-}
 
 
 
@@ -30,18 +20,6 @@ span.ui-navigation-menu ul li>button {
 }
 
 
-
-span.ui-navigation-menu ul li.menu-main-connections>button {
-    border-left-color: <?php echo $ui->getParameter('color-for-connection');?>;
-}
-
-span.ui-navigation-menu ul li.menu-main-profiles>button {
-    border-left-color: <?php echo $ui->getParameter('color-for-profile');?>;
-}
-
-span.ui-navigation-menu ul li.menu-main-projects>button {
-    border-left-color: <?php echo $ui->getParameter('color-for-project');?>;
-}
 
 
 
@@ -56,14 +34,21 @@ span.ui-navigation-menu ul li.menu-main-projects>button {
 }
 
 
-.ui-view.connection-feed-item .btn-action{
-    background-color: <?php echo $ui->getParameter('color-for-connection');?>;
-}
+<?php foreach(array('connection', 'profile', 'project', 'connection', 'request') as $type){
+    ?>
+    
+    .ui-view.<?php echo $type; ?>-feed-item {
+        border-left-color: <?php echo $ui->getParameter('color-for-'.$type);?>;
+    }
+    
+    span.ui-navigation-menu ul li.menu-main-<?php echo $type; ?>s>button {
+        border-left-color: <?php echo $ui->getParameter('color-for-'.$type);?>;
+    }
 
-.ui-view.profile-feed-item .btn-action{
-    background-color: <?php echo $ui->getParameter('color-for-profile');?>;
-}
+    .ui-view.<?php echo $type; ?>-feed-item .btn-action{
+        background-color: <?php echo $ui->getParameter('color-for-'.$type);?>;
+    }
 
-.ui-view.project-feed-item .btn-action{
-   background-color: <?php echo $ui->getParameter('color-for-project');?>;
-}
+    
+    <?php
+}?>
