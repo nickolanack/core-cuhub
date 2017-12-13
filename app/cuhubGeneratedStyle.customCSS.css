@@ -40,7 +40,7 @@ span.ui-navigation-menu ul li.menu-main-profiles>button {
 }
 
 span.ui-navigation-menu ul li.menu-main-projects>button {
-    border-left-color: #<?php echo $ui->getParameter('color-for-project');?>;
+    border-left-color: <?php echo $ui->getParameter('color-for-project');?>;
 }
 
 
