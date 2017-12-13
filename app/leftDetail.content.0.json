@@ -2,7 +2,7 @@
     "type": "FieldValue",
     "config": {
         "loadAsync": false,
-        "fieldLabelScript": "return \"Field Label Script\";",
+        "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return \"Field Value Script\";",
         "formatElementScript": "el.addClass('feed-item-icon')"
     }

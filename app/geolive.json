@@ -256,7 +256,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Field Label Script\";",
-                                    "fieldValueScript": "return \"Field Value Script\";",
+                                    "fieldValueScript": "return \"\";",
                                     "formatElementScript": "el.addClass('feed-item-icon')"
                                 }
                             },
@@ -283,7 +283,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Field Label Script\";",
-                                    "fieldValueScript": "return \"Field Value Script\";",
+                                    "fieldValueScript": "return \"\";",
                                     "formatElementScript": "el.addClass('feed-item-icon')"
                                 }
                             },
