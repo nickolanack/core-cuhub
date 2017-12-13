@@ -6,6 +6,7 @@
 
 .calendar .nav label {
     padding: 0 5px;
+    vertical-align: top;
 }
 
 .calendar .month {
@@ -56,7 +57,7 @@
 }
 
 .nav>.prev-btn {
-    float: left;
+
 }
 
 .day.today:after {
