@@ -61,7 +61,7 @@ span.ui-navigation-menu ul li.menu-main-projects>button {
 }
 
 .ui-view.profile-feed-item .btn-action{
-    background-color: <?php echo $ui->getParameter('color-for-connection');?>;
+    background-color: <?php echo $ui->getParameter('color-for-profile');?>;
 }
 
 .ui-view.project-feed-item .btn-action{
