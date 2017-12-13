@@ -632,5 +632,10 @@
             "target": "calendarDetail",
             "readAccess": "public"
         }
+    },
+    "widget.19": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {}
     }
 }
