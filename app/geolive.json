@@ -706,5 +706,10 @@
             "target": "feedItemExpandedDetail",
             "readAccess": "public"
         }
+    },
+    "widget.21": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {}
     }
 }
