@@ -893,6 +893,38 @@
     "widget.24": {
         "name": "Configuration",
         "instance": "Configuration",
-        "parameters": {}
+        "parameters": {
+            "contentTemplate": "",
+            "comments": "",
+            "formatParametersScript": "return $parameters;",
+            "parameters": [
+                "widget.Configuration.24.parameters.0.json",
+                {
+                    "type": "color",
+                    "name": "color-for-project",
+                    "default": "rgb(0,0,0)",
+                    "label": "color-for-project"
+                },
+                {
+                    "type": "color",
+                    "name": "color-for-event",
+                    "default": "rgb(0,0,0)",
+                    "label": "color-for-event"
+                },
+                {
+                    "type": "color",
+                    "name": "color-for-connection",
+                    "default": "rgb(0,0,0)",
+                    "label": "color-for-connection"
+                }
+            ],
+            "color-for-profile": "rgb(0,0,0)",
+            "color-for-project": "rgb(0,0,0)",
+            "color-for-event": "rgb(0,0,0)",
+            "color-for-connection": "rgb(0,0,0)",
+            "widgetTitle": "",
+            "target": "none",
+            "readAccess": "public"
+        }
     }
 }
