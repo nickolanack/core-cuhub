@@ -820,6 +820,41 @@
     "widget.23": {
         "name": "Detail View",
         "instance": "DetailView",
-        "parameters": {}
+        "parameters": {
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "emptyPinnedListView.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "emptyPinnedListView.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "emptyPinnedListView.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "templateName": "emptyPinnedListView",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "emptyPinnedListView",
+            "target": "emptyPinnedListView",
+            "readAccess": "public"
+        }
     }
 }
