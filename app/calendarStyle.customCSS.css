@@ -32,10 +32,10 @@
 .calendar .day:before {
     content: attr(data-day);
     display: inline-block;
-
-    margin-top: 25px;
-    position: relative;
+    position: absolute;
     z-index: 1;
+    top: calc( 50% - 4px );
+    left: calc( 50% - 6px );
 }
 
 .day.active {
