@@ -343,6 +343,15 @@
                         "modules": [
                             "rightDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Your Pinned Items\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "pinned-items",
