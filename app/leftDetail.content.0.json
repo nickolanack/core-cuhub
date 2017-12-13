@@ -1,7 +1,7 @@
 {
     "type": "UIView",
     "config": {
-        "className": "",
+        "className": "user-detail",
         "viewType": "view",
         "namedView": "userDetail",
         "showInlineEdit": false,
