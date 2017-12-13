@@ -944,7 +944,9 @@
                         "modules": []
                     },
                     "content": {
-                        "modules": []
+                        "modules": [
+                            "guestExpandedDetail.metadata.positions.content.modules.0.json"
+                        ]
                     },
                     "footer": {
                         "modules": []
