@@ -970,5 +970,10 @@
             "target": "guestExpandedDetail",
             "readAccess": "public"
         }
+    },
+    "widget.26": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {}
     }
 }
