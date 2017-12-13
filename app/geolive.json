@@ -532,7 +532,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return \"{item actions}\";",
+                                    "fieldValueScript": "return \"\";",
                                     "formatElementScript": "feedItemDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             },
