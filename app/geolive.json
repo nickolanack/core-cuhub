@@ -898,7 +898,7 @@
             "comments": "",
             "formatParametersScript": "return $parameters;",
             "parameters": [
-                "widget.Configuration.24.parameters.0.json",
+                "interfaceConfig.parameters.0.json",
                 {
                     "type": "color",
                     "name": "color-for-project",
@@ -922,8 +922,8 @@
             "color-for-project": "rgb(255, 193, 7)",
             "color-for-event": "rgb(0, 216, 255)",
             "color-for-connection": "rgb(127, 255, 0)",
-            "widgetTitle": "",
-            "target": "none",
+            "widgetTitle": "interfaceConfig",
+            "target": "interfaceConfig",
             "readAccess": "public"
         }
     }
