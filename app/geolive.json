@@ -933,5 +933,10 @@
             "readAccess": "public",
             "color-for-request": "rgb(134, 0, 8)"
         }
+    },
+    "widget.25": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {}
     }
 }
