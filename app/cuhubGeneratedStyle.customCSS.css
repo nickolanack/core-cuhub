@@ -2,6 +2,37 @@
     border-left: 7px solid #00d8ff;
 }
 
+.ui-view.connection-feed-item {
+    border-left-color: chartreuse;
+}
+
+.ui-view.profile-feed-item {
+    border-left-color: cornflowerblue;
+}
+
+.ui-view.project-feed-item {
+    border-left-color: #FFC107;
+}
+
+
+
+
+
+
 span.ui-navigation-menu ul li.menu-main-events>button {
     border-left: 3px solid #00d8ff;
+}
+
+
+
+span.ui-navigation-menu ul li.menu-main-partnerships>button {
+    border-left-color: chartreuse;
+}
+
+span.ui-navigation-menu ul li.menu-main-profiles>button {
+    border-left-color: cornflowerblue;
+}
+
+span.ui-navigation-menu ul li.menu-main-projects>button {
+    border-left-color: #FFC107;
 }
