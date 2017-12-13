@@ -341,7 +341,25 @@
                     },
                     "content": {
                         "modules": [
-                            "rightDetail.metadata.positions.content.modules.0.json"
+                            "rightDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "pinned-items",
+                                    "viewType": "view",
+                                    "namedView": "pinnedItemsDetail",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "itemButtonsScript": "return [];",
+                                    "namedViewScript": "return namedView",
+                                    "filterModulesScript": "return list",
+                                    "formOptions": "{}"
+                                }
+                            }
                         ]
                     },
                     "footer": {
