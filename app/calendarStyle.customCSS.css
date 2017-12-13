@@ -39,9 +39,11 @@
     z-index: 1;
 }
 
-
+.day.active {
+     background-color: rgba(0, 0, 0, 0.05);
+}
 .calendar .day:hover {
-    background: rgba(0,0,0,0.05);
+    background: rgba(0,0,0,0.06);
     
     cursor: pointer;
 }
@@ -67,9 +69,7 @@
 }
 
 
-.day.active {
-     background-color: rgba(0, 0, 0, 0.1);
-}
+
 .calendar .day.active:hover{
     background-color: #6A7CE9;
 }
