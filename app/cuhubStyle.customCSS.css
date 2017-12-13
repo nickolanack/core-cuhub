@@ -122,8 +122,17 @@ span.ui-navigation-menu label {
     transition: height 0.2s, opacity 0.5s;
 }
 
+.ui-view.feed-item-expanded-detail {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 300px;
+    font-size: 16px;
+    font-weight: 100;
+    color: #333333;
+}
 
-.ui-view.feed-item-expanded-detail:after {
+
+.active.ui-view.feed-item-expanded-detail:after {
     content: "";
     position: absolute;
     width: 7px;
