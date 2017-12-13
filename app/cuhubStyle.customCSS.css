@@ -106,3 +106,8 @@ span.ui-navigation-menu label {
 .ui-view.event-feed-item>.ui-template>.template-content {
     display: block;
 }
+
+.active.event-feed-item .ui-view.feed-item-expanded-detail {
+    background-color: rgba(0,0,0,0.1);
+    min-height: 300px;
+}
