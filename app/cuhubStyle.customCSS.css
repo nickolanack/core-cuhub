@@ -137,6 +137,8 @@ span.ui-navigation-menu label {
 }
 
 
+
+
 .ui-view.feed-item-expanded-detail {
     text-align: center;
     vertical-align: middle;
@@ -144,6 +146,11 @@ span.ui-navigation-menu label {
     font-size: 16px;
     font-weight: 100;
     color: #333333;
+}
+
+.user-detail .active.feed-item .ui-view.feed-item-expanded-detail {
+    line-height: 20px;
+    height: auto;
 }
 
 
