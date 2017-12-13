@@ -919,7 +919,7 @@
                 }
             ],
             "color-for-profile": "rgb(100, 149, 237)",
-            "color-for-project": "rgb(255, 193, 7)",
+            "color-for-project": "rgb(173, 0, 173)",
             "color-for-event": "rgb(0, 216, 255)",
             "color-for-connection": "rgb(127, 255, 0)",
             "widgetTitle": "interfaceConfig",
