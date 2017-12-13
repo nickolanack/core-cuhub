@@ -85,7 +85,7 @@ span.ui-navigation-menu label {
 .ui-view.feed-item, .ui-view.pinned-item, .ui-view.user-detail-item {
     min-height: 40px;
     border: 1px solid rgba(0,0,0,0.3);
-    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    box-shadow: 0 0 2px rgba(0,0,0,0.1);
     margin: 5px;
 }
 
