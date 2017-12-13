@@ -3,7 +3,7 @@
     "config": {
         "className": "",
         "viewType": "view",
-        "namedView": "feedItemsList",
+        "namedView": "userDetail",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
         "showDeleteButton": false,
