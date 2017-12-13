@@ -236,7 +236,7 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "",
+                                    "className": "pinned-items",
                                     "viewType": "view",
                                     "namedView": "pinnedItemsDetail",
                                     "showInlineEdit": false,
