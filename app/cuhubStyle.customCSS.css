@@ -158,7 +158,7 @@ span.ui-navigation-menu label {
     top: 0;
 }
 
-.feed-item-icon {
+.feed-item-icon, .section-item-icon {
     width: 40px;
     height: 40px;
     display: inline-block;
@@ -166,8 +166,18 @@ span.ui-navigation-menu label {
     margin: 6px;
     float: left;
     border-radius: 100%;
+    position:relative;
 }
 
+section-item-icon {
+    
+}
+.section-item-icon .field-label {
+    position: absolute;
+    left: calc( 100% + 10px );
+    white-space: nowrap;
+    top: calc( 50% - 7px );
+}
 
 
 .empty-pinned-item.field-value-module {
