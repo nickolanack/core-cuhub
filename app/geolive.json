@@ -348,7 +348,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Your Pinned Items\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": ""
+                                    "formatElementScript": "rightDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             },
                             {
