@@ -607,7 +607,7 @@
                     },
                     "content": {
                         "modules": [
-                            "widget.DetailView.18.metadata.positions.content.modules.0.json"
+                            "calendarDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
@@ -625,11 +625,11 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "default",
+            "templateName": "calendarDetail",
             "onRenderApplictionScript": "",
             "requireTarget": true,
-            "widgetTitle": "",
-            "target": "none",
+            "widgetTitle": "calendarDetail",
+            "target": "calendarDetail",
             "readAccess": "public"
         }
     }
