@@ -1,8 +1,8 @@
 {
     "type": "UIListView",
     "config": {
-        "listClassName": "event-feed-item",
-        "className": "",
+        "listClassName": "",
+        "className": "event-feed-item",
         "viewType": "view",
         "namedView": "feedItemDetail",
         "showInlineEdit": false,
