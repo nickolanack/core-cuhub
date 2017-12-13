@@ -9,7 +9,7 @@
         "showDeleteButton": false,
         "deleteItemScript": "",
         "formatModuleScript": "",
-        "resolveItemScript": "return new EventItem();",
+        "resolveItemScript": "return new MyProfileItem();",
         "itemButtonsScript": "return [];",
         "namedViewScript": "return namedView",
         "filterModulesScript": "return list",
