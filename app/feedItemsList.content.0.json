@@ -11,7 +11,7 @@
         "deleteItemScript": "",
         "getItemListScript": " EventList.SharedInstance(function(el){\n     callback(el.getEvents());\n })",
         "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "childView.getElement().addClass(child.getType()+'-feed-item');",
+        "formatListItemModuleScript": "childView.getElement().addClass(child.getType()+'-feed-item');\nchildView.getElement().addClass('feed-item-'+child.getId());",
         "formatModuleScript": "",
         "itemButtonsScript": "return [];",
         "emptyNamedView": "emptyListView",
