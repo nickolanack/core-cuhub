@@ -1,7 +1,7 @@
 {
     "type": "UIListView",
     "config": {
-        "listClassName": "",
+        "listClassName": "event-feed-item",
         "className": "",
         "viewType": "view",
         "namedView": "feedItemDetail",
@@ -11,7 +11,7 @@
         "deleteItemScript": "",
         "getItemListScript": " EventList.SharedInstance(function(el){\n     callback(el.getEvents());\n })",
         "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "",
+        "formatListItemModuleScript": "childView.getElement().addClass(child.getType()+'-feed-item');\nchildView.getElement().addClass('feed-item-'+child.getId());\nchildView.getElement().addEvent('click',function(){\n    var me=this;\n    if(me.hasClass('active')){\n        me.removeClass('active');\n    }else{\n        me.addClass('active');\n    }\n})",
         "formatModuleScript": "",
         "itemButtonsScript": "return [];",
         "emptyNamedView": "emptyListView",
