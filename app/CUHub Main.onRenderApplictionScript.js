@@ -14,6 +14,7 @@ TemplateModule.SetTemplate(\'default\',\'<div data-template="content" class="tem
 GetPlugin('ProjectHub')->includeScripts();
 
 GetWidget('cuhubStyle')->display($targetInstance);
+GetWidget('calendarStyle')->display($targetInstance);
 if(UrlVar('tpl',false)){
     GetWidget('cuhubDebugStyle')->display($targetInstance);
 }
