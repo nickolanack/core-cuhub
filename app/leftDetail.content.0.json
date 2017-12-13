@@ -1,18 +1,9 @@
 {
-    "type": "UIView",
+    "type": "FieldValue",
     "config": {
-        "className": "user-detail",
-        "viewType": "view",
-        "namedView": "userDetail",
-        "showInlineEdit": false,
-        "namedFormView": "defaultFormView",
-        "showDeleteButton": false,
-        "deleteItemScript": "",
-        "formatModuleScript": "",
-        "resolveItemScript": "",
-        "itemButtonsScript": "return [];",
-        "namedViewScript": "return namedView",
-        "filterModulesScript": "return list",
-        "formOptions": "{}"
+        "loadAsync": false,
+        "fieldLabelScript": "return \"Field Label Script\";",
+        "fieldValueScript": "return \"Field Value Script\";",
+        "formatElementScript": "el.addClass('feed-item-icon')"
     }
 }
