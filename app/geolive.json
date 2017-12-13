@@ -593,5 +593,42 @@
         "name": "Javascript",
         "instance": "CustomBehaviorScript",
         "parameters": {}
+    },
+    "widget.18": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "widget.DetailView.18.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "default",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "",
+            "target": "none",
+            "readAccess": "public"
+        }
     }
 }
