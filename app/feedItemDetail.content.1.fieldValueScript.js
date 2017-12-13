@@ -1,1 +1,1 @@
-return (item.getName?item.getName():'{name}')+' - {description}'
+return (item.getName?item.getName():'{name}')+' - '+(item.getName?item.getName():'{description}')
