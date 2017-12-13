@@ -916,6 +916,12 @@
                     "name": "color-for-connection",
                     "default": "rgb(0,0,0)",
                     "label": "color-for-connection"
+                },
+                {
+                    "type": "color",
+                    "name": "color-for-request",
+                    "default": "rgb(0,0,0)",
+                    "label": "color-for-request"
                 }
             ],
             "color-for-profile": "rgb(100, 149, 237)",
@@ -924,7 +930,8 @@
             "color-for-connection": "rgb(127, 255, 0)",
             "widgetTitle": "interfaceConfig",
             "target": "interfaceConfig",
-            "readAccess": "public"
+            "readAccess": "public",
+            "color-for-request": "rgb(0,0,0)"
         }
     }
 }
