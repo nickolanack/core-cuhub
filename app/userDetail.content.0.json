@@ -1,7 +1,7 @@
 {
     "type": "UIView",
     "config": {
-        "className": "feed-item",
+        "className": "feed-item active",
         "viewType": "view",
         "namedView": "feedItemDetail",
         "showInlineEdit": false,
