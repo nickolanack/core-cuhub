@@ -984,19 +984,19 @@
                     "y": 171
                 },
                 "children": [
-                    "widget.LoginWizardBuilder.27.metadata.children.0.json",
+                    "loginForm.metadata.children.0.json",
                     {
                         "title": "New Empty Step",
                         "class": "AttributesTableNode",
                         "fields": [
-                            "widget.LoginWizardBuilder.27.metadata.children.1.fields.0.json"
+                            "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
                             "x": 138,
                             "y": 270
                         },
                         "children": [
-                            "widget.LoginWizardBuilder.27.metadata.children.1.children.0.json",
+                            "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
@@ -1009,17 +1009,17 @@
                             "positions": {
                                 "title": {
                                     "modules": [
-                                        "widget.LoginWizardBuilder.27.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                        "loginForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
                                     ]
                                 },
                                 "content": {
                                     "modules": [
-                                        "widget.LoginWizardBuilder.27.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "loginForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
                                     ]
                                 },
                                 "footer": {
                                     "modules": [
-                                        "widget.LoginWizardBuilder.27.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                        "loginForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
                                     ]
                                 },
                                 "menu": {
@@ -1045,9 +1045,9 @@
             "onSaveScript": "",
             "onLoadScript": "",
             "requireTarget": true,
-            "templateName": "MapItemTemplate",
-            "widgetTitle": "",
-            "target": "none",
+            "templateName": "loginForm",
+            "widgetTitle": "loginForm",
+            "target": "loginForm",
             "readAccess": "public"
         }
     }
