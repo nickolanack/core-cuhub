@@ -110,6 +110,17 @@ span.ui-navigation-menu label {
 .active.event-feed-item .ui-view.feed-item-expanded-detail {
     background-color: rgba(0,0,0,0.1);
     min-height: 300px;
+    position:relative;
+}
+.ui-view.feed-item-expanded-detail:after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+    left: -7px;
+    top: 0;
 }
 
 .feed-item-icon {
