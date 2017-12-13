@@ -132,7 +132,7 @@ span.ui-navigation-menu label {
 }
 
 
-.active.ui-view.feed-item-expanded-detail:after {
+.ui-view.feed-item-expanded-detail:after {
     content: "";
     position: absolute;
     width: 7px;
