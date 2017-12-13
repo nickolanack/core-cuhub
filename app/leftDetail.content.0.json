@@ -2,8 +2,8 @@
     "type": "FieldValue",
     "config": {
         "loadAsync": false,
-        "fieldLabelScript": "return \"\";",
-        "fieldValueScript": "return \"Field Value Script\";",
+        "fieldLabelScript": "return \"Your Profile\";",
+        "fieldValueScript": "return \"\";",
         "formatElementScript": "el.addClass('feed-item-icon')"
     }
 }
