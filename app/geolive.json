@@ -922,6 +922,42 @@
                     "name": "color-for-request",
                     "default": "rgb(0,0,0)",
                     "label": "color-for-request"
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-action-pin",
+                    "default": [],
+                    "label": "icon-for-action-pin",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-action-unpin",
+                    "default": [],
+                    "label": "icon-for-action-unpin",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-action-archive",
+                    "default": [],
+                    "label": "icon-for-action-archive",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-action-unarchive",
+                    "default": [],
+                    "label": "icon-for-action-unarchive",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
                 }
             ],
             "color-for-profile": "rgb(100, 149, 237)",
@@ -931,7 +967,11 @@
             "widgetTitle": "interfaceConfig",
             "target": "interfaceConfig",
             "readAccess": "public",
-            "color-for-request": "rgb(134, 0, 8)"
+            "color-for-request": "rgb(134, 0, 8)",
+            "icon-for-action-pin": [],
+            "icon-for-action-unpin": [],
+            "icon-for-action-archive": [],
+            "icon-for-action-unarchive": []
         }
     },
     "widget.25": {
