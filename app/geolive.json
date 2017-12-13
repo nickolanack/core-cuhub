@@ -710,6 +710,46 @@
     "widget.21": {
         "name": "Detail View",
         "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "positions": {
+                    "title": {
+                        "modules": [
+                            "userDetail.metadata.positions.title.modules.0.json"
+                        ]
+                    },
+                    "content": {
+                        "modules": [
+                            "userDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": [
+                            "userDetail.metadata.positions.footer.modules.0.json"
+                        ]
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                }
+            },
+            "templateName": "userDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "userDetail",
+            "target": "userDetail",
+            "readAccess": "public"
+        }
+    },
+    "widget.22": {
+        "name": "Detail View",
+        "instance": "DetailView",
         "parameters": {}
     }
 }
