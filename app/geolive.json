@@ -970,5 +970,10 @@
             "target": "guestExpandedDetail",
             "readAccess": "public"
         }
+    },
+    "widget.27": {
+        "name": "Login Wizard Builder",
+        "instance": "LoginWizardBuilder",
+        "parameters": {}
     }
 }
