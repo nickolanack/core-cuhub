@@ -10,7 +10,7 @@
 
 .calendar .month {
     width: 100%;
-    min-height: 300px;
+    min-height: 475px;
     display: grid;
 }
 
@@ -26,7 +26,6 @@
     display: inline-block;
     position: relative;
     border-radius: 2px;
-    padding: 10px 0;
 }
 
 
@@ -44,7 +43,6 @@
 }
 .calendar .day:hover {
     background: rgba(0,0,0,0.06);
-    
     cursor: pointer;
 }
 
