@@ -46,6 +46,7 @@ span.ui-navigation-menu ul li.menu-main-projects>button {
     background-color: #00d8ff;
     height: 20px;
     width: 20px;
+    opacity: 0.3;
 }
 
 
