@@ -36,3 +36,27 @@ span.ui-navigation-menu ul li.menu-main-profiles>button {
 span.ui-navigation-menu ul li.menu-main-projects>button {
     border-left-color: #FFC107;
 }
+
+
+
+.btn-action {
+    border: none;
+    border-radius: 100%;
+    margin: 2px;
+    background-color: #00d8ff;
+    height: 20px;
+    width: 20px;
+}
+
+
+.ui-view.connection-feed-item .btn-action{
+    background-color: chartreuse;
+}
+
+.ui-view.profile-feed-item .btn-action{
+    background-color: cornflowerblue;
+}
+
+.ui-view.project-feed-item .btn-action{
+   background-color: #FFC107;
+}
