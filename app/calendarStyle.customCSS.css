@@ -69,7 +69,7 @@
 
 
 .calendar .day.active:hover{
-    background-color: #6A7CE9;
+     background: rgba(0,0,0,0.1);
 }
 .day.today.active:after{
     border: 1px solid rgba(0,0,0,0.4);
