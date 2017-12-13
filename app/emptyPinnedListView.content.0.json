@@ -4,6 +4,6 @@
         "loadAsync": false,
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return \"You can pin items here\";",
-        "formatElementScript": ""
+        "formatElementScript": "el.addClass('empty-pinned-item')"
     }
 }
