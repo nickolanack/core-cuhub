@@ -974,6 +974,81 @@
     "widget.27": {
         "name": "Login Wizard Builder",
         "instance": "LoginWizardBuilder",
-        "parameters": {}
+        "parameters": {
+            "reloadOnSuccess": true,
+            "reloadUrl": "",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "widget.LoginWizardBuilder.27.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "widget.LoginWizardBuilder.27.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 138,
+                            "y": 270
+                        },
+                        "children": [
+                            "widget.LoginWizardBuilder.27.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 98,
+                                    "y": 436
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "widget.LoginWizardBuilder.27.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "widget.LoginWizardBuilder.27.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "widget.LoginWizardBuilder.27.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "requireTarget": true,
+            "templateName": "MapItemTemplate",
+            "widgetTitle": "",
+            "target": "none",
+            "readAccess": "public"
+        }
     }
 }
