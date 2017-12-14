@@ -215,8 +215,8 @@ span.ui-navigation-menu label {
 }
 
 .ui-view.feed-item.expandable.active .feed-item-actions:after {
-    content: "▲";
-    line-height: 20px;
+    transform: rotate(180deg);
+    transition: transform 1.5s;
 }
 
 
@@ -234,4 +234,5 @@ span.ui-navigation-menu label {
     background: rgba(0,0,0,0.1);
     position: absolute;
     right: 4px;
+    transition: transform 0.5s;
 }
