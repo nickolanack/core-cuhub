@@ -1144,5 +1144,10 @@
             "target": "feedItemActionsDetail",
             "readAccess": "public"
         }
+    },
+    "widget.29": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {}
     }
 }
