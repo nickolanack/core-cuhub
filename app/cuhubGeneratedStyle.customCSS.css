@@ -62,7 +62,7 @@ span.ui-navigation-menu ul li>button {
 <?php 
 
     foreach($ui->getParameters() as $key=>$value){
-        if(strpos($key, '')!==0){
+        if(strpos($key, 'icon-for-action')!==0){
             continue;
         }
         $action=explode('-', $key);
