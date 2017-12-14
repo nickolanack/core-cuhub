@@ -59,7 +59,11 @@ span.ui-navigation-menu ul li>button {
 
 
 
-
+.feed-item-icon {
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 
 <?php 
