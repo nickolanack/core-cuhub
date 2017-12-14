@@ -62,14 +62,14 @@ span.ui-navigation-menu ul li>button {
 <?php 
 
     foreach($ui->getParameters() as $key=>$value){
-        if(strpos($key, 'icon-for-action')!==0){
+        if(strpos($key, 'icon-for-action')!==0||empty($value)){
             continue;
         }
         $action=explode('-', $key);
         $action=array_pop($action);
         ?>
         button.btn-action.action-<?php echo $action; ?> {
-            
+            backgound-image:url(<?php echo UrlFrom($value[0])?>);
         }
         
         <?php
