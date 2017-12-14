@@ -17,7 +17,7 @@ body {
     display: inline;
 }
 
-.ui-view>.ui-template>.template-content {
+.ui-view.flex-layout>.ui-template>.template-content {
     width: 100%;
     height: 100%;
     display: flex;
