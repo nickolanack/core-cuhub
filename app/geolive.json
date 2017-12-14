@@ -977,7 +977,9 @@
             "target": "interfaceConfig",
             "readAccess": "public",
             "color-for-request": "rgb(134, 0, 8)",
-            "icon-for-action-pin": [],
+            "icon-for-action-pin": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/ARx_[ImAgE]_[G]_3mU_Af3.png"
+            ],
             "icon-for-action-unpin": [],
             "icon-for-action-archive": [],
             "icon-for-action-unarchive": [],
