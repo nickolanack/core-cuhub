@@ -1263,5 +1263,15 @@
         "name": "Form View",
         "instance": "UserWizardBuilder",
         "parameters": {}
+    },
+    "widget.31": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {}
+    },
+    "widget.32": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {}
     }
 }
