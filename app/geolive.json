@@ -1025,10 +1025,18 @@
             "icon-for-action-logout": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/xJC_[ImAgE]_lWZ_[G]_QHU.png"
             ],
-            "icon-for-feed-profile": [],
-            "icon-for-feed-project": [],
-            "icon-for-feed-event": [],
-            "icon-for-feed-connection": []
+            "icon-for-feed-profile": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[ImAgE]_[G]_Pve_gmo_3VQ.png"
+            ],
+            "icon-for-feed-project": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/cC7_[ImAgE]_NK5_[G]_Hok.png"
+            ],
+            "icon-for-feed-event": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/0bC_37G_Ahf_[G]_[ImAgE].png"
+            ],
+            "icon-for-feed-connection": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[G]_BMn_[ImAgE]_KEx_795.png"
+            ]
         }
     },
     "widget.25": {
