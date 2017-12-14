@@ -1116,7 +1116,7 @@
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
-                                    "script": "",
+                                    "script": "profileExpandedDetail.metadata.positions.content.modules.3.config.script.js",
                                     "identifier": "customScriptElement"
                                 }
                             }
