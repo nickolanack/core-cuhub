@@ -541,8 +541,8 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return \"{item tags}\";",
-                                    "formatElementScript": "el.addClass('feed-item-tags')\n"
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
                                 }
                             },
                             {
