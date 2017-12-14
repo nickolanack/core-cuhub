@@ -958,6 +958,15 @@
                     "maxHeight": 128,
                     "maxWidth": 128,
                     "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-action-logout",
+                    "default": [],
+                    "label": "icon-for-action-logout",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
                 }
             ],
             "color-for-profile": "rgb(100, 149, 237)",
@@ -971,7 +980,8 @@
             "icon-for-action-pin": [],
             "icon-for-action-unpin": [],
             "icon-for-action-archive": [],
-            "icon-for-action-unarchive": []
+            "icon-for-action-unarchive": [],
+            "icon-for-action-logout": []
         }
     },
     "widget.25": {
