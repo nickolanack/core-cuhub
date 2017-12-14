@@ -1098,25 +1098,25 @@
                     },
                     "content": {
                         "modules": [
-                            "profileExpandedDetail.metadata.positions.content.modules.0.json",
+                            "feedItemActionsDetail.metadata.positions.content.modules.0.json",
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
-                                    "script": "profileExpandedDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "script": "feedItemActionsDetail.metadata.positions.content.modules.1.config.script.js",
                                     "identifier": "customScriptElement"
                                 }
                             },
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
-                                    "script": "profileExpandedDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "script": "feedItemActionsDetail.metadata.positions.content.modules.2.config.script.js",
                                     "identifier": "customScriptElement"
                                 }
                             },
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
-                                    "script": "profileExpandedDetail.metadata.positions.content.modules.3.config.script.js",
+                                    "script": "feedItemActionsDetail.metadata.positions.content.modules.3.config.script.js",
                                     "identifier": "customScriptElement"
                                 }
                             }
@@ -1137,11 +1137,11 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "profileExpandedDetail",
+            "templateName": "feedItemActionsDetail",
             "onRenderApplictionScript": "",
             "requireTarget": true,
-            "widgetTitle": "profileExpandedDetail",
-            "target": "profileExpandedDetail",
+            "widgetTitle": "feedItemActionsDetail",
+            "target": "feedItemActionsDetail",
             "readAccess": "public"
         }
     }
