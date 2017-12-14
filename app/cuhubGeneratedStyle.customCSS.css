@@ -49,7 +49,7 @@ span.ui-navigation-menu ul li>button {
     }
 
     .ui-view.<?php echo $type; ?>-feed-item .btn-action{
-        background-color: <?php echo str_replace(')', ',0.3)', $ui->getParameter('color-for-'.$type));?>;
+        background-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ',0.3)', $ui->getParameter('color-for-'.$type)));?>;
     }
 
     
