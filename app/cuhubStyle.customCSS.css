@@ -209,3 +209,29 @@ span.ui-navigation-menu label {
     margin-left: 15px;
     padding-left: 15px;
 }
+
+.ui-view.feed-item.expandable .feed-item-actions {
+    margin-right: 50px;
+}
+
+.ui-view.feed-item.expandable.active .feed-item-actions:after {
+    content: "▲";
+    line-height: 20px;
+}
+
+
+.ui-view.feed-item.expandable .feed-item-actions:after {
+    content: "▼";
+    color: #666666;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 100%;
+    vertical-align: top;
+    margin: 2px;
+    background: rgba(0,0,0,0.1);
+    position: absolute;
+    right: 4px;
+}
