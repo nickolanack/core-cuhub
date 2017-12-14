@@ -951,6 +951,15 @@
                     "label": "color-for-connection"
                 },
                 {
+                    "type": "images",
+                    "name": "icon-for-feed-request",
+                    "default": [],
+                    "label": "icon-for-feed-request",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
                     "type": "color",
                     "name": "color-for-request",
                     "default": "rgb(0,0,0)",
@@ -1036,7 +1045,8 @@
             ],
             "icon-for-feed-connection": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[G]_BMn_[ImAgE]_KEx_795.png"
-            ]
+            ],
+            "icon-for-feed-request": []
         }
     },
     "widget.25": {
