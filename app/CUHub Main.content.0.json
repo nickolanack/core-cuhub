@@ -1,7 +1,7 @@
 {
     "type": "UIView",
     "config": {
-        "className": "root-container",
+        "className": "root-container flex-layout",
         "viewType": "view",
         "namedView": "layoutDetail",
         "showInlineEdit": false,
