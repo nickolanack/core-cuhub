@@ -1,6 +1,6 @@
-return new ModalFormButtonModule(application, AppClient, {
+return new ModalFormButtonModule(application, item, {
     "label":"Create Project",
-    "formName":"createEvent",
+    "formName":"createProject",
     "formOptions":{
         "template":"form"
     }

@@ -1,4 +1,4 @@
-return new ModalFormButtonModule(application, AppClient, {
+return new ModalFormButtonModule(application, item, {
     "label":"Create Connection Request",
     "formName":"createConnection",
     "formOptions":{
