@@ -85,7 +85,7 @@ span.ui-navigation-menu ul li>button {
 <?php 
 
     foreach($ui->getParameters() as $key=>$value){
-        if(strpos($key, 'icon-for-item')!==0||empty($value)){
+        if(strpos($key, 'icon-for-feed')!==0||empty($value)){
             continue;
         }
         $type=explode('-', $key);
