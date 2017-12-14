@@ -1086,5 +1086,10 @@
             "target": "loginForm",
             "readAccess": "public"
         }
+    },
+    "widget.28": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {}
     }
 }
