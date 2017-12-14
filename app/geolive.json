@@ -1101,17 +1101,17 @@
                 "positions": {
                     "title": {
                         "modules": [
-                            "profileExpendedDetail.metadata.positions.title.modules.0.json"
+                            "profileExpandedDetail.metadata.positions.title.modules.0.json"
                         ]
                     },
                     "content": {
                         "modules": [
-                            "profileExpendedDetail.metadata.positions.content.modules.0.json"
+                            "profileExpandedDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
                         "modules": [
-                            "profileExpendedDetail.metadata.positions.footer.modules.0.json"
+                            "profileExpandedDetail.metadata.positions.footer.modules.0.json"
                         ]
                     },
                     "menu": {
@@ -1119,11 +1119,11 @@
                     }
                 }
             },
-            "templateName": "profileExpendedDetail",
+            "templateName": "profileExpandedDetail",
             "onRenderApplictionScript": "",
             "requireTarget": true,
-            "widgetTitle": "profileExpendedDetail",
-            "target": "profileExpendedDetail",
+            "widgetTitle": "profileExpandedDetail",
+            "target": "profileExpandedDetail",
             "readAccess": "public"
         }
     }
