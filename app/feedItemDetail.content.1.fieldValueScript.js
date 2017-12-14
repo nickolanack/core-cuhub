@@ -1,6 +1,6 @@
 
 
-if(AppClient.getUserType()=="guest"){
+if(item instanceof MyProfileItem&&AppClient.getUserType()=="guest"){
     return "You are not logged in"
 }
 
