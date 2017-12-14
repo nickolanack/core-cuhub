@@ -1,13 +1,18 @@
 {
-    "type": "DefaultDescription",
+    "type": "UIView",
     "config": {
         "className": "",
-        "imageWidth": 300,
-        "imageHeight": 240,
-        "multiImageWidth": 100,
-        "multiImageHeight": 75,
-        "autoArrange": true,
-        "oneLine": true,
-        "maxChars": 0
+        "viewType": "view",
+        "namedView": "feedItemActionsDetail",
+        "showInlineEdit": false,
+        "namedFormView": "defaultFormView",
+        "showDeleteButton": false,
+        "deleteItemScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "",
+        "itemButtonsScript": "return [];",
+        "namedViewScript": "return namedView",
+        "filterModulesScript": "return list",
+        "formOptions": "{}"
     }
 }
