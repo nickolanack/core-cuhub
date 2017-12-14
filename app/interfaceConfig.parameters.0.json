@@ -1,6 +1,9 @@
 {
-    "type": "color",
-    "name": "color-for-profile",
-    "default": "rgb(0,0,0)",
-    "label": "color-for-profile"
+    "type": "images",
+    "name": "icon-for-feed-profile",
+    "default": [],
+    "label": "icon-for-feed-profile",
+    "maxHeight": 128,
+    "maxWidth": 128,
+    "limit": 1
 }

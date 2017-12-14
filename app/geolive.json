@@ -901,15 +901,48 @@
                 "interfaceConfig.parameters.0.json",
                 {
                     "type": "color",
+                    "name": "color-for-profile",
+                    "default": "rgb(0,0,0)",
+                    "label": "color-for-profile"
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-feed-project",
+                    "default": [],
+                    "label": "icon-for-feed-project",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "color",
                     "name": "color-for-project",
                     "default": "rgb(0,0,0)",
                     "label": "color-for-project"
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-feed-event",
+                    "default": [],
+                    "label": "icon-for-feed-event",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
                 },
                 {
                     "type": "color",
                     "name": "color-for-event",
                     "default": "rgb(0,0,0)",
                     "label": "color-for-event"
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-feed-connection",
+                    "default": [],
+                    "label": "icon-for-feed-connection",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
                 },
                 {
                     "type": "color",
@@ -991,7 +1024,11 @@
             ],
             "icon-for-action-logout": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/xJC_[ImAgE]_lWZ_[G]_QHU.png"
-            ]
+            ],
+            "icon-for-feed-profile": [],
+            "icon-for-feed-project": [],
+            "icon-for-feed-event": [],
+            "icon-for-feed-connection": []
         }
     },
     "widget.25": {
