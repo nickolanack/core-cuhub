@@ -1,0 +1,7 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "script": "return new ModalFormButtonModule(application, AppClient, {\n    \"label\":\"Create Event\",\n    \"formName\":\"createEvent\",\n    \"formOptions\":{\n        \"template\":\"form\"\n    }\n})",
+        "identifier": "customScriptElement"
+    }
+}
