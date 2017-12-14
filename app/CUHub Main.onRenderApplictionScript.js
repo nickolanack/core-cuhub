@@ -24,3 +24,4 @@ GetWidget('cuhubGeneratedStyle')->display($targetInstance);
 
 
 GetWidget('guestExpandedDetail')->display($targetInstance);
+GetWidget('loginForm')->display($targetInstance);
