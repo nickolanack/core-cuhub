@@ -26,3 +26,8 @@ GetWidget('cuhubGeneratedStyle')->display($targetInstance);
 GetWidget('guestExpandedDetail')->display($targetInstance);
 GetWidget('profileExpandedDetail')->display($targetInstance);
 GetWidget('loginForm')->display($targetInstance);
+
+GetWidget('eventForm')->display($targetInstance);
+GetWidget('projectForm')->display($targetInstance);
+GetWidget('connectionForm')->display($targetInstance);
+GetWidget('requestForm')->display($targetInstance);
