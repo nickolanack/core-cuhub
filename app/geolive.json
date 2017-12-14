@@ -827,7 +827,7 @@
                     },
                     "content": {
                         "modules": [
-                            "pinnedItemsDetail.metadata.positions.content.modules.0.json"
+                            "pinnedItemsList.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
@@ -845,11 +845,11 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "pinnedItemsDetail",
+            "templateName": "pinnedItemsList",
             "onRenderApplictionScript": "",
             "requireTarget": true,
-            "widgetTitle": "pinnedItemsDetail",
-            "target": "pinnedItemsDetail",
+            "widgetTitle": "pinnedItemsList",
+            "target": "pinnedItemsList",
             "readAccess": "public"
         }
     },
