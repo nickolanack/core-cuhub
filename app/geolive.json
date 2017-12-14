@@ -329,7 +329,7 @@
                                 "config": {
                                     "className": "pinned-items",
                                     "viewType": "view",
-                                    "namedView": "pinnedItemsDetail",
+                                    "namedView": "pinnedItemsList",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "showDeleteButton": false,
