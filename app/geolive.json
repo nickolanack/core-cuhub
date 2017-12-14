@@ -980,9 +980,15 @@
             "icon-for-action-pin": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/ARx_[ImAgE]_[G]_3mU_Af3.png"
             ],
-            "icon-for-action-unpin": [],
-            "icon-for-action-archive": [],
-            "icon-for-action-unarchive": [],
+            "icon-for-action-unpin": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/ARx_[ImAgE]_[G]_3mU_Af3.png"
+            ],
+            "icon-for-action-archive": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/LDe_mP1_ON0_[ImAgE]_[G].png"
+            ],
+            "icon-for-action-unarchive": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/LDe_mP1_ON0_[ImAgE]_[G].png"
+            ],
             "icon-for-action-logout": []
         }
     },
