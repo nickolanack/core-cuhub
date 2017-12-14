@@ -753,25 +753,7 @@
                     },
                     "content": {
                         "modules": [
-                            "feedItemExpandedDetail.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "",
-                                    "viewType": "view",
-                                    "namedView": "feedItemActionsDetail",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "",
-                                    "itemButtonsScript": "return [];",
-                                    "namedViewScript": "return namedView",
-                                    "filterModulesScript": "return list",
-                                    "formOptions": "{}"
-                                }
-                            }
+                            "feedItemExpandedDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
