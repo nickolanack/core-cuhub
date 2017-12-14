@@ -419,7 +419,7 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "right-detail",
+                                    "className": "right-detail  flex-layout",
                                     "viewType": "view",
                                     "namedView": "rightDetail",
                                     "showInlineEdit": false,
