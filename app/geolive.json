@@ -598,9 +598,7 @@
                         "modules": []
                     },
                     "content": {
-                        "modules": [
-                            "feedItemsList.metadata.positions.content.modules.0.json"
-                        ]
+                        "modules": []
                     },
                     "footer": {
                         "modules": []
