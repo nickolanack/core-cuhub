@@ -1606,10 +1606,5 @@
             "target": "requestForm",
             "readAccess": "public"
         }
-    },
-    "widget.36": {
-        "name": "Detail View",
-        "instance": "DetailView",
-        "parameters": {}
     }
 }
