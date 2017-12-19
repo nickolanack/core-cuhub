@@ -1607,7 +1607,7 @@
             "readAccess": "public"
         }
     },
-    "widget.35": {
+    "widget.36": {
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {}
