@@ -1606,5 +1606,10 @@
             "target": "requestForm",
             "readAccess": "public"
         }
+    },
+    "widget.40": {
+        "name": "Javascript",
+        "instance": "CustomBehaviorScript",
+        "parameters": {}
     }
 }
