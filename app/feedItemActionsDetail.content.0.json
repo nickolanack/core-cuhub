@@ -1,7 +1,7 @@
 {
     "type": "WizardScriptElement",
     "config": {
-        "script": "\nif((['user', 'profile', 'project']).indexOf(item.getType().split('.').pop())>=0){\n    return null;\n}\nreturn new ModalFormButtonModule(application, item, {\n    \"label\":\"Create Event\",\n    \"formName\":\"createEvent\",\n    \"formOptions\":{\n        \"template\":\"form\"\n    }\n})",
+        "script": "\nif((['user', 'profile', 'project']).indexOf(item.getType().split('.').pop())>=0){\n    return null;\n}\nreturn new ModalFormButtonModule(application, \n    new EventItem({\n        \"item\":item,\n    }), {\n    \"label\":\"Create Event\",\n    \"formName\":\"createEvent\",\n    \"formOptions\":{\n        \"template\":\"form\"\n    }\n})",
         "identifier": "customScriptElement"
     }
 }
