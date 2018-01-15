@@ -27,7 +27,15 @@
     "plugin.6": {
         "name": "Filesystem",
         "instance": "Filesystem",
-        "parameters": {}
+        "parameters": {
+            "enableFileMetadataCache": true,
+            "showDropboxImagePicker": false,
+            "dropbox-app-key": "",
+            "uploadViewInlineCss": "",
+            "uploadViewPageScript": "",
+            "enableFileAttributes": false,
+            "fileAttributesTableName": "filesystemAttributes"
+        }
     },
     "plugin.7": {
         "name": "Google Maps",
@@ -166,61 +174,6 @@
             "readAccess": "public"
         }
     },
-    "widget.3": {
-        "name": "Detail View",
-        "instance": "DetailView",
-        "parameters": {
-            "metadata": {
-                "positions": {
-                    "title": {
-                        "modules": []
-                    },
-                    "content": {
-                        "modules": [
-                            "layoutDetail.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "bottom-detail  flex-layout",
-                                    "viewType": "view",
-                                    "namedView": "bottomDetail",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "",
-                                    "itemButtonsScript": "return [];",
-                                    "namedViewScript": "return namedView",
-                                    "filterModulesScript": "return list",
-                                    "formOptions": "{}"
-                                }
-                            }
-                        ]
-                    },
-                    "footer": {
-                        "modules": []
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                },
-                "positionList": [
-                    "title",
-                    "content",
-                    "footer",
-                    "menu"
-                ],
-                "_diagramState": []
-            },
-            "templateName": "layoutDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "layoutDetail",
-            "target": "layoutDetail",
-            "readAccess": "public"
-        }
-    },
     "widget.5": {
         "name": "Detail View",
         "instance": "DetailView",
@@ -300,6 +253,61 @@
             "requireTarget": true,
             "widgetTitle": "leftDetail",
             "target": "leftDetail",
+            "readAccess": "public"
+        }
+    },
+    "widget.3": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "layoutDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "bottom-detail  flex-layout",
+                                    "viewType": "view",
+                                    "namedView": "bottomDetail",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "itemButtonsScript": "return [];",
+                                    "namedViewScript": "return namedView",
+                                    "filterModulesScript": "return list",
+                                    "formOptions": "{}"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "layoutDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "layoutDetail",
+            "target": "layoutDetail",
             "readAccess": "public"
         }
     },
@@ -404,6 +412,16 @@
             "readAccess": "public"
         }
     },
+    "widget.9": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {
+            "customCSS": "cuhubStyle.customCSS.css",
+            "widgetTitle": "cuhubStyle",
+            "target": "cuhubStyle",
+            "readAccess": "public"
+        }
+    },
     "widget.8": {
         "name": "Detail View",
         "instance": "DetailView",
@@ -459,16 +477,6 @@
             "readAccess": "public"
         }
     },
-    "widget.9": {
-        "name": "Stylesheet",
-        "instance": "CSS",
-        "parameters": {
-            "customCSS": "cuhubStyle.customCSS.css",
-            "widgetTitle": "cuhubStyle",
-            "target": "cuhubStyle",
-            "readAccess": "public"
-        }
-    },
     "widget.10": {
         "name": "Detail View",
         "instance": "DetailView",
@@ -503,6 +511,16 @@
             "requireTarget": true,
             "widgetTitle": "navigationDetail",
             "target": "navigationDetail",
+            "readAccess": "public"
+        }
+    },
+    "widget.16": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {
+            "customCSS": "cuhubGeneratedStyle.customCSS.css",
+            "widgetTitle": "cuhubGeneratedStyle",
+            "target": "cuhubGeneratedStyle",
             "readAccess": "public"
         }
     },
@@ -677,16 +695,6 @@
             "customCSS": "cuhubDebugStyle.customCSS.css",
             "widgetTitle": "cuhubDebugStyle",
             "target": "cuhubDebugStyle",
-            "readAccess": "public"
-        }
-    },
-    "widget.16": {
-        "name": "Stylesheet",
-        "instance": "CSS",
-        "parameters": {
-            "customCSS": "cuhubGeneratedStyle.customCSS.css",
-            "widgetTitle": "cuhubGeneratedStyle",
-            "target": "cuhubGeneratedStyle",
             "readAccess": "public"
         }
     },
@@ -1610,6 +1618,11 @@
     "widget.40": {
         "name": "Javascript",
         "instance": "CustomBehaviorScript",
+        "parameters": {}
+    },
+    "widget.41": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
         "parameters": {}
     }
 }
