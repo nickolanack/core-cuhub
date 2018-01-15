@@ -3,7 +3,7 @@ return new ModalFormButtonModule(application,
         "item":item,
     }), {
     "label":"Create Connection Request",
-    "formName":"createConnection",
+    "formName":"requestForm",
     "formOptions":{
         "template":"form"
     }

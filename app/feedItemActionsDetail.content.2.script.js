@@ -3,7 +3,7 @@ return new ModalFormButtonModule(application,
         "item":item,
     }), {
     "label":"Add Personal Connection",
-    "formName":"createConnection",
+    "formName":"connectionForm",
     "formOptions":{
         "template":"form"
     }
