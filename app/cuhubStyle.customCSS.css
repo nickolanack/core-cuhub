@@ -127,7 +127,7 @@ li.WizardButton {
     display: inline-block;
 }
 
-.btn-tag, .form-btn .li.WizardButton{
+.btn-tag, .form-btn li.WizardButton{
     border: 1px solid rgba(0,0,0,0.3);
     border-radius: 2px;
     margin: 2px;
