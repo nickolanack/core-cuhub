@@ -114,12 +114,26 @@ span.ui-navigation-menu label {
     text-align: center;
     min-height:22px;
 }
-.btn-tag, .form-btn {
+
+ul.WizardButtonContainer {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+li.WizardButton {
+    list-style: none;
+    display: inline-block;
+}
+
+.btn-tag, .form-btn .li.WizardButton{
     border: 1px solid rgba(0,0,0,0.3);
     border-radius: 2px;
     margin: 2px;
     color: #555555;
     text-transform: capitalize;
+    padding: 2px 7px;
 }
 
 .ui-view.feed-item>.ui-template>.template-content {
