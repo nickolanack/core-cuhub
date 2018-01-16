@@ -1,3 +1,8 @@
+
+if(!item.canCreate('project')){
+    return null;
+}
+
 return new ModalFormButtonModule(application, 
     new ProjectItem({
         "item":item,

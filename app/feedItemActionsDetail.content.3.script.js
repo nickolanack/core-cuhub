@@ -1,3 +1,8 @@
+
+if(!item.canCreate('request')){
+    return null;
+}
+
 return new ModalFormButtonModule(application, 
     new ConnectionRequestItem({
         "item":item,
