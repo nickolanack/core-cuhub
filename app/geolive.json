@@ -1229,6 +1229,13 @@
                                     "script": "feedItemActionsDetail.metadata.positions.content.modules.3.config.script.js",
                                     "identifier": "customScriptElement"
                                 }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "script": "feedItemActionsDetail.metadata.positions.content.modules.4.config.script.js",
+                                    "identifier": "customScriptElement"
+                                }
                             }
                         ]
                     },
