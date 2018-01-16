@@ -1,0 +1,1 @@
+wizardDataSet.published=object.value;

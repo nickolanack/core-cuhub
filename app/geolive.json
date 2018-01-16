@@ -1671,16 +1671,16 @@
                             "profileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 228,
-                            "y": 360
+                            "x": 238,
+                            "y": 370
                         },
                         "children": [
                             "profileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 188,
-                                    "y": 536
+                                    "x": 198,
+                                    "y": 546
                                 }
                             }
                         ],
@@ -1723,7 +1723,7 @@
                                                 "mandatory": false,
                                                 "getValueScript": "return item.isPublished()",
                                                 "updateValueScript": "object.value=value",
-                                                "submitValueScript": "wizardDataSet.published=true;",
+                                                "submitValueScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
                                                 "validateValueScript": ""
                                             }
                                         }
