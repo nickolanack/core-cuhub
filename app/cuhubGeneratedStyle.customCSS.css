@@ -7,7 +7,7 @@
 
 
 <?php
-$backgroundImage=ui->getParameter('background-image', array());
+$backgroundImage=$ui->getParameter('background-image', array());
         if(!empty($backgroundImage)){
           
             $backgroundImage=$backgroundImage[0];
