@@ -1017,6 +1017,24 @@
                     "maxHeight": 128,
                     "maxWidth": 128,
                     "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-action-edit",
+                    "default": [],
+                    "label": "icon-for-action-edit",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-action-delete",
+                    "default": [],
+                    "label": "icon-for-action-delete",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
                 }
             ],
             "color-for-profile": "rgb(100, 149, 237)",
@@ -1056,7 +1074,10 @@
             ],
             "icon-for-feed-request": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/20e_[ImAgE]_[G]_Vq0_HE6.png"
-            ]
+            ],
+            "formatOutputScript": "return $parameters;",
+            "icon-for-action-edit": [],
+            "icon-for-action-delete": []
         }
     },
     "widget.25": {
