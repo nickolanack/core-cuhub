@@ -1671,16 +1671,16 @@
                             "profileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 168,
-                            "y": 300
+                            "x": 178,
+                            "y": 310
                         },
                         "children": [
                             "profileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 128,
-                                    "y": 476
+                                    "x": 138,
+                                    "y": 486
                                 }
                             }
                         ],
@@ -1700,7 +1700,7 @@
                                                 "className": "",
                                                 "label": "Description",
                                                 "placeholder": "add value",
-                                                "lines": 1,
+                                                "lines": 2,
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
@@ -1710,8 +1710,8 @@
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
                                                 "getValueScript": "item.getDescription()",
-                                                "updateValueScript": "",
-                                                "submitValueScript": "",
+                                                "updateValueScript": "object.value=value;",
+                                                "submitValueScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
                                                 "validateValueScript": ""
                                             }
                                         },
