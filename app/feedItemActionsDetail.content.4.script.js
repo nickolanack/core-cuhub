@@ -7,5 +7,8 @@ return new ModalFormButtonModule(application,
     "formName":"profileForm",
     "formOptions":{
         "template":"form"
-    }
+    },
+    events:{click:function(){
+        item.setPublished(true);
+    }}
 })
