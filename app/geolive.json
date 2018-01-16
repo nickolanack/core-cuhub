@@ -908,6 +908,15 @@
             "parameters": [
                 "interfaceConfig.parameters.0.json",
                 {
+                    "type": "images",
+                    "name": "icon-for-feed-profile",
+                    "default": [],
+                    "label": "icon-for-feed-profile",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
                     "type": "color",
                     "name": "color-for-profile",
                     "default": "rgb(0,0,0)",
@@ -1081,7 +1090,8 @@
             ],
             "icon-for-action-delete": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/wTS_[G]_0t5_[ImAgE]_WFG.png"
-            ]
+            ],
+            "background-image": []
         }
     },
     "widget.25": {

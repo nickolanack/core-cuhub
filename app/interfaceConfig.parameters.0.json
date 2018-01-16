@@ -1,9 +1,9 @@
 {
     "type": "images",
-    "name": "icon-for-feed-profile",
+    "name": "background-image",
     "default": [],
-    "label": "icon-for-feed-profile",
-    "maxHeight": 128,
-    "maxWidth": 128,
+    "label": "background-image",
+    "maxHeight": 256,
+    "maxWidth": 256,
     "limit": 1
 }
