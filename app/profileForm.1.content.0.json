@@ -14,8 +14,8 @@
         "onRenderTextFieldScript": "",
         "formatValueScript": "",
         "getValueScript": "return item.getName();",
-        "updateValueScript": "",
-        "submitValueScript": "wizard.title=object.value;",
+        "updateValueScript": "object.value=value ",
+        "submitValueScript": "wizardDataSet.title=object.value;",
         "validateValueScript": ""
     }
 }
