@@ -1671,11 +1671,18 @@
                             "profileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 128,
-                            "y": 260
+                            "x": 138,
+                            "y": 270
                         },
                         "children": [
-                            "profileForm.metadata.children.1.children.0.json"
+                            "profileForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 98,
+                                    "y": 436
+                                }
+                            }
                         ],
                         "builderMetadata": {
                             "positions": {
@@ -1688,22 +1695,36 @@
                                     "modules": [
                                         "profileForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
-                                            "type": "WizardDescriptionField",
+                                            "type": "FormTextField",
                                             "config": {
-                                                "label": "Description",
-                                                "message": "add a description",
-                                                "lines": 3,
-                                                "mandatory": false,
-                                                "showAudios": true,
-                                                "showImages": true,
-                                                "showDocuments": true,
-                                                "showVideos": true,
                                                 "className": "",
+                                                "label": "Description",
+                                                "placeholder": "add value",
+                                                "lines": 1,
                                                 "maxChars": 0,
-                                                "showExpandInput": true,
-                                                "toolbarPosition": "bottom",
-                                                "textFormatScript": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": "item.getDescription()",
+                                                "updateValueScript": "",
+                                                "submitValueScript": "",
+                                                "validateValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Some Field",
+                                                "mandatory": false,
+                                                "getValueScript": "",
+                                                "updateValueScript": "",
+                                                "submitValueScript": "",
+                                                "validateValueScript": ""
                                             }
                                         }
                                     ]
@@ -1722,7 +1743,10 @@
                                 "content",
                                 "footer",
                                 "menu"
-                            ]
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
                         }
                     }
                 ]
