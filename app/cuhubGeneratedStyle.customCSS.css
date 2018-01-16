@@ -27,7 +27,7 @@ $backgroundImage=$ui->getParameter('background-image', array());
             <?php
         }
 
-
+?>
 
 
 
