@@ -13,9 +13,11 @@
     width: 100%;
     min-height: 475px;
     display: grid;
+    grid-template-rows: 118.75px 118.75px 118.75px 118.75px
 }
 .calendar .month.num-weeks-5 {
     min-height: 395px;
+    grid-template-rows: 85px 85px 85px 85px 85px;
 }
 
 .calendar .week {
