@@ -6,7 +6,7 @@
 
 
 
-
+<?php
 $backgroundImage=$config->getParameter('background-image', array());
         if(!empty($backgroundImage)){
           
