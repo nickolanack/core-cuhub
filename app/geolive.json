@@ -1671,16 +1671,16 @@
                             "profileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 208,
-                            "y": 340
+                            "x": 218,
+                            "y": 350
                         },
                         "children": [
                             "profileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 168,
-                                    "y": 516
+                                    "x": 178,
+                                    "y": 526
                                 }
                             }
                         ],
@@ -1719,7 +1719,7 @@
                                             "type": "FormBooleanField",
                                             "config": {
                                                 "className": "",
-                                                "label": "Some Field",
+                                                "label": "Publish My Profile",
                                                 "mandatory": false,
                                                 "getValueScript": "return item.isPublished()",
                                                 "updateValueScript": "object.published=value",
