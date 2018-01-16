@@ -1671,16 +1671,16 @@
                             "profileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 218,
-                            "y": 350
+                            "x": 228,
+                            "y": 360
                         },
                         "children": [
                             "profileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 178,
-                                    "y": 526
+                                    "x": 188,
+                                    "y": 536
                                 }
                             }
                         ],
@@ -1722,7 +1722,7 @@
                                                 "label": "Publish My Profile",
                                                 "mandatory": false,
                                                 "getValueScript": "return item.isPublished()",
-                                                "updateValueScript": "object.published=value",
+                                                "updateValueScript": "object.value=value",
                                                 "submitValueScript": "wizardDataSet.published=true;",
                                                 "validateValueScript": ""
                                             }
