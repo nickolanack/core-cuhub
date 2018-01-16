@@ -1076,8 +1076,12 @@
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/20e_[ImAgE]_[G]_Vq0_HE6.png"
             ],
             "formatOutputScript": "return $parameters;",
-            "icon-for-action-edit": [],
-            "icon-for-action-delete": []
+            "icon-for-action-edit": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[ImAgE]_xtG_lYk_Nbn_[G].png"
+            ],
+            "icon-for-action-delete": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/wTS_[G]_0t5_[ImAgE]_WFG.png"
+            ]
         }
     },
     "widget.25": {
