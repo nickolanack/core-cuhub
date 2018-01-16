@@ -15,7 +15,7 @@
         "formatValueScript": "",
         "getValueScript": "return item.getName();",
         "updateValueScript": "",
-        "submitValueScript": "",
+        "submitValueScript": "wizard.title=object.value;",
         "validateValueScript": ""
     }
 }
