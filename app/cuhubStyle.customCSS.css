@@ -89,6 +89,27 @@ span.ui-navigation-menu label {
     margin: 5px;
 }
 
+
+.ui-view.pinned-item {
+    height: 30px;
+    min-height: 30px;
+}
+
+.ui-view.pinned-item .feed-item-icon{
+    height: 19px;
+    width: 19px;
+}
+
+.ui-view.pinned-item .feed-item-tags {
+    display:none
+}
+
+.ui-view.pinned-item .feed-item-actions {
+    margin: 3px;
+    margin-right: 5px;
+}
+
+
 .ui-view.user-detail{
     margin-bottom: 15px;
     border-bottom: 1px solid rgba(0,0,0,0.1);
