@@ -109,6 +109,11 @@ span.ui-navigation-menu label {
     margin-right: 5px;
 }
 
+.ui-view.feed-item .btn-action.action-delete {
+    background-color: rgba(0,0,0,0.1);
+    margin-left: 25px;
+}
+
 
 .ui-view.user-detail{
     margin-bottom: 15px;
