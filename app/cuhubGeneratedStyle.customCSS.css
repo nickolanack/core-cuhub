@@ -26,9 +26,11 @@ $backgroundImage=$ui->getParameter('background-image', array());
             }
             <?php
         }else{
+            ?>
             .ui-view.root-container:after {
                 content:"no background";
             }
+            <?php
         }
 
 ?>
