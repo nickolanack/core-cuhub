@@ -141,8 +141,8 @@
         "name": "Single SignOn Plugin",
         "instance": "SingleSignOn",
         "parameters": {
-            "facebookAppId": "",
-            "facebookAppSecret": "",
+            "facebookAppId": "843902265812603",
+            "facebookAppSecret": "XXXX-XXXX",
             "googleAuthClientId": "529895863695-abb1196qb2ek6b88i3hjekqk8ch8vk30.apps.googleusercontent.com"
         }
     },
