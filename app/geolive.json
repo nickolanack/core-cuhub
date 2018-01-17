@@ -140,7 +140,11 @@
     "plugin.18": {
         "name": "Single SignOn Plugin",
         "instance": "SingleSignOn",
-        "parameters": {}
+        "parameters": {
+            "facebookAppId": "",
+            "facebookAppSecret": "",
+            "googleAuthClientId": "529895863695-abb1196qb2ek6b88i3hjekqk8ch8vk30.apps.googleusercontent.com"
+        }
     },
     "widget.1": {
         "name": "Detail View",
