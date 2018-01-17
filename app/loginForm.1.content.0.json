@@ -1,12 +1,7 @@
 {
-    "type": "WizardLogin",
+    "type": "plugin.SingleSignOn.GoogleLogin",
     "config": {
-        "className": "",
-        "showCancel": true,
-        "labelForCancel": "cancel",
-        "labelForSubmit": "Login",
-        "labelForUsername": "Username",
-        "labelForPassword": "Password",
-        "onLoginFailedScript": ""
+        "reloadOnSuccess": true,
+        "reloadUrl": ""
     }
 }
