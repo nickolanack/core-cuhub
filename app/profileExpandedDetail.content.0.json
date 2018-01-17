@@ -1,9 +1,9 @@
 {
     "type": "UIView",
     "config": {
-        "className": "left-detail  flex-layout",
+        "className": "",
         "viewType": "view",
-        "namedView": "leftDetail",
+        "namedView": "feedItemActionsDetail",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
         "showDeleteButton": false,

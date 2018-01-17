@@ -1,0 +1,93 @@
+.calendar .nav {
+    text-align: center;
+    line-height: 70px;
+    height: 70px;
+}
+
+.calendar .nav label {
+    padding: 0 5px;
+    vertical-align: top;
+}
+
+.calendar .month {
+    width: 100%;
+    min-height: 475px;
+    display: grid;
+    grid-template-rows: 118.75px 118.75px 118.75px 118.75px;
+}
+.calendar .month.num-weeks-5 {
+    min-height: 395px;
+    grid-template-rows: 85px 85px 85px 85px 85px;
+}
+.calendar .month.num-weeks-6 {
+    min-height: 395px;
+    grid-template-rows: 79.16px 79.16px 79.16px 79.16px 79.16px 79.16px;
+}
+
+.calendar .week {
+    width: 100%;
+    height: 100%;
+}
+
+.calendar .day {
+    width: calc( 100% / 7 );
+    height: 100%;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    border-radius: 2px;
+}
+
+
+.calendar .day:before {
+    content: attr(data-day);
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    top: calc( 50% - 4px );
+    left: calc( 50% - 6px );
+}
+
+.day.active {
+     background-color: rgba(0, 0, 0, 0.05);
+}
+.calendar .day:hover {
+    background: rgba(0,0,0,0.06);
+    cursor: pointer;
+}
+
+.nav>.next-btn, .nav>.prev-btn {
+    margin: 20px;
+    width: 28px;
+    height: 28px;
+    
+    border: 1px solid rgba(0,0,0,0.4);
+    border-radius: 2px;
+}
+
+.nav>.prev-btn {
+
+}
+
+.day.today:after {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 50px;
+    left: calc( 50% - 25px );
+    top: calc( 50% - 25px );
+    border-radius: 100%;
+}
+
+
+
+.calendar .day.active:hover{
+     background: rgba(0,0,0,0.1);
+}
+.day.today.active:after{
+    border: 1px solid rgba(0,0,0,0.4);
+}
+
+.day.next, .day.prev {
+    opacity: 0.2;
+}

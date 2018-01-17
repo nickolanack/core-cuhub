@@ -1,0 +1,9 @@
+{
+    "type": "images",
+    "name": "background-image",
+    "default": [],
+    "label": "background-image",
+    "maxHeight": 256,
+    "maxWidth": 256,
+    "limit": 1
+}

@@ -1,0 +1,9 @@
+{
+    "type": "FieldValue",
+    "config": {
+        "loadAsync": false,
+        "fieldLabelScript": "return \"Your Profile\";",
+        "fieldValueScript": "return \"\";",
+        "formatElementScript": "el.addClass('section-item-icon')"
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "type": "UIListView",
+    "config": {
+        "listClassName": "",
+        "className": "feed-item pinned-item",
+        "viewType": "view",
+        "namedView": "feedItemDetail",
+        "showInlineEdit": false,
+        "namedFormView": "defaultFormView",
+        "showDeleteButton": false,
+        "deleteItemScript": "",
+        "getItemListScript": " \n if(AppClient.getUserType()==\"guest\"){\n     return [];\n }\n EventList.SharedInstance(function(el){\n     callback(el.getPinnedEvents());\n })",
+        "formatItemListScript": "return list;",
+        "formatListItemModuleScript": "childView.getElement().addClass((child.getType().split('.').pop())+'-feed-item');\nchildView.getElement().addClass('feed-item-'+child.getId());\nchildView.getElement().addEvent('click',function(){\n    var me=this;\n    if(me.hasClass('active')){\n        me.removeClass('active');\n    }else{\n        me.addClass('active');\n    }\n})",
+        "formatModuleScript": "",
+        "itemButtonsScript": "return [];",
+        "emptyNamedView": "emptyPinnedListView",
+        "namedViewScript": "return namedView",
+        "filterModulesScript": "return list"
+    }
+}

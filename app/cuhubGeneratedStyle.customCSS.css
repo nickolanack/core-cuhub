@@ -1,0 +1,146 @@
+<?php 
+
+    $ui=GetWidget('interfaceConfig');
+
+?>
+
+
+
+<?php
+$backgroundImage=$ui->getParameter('background-image', array());
+        if(!empty($backgroundImage)){
+          
+            $backgroundImage=$backgroundImage[0];
+            ?>
+
+            .ui-view.root-container:after {
+                background-image: url("<?php echo UrlFrom($backgroundImage); ?>");
+                    position: fixed;
+                    width: 100%;
+                    height: 100%;
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    opacity: 0.2;
+                    pointer-events: none;
+                    background-size: cover;
+                    background-position: bottom;
+            }
+            <?php
+        }else{
+            ?>
+            .ui-view.root-container:after {
+                content:"no background";
+            }
+            <?php
+        }
+
+?>
+
+
+
+
+
+.ui-view.feed-item {
+    border-left: 7px solid #00d8ff;
+}
+
+
+
+
+
+
+
+
+span.ui-navigation-menu ul li>button {
+    border-left: 3px solid #00d8ff;
+}
+
+
+
+
+
+.btn-action {
+    border: none;
+    border-radius: 100%;
+    margin: 2px;
+    background-color: #00d8ff;
+    height: 20px;
+    width: 20px;
+  
+    background-size: 60% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+<?php foreach(array('connection', 'profile', 'project', 'connection', 'request') as $type){
+    ?>
+    
+    .ui-view.<?php echo $type; ?>-feed-item {
+        border-left-color: <?php echo $ui->getParameter('color-for-'.$type);?>;
+    }
+    
+    span.ui-navigation-menu ul li.menu-main-<?php echo $type; ?>s>button {
+        border-left-color: <?php echo $ui->getParameter('color-for-'.$type);?>;
+    }
+
+    .ui-view.<?php echo $type; ?>-feed-item .btn-action{
+        background-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ',0.3)', $ui->getParameter('color-for-'.$type)));?>;
+    }
+
+    
+    <?php
+}?>
+
+
+
+
+.feed-item-icon {
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+<?php 
+
+    foreach($ui->getParameters() as $key=>$value){
+        if(strpos($key, 'icon-for-action')!==0||empty($value)){
+            continue;
+        }
+        $action=explode('-', $key);
+        $action=array_pop($action);
+        ?>
+        button.btn-action.action-<?php echo $action; ?> {
+            background-image:url(<?php echo json_encode(UrlFrom($value[0])); ?>);
+        }
+        
+        <?php
+        
+        
+    }
+
+?>
+
+<?php 
+
+    foreach($ui->getParameters() as $key=>$value){
+        if(strpos($key, 'icon-for-feed')!==0||empty($value)){
+            continue;
+        }
+        $type=explode('-', $key);
+        $type=array_pop($type);
+        ?>
+        
+        .<?php echo $type; ?>-feed-item .feed-item-icon {
+             background-image:url(<?php echo json_encode(UrlFrom($value[0])); ?>);
+        }
+     
+        
+        <?php
+        
+        
+    }
+
+?>

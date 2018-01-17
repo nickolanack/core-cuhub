@@ -27,7 +27,15 @@
     "plugin.6": {
         "name": "Filesystem",
         "instance": "Filesystem",
-        "parameters": {}
+        "parameters": {
+            "enableFileMetadataCache": true,
+            "showDropboxImagePicker": false,
+            "dropbox-app-key": "",
+            "uploadViewInlineCss": "",
+            "uploadViewPageScript": "",
+            "enableFileAttributes": false,
+            "fileAttributesTableName": "filesystemAttributes"
+        }
     },
     "plugin.7": {
         "name": "Google Maps",
@@ -59,10 +67,10 @@
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": true,
-            "CachingEnabled": false,
+            "CachingEnabled": true,
             "ExternalizeWidgetScripts": true,
             "PrettyPrintJson": true,
-            "showFrontEndEditButtons": true,
+            "showFrontEndEditButtons": false,
             "JSCacheObfuscationEnabled": false,
             "phase": "production",
             "ForceHTTPS": false,
@@ -124,6 +132,11 @@
             "enabled": true
         }
     },
+    "plugin.17": {
+        "name": "Project Hub Plugin",
+        "instance": "ProjectHub",
+        "parameters": {}
+    },
     "widget.1": {
         "name": "Detail View",
         "instance": "DetailView",
@@ -161,6 +174,88 @@
             "readAccess": "public"
         }
     },
+    "widget.5": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "leftDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "user-detail",
+                                    "viewType": "view",
+                                    "namedView": "userDetail",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "itemButtonsScript": "return [];",
+                                    "namedViewScript": "return namedView",
+                                    "filterModulesScript": "return list",
+                                    "formOptions": "{}"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "leftDetail.metadata.positions.content.modules.2.config.fieldLabelScript.js",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "feedItemsList",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "itemButtonsScript": "return [];",
+                                    "namedViewScript": "return namedView",
+                                    "filterModulesScript": "return list",
+                                    "formOptions": "{}"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "leftDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "leftDetail",
+            "target": "leftDetail",
+            "readAccess": "public"
+        }
+    },
     "widget.3": {
         "name": "Detail View",
         "instance": "DetailView",
@@ -176,7 +271,7 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "bottom-detail",
+                                    "className": "bottom-detail  flex-layout",
                                     "viewType": "view",
                                     "namedView": "bottomDetail",
                                     "showInlineEdit": false,
@@ -216,41 +311,6 @@
             "readAccess": "public"
         }
     },
-    "widget.5": {
-        "name": "Detail View",
-        "instance": "DetailView",
-        "parameters": {
-            "metadata": {
-                "positions": {
-                    "title": {
-                        "modules": []
-                    },
-                    "content": {
-                        "modules": []
-                    },
-                    "footer": {
-                        "modules": []
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                },
-                "positionList": [
-                    "title",
-                    "content",
-                    "footer",
-                    "menu"
-                ],
-                "_diagramState": []
-            },
-            "templateName": "leftDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "leftDetail",
-            "target": "leftDetail",
-            "readAccess": "public"
-        }
-    },
     "widget.6": {
         "name": "Detail View",
         "instance": "DetailView",
@@ -261,7 +321,36 @@
                         "modules": []
                     },
                     "content": {
-                        "modules": []
+                        "modules": [
+                            "rightDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Your Pinned Items\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "rightDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "pinned-items",
+                                    "viewType": "view",
+                                    "namedView": "pinnedItemsList",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "itemButtonsScript": "return [];",
+                                    "namedViewScript": "return namedView",
+                                    "filterModulesScript": "return list",
+                                    "formOptions": "{}"
+                                }
+                            }
+                        ]
                     },
                     "footer": {
                         "modules": []
@@ -296,7 +385,9 @@
                         "modules": []
                     },
                     "content": {
-                        "modules": []
+                        "modules": [
+                            "topDetail.metadata.positions.content.modules.0.json"
+                        ]
                     },
                     "footer": {
                         "modules": []
@@ -321,6 +412,16 @@
             "readAccess": "public"
         }
     },
+    "widget.9": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {
+            "customCSS": "cuhubStyle.customCSS.css",
+            "widgetTitle": "cuhubStyle",
+            "target": "cuhubStyle",
+            "readAccess": "public"
+        }
+    },
     "widget.8": {
         "name": "Detail View",
         "instance": "DetailView",
@@ -336,7 +437,7 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "right-detail",
+                                    "className": "right-detail  flex-layout",
                                     "viewType": "view",
                                     "namedView": "rightDetail",
                                     "showInlineEdit": false,
@@ -376,13 +477,1301 @@
             "readAccess": "public"
         }
     },
-    "widget.9": {
+    "widget.10": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "navigationDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "navigationDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "navigationDetail",
+            "target": "navigationDetail",
+            "readAccess": "public"
+        }
+    },
+    "widget.16": {
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "customCSS": "cuhubStyle.customCSS.css",
-            "widgetTitle": "cuhubStyle",
-            "target": "cuhubStyle",
+            "customCSS": "cuhubGeneratedStyle.customCSS.css",
+            "widgetTitle": "cuhubGeneratedStyle",
+            "target": "cuhubGeneratedStyle",
+            "readAccess": "public"
+        }
+    },
+    "widget.11": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "feedItemDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "feedItemDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
+                                    "formatElementScript": "el.addClass('feed-item-label')"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "feed-item-expanded-detail",
+                                    "viewType": "view",
+                                    "namedView": "feedItemExpandedDetail",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "itemButtonsScript": "return [];",
+                                    "namedViewScript": "feedItemDetail.metadata.positions.content.modules.4.config.namedViewScript.js",
+                                    "filterModulesScript": "return list",
+                                    "formOptions": "{}"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "feedItemDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "feedItemDetail",
+            "target": "feedItemDetail",
+            "readAccess": "public"
+        }
+    },
+    "widget.12": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "feedItemsList.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "feedItemsList",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "feedItemsList",
+            "target": "feedItemsList",
+            "readAccess": "public"
+        }
+    },
+    "widget.13": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "emptyListView.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "emptyListView",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "emptyListView",
+            "target": "emptyListView",
+            "readAccess": "public"
+        }
+    },
+    "widget.14": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "There is nothing to see here",
+            "widgetTitle": "module..text"
+        }
+    },
+    "widget.15": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {
+            "customCSS": "cuhubDebugStyle.customCSS.css",
+            "widgetTitle": "cuhubDebugStyle",
+            "target": "cuhubDebugStyle",
+            "readAccess": "public"
+        }
+    },
+    "widget.17": {
+        "name": "Javascript",
+        "instance": "CustomBehaviorScript",
+        "parameters": {}
+    },
+    "widget.18": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "calendarDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "calendarDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "calendarDetail",
+            "target": "calendarDetail",
+            "readAccess": "public"
+        }
+    },
+    "widget.19": {
+        "name": "Stylesheet",
+        "instance": "CSS",
+        "parameters": {
+            "customCSS": "calendarStyle.customCSS.css",
+            "widgetTitle": "calendarStyle",
+            "target": "calendarStyle",
+            "readAccess": "public"
+        }
+    },
+    "widget.20": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "feedItemExpandedDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "feedItemExpandedDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "feedItemExpandedDetail",
+            "target": "feedItemExpandedDetail",
+            "readAccess": "public"
+        }
+    },
+    "widget.21": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "userDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "userDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "userDetail",
+            "target": "userDetail",
+            "readAccess": "public"
+        }
+    },
+    "widget.22": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "pinnedItemsList.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "pinnedItemsList",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "pinnedItemsList",
+            "target": "pinnedItemsList",
+            "readAccess": "public"
+        }
+    },
+    "widget.23": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "emptyPinnedListView.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "emptyPinnedListView",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "emptyPinnedListView",
+            "target": "emptyPinnedListView",
+            "readAccess": "public"
+        }
+    },
+    "widget.24": {
+        "name": "Configuration",
+        "instance": "Configuration",
+        "parameters": {
+            "contentTemplate": "",
+            "comments": "",
+            "formatParametersScript": "return $parameters;",
+            "parameters": [
+                "interfaceConfig.parameters.0.json",
+                {
+                    "type": "images",
+                    "name": "icon-for-feed-profile",
+                    "default": [],
+                    "label": "icon-for-feed-profile",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "color",
+                    "name": "color-for-profile",
+                    "default": "rgb(0,0,0)",
+                    "label": "color-for-profile"
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-feed-project",
+                    "default": [],
+                    "label": "icon-for-feed-project",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "color",
+                    "name": "color-for-project",
+                    "default": "rgb(0,0,0)",
+                    "label": "color-for-project"
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-feed-event",
+                    "default": [],
+                    "label": "icon-for-feed-event",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "color",
+                    "name": "color-for-event",
+                    "default": "rgb(0,0,0)",
+                    "label": "color-for-event"
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-feed-connection",
+                    "default": [],
+                    "label": "icon-for-feed-connection",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "color",
+                    "name": "color-for-connection",
+                    "default": "rgb(0,0,0)",
+                    "label": "color-for-connection"
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-feed-request",
+                    "default": [],
+                    "label": "icon-for-feed-request",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "color",
+                    "name": "color-for-request",
+                    "default": "rgb(0,0,0)",
+                    "label": "color-for-request"
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-action-pin",
+                    "default": [],
+                    "label": "icon-for-action-pin",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-action-unpin",
+                    "default": [],
+                    "label": "icon-for-action-unpin",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-action-archive",
+                    "default": [],
+                    "label": "icon-for-action-archive",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-action-unarchive",
+                    "default": [],
+                    "label": "icon-for-action-unarchive",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-action-logout",
+                    "default": [],
+                    "label": "icon-for-action-logout",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-action-edit",
+                    "default": [],
+                    "label": "icon-for-action-edit",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-action-delete",
+                    "default": [],
+                    "label": "icon-for-action-delete",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                }
+            ],
+            "color-for-profile": "rgb(100, 149, 237)",
+            "color-for-project": "rgb(173, 0, 173)",
+            "color-for-event": "rgb(0, 216, 255)",
+            "color-for-connection": "rgb(127, 255, 0)",
+            "widgetTitle": "interfaceConfig",
+            "target": "interfaceConfig",
+            "readAccess": "public",
+            "color-for-request": "rgb(134, 0, 8)",
+            "icon-for-action-pin": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/ARx_[ImAgE]_[G]_3mU_Af3.png"
+            ],
+            "icon-for-action-unpin": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/ARx_[ImAgE]_[G]_3mU_Af3.png"
+            ],
+            "icon-for-action-archive": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/LDe_mP1_ON0_[ImAgE]_[G].png"
+            ],
+            "icon-for-action-unarchive": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/LDe_mP1_ON0_[ImAgE]_[G].png"
+            ],
+            "icon-for-action-logout": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/xJC_[ImAgE]_lWZ_[G]_QHU.png"
+            ],
+            "icon-for-feed-profile": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[ImAgE]_[G]_Pve_gmo_3VQ.png"
+            ],
+            "icon-for-feed-project": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/cC7_[ImAgE]_NK5_[G]_Hok.png"
+            ],
+            "icon-for-feed-event": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/0bC_37G_Ahf_[G]_[ImAgE].png"
+            ],
+            "icon-for-feed-connection": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[G]_BMn_[ImAgE]_KEx_795.png"
+            ],
+            "icon-for-feed-request": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/20e_[ImAgE]_[G]_Vq0_HE6.png"
+            ],
+            "formatOutputScript": "return $parameters;",
+            "icon-for-action-edit": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[ImAgE]_xtG_lYk_Nbn_[G].png"
+            ],
+            "icon-for-action-delete": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/wTS_[G]_0t5_[ImAgE]_WFG.png"
+            ],
+            "background-image": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[ImAgE]_[G]_nem_gqa_Ahr.jpeg"
+            ]
+        }
+    },
+    "widget.25": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "guestExpandedDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "guestExpandedDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "guestExpandedDetail",
+            "target": "guestExpandedDetail",
+            "readAccess": "public"
+        }
+    },
+    "widget.27": {
+        "name": "Login Wizard Builder",
+        "instance": "LoginWizardBuilder",
+        "parameters": {
+            "reloadOnSuccess": true,
+            "reloadUrl": "",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "loginForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "loginForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 148,
+                            "y": 280
+                        },
+                        "children": [
+                            "loginForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 108,
+                                    "y": 446
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": []
+                                },
+                                "content": {
+                                    "modules": [
+                                        "loginForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": []
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "requireTarget": true,
+            "templateName": "loginForm",
+            "widgetTitle": "loginForm",
+            "target": "loginForm",
+            "readAccess": "public"
+        }
+    },
+    "widget.28": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "feedItemActionsDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "script": "feedItemActionsDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "identifier": "customScriptElement"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "script": "feedItemActionsDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "identifier": "customScriptElement"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "script": "feedItemActionsDetail.metadata.positions.content.modules.3.config.script.js",
+                                    "identifier": "customScriptElement"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "script": "feedItemActionsDetail.metadata.positions.content.modules.4.config.script.js",
+                                    "identifier": "customScriptElement"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "feedItemActionsDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "feedItemActionsDetail",
+            "target": "feedItemActionsDetail",
+            "readAccess": "public"
+        }
+    },
+    "widget.29": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "profileExpandedDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "templateName": "profileExpandedDetail",
+            "onRenderApplictionScript": "",
+            "requireTarget": true,
+            "widgetTitle": "profileExpandedDetail",
+            "target": "profileExpandedDetail",
+            "readAccess": "public"
+        }
+    },
+    "widget.30": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "eventForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "eventForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 128,
+                            "y": 260
+                        },
+                        "children": [
+                            "eventForm.metadata.children.1.children.0.json"
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "eventForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "eventForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardDescriptionField",
+                                            "config": {
+                                                "label": "Description",
+                                                "message": "add a description",
+                                                "lines": 3,
+                                                "mandatory": false,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "eventForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "requireTarget": true,
+            "templateName": "eventForm",
+            "widgetTitle": "eventForm",
+            "target": "eventForm",
+            "readAccess": "public"
+        }
+    },
+    "widget.31": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "projectForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "projectForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 128,
+                            "y": 260
+                        },
+                        "children": [
+                            "projectForm.metadata.children.1.children.0.json"
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "projectForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "projectForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardDescriptionField",
+                                            "config": {
+                                                "label": "Description",
+                                                "message": "add a description",
+                                                "lines": 3,
+                                                "mandatory": false,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "projectForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "requireTarget": true,
+            "templateName": "projectForm",
+            "widgetTitle": "projectForm",
+            "target": "projectForm",
+            "readAccess": "public"
+        }
+    },
+    "widget.32": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "connectionForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "connectionForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 128,
+                            "y": 260
+                        },
+                        "children": [
+                            "connectionForm.metadata.children.1.children.0.json"
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "connectionForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "connectionForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardDescriptionField",
+                                            "config": {
+                                                "label": "Description",
+                                                "message": "add a description",
+                                                "lines": 3,
+                                                "mandatory": false,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "connectionForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "requireTarget": true,
+            "templateName": "connectionForm",
+            "widgetTitle": "connectionForm",
+            "target": "connectionForm",
+            "readAccess": "public"
+        }
+    },
+    "widget.33": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "requestForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "requestForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 128,
+                            "y": 260
+                        },
+                        "children": [
+                            "requestForm.metadata.children.1.children.0.json"
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "requestForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "requestForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardDescriptionField",
+                                            "config": {
+                                                "label": "Description",
+                                                "message": "add a description",
+                                                "lines": 3,
+                                                "mandatory": false,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "requestForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "requireTarget": true,
+            "templateName": "requestForm",
+            "widgetTitle": "requestForm",
+            "target": "requestForm",
+            "readAccess": "public"
+        }
+    },
+    "widget.40": {
+        "name": "Javascript",
+        "instance": "CustomBehaviorScript",
+        "parameters": {}
+    },
+    "widget.42": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "profileForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "profileForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 238,
+                            "y": 370
+                        },
+                        "children": [
+                            "profileForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 198,
+                                    "y": 546
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "profileForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "profileForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Description",
+                                                "placeholder": "add value",
+                                                "lines": 2,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": "return item.getDescription()",
+                                                "updateValueScript": "object.value=value;",
+                                                "submitValueScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
+                                                "validateValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "FormBooleanField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Publish My Profile",
+                                                "mandatory": false,
+                                                "getValueScript": "return item.isPublished()",
+                                                "updateValueScript": "object.value=value",
+                                                "submitValueScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
+                                                "validateValueScript": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "profileForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "requireTarget": true,
+            "templateName": "profileForm",
+            "widgetTitle": "profileForm",
+            "target": "profileForm",
             "readAccess": "public"
         }
     }
