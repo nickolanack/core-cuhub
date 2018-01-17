@@ -137,6 +137,11 @@
         "instance": "ProjectHub",
         "parameters": {}
     },
+    "plugin.18": {
+        "name": "Single SignOn Plugin",
+        "instance": "SingleSignOn",
+        "parameters": {}
+    },
     "widget.1": {
         "name": "Detail View",
         "instance": "DetailView",
