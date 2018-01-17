@@ -276,3 +276,11 @@ li.WizardButton {
     right: 4px;
     transition: transform 0.5s;
 }
+
+
+
+.sso-btn {
+    display: inline-block;
+    margin: 5px;
+    vertical-align: top;
+}
