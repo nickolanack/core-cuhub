@@ -1,0 +1,262 @@
+{
+	"project": [{
+		"name": "id",
+		"type": "id"
+	}, {
+		"name": "itemType",
+		"type": "label",
+		"comment": "probably user"
+	}, {
+		"name": "itemId",
+		"type": "int",
+		"comment": "probably a user id"
+	}, {
+		"name": "name",
+		"type": "label",
+		"comment": "optional name"
+	}, {
+		"name": "description",
+		"type": "description",
+		"comment": "optional description"
+	}, {
+		"name": "metadata",
+		"type": "json",
+		"comment": "additional json parameters"
+	}, {
+		"name": "createdDate",
+		"type": "date",
+		"comment": "discussion creation"
+	}, {
+		"name": "modifiedDate",
+		"type": "date",
+		"comment": "discussion modification date. not last post"
+	}, {
+		"name": "readAccess",
+		"type": "label",
+		"comment": "read access auth group"
+
+	}, {
+		"name": "writeAccess",
+		"type": "label",
+		"comment": "group that can post to discussion"
+	}],
+	"connection": [{
+		"name": "id",
+		"type": "id"
+	}, {
+		"name": "itemTypeA",
+		"type": "label",
+		"comment": "used with itemId to define a datatype"
+	}, {
+		"name": "itemIdA",
+		"type": "int"
+	}, {
+		"name": "itemTypeB",
+		"type": "label",
+		"comment": "used with itemId to define a datatype"
+	}, {
+		"name": "itemIdB",
+		"type": "int"
+	}, {
+		"name": "name",
+		"type": "label",
+		"comment": "optional name"
+	}, {
+		"name": "description",
+		"type": "description",
+		"comment": "optional description"
+	}, {
+		"name": "metadata",
+		"type": "json",
+		"comment": "additional json parameters"
+	}, {
+		"name": "createdDate",
+		"type": "date",
+		"comment": "discussion creation"
+	}, {
+		"name": "modifiedDate",
+		"type": "date",
+		"comment": "discussion modification date. not last post"
+	}, {
+		"name": "readAccess",
+		"type": "label",
+		"comment": "read access auth group"
+
+	}, {
+		"name": "writeAccess",
+		"type": "label",
+		"comment": "group that can post to discussion"
+	}],
+	"request": [{
+		"name": "id",
+		"type": "id"
+	}, {
+		"name": "itemType",
+		"type": "label",
+		"comment": "used with itemId to define a datatype"
+	}, {
+		"name": "itemId",
+		"type": "int"
+	}, {
+		"name": "name",
+		"type": "label",
+		"comment": "optional name"
+	}, {
+		"name": "description",
+		"type": "description",
+		"comment": "optional description"
+	}, {
+		"name": "metadata",
+		"type": "json",
+		"comment": "additional json parameters"
+	}, {
+		"name": "createdDate",
+		"type": "date",
+		"comment": "discussion creation"
+	}, {
+		"name": "modifiedDate",
+		"type": "date",
+		"comment": "discussion modification date. not last post"
+	}, {
+		"name": "readAccess",
+		"type": "label",
+		"comment": "read access auth group"
+
+	}, {
+		"name": "writeAccess",
+		"type": "label",
+		"comment": "group that can post to discussion"
+	}],
+	"ignore": [{
+		"name": "id",
+		"type": "id"
+	}, {
+		"name": "uid",
+		"type": "int",
+		"comment": "user id"
+	}, {
+		"name": "itemType",
+		"type": "label",
+		"comment": "used with itemId to define a datatype"
+	}, {
+		"name": "itemId",
+		"type": "int",
+		"comment": "datatype id"
+	}, {
+		"name": "ignoreType",
+		"type": "label",
+		"comment": "",
+		"default": "ie: archive ignore hide"
+	}],
+	"watch": [{
+		"name": "id",
+		"type": "id"
+	}, {
+		"name": "uid",
+		"type": "int",
+		"comment": "user id"
+	},{
+		"name": "itemType",
+		"type": "label",
+		"comment": "used with itemId to define a datatype"
+	}, {
+		"name": "itemId",
+		"type": "int",
+		"comment": "datatype id"
+	}, {
+		"name": "watchType",
+		"type": "label",
+		"comment": "ie: watch follow subscribe",
+		"default": "watch"
+	}],
+	"event": [{
+		"name": "id",
+		"type": "id"
+	}, {
+		"name": "name",
+		"type": "label",
+		"comment": "optional name"
+	}, {
+		"name": "description",
+		"type": "description",
+		"comment": "optional description"
+	}, {
+		"name": "itemType",
+		"type": "label",
+		"comment": "used with itemId to define a datatype"
+	}, {
+		"name": "itemId",
+		"type": "int",
+		"comment": "datatype id"
+	}, {
+		"name": "metadata",
+		"type": "json",
+		"comment": "additional json parameters"
+	}, {
+		"name": "createdDate",
+		"type": "date",
+		"comment": "discussion creation"
+	}, {
+		"name": "modifiedDate",
+		"type": "date",
+		"comment": "discussion modification date. not last post"
+	}, {
+		"name": "readAccess",
+		"type": "label",
+		"comment": "read access auth group"
+
+	}, {
+		"name": "writeAccess",
+		"type": "label",
+		"comment": "group that can post to discussion"
+	}],
+	"profile": [{
+		"name": "id",
+		"type": "id"
+	}, {
+		"name": "name",
+		"type": "label",
+		"comment": "optional name"
+	}, {
+		"name": "description",
+		"type": "description",
+		"comment": "optional description"
+	}, {
+		"name": "itemType",
+		"type": "label",
+		"comment": "used with itemId to define a datatype"
+	}, {
+		"name": "itemId",
+		"type": "int",
+		"comment": "datatype id"
+	}, {
+		"name": "metadata",
+		"type": "json",
+		"comment": "additional json parameters"
+	}, {
+		"name": "createdDate",
+		"type": "date",
+		"comment": "discussion creation"
+	}, {
+		"name": "modifiedDate",
+		"type": "date",
+		"comment": "discussion modification date. not last post"
+	}, {
+		"name": "readAccess",
+		"type": "label",
+		"comment": "read access auth group"
+
+	}, {
+		"name": "writeAccess",
+		"type": "label",
+		"comment": "group that can post to discussion"
+	}, {
+		"name": "published",
+		"type": "boolean",
+		"comment": ""
+	},{
+		"name": "publishedDate",
+		"type": "date",
+		"comment": "can only be published once"
+	}]
+}

@@ -1,0 +1,20 @@
+{
+    "list_feed_items": {},
+    "list_pinned_feed_items": {},
+    "list_archived_feed_items": {},
+    "save_project": {},
+    "save_connection": {},
+    "save_event": {},
+    "save_request": {},
+    "save_profile": {},
+    "users_profile": {},
+    "delete_project": {},
+    "delete_connection": {},
+    "delete_event": {},
+    "delete_request": {},
+    "delete_profile": {},
+    "pin_item": {},
+    "unpin_item": {},
+    "archive_item": {},
+    "unarchive_item": {}
+}
