@@ -67,7 +67,7 @@
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": true,
-            "CachingEnabled": true,
+            "CachingEnabled": false,
             "ExternalizeWidgetScripts": true,
             "PrettyPrintJson": true,
             "showFrontEndEditButtons": false,
@@ -150,6 +150,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "CUHub Main",
+            "target": "cuhub",
+            "templateName": "cuhub",
+            "requireTarget": false,
+            "onRenderApplictionScript": "CUHub Main.onRenderApplictionScript.js",
             "metadata": {
                 "positions": {
                     "title": {
@@ -175,11 +180,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "cuhub",
-            "onRenderApplictionScript": "CUHub Main.onRenderApplictionScript.js",
-            "requireTarget": false,
-            "widgetTitle": "CUHub Main",
-            "target": "cuhub",
             "readAccess": "public"
         }
     },
@@ -187,6 +187,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "leftDetail",
+            "target": "leftDetail",
+            "templateName": "leftDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -257,11 +262,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "leftDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "leftDetail",
-            "target": "leftDetail",
             "readAccess": "public"
         }
     },
@@ -269,6 +269,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "layoutDetail",
+            "target": "layoutDetail",
+            "templateName": "layoutDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -312,11 +317,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "layoutDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "layoutDetail",
-            "target": "layoutDetail",
             "readAccess": "public"
         }
     },
@@ -324,6 +324,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "rightDetail",
+            "target": "rightDetail",
+            "templateName": "rightDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -376,11 +381,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "rightDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "rightDetail",
-            "target": "rightDetail",
             "readAccess": "public"
         }
     },
@@ -388,6 +388,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "topDetail",
+            "target": "topDetail",
+            "templateName": "topDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -413,11 +418,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "topDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "topDetail",
-            "target": "topDetail",
             "readAccess": "public"
         }
     },
@@ -435,6 +435,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "bottomDetail",
+            "target": "bottomDetail",
+            "templateName": "bottomDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -478,11 +483,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "bottomDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "bottomDetail",
-            "target": "bottomDetail",
             "readAccess": "public"
         }
     },
@@ -490,6 +490,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "navigationDetail",
+            "target": "navigationDetail",
+            "templateName": "navigationDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -515,11 +520,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "navigationDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "navigationDetail",
-            "target": "navigationDetail",
             "readAccess": "public"
         }
     },
@@ -537,6 +537,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "feedItemDetail",
+            "target": "feedItemDetail",
+            "templateName": "feedItemDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -607,11 +612,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "feedItemDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "feedItemDetail",
-            "target": "feedItemDetail",
             "readAccess": "public"
         }
     },
@@ -619,6 +619,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "feedItemsList",
+            "target": "feedItemsList",
+            "templateName": "feedItemsList",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -644,11 +649,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "feedItemsList",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "feedItemsList",
-            "target": "feedItemsList",
             "readAccess": "public"
         }
     },
@@ -656,6 +656,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "emptyListView",
+            "target": "emptyListView",
+            "templateName": "emptyListView",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -681,11 +686,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "emptyListView",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "emptyListView",
-            "target": "emptyListView",
             "readAccess": "public"
         }
     },
@@ -716,6 +716,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "calendarDetail",
+            "target": "calendarDetail",
+            "templateName": "calendarDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -741,11 +746,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "calendarDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "calendarDetail",
-            "target": "calendarDetail",
             "readAccess": "public"
         }
     },
@@ -763,6 +763,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "feedItemExpandedDetail",
+            "target": "feedItemExpandedDetail",
+            "templateName": "feedItemExpandedDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -788,11 +793,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "feedItemExpandedDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "feedItemExpandedDetail",
-            "target": "feedItemExpandedDetail",
             "readAccess": "public"
         }
     },
@@ -800,6 +800,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "userDetail",
+            "target": "userDetail",
+            "templateName": "userDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -825,11 +830,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "userDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "userDetail",
-            "target": "userDetail",
             "readAccess": "public"
         }
     },
@@ -837,6 +837,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "pinnedItemsList",
+            "target": "pinnedItemsList",
+            "templateName": "pinnedItemsList",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -862,11 +867,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "pinnedItemsList",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "pinnedItemsList",
-            "target": "pinnedItemsList",
             "readAccess": "public"
         }
     },
@@ -874,6 +874,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "emptyPinnedListView",
+            "target": "emptyPinnedListView",
+            "templateName": "emptyPinnedListView",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -899,11 +904,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "emptyPinnedListView",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "emptyPinnedListView",
-            "target": "emptyPinnedListView",
             "readAccess": "public"
         }
     },
@@ -1109,6 +1109,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "guestExpandedDetail",
+            "target": "guestExpandedDetail",
+            "templateName": "guestExpandedDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -1134,11 +1139,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "guestExpandedDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "guestExpandedDetail",
-            "target": "guestExpandedDetail",
             "readAccess": "public"
         }
     },
@@ -1243,6 +1243,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "feedItemActionsDetail",
+            "target": "feedItemActionsDetail",
+            "templateName": "feedItemActionsDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -1296,11 +1301,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "feedItemActionsDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "feedItemActionsDetail",
-            "target": "feedItemActionsDetail",
             "readAccess": "public"
         }
     },
@@ -1308,6 +1308,11 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
+            "widgetTitle": "profileExpandedDetail",
+            "target": "profileExpandedDetail",
+            "templateName": "profileExpandedDetail",
+            "requireTarget": true,
+            "onRenderApplictionScript": "",
             "metadata": {
                 "positions": {
                     "title": {
@@ -1333,11 +1338,6 @@
                 ],
                 "_diagramState": []
             },
-            "templateName": "profileExpandedDetail",
-            "onRenderApplictionScript": "",
-            "requireTarget": true,
-            "widgetTitle": "profileExpandedDetail",
-            "target": "profileExpandedDetail",
             "readAccess": "public"
         }
     },
