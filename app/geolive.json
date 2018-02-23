@@ -146,6 +146,12 @@
             "googleAuthClientId": "529895863695-baov9aeoir1kf6i2stphk1sda5dgm2ph.apps.googleusercontent.com"
         }
     },
+    "plugin.19": {
+        "name": "Attributes",
+        "instance": "Attributes",
+        "parameters": {},
+        "attributes": "plugin.Attributes.19.attributes.json"
+    },
     "widget.1": {
         "name": "Detail View",
         "instance": "DetailView",
