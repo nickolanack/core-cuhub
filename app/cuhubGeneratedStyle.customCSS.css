@@ -7,7 +7,7 @@
 
 
 <?php
-$backgroundImage=$ui->getParameter('background-image', array());
+        $backgroundImage=$ui->getParameter('background-image', array());
         if(!empty($backgroundImage)){
           
             $backgroundImage=$backgroundImage[0];
@@ -15,9 +15,9 @@ $backgroundImage=$ui->getParameter('background-image', array());
 
             .ui-view.root-container:after {
                 background-image: url("<?php echo UrlFrom($backgroundImage); ?>");
-                    position: fixed;
+                    position: absolute;
                     width: 100%;
-                    height: 100%;
+                    height: 338px;
                     content: "";
                     top: 0;
                     left: 0;
@@ -25,12 +25,27 @@ $backgroundImage=$ui->getParameter('background-image', array());
                     pointer-events: none;
                     background-size: cover;
                     background-position: bottom;
+                    border-bottom: 1px solid black;
             }
             <?php
         }else{
             ?>
             .ui-view.root-container:after {
                 content:"no background";
+            }
+            <?php
+        }
+        
+        
+        
+        $logoImage=$ui->getParameter('icon-logo', array());
+        if(!empty($logoImage)){
+          
+            $logoImage=$logoImage[0];
+            ?>
+
+            .site-logo {
+                background-image: url("<?php echo UrlFrom($logoImage); ?>");
             }
             <?php
         }
@@ -49,12 +64,10 @@ $backgroundImage=$ui->getParameter('background-image', array());
 
 
 
-
-
-
-span.ui-navigation-menu ul li>button {
-    border-left: 3px solid #00d8ff;
+span.ui-navigation-menu ul.menu-main li {
+    border-bottom: 3px solid #00d8ff;
 }
+
 
 
 
@@ -74,19 +87,27 @@ span.ui-navigation-menu ul li>button {
 }
 
 
-<?php foreach(array('connection', 'profile', 'project', 'connection', 'request') as $type){
+<?php foreach(array('connection', 'profile', 'project', 'connection', 'request', 'myprofile') as $type){
     ?>
     
     .ui-view.<?php echo $type; ?>-feed-item {
         border-left-color: <?php echo $ui->getParameter('color-for-'.$type);?>;
     }
     
-    span.ui-navigation-menu ul li.menu-main-<?php echo $type; ?>s>button {
-        border-left-color: <?php echo $ui->getParameter('color-for-'.$type);?>;
+    span.ui-navigation-menu ul li.menu-main-<?php echo $type; ?>s {
+        border-bottom-color: <?php echo $ui->getParameter('color-for-'.$type);?>;
+    }
+    
+    span.ui-navigation-menu ul.menu-main li.menu-main-<?php echo $type; ?>s:after{
+         background-color: <?php echo $ui->getParameter('color-for-'.$type);?>;
     }
 
     .ui-view.<?php echo $type; ?>-feed-item .btn-action{
         background-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ',0.3)', $ui->getParameter('color-for-'.$type)));?>;
+    }
+    
+    .ui-view.<?php echo $type; ?>-feed-item .btn-action:hover{
+        background-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ',0.5)', $ui->getParameter('color-for-'.$type)));?>;
     }
 
     
@@ -112,9 +133,10 @@ span.ui-navigation-menu ul li>button {
         $action=explode('-', $key);
         $action=array_pop($action);
         ?>
-        button.btn-action.action-<?php echo $action; ?> {
+        button.btn-action.action-<?php echo $action; ?>, button.btn-action.action-<?php echo $action; ?>-disabled {
             background-image:url(<?php echo json_encode(UrlFrom($value[0])); ?>);
         }
+        
         
         <?php
         
@@ -136,11 +158,25 @@ span.ui-navigation-menu ul li>button {
         .<?php echo $type; ?>-feed-item .feed-item-icon {
              background-image:url(<?php echo json_encode(UrlFrom($value[0])); ?>);
         }
+        
+        span.ui-navigation-menu ul.menu-main li.menu-main-<?php echo $type; ?>s:after{
+             background-image:url(<?php echo json_encode(UrlFrom($value[0])); ?>);
+        }
+        
+        .left-detail .ui-view.user-detail button.form-btn.action-<?php echo $type; ?>:before{
+             background-image:url(<?php echo json_encode(UrlFrom($value[0])."?tint=rgb(31, 84, 245)"); ?>);
+        }
      
         
         <?php
         
-        
+            
     }
 
 ?>
+
+
+span.ui-navigation-menu ul li.menu-main-calendar, span.ui-navigation-menu ul li.menu-main-archive {
+    display: none;
+}
+

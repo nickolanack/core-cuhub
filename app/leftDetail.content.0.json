@@ -1,9 +1,19 @@
 {
-    "type": "FieldValue",
+    "type": "UIView",
     "config": {
-        "loadAsync": false,
-        "fieldLabelScript": "return \"Your Profile\";",
-        "fieldValueScript": "return \"\";",
-        "formatElementScript": "el.addClass('section-item-icon')"
+        "className": "user-detail",
+        "viewType": "view",
+        "namedView": "userDetail",
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultFormView",
+        "formOptions": "{}",
+        "showDeleteButton": false,
+        "deleteItemScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false
     }
 }

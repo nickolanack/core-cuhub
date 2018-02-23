@@ -1,7 +1,7 @@
 {
     "type": "WizardScriptElement",
     "config": {
-        "script": "return new ElementModule('div',{\"class\":\"feed-item-icon\"});",
+        "script": "var icon= new ElementModule('div',{\"class\":\"feed-item-icon\"});\n\nif(item.hasIcon()){\n    icon.getElement().addClass('user-icon');\n    icon.getElement().setStyle(\"background-image\",\"url('\"+item.getIcon()+\"')\");\n}\n\nreturn icon;",
         "identifier": "customScriptElement"
     }
 }

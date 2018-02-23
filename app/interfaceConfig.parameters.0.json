@@ -1,9 +1,9 @@
 {
     "type": "images",
-    "name": "background-image",
+    "name": "icon-logo",
     "default": [],
-    "label": "background-image",
-    "maxHeight": 256,
-    "maxWidth": 256,
+    "label": "icon-logo",
+    "maxHeight": 64,
+    "maxWidth": 64,
     "limit": 1
 }

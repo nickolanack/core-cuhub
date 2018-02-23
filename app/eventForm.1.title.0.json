@@ -2,12 +2,13 @@
     "type": "WizardSteps",
     "config": {
         "iconValue": [],
-        "className": "",
+        "className": "WizardFooter form-nav",
         "manualValue": "1",
         "width": 460,
         "height": 250,
         "labelMethod": "auto",
         "elasticity": false,
+        "fitContent": true,
         "minHeight": 200,
         "minWidth": 400,
         "showSteps": false

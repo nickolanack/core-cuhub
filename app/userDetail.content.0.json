@@ -1,18 +1,18 @@
 {
     "type": "UIView",
     "config": {
-        "className": "feed-item active",
+        "className": "feed-item active myprofile-feed-item",
         "viewType": "view",
         "namedView": "feedItemDetail",
+        "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
+        "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "if(AppClient.getUserType()==\"guest\"){\n\t\t    return new MyProfileItem();\n\t\t}\n\t\t\n\t\t\n\t\t(new AjaxControlQuery(CoreAjaxUrlRoot, 'users_profile', {\n\t\t\tplugin:\"ProjectHub\"\n\t\t})).addEvent('success',function(response){\n\n\t\t\tcallback(new MyProfileItem(response.result));\n\n\t\t}).execute();\n",
-        "itemButtonsScript": "return [];",
-        "namedViewScript": "return namedView",
         "filterModulesScript": "return list",
-        "formOptions": "{}"
+        "itemButtonsScript": "return [];"
     }
 }

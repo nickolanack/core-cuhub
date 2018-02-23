@@ -1,0 +1,7 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "script": "return new ElementModule('h1',{'class':\"site-logo\",\"html\":\"CUhub<span> Portal<\/span>\"});",
+        "identifier": "customScriptElement"
+    }
+}

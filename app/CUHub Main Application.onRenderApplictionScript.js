@@ -18,6 +18,10 @@ GetWidget('calendarStyle')->display($targetInstance);
 if(UrlVar('tpl',false)){
     GetWidget('cuhubDebugStyle')->display($targetInstance);
 }
+
+GetWidget('cuhubResponsiveStyle')->display($targetInstance);
+
+
 GetWidget('emptyListView')->display($targetInstance);
 GetWidget('emptyPinnedListView')->display($targetInstance);
 GetWidget('cuhubGeneratedStyle')->display($targetInstance);
@@ -33,3 +37,4 @@ GetWidget('connectionForm')->display($targetInstance);
 GetWidget('requestForm')->display($targetInstance);
 
 GetWidget('profileForm')->display($targetInstance);
+GetWidget('dialogForm')->display($targetInstance);
