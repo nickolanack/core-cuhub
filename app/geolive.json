@@ -119,7 +119,7 @@
         "name": "Monolog Plugin",
         "instance": "Monolog",
         "parameters": {
-            "logPath": "{site}\/logs",
+            "logPath": "{front}\/logs",
             "logToSentry": false
         }
     },
@@ -1211,12 +1211,12 @@
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/wTS_[G]_0t5_[ImAgE]_WFG.png"
             ],
             "background-image": [
-                "users_files\/user_files_1\/Uploads\/Fp_[G]_1wz_6gx_[ImAgE].png"
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/Htq_[ImAgE]_6kf_KiE_[G].png"
             ],
             "color-for-myprofile": "rgb(84, 167, 0)",
             "color-for-primary-btn": "rgb(31, 84, 245)",
             "icon-logo": [
-                "users_files\/user_files_1\/Uploads\/Dev_[ImAgE]_YCy_[G]_XSR.png"
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/y1E_4cQ_[ImAgE]_[G]_qNq.png"
             ]
         }
     },
