@@ -1,1 +1,53 @@
-[]
+[
+    {
+        "id": "1",
+        "name": "profileAttributes",
+        "description": "",
+        "label": "",
+        "suffix": "_2608",
+        "metadata": {
+            "title": "profileAttributes",
+            "readAccess": "public",
+            "appliesTo": [
+                "profile"
+            ],
+            "id": "1",
+            "suffix": "_2608",
+            "description": "",
+            "fields": [
+                {
+                    "visibility": "public",
+                    "tableId": "1",
+                    "tableName": "profileAttributes",
+                    "tableSuffix": "_2608",
+                    "title": "profileIcon",
+                    "label": "Profile Icon",
+                    "description": "",
+                    "fieldType": "text",
+                    "color": "rgb(undefined, undefined, undefined)",
+                    "searchability": "public",
+                    "editability": "registered",
+                    "fieldTextOptions": {
+                        "textType": "input",
+                        "inputOptions": {
+                            "buildAutocomplete": false,
+                            "requireModeration": false,
+                            "limitMaxChars": 0,
+                            "limitMaxWords": 0,
+                            "allowHtml": false,
+                            "allowMedia": true,
+                            "allowLinks": true
+                        },
+                        "listOptions": {
+                            "takeSugesstions": true,
+                            "buildTree": false,
+                            "iconize": false,
+                            "colorize": false
+                        }
+                    },
+                    "allowMultiple": false
+                }
+            ]
+        }
+    }
+]
