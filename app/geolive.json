@@ -2317,5 +2317,16 @@
             "target": "cuhubResponsiveStyle",
             "readAccess": "public"
         }
+    },
+    "widget.46": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "",
+            "target": "",
+            "templateName": "{target}",
+            "requireTarget": true,
+            "onRenderApplictionScript": ""
+        }
     }
 }
