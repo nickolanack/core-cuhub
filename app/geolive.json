@@ -212,12 +212,31 @@
                         "modules": [
                             "leftDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "user-detail",
+                                    "viewType": "view",
+                                    "namedView": "userDetail",
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
+                                }
+                            },
+                            {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "leftDetail.metadata.positions.content.modules.1.config.fieldLabelScript.js",
+                                    "fieldLabelScript": "leftDetail.metadata.positions.content.modules.2.config.fieldLabelScript.js",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -245,7 +264,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Archived Items\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
+                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -661,7 +680,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return \"\";",
+                                    "fieldValueScript": "feedItemDetail.metadata.positions.content.modules.3.config.fieldValueScript.js",
                                     "formatElementScript": "feedItemDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
                                 }
                             },
@@ -864,7 +883,49 @@
                     },
                     "content": {
                         "modules": [
-                            "feedItemExpandedDetail.metadata.positions.content.modules.0.json"
+                            "feedItemExpandedDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "ShareLinks",
+                                "config": {
+                                    "className": "",
+                                    "label": "Share this item",
+                                    "fbid": "",
+                                    "twitVia": "@cuhub-projects",
+                                    "hashtag": "",
+                                    "siteTitle": "CUHub Portal",
+                                    "siteURL": "cuhub.geolive.ca",
+                                    "siteDescription": "",
+                                    "formatClass": "s-icon"
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "feedItemInteractionDetail",
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
+                                }
+                            }
                         ]
                     },
                     "footer": {
@@ -1142,6 +1203,15 @@
                 },
                 {
                     "type": "images",
+                    "name": "icon-for-action-login",
+                    "default": [],
+                    "label": "icon-for-action-login",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
                     "name": "icon-for-action-edit",
                     "default": [],
                     "label": "icon-for-action-edit",
@@ -1166,9 +1236,9 @@
                 }
             ],
             "color-for-profile": "rgb(100, 149, 237)",
-            "color-for-project": "rgb(173, 0, 173)",
-            "color-for-event": "rgb(0, 216, 255)",
-            "color-for-connection": "rgb(127, 255, 0)",
+            "color-for-project": "rgb(232, 137, 0)",
+            "color-for-event": "rgb(0, 137, 137)",
+            "color-for-connection": "rgb(88, 128, 88)",
             "widgetTitle": "interfaceConfig",
             "target": "interfaceConfig",
             "readAccess": "public",
@@ -1211,13 +1281,14 @@
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/wTS_[G]_0t5_[ImAgE]_WFG.png"
             ],
             "background-image": [
-                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/Htq_[ImAgE]_6kf_KiE_[G].png"
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/tKT_[ImAgE]_[G]_Vq9_Frz.png"
             ],
             "color-for-myprofile": "rgb(84, 167, 0)",
             "color-for-primary-btn": "rgb(31, 84, 245)",
             "icon-logo": [
-                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/y1E_4cQ_[ImAgE]_[G]_qNq.png"
-            ]
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/Rky_[ImAgE]_[G]_k1k_Df5.png"
+            ],
+            "icon-for-action-login": []
         }
     },
     "widget.25": {
@@ -1278,23 +1349,25 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 168,
-                            "y": 300
+                            "x": 178,
+                            "y": 310
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 128,
-                                    "y": 466
+                                    "x": 138,
+                                    "y": 486
                                 }
                             }
                         ],
                         "builderMetadata": {
                             "positions": {
                                 "title": {
-                                    "modules": []
+                                    "modules": [
+                                        "loginForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
                                 },
                                 "content": {
                                     "modules": [
@@ -1358,7 +1431,7 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "feedItemActionsDetail",
+            "widgetTitle": "feedItemActionsDetail Admin",
             "target": "feedItemActionsDetail",
             "templateName": "feedItemActionsDetail",
             "requireTarget": true,
@@ -1370,32 +1443,32 @@
                     },
                     "content": {
                         "modules": [
-                            "feedItemActionsDetail.metadata.positions.content.modules.0.json",
+                            "feedItemActionsDetail Admin.metadata.positions.content.modules.0.json",
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
-                                    "script": "feedItemActionsDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "script": "feedItemActionsDetail Admin.metadata.positions.content.modules.1.config.script.js",
                                     "identifier": "customScriptElement"
                                 }
                             },
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
-                                    "script": "feedItemActionsDetail.metadata.positions.content.modules.2.config.script.js",
+                                    "script": "feedItemActionsDetail Admin.metadata.positions.content.modules.2.config.script.js",
                                     "identifier": "customScriptElement"
                                 }
                             },
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
-                                    "script": "feedItemActionsDetail.metadata.positions.content.modules.3.config.script.js",
+                                    "script": "feedItemActionsDetail Admin.metadata.positions.content.modules.3.config.script.js",
                                     "identifier": "customScriptElement"
                                 }
                             },
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
-                                    "script": "feedItemActionsDetail.metadata.positions.content.modules.4.config.script.js",
+                                    "script": "feedItemActionsDetail Admin.metadata.positions.content.modules.4.config.script.js",
                                     "identifier": "customScriptElement"
                                 }
                             }
@@ -1469,22 +1542,22 @@
                 "children": [
                     "eventForm.metadata.children.0.json",
                     {
-                        "title": "New Empty Step",
+                        "title": "Event Form",
                         "class": "AttributesTableNode",
                         "fields": [
                             "eventForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 168,
-                            "y": 300
+                            "x": 236,
+                            "y": 328
                         },
                         "children": [
                             "eventForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 128,
-                                    "y": 466
+                                    "x": 196,
+                                    "y": 504
                                 }
                             }
                         ],
@@ -1498,6 +1571,16 @@
                                 "content": {
                                     "modules": [
                                         "eventForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardTitleField",
+                                            "config": {
+                                                "label": "Title",
+                                                "message": "add a title",
+                                                "className": "",
+                                                "maxChars": 0,
+                                                "textFormatScript": ""
+                                            }
+                                        },
                                         {
                                             "type": "WizardDescriptionField",
                                             "config": {
@@ -1516,6 +1599,50 @@
                                                 "textFormatScript": "",
                                                 "mediaIconTint": "rgb(100, 149, 237)",
                                                 "onRenderModuleFn": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "eventForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                ],
+                                                "className": "cols-2",
+                                                "label": "{field.label}",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "autocomplete": true,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "eventForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                ],
+                                                "className": "cols-2",
+                                                "label": "{field.label}",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "autocomplete": true,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
                                             }
                                         }
                                     ]
@@ -1573,16 +1700,16 @@
                             "projectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 148,
-                            "y": 280
+                            "x": 198,
+                            "y": 330
                         },
                         "children": [
                             "projectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 108,
-                                    "y": 446
+                                    "x": 158,
+                                    "y": 506
                                 }
                             }
                         ],
@@ -1596,6 +1723,16 @@
                                 "content": {
                                     "modules": [
                                         "projectForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardTitleField",
+                                            "config": {
+                                                "label": "Title",
+                                                "message": "add a title",
+                                                "className": "",
+                                                "maxChars": 0,
+                                                "textFormatScript": ""
+                                            }
+                                        },
                                         {
                                             "type": "WizardDescriptionField",
                                             "config": {
@@ -1614,6 +1751,50 @@
                                                 "textFormatScript": "",
                                                 "mediaIconTint": "rgb(100, 149, 237)",
                                                 "onRenderModuleFn": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "projectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                ],
+                                                "className": "col-2",
+                                                "label": "{field.label}",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "autocomplete": true,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "date",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "projectForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                ],
+                                                "className": "col-2",
+                                                "label": "{field.label}",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "autocomplete": true,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "date",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
                                             }
                                         }
                                     ]
@@ -1671,16 +1852,16 @@
                             "connectionForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 148,
-                            "y": 280
+                            "x": 218,
+                            "y": 350
                         },
                         "children": [
                             "connectionForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 108,
-                                    "y": 446
+                                    "x": 178,
+                                    "y": 538
                                 }
                             }
                         ],
@@ -1694,6 +1875,16 @@
                                 "content": {
                                     "modules": [
                                         "connectionForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardTitleField",
+                                            "config": {
+                                                "label": "Title",
+                                                "message": "add a title",
+                                                "className": "",
+                                                "maxChars": 0,
+                                                "textFormatScript": ""
+                                            }
+                                        },
                                         {
                                             "type": "WizardDescriptionField",
                                             "config": {
@@ -1712,6 +1903,23 @@
                                                 "textFormatScript": "",
                                                 "mediaIconTint": "rgb(100, 149, 237)",
                                                 "onRenderModuleFn": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTagCloud",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "connectionForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "{field.label}",
+                                                "showLabel": false,
+                                                "showAddWord": false,
+                                                "fontColor": "rgb(0, 0, 0)",
+                                                "hoverColor": "rgb(31, 84, 245)",
+                                                "selectedColor": "rgb(31, 84, 245)",
+                                                "shuffleTags": false,
+                                                "tags": "[\"tag one\", \"tag two\"]"
                                             }
                                         }
                                     ]
@@ -1769,16 +1977,16 @@
                             "requestForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 148,
-                            "y": 280
+                            "x": 158,
+                            "y": 290
                         },
                         "children": [
                             "requestForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 108,
-                                    "y": 446
+                                    "x": 118,
+                                    "y": 456
                                 }
                             }
                         ],
@@ -1872,16 +2080,16 @@
                             "profileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 298,
-                            "y": 430
+                            "x": 318,
+                            "y": 450
                         },
                         "children": [
                             "profileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 258,
-                                    "y": 618
+                                    "x": 278,
+                                    "y": 638
                                 }
                             }
                         ],
@@ -1906,7 +2114,7 @@
                                                 "showImages": true,
                                                 "showDocuments": true,
                                                 "showVideos": true,
-                                                "className": "",
+                                                "className": "no-media",
                                                 "maxChars": 0,
                                                 "showExpandInput": true,
                                                 "toolbarPosition": "bottom",
@@ -2041,16 +2249,16 @@
                             "dialogForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 178,
-                            "y": 310
+                            "x": 188,
+                            "y": 320
                         },
                         "children": [
                             "dialogForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 138,
-                                    "y": 476
+                                    "x": 148,
+                                    "y": 486
                                 }
                             }
                         ],

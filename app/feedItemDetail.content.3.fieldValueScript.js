@@ -1,0 +1,1 @@
+return JSTextUtilities.StripTags(item.getDescription());

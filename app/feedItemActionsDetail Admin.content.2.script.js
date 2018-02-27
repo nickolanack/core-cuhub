@@ -14,7 +14,7 @@ return (new ModalFormButtonModule(application,
             
         });
     }), {
-    "label":"Add Personal Connection",
+    "label":(item instanceof MyProfileItem)?"Add Personal Connection":"Add "+item.getTypeName()+" Connection",
     "formName":"connectionForm",
     "formOptions":{
         "template":"form"

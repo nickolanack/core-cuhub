@@ -1,19 +1,7 @@
 {
-    "type": "UIView",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "user-detail",
-        "viewType": "view",
-        "namedView": "userDetail",
-        "namedViewScript": "return namedView",
-        "showInlineEdit": false,
-        "namedFormView": "defaultFormView",
-        "formOptions": "{}",
-        "showDeleteButton": false,
-        "deleteItemScript": "",
-        "formatModuleScript": "",
-        "resolveItemScript": "",
-        "filterModulesScript": "return list",
-        "itemButtonsScript": "return [];",
-        "insertAtTop": false
+        "script": "\n if(application.getNamedValue('navigationController').getCurrentView().view==\"FeedItems\"){\n     return null;\n }\nreturn new ElementModule('button',{\n    html:\"Show All\",\n    events:{click:function(){\n        application.getNamedValue('navigationController').navigateTo(\"FeedItems\", \"Main\");\n    }},\n    \"class\":\"clear-filter form-btn\"\n})",
+        "identifier": "customScriptElement"
     }
 }

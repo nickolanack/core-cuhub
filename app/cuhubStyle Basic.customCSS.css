@@ -277,7 +277,7 @@ span.ui-navigation-menu ul>label {
     color:white;
 }
 
-.ui-view.myprofile-feed-item .btn-action.action-logout:before, .ui-view.myprofile-feed-item .btn-action.action-edit:before {
+.ui-view.myprofile-feed-item .btn-action.action-logout:before, .ui-view.myprofile-feed-item .btn-action.action-edit:before, .ui-view.myprofile-feed-item .btn-action.action-login:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -330,17 +330,7 @@ span.ui-navigation-menu ul>label {
     margin: 5px;
 }
 
-.feed-item-tags {
-    text-align: center;
-    min-height:22px;
-}
 
-.WizardButtonContainer {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    white-space: nowrap;
-}
 
 .WizardButton {
     list-style: none;
@@ -377,14 +367,11 @@ span.ui-navigation-menu ul>label {
     display: none;
 }
 
-.form-nav {
-    position: absolute;
-    bottom: 0;
-    right: 24px;
-}
+
 
 .form-nav .btn {
     padding: 5px 10px;
+    float: right;
 }
 
 .ui-view.feed-item>.ui-template>.template-content {
@@ -598,5 +585,113 @@ span.ui-navigation-menu ul>label {
     top: 2px;
     right: 25px;
 }
+.ui-view.myprofile-feed-item .btn-action.action-login:after {
+    content: "Log In";
+    position: absolute;
+    white-space: nowrap;
+    top: 2px;
+    right: 25px;
+}
 
 
+
+.connection-feed-items-list .feed-item-actions {
+    display: none;
+}
+.connection-feed-items-list .feed-item-tags {
+    display: none;
+}
+.connection-feed-items-list{
+    margin-bottom:15px
+}
+.connection-feed-items-list>.ui-view{
+    background-color: rgba(0,0,0,0.1);
+    margin: 5px 0;
+    border-radius: 3px;
+    height: 50px;
+}
+
+button.clear-filter.form-btn {
+    width: 100px;
+}
+
+.field-value-module.feed-item-short-desc {
+    display: none;
+}
+
+.feed-item-list .field-value-module.feed-item-short-desc{
+    display:block;
+    margin-top: 20px;
+    height: 30px;
+    text-indent: 10px;
+}
+
+.feed-item-list .active .ui-view.feed-item-expanded-detail {
+    text-align: left;
+    padding: 24px;
+}
+
+span.noIcon {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    float: right;
+    background-size: 68%;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 3px rgba(0,0,0,0.4);
+    border: 1px solid #1f54f5;
+    margin: 3px;
+    border-radius: 100%;
+    margin-top: 15px;
+}
+
+.ToolbarBottom {
+    height: 35px;
+    margin: 10px 0;
+}
+
+.ToolbarBottom .droppable {
+    height: 35px;
+}
+
+
+body.dragover .empty.droppable:after, .empty.droppable:after {
+    content: "drag files here...";
+    line-height: 35px;
+    color: cornflowerblue;
+    font-style: italic;
+    top: 0;
+}
+
+
+body.dragover .add-photo .empty.droppable:after, .add-photo .empty.droppable:after {
+    content: "drag photo here...";
+}
+
+.no-media .ToolbarBottom, .no-media .media-bar {
+    display: none;
+}
+
+.form-btn.action-user {
+    color: #666666;
+}
+
+.form-btn.action-user:hover {
+    color: black;
+}
+
+
+.add-photo span.noIcon {
+    display: none;
+}
+
+.add-photo span.noIcon.image {
+    display: inline-block;
+}
+
+
+.uitext-container.col-2 {
+    width: calc( 50% - 10px );
+    display: inline-block;
+}

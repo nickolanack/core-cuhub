@@ -6,4 +6,4 @@ if(item instanceof MyProfileItem&&AppClient.getUserType()=="guest"){
 
 
 
-return (item.getName?item.getName():'{name}')+(item.getDateFromNow?' - '+item.getDateFromNow():' - {created from now}')
+return (item.getName?item.getName():'{name}')+(item.hasDate()?' - '+item.getDateFromNow():'')

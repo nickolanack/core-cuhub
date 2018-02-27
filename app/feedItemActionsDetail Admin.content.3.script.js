@@ -14,7 +14,7 @@ return (new ModalFormButtonModule(application,
             
         });
     }), {
-    "label":"Create Connection Request",
+    "label":(item instanceof MyProfileItem)?"Add Connection Request":"Add "+item.getTypeName()+" Connection Request",
     "formName":"requestForm",
     "formOptions":{
         "template":"form"
