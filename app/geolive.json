@@ -1548,16 +1548,16 @@
                             "eventForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 236,
-                            "y": 328
+                            "x": 246,
+                            "y": 338
                         },
                         "children": [
                             "eventForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 196,
-                                    "y": 504
+                                    "x": 206,
+                                    "y": 539
                                 }
                             }
                         ],
@@ -1617,7 +1617,7 @@
                                                 "autocomplete": true,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
-                                                "formatter": "none",
+                                                "formatter": "date",
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": ""
@@ -1639,7 +1639,7 @@
                                                 "autocomplete": true,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
-                                                "formatter": "none",
+                                                "formatter": "date",
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": ""
