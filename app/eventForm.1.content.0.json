@@ -38,7 +38,7 @@
         "label": "Event Photo",
         "message": "add a description",
         "lines": 3,
-        "mandatory": false,
+        "mandatory": true,
         "showAudios": true,
         "showImages": true,
         "showDocuments": true,

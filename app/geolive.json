@@ -1281,12 +1281,12 @@
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/wTS_[G]_0t5_[ImAgE]_WFG.png"
             ],
             "background-image": [
-                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/tKT_[ImAgE]_[G]_Vq9_Frz.png"
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[ImAgE]_r7C_qhw_[G]_ioL.png"
             ],
             "color-for-myprofile": "rgb(84, 167, 0)",
             "color-for-primary-btn": "rgb(31, 84, 245)",
             "icon-logo": [
-                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/Rky_[ImAgE]_[G]_k1k_Df5.png"
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/ji3_VC9_4zi_[G]_[ImAgE].png"
             ],
             "icon-for-action-login": []
         }
@@ -1548,16 +1548,16 @@
                             "eventForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 246,
-                            "y": 338
+                            "x": 236,
+                            "y": 328
                         },
                         "children": [
                             "eventForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 206,
-                                    "y": 539
+                                    "x": 196,
+                                    "y": 504
                                 }
                             }
                         ],
@@ -1617,7 +1617,7 @@
                                                 "autocomplete": true,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
-                                                "formatter": "date",
+                                                "formatter": "none",
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": ""
@@ -1639,7 +1639,7 @@
                                                 "autocomplete": true,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
-                                                "formatter": "date",
+                                                "formatter": "none",
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": ""
