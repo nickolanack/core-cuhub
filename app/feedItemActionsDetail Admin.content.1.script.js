@@ -17,7 +17,8 @@ return (new ModalFormButtonModule(application,
     "label":(item instanceof MyProfileItem)?"Create New Project":((item instanceof ProjectItem)?"Add Sub-Project":"Add "+item.getTypeName()+" Project"),
     "formName":"projectForm",
     "formOptions":{
-        "template":"form"
+        "template":"form",
+        "className":"project-form"
     },
     "className":"action-project"
 }))

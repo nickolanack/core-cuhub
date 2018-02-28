@@ -6,7 +6,8 @@ return (new ModalFormButtonModule(application,
     "label":"Publish your profile",
     "formName":"profileForm",
     "formOptions":{
-        "template":"form"
+        "template":"form",
+        "className":"profile-form"
     },
     "className":"action-profile",
     events:{click:function(){

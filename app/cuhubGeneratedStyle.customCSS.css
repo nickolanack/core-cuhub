@@ -87,7 +87,7 @@ span.ui-navigation-menu ul.menu-main li {
 }
 
 
-<?php foreach(array('connection', 'profile', 'project', 'connection', 'request', 'myprofile') as $type){
+<?php foreach(array('connection', 'profile', 'project', 'connection', 'request', 'myprofile', 'event') as $type){
     ?>
     
     .ui-view.<?php echo $type; ?>-feed-item {
@@ -115,6 +115,25 @@ span.ui-navigation-menu ul.menu-main li {
         background-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ',0.5)', $ui->getParameter('color-for-'.$type)));?>;
     }
 
+    
+    .module-wizard.<?php echo $type; ?>-form:after  {
+         border: 3px solid <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ', 1)', $ui->getParameter('color-for-'.$type)));?>;
+    }
+    .module-wizard.<?php echo $type; ?>-form:before {
+        background-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ', 1)', $ui->getParameter('color-for-'.$type)));?>;
+    }
+
+    .module-wizard.<?php echo $type; ?>-form .WizardButton{
+        background-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ', 1)', $ui->getParameter('color-for-'.$type)));?>;
+    }
+    
+    .module-wizard.<?php echo $type; ?>-form span.noIcon{
+        border-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ', 1)', $ui->getParameter('color-for-'.$type)));?>;
+    }
+    
+    body.dragover .module-wizard.<?php echo $type; ?>-form .empty.droppable:after, .module-wizard.<?php echo $type; ?>-form .empty.droppable:after{
+            color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ', 1)', $ui->getParameter('color-for-'.$type)));?>;
+        }
     
     <?php
 }?>
@@ -171,12 +190,41 @@ span.ui-navigation-menu ul.menu-main li {
         .left-detail .ui-view.user-detail button.form-btn.action-<?php echo $type; ?>:before{
              background-image:url(<?php echo json_encode(UrlFrom($value[0])."?tint=rgb(31, 84, 245)"); ?>);
         }
+        
+        
+        .module-wizard.<?php echo $type; ?>-form:after  {
+             background-image: url(<?php echo json_encode(UrlFrom($value[0])); ?>);
+        }
      
         
+   
+    
+        <?php
+        
+        
+        foreach($ui->getParameters() as $key=>$value){
+        if(strpos($key, 'icon-for-upload')!==0||empty($value)){
+            continue;
+        }
+        $file=explode('-', $key);
+        $file=array_pop($file);
+        ?>
+        
+        .module-wizard.<?php echo $type; ?>-form .upload-btns span.<?php echo $file; ?> {
+             background-image:url(<?php echo json_encode(UrlFrom($value[0])."?tint=".$ui->getParameter('color-for-'.$type)); ?>);
+        }
+        
+    
         <?php
         
             
     }
+        
+            
+    }
+    
+    
+    
 
 ?>
 

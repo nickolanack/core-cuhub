@@ -1233,6 +1233,42 @@
                     "name": "color-for-primary-btn",
                     "default": "rgb(0,0,0)",
                     "label": "color-for-primary-btn"
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-upload-image",
+                    "default": [],
+                    "label": "icon-for-upload-image",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-upload-audio",
+                    "default": [],
+                    "label": "icon-for-upload-audio",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-upload-video",
+                    "default": [],
+                    "label": "icon-for-upload-video",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-upload-document",
+                    "default": [],
+                    "label": "icon-for-upload-document",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
                 }
             ],
             "color-for-profile": "rgb(100, 149, 237)",
@@ -1288,7 +1324,21 @@
             "icon-logo": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/ji3_VC9_4zi_[G]_[ImAgE].png"
             ],
-            "icon-for-action-login": []
+            "icon-for-action-login": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/xJC_[ImAgE]_lWZ_[G]_QHU.png"
+            ],
+            "icon-for-upload-image": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/SjG_[ImAgE]_zae_4XE_[G].png"
+            ],
+            "icon-for-upload-audio": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/Gj_HXH_[ImAgE]_[G]_51z.png"
+            ],
+            "icon-for-upload-video": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/oen_[G]_yKN_PsF_[ImAgE].png"
+            ],
+            "icon-for-upload-document": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[G]_wzZ_iJr_[ImAgE]_j6T.png"
+            ]
         }
     },
     "widget.25": {
@@ -1548,16 +1598,16 @@
                             "eventForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 236,
-                            "y": 328
+                            "x": 276,
+                            "y": 368
                         },
                         "children": [
                             "eventForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 196,
-                                    "y": 504
+                                    "x": 236,
+                                    "y": 581
                                 }
                             }
                         ],
@@ -1617,7 +1667,7 @@
                                                 "autocomplete": true,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
-                                                "formatter": "none",
+                                                "formatter": "date",
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": ""
@@ -1639,10 +1689,31 @@
                                                 "autocomplete": true,
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "",
-                                                "formatter": "none",
+                                                "formatter": "time",
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Maps.FormLocationField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Location",
+                                                "placeholder": "add value",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"Hello World\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
                                     ]
@@ -2322,11 +2393,37 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "",
-            "target": "",
-            "templateName": "{target}",
+            "widgetTitle": "feedItemInteractionDetail User",
+            "target": "feedItemInteractionDetail",
+            "templateName": "feedItemInteractionDetail",
             "requireTarget": true,
-            "onRenderApplictionScript": ""
+            "onRenderApplictionScript": "",
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "feedItemInteractionDetail User.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
         }
     }
 }

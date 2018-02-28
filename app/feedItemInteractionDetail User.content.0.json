@@ -1,0 +1,7 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "script": "if(!item.canCreateConnectionFrom(EventList.SharedInstance().getClientProfile())){\n    return null;\n}\n\nreturn (new ModalFormButtonModule(application, \n    new ConnectionItem({\n        \"item\":EventList.SharedInstance().getClientProfile(),\n        \"itemB\":item,\n    }).addEvent(\"save\", function(){\n        var item=this;\n        EventList.SharedInstance(function(el){\n            el.addItem(item);\n        });\n    }), {\n    \"label\":\"Create Connection To This \"+item.getTypeName(),\n    \"formName\":\"connectionForm\",\n    \"formOptions\":{\n        \"template\":\"form\"\n    },\n    \"className\":\"action-connection action-user\"\n}))",
+        "identifier": "customScriptElement"
+    }
+}
