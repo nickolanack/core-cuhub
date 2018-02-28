@@ -668,7 +668,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "feedItemDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
-                                    "formatElementScript": "el.addClass('feed-item-label')"
+                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -1081,10 +1081,25 @@
                     "limit": 1
                 },
                 {
+                    "type": "boolean",
+                    "name": "show-banner",
+                    "default": true,
+                    "label": "show-banner"
+                },
+                {
                     "type": "images",
                     "name": "icon-for-feed-profile",
                     "default": [],
                     "label": "icon-for-feed-profile",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
+                    "name": "icon-for-feed-myprofile",
+                    "default": [],
+                    "label": "icon-for-feed-myprofile",
                     "maxHeight": 128,
                     "maxWidth": 128,
                     "limit": 1
@@ -1274,6 +1289,78 @@
                     "maxHeight": 128,
                     "maxWidth": 128,
                     "limit": 1
+                },
+                {
+                    "type": "text",
+                    "name": "label-for-events",
+                    "label": "label-for-events",
+                    "default": "Share and view events in the community"
+                },
+                {
+                    "type": "text",
+                    "name": "label-for-projects",
+                    "label": "label-for-projects",
+                    "default": "Create and follow research projects"
+                },
+                {
+                    "type": "text",
+                    "name": "label-for-connections",
+                    "label": "label-for-connections",
+                    "default": "Discover and connection with cuhub users"
+                },
+                {
+                    "type": "text",
+                    "name": "label-for-profiles",
+                    "label": "label-for-profiles",
+                    "default": "View and contact community and university members"
+                },
+                {
+                    "type": "text",
+                    "name": "label-for-create-event",
+                    "label": "label-for-create-event",
+                    "default": "Share Event"
+                },
+                {
+                    "type": "text",
+                    "name": "label-for-create-project",
+                    "label": "label-for-create-project",
+                    "default": "Share Project"
+                },
+                {
+                    "type": "text",
+                    "name": "label-for-create-connection",
+                    "label": "label-for-create-connection",
+                    "default": "Connect"
+                },
+                {
+                    "type": "text",
+                    "name": "label-for-item-create-event",
+                    "label": "label-for-item-create-event",
+                    "default": "Create {type} Event"
+                },
+                {
+                    "type": "text",
+                    "name": "label-for-item-create-project",
+                    "label": "label-for-item-create-project",
+                    "default": "Create Sub-Project"
+                },
+                {
+                    "type": "text",
+                    "name": "label-for-item-create-connection",
+                    "label": "label-for-item-create-connection",
+                    "default": "Create {type} Connection"
+                },
+                {
+                    "type": "text",
+                    "name": "label-for-item-connect",
+                    "label": "label-for-item-connect",
+                    "default": "Connect to this {type}"
+                },
+                {
+                    "type": "text",
+                    "name": "label-for-item-owner-connect",
+                    "label": "label-for-item-owner-connect",
+                    "default": "Connect to Creator"
                 }
             ],
             "color-for-profile": "rgb(100, 149, 237)",
@@ -1343,6 +1430,22 @@
             ],
             "icon-for-upload-document": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[G]_wzZ_iJr_[ImAgE]_j6T.png"
+            ],
+            "label-for-events": "Share and view events in the community",
+            "label-for-projects": "Create and follow research projects",
+            "label-for-connections": "Discover and connection with cuhub users",
+            "label-for-profiles": "View and contact community and university members",
+            "show-banner": false,
+            "label-for-create-event": "Share Event",
+            "label-for-create-project": "Share Project",
+            "label-for-create-connection": "Connect",
+            "label-for-item-create-event": "Create {type} Event",
+            "label-for-item-create-project": "Create Sub-Project",
+            "label-for-item-create-connection": "Create {type} Connection",
+            "label-for-item-connect": "Connect to this {type}",
+            "label-for-item-owner-connect": "Connect to Creator",
+            "icon-for-feed-myprofile": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[G]_0ST_[ImAgE]_P07_1Ge.png"
             ]
         }
     },
@@ -1603,16 +1706,16 @@
                             "eventForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 276,
-                            "y": 368
+                            "x": 286,
+                            "y": 378
                         },
                         "children": [
                             "eventForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 236,
-                                    "y": 581
+                                    "x": 246,
+                                    "y": 591
                                 }
                             }
                         ],
@@ -1776,16 +1879,16 @@
                             "projectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 198,
-                            "y": 330
+                            "x": 208,
+                            "y": 340
                         },
                         "children": [
                             "projectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 158,
-                                    "y": 506
+                                    "x": 168,
+                                    "y": 541
                                 }
                             }
                         ],
@@ -2410,7 +2513,14 @@
                     },
                     "content": {
                         "modules": [
-                            "feedItemInteractionDetail User.metadata.positions.content.modules.0.json"
+                            "feedItemInteractionDetail User.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "script": "feedItemInteractionDetail User.metadata.positions.content.modules.1.config.script.js",
+                                    "identifier": "customScriptElement"
+                                }
+                            }
                         ]
                     },
                     "footer": {

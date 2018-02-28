@@ -14,7 +14,15 @@ return (new ModalFormButtonModule(application,
             
         });
     }), {
-    "label":(item instanceof MyProfileItem)?"Create New Project":((item instanceof ProjectItem)?"Add Sub-Project":"Add "+item.getTypeName()+" Project"),
+    "label":((item instanceof MyProfileItem)?<?php 
+        
+       echo json_encode(($ui=GetWidget('interfaceConfig'))->getParameter('label-for-create-project'));
+    
+        ?>:<?php 
+        
+       echo json_encode($ui->getParameter('label-for-item-create-project'));
+    
+    ?>).replace('{type}', item.getTypeName()),
     "formName":"projectForm",
     "formOptions":{
         "template":"form",

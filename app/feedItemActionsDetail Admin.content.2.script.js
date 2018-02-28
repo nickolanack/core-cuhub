@@ -14,7 +14,15 @@ return (new ModalFormButtonModule(application,
             
         });
     }), {
-    "label":(item instanceof MyProfileItem)?"Add Personal Connection":"Add "+item.getTypeName()+" Connection",
+    "label":((item instanceof MyProfileItem)?<?php 
+        
+       echo json_encode(($ui=GetWidget('interfaceConfig'))->getParameter('label-for-create-connection'));
+    
+        ?>:<?php 
+        
+       echo json_encode($ui->getParameter('label-for-item-create-connection'));
+    
+    ?>).replace('{type}', item.getTypeName()),
     "formName":"connectionForm",
     "formOptions":{
         "template":"form",

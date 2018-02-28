@@ -7,6 +7,8 @@
 
 
 <?php
+
+    if($ui->getParameter('show-banner', true)){
         $backgroundImage=$ui->getParameter('background-image', array());
         if(!empty($backgroundImage)){
           
@@ -35,6 +37,7 @@
             }
             <?php
         }
+    }
         
         
         
@@ -134,6 +137,11 @@ span.ui-navigation-menu ul.menu-main li {
     body.dragover .module-wizard.<?php echo $type; ?>-form .empty.droppable:after, .module-wizard.<?php echo $type; ?>-form .empty.droppable:after{
             color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ', 1)', $ui->getParameter('color-for-'.$type)));?>;
         }
+        
+        
+    .calendar span.events .event-data.calendar-item-<?php echo $type; ?>{
+                background-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ', 1)', $ui->getParameter('color-for-'.$type)));?>;
+    }
     
     <?php
 }?>
@@ -229,7 +237,11 @@ span.ui-navigation-menu ul.menu-main li {
 ?>
 
 
-span.ui-navigation-menu ul li.menu-main-calendar, span.ui-navigation-menu ul li.menu-main-archive, span.ui-navigation-menu ul li.menu-main-feeditems, span.ui-navigation-menu ul li.menu-main-tags {
-    display: none;
+span.ui-navigation-menu ul li.menu-main-calendar, 
+    span.ui-navigation-menu ul li.menu-main-archive, 
+    span.ui-navigation-menu ul li.menu-main-feeditems, 
+    span.ui-navigation-menu ul li.menu-main-tags, 
+    span.ui-navigation-menu ul li.menu-main-date {
+        display: none;
 }
 

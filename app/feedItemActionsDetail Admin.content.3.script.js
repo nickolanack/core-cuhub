@@ -1,7 +1,7 @@
 
-if(!item.canCreate('request')){
+//if(!item.canCreate('request')){
     return null;
-}
+//}
 
 return (new ModalFormButtonModule(application, 
     new ConnectionRequestItem({

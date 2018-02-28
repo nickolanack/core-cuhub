@@ -10,7 +10,7 @@
         "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
-        "formatModuleScript": "",
+        "formatModuleScript": "<?php\n\nif(!GetWidget('interfaceConfig')->getParameter('show-banner')){\n    ?>\n    module.getElement().addClass('no-banner');\n\n    <?php\n}\n\n?>",
         "resolveItemScript": "",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",

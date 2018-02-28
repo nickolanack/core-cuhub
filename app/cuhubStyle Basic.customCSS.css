@@ -130,6 +130,13 @@ span.ui-navigation-menu .menu-main {
     top: 30px;
 }
 
+.no-banner ul.menu-main {
+    position: absolute;
+    top: -145px;
+    height: 0px;
+    width: 100%;
+}
+
 span.ui-navigation-menu .menu-main li {
     display: inline-block;
     margin: 5px;
@@ -255,6 +262,12 @@ span.ui-navigation-menu ul>label {
     background-repeat: no-repeat;
     background-position: center;
     top: -1px;
+}
+
+.left-detail .myprofile-feed-item .feed-item-icon {
+    position: relative;
+    top: -30px;
+    left: 24px;
 }
 
 
@@ -569,6 +582,39 @@ span.ui-navigation-menu ul>label {
 }
 
 
+.item-author .feed-item-icon.user-icon {
+    display: inline-block;
+    float: none;
+    height: 18px;
+    width: 18px;
+    vertical-align: bottom;
+}
+
+.feed-item-icon>.feed-item-icon {float: none;left: 100%;top: -6px;background-color: transparent;}
+
+.feed-item-icon.user-icon.connection-icon {
+    margin-right: 40px;
+}
+
+
+
+span.item-connection-to {
+    color: #577f57;
+}
+span.item-connection-to:before {
+    content: " to";
+}
+span.item-author:before {
+    content: " created by";
+}
+span.item-author, span.date-from-now, span.item-connection-to:before {
+    color: slategrey;
+    font-style: italic;
+    font-size: 13px;
+}
+
+
+
 .ui-view.myprofile-feed-item .btn-action{
     position:relative;
     right: 85px;
@@ -790,3 +836,5 @@ body.dragover .add-photo .empty.droppable:after, .add-photo .empty.droppable:aft
     margin:1px;
     border-radius:100%;
 }
+
+

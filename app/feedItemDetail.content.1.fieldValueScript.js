@@ -6,4 +6,8 @@ if(item instanceof MyProfileItem&&AppClient.getUserType()=="guest"){
 
 
 
-return (item.getName?item.getName():'{name}')+(item.hasDate()?' - '+item.getDateFromNow():'')
+var str= (item.getName?item.getName():"{name}");
+
+
+
+return str;

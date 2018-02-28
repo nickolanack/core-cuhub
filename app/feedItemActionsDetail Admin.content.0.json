@@ -1,7 +1,7 @@
 {
     "type": "WizardScriptElement",
     "config": {
-        "script": "\n\nif(!item.canCreate('event')){\n    return null;\n}\nreturn (new ModalFormButtonModule(application, \n    new EventItem({\n        \"item\":item,\n    }).addEvent(\"save\", function(){\n        var item=this;\n        EventList.SharedInstance(function(el){\n            \n            el.addItem(item);\n            \n        });\n    }), {\n    \"label\":(item instanceof MyProfileItem)?\"Create New Event\":\"Add \"+item.getTypeName()+\" Event\",\n    \"formName\":\"eventForm\",\n    \"formOptions\":{\n        \"template\":\"form\",\n        \"className\":\"event-form\"\n    },\n    \"className\":\"action-event\"\n}))",
+        "script": "\n\nif(!item.canCreate('event')){\n    return null;\n}\nreturn (new ModalFormButtonModule(application, \n    new EventItem({\n        \"item\":item,\n    }).addEvent(\"save\", function(){\n        var item=this;\n        EventList.SharedInstance(function(el){\n            \n            el.addItem(item);\n            \n        });\n    }), {\n    \"label\":((item instanceof MyProfileItem)?<?php \n        \n       echo json_encode(($ui=GetWidget('interfaceConfig'))->getParameter('label-for-create-event'));\n    \n        ?>:<?php \n        \n       echo json_encode($ui->getParameter('label-for-item-create-event'));\n    \n    ?>).replace('{type}', item.getTypeName()),\n    \"formName\":\"eventForm\",\n    \"formOptions\":{\n        \"template\":\"form\",\n        \"className\":\"event-form\"\n    },\n    \"className\":\"action-event\"\n}))",
         "identifier": "customScriptElement"
     }
 }
