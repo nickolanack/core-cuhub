@@ -68,8 +68,16 @@ body {
 .ui-view.bottom-detail {
     background-color: rgba(0,0,0,0.05);
     padding-top: 40px;
+    text-align:center;
 }
 
+.ui-view.bottom-detail>div {
+    max-width: 1700px;
+    margin: auto;
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+}
 
 
 .ui-view.left-detail {
