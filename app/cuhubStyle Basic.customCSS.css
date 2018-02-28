@@ -177,6 +177,7 @@ span.ui-navigation-menu ul.menu-main li:after {
     border-radius: 100%;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: 50%;
 }
 
 span.ui-navigation-menu .menu-main li button {
@@ -836,5 +837,3 @@ body.dragover .add-photo .empty.droppable:after, .add-photo .empty.droppable:aft
     margin:1px;
     border-radius:100%;
 }
-
-
