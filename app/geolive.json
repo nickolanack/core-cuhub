@@ -1365,7 +1365,7 @@
             ],
             "color-for-profile": "rgb(100, 149, 237)",
             "color-for-project": "rgb(232, 137, 0)",
-            "color-for-event": "rgb(173, 0, 3)",
+            "color-for-event": "rgb(176, 59, 59)",
             "color-for-connection": "rgb(88, 128, 88)",
             "widgetTitle": "interfaceConfig",
             "target": "interfaceConfig",
