@@ -157,6 +157,11 @@
         "instance": "PusherMessages",
         "parameters": "_PusherMessages.json"
     },
+    "plugin.21": {
+        "name": "Maps",
+        "instance": "Maps",
+        "parameters": {}
+    },
     "widget.1": {
         "name": "Detail View",
         "instance": "DetailView",
