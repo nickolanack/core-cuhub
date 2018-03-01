@@ -1,6 +1,6 @@
 <?php
 
-class ProjectHubDatabase extends core\CoreDatabase {
+class ProjectHubDatabase extends core\DataStorage {
 
     use core\DatabaseTrait;
 

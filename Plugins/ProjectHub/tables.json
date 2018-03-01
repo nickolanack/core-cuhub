@@ -155,7 +155,7 @@
 		"name": "uid",
 		"type": "int",
 		"comment": "user id"
-	},{
+	}, {
 		"name": "itemType",
 		"type": "label",
 		"comment": "used with itemId to define a datatype"
@@ -254,7 +254,7 @@
 		"name": "published",
 		"type": "boolean",
 		"comment": ""
-	},{
+	}, {
 		"name": "publishedDate",
 		"type": "date",
 		"comment": "can only be published once"

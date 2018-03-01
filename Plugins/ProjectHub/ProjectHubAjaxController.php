@@ -17,8 +17,8 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
         $userCanSubscribe = !Core::Client()->isGuest();
         if ($userCanSubscribe) {
             $response['subscription'] = array(
-                'channel' => 'eventfeed.'.Core::Client()->getUserId(),
-                'event' => 'update',
+                'eventfeed.'.Core::Client()->getUserId()=>'update',
+                'eventlist'=>'update',
             );
         }
 
@@ -81,6 +81,8 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
             );
         }
 
+
+
         return $response;
 
     }
@@ -96,6 +98,11 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
                 'name'=>$json->name,
                 'description'=>$json->description,
                 'modifiedDate'=>date('Y-m-d H:i:s')
+            ));
+
+            Broadcast('eventlist', 'update', array(
+                'event'=>'updated',
+                'item'=>$this->getPlugin()->getFeedItemRecord($json->id, "project")
             ));
 
            return array('id'=>$json->id);
@@ -118,6 +125,12 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 
             ));
 
+
+            Broadcast('eventlist', 'update', array(
+                'event'=>'created',
+                'item'=>$this->getPlugin()->getFeedItemRecord($id, "project")
+            ));
+
            return array_merge(array('id'=>$id));
 
 
@@ -136,27 +149,43 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
                 'modifiedDate'=>date('Y-m-d H:i:s')
             ));
 
+
+            Broadcast('eventlist', 'update', array(
+                'event'=>'updated',
+                'item'=>$this->getPlugin()->getFeedItemRecord($json->id, "connection")
+            ));
+
            return array('id'=>$json->id);
 
         }
 
 
+      
+
 
             $id=$this->getPlugin()->getDatabase()->createConnection($fields=array(
 
-                'itemTypeA'=>$json->itemTypeA,
-                'itemIdA'=>$json->itemA,
+                'itemTypeA'=>$json->itemType,
+                'itemIdA'=>$json->itemId,
 
                 'itemTypeB'=>$json->itemTypeB,
-                'itemIdB'=>$json->itemB,
+                'itemIdB'=>$json->itemIdB,
 
 
                 'metadata'=>json_encode((object)array()),
                 'createdDate'=>$now=date('Y-m-d H:i:s'),
                 'modifiedDate'=>$now,
                 "readAccess"=>"public",
-                "writeAccess"=>"registered"
+                "writeAccess"=>"registered",
 
+                'name'=>$json->name,
+                'description'=>$json->description
+
+            ));
+
+            Broadcast('eventlist', 'update', array(
+                'event'=>'created',
+                'item'=>$this->getPlugin()->getFeedItemRecord($id, "connection")
             ));
 
            return array_merge(array('id'=>$id));
@@ -175,6 +204,11 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
                 'name'=>$json->name,
                 'description'=>$json->description,
                 'modifiedDate'=>date('Y-m-d H:i:s')
+            ));
+
+            Broadcast('eventlist', 'update', array(
+                'event'=>'updated',
+                'item'=>$this->getPlugin()->getFeedItemRecord($json->id, "event")
             ));
 
            return array('id'=>$json->id);
@@ -199,6 +233,11 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 
             ));
 
+            Broadcast('eventlist', 'update', array(
+                'event'=>'created',
+                'item'=>$this->getPlugin()->getFeedItemRecord($id, "event")
+            ));
+
            return array_merge(array('id'=>$id));
 
 
@@ -214,6 +253,11 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
                 'name'=>$json->name,
                 'description'=>$json->description,
                 'modifiedDate'=>date('Y-m-d H:i:s')
+            ));
+
+            Broadcast('eventlist', 'update', array(
+                'event'=>'updated',
+                'item'=>$this->getPlugin()->getFeedItemRecord($json->id, "request")
             ));
 
            return array('id'=>$json->id);
@@ -236,6 +280,11 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
                 "readAccess"=>"public",
                 "writeAccess"=>"registered"
 
+            ));
+
+            Broadcast('eventlist', 'update', array(
+                'event'=>'created',
+                'item'=>$this->getPlugin()->getFeedItemRecord($id, "request")
             ));
 
            return array_merge(array('id'=>$id));
@@ -267,6 +316,13 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 
             $this->getPlugin()->getDatabase()->updateProfile($fields);
 
+
+            Broadcast('eventlist', 'update', array(
+                'event'=>'updated',
+                'item'=>$this->getPlugin()->getFeedItemRecord($json->id, "profile")
+            ));
+
+
            return array('id'=>$json->id);
 
         }
@@ -291,6 +347,11 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 
             ));
 
+            Broadcast('eventlist', 'update', array(
+                'event'=>'created',
+                'item'=>$this->getPlugin()->getFeedItemRecord($id, "profile")
+            ));
+
            return array_merge(array('id'=>$id));
 
 
@@ -300,27 +361,86 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 
     protected function deleteProject($json){
 
-        return $this->getPlugin()->getDatabase()->deleteProject($json->id);
+        $item=$this->getPlugin()->getFeedItemRecord($json->id, "project");
 
+        if($this->getPlugin()->getDatabase()->deleteProject($json->id)){
+
+            Broadcast('eventlist', 'update', array(
+                'event'=>'deleted',
+                'item'=>$item
+            ));
+            return true;
+
+        }
+
+        return false;
     }
     protected function deleteConnection($json){
 
-        return $this->getPlugin()->getDatabase()->deleteConnection($json->id);
+        $item=$this->getPlugin()->getFeedItemRecord($json->id, "connection");
+
+        if($this->getPlugin()->getDatabase()->deleteConnection($json->id)){
+
+            Broadcast('eventlist', 'update', array(
+                'event'=>'deleted',
+                'item'=>$item
+            ));
+            return true;
+
+        }
+
+        return false;
         
     }
     protected function deleteRequest($json){
 
-        return $this->getPlugin()->getDatabase()->deleteRequest($json->id);
+        $item=$this->getPlugin()->getFeedItemRecord($json->id, "request");
+
+        if($this->getPlugin()->getDatabase()->deleteRequest($json->id)){
+
+            Broadcast('eventlist', 'update', array(
+                'event'=>'deleted',
+                'item'=>$item
+            ));
+            return true;
+
+        }
+
+        return false;
         
     }
     protected function deleteEvent($json){
 
-        return $this->getPlugin()->getDatabase()->deleteEvent($json->id);
+         $item=$this->getPlugin()->getFeedItemRecord($json->id, "event");
+
+        if($this->getPlugin()->getDatabase()->deleteEvent($json->id)){
+
+            Broadcast('eventlist', 'update', array(
+                'event'=>'deleted',
+                'item'=>$item
+            ));
+            return true;
+
+        }
+
+        return false;
         
     }
     protected function deleteProfile($json){
 
-        return $this->getPlugin()->getDatabase()->deleteProfile($json->id);
+         $item=$this->getPlugin()->getFeedItemRecord($json->id, "profile");
+
+        if($this->getPlugin()->getDatabase()->deleteProfile($json->id)){
+
+            Broadcast('eventlist', 'update', array(
+                'event'=>'deleted',
+                'item'=>$item
+            ));
+            return true;
+
+        }
+
+        return false;
         
     }
 
@@ -365,7 +485,7 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 
     protected function unarchiveItem($json){
 
-        $id=$this->getPlugin()->getDatabase()->deleteUArchiveItem(
+        $id=$this->getPlugin()->getDatabase()->deleteUserArchiveItem(
             GetClient()->getUserId(),
             $json->itemType,
             $json->itemId

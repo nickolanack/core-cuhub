@@ -4,11 +4,13 @@
  * TODO: rename this plugin to MobileDevicePlugin
  */
 
-class ProjectHubPlugin extends Plugin implements
-
-core\AjaxControllerProvider, core\DatabaseProvider, core\ViewController {
+class ProjectHubPlugin extends Plugin implements 
+	core\AjaxControllerProvider, core\DatabaseProvider, core\ViewController, core\PluginDataTypeProvider {
+		
 	use core\AjaxControllerProviderTrait;
 	use core\DatabaseProviderTrait;
+	use core\PluginDataTypeProviderTrait;
+
 	protected $name = 'Project Hub Plugin';
 	protected $description = 'Provides project and connection management';
 
@@ -39,6 +41,8 @@ core\AjaxControllerProvider, core\DatabaseProvider, core\ViewController {
 	}
 	public function listFeedItems() {
 
+		GetPlugin('Attributes');
+
 		$projects = $this->getDatabase()->getProjects(array('ORDER BY' => 'createdDate DESC'));
 		$events = $this->getDatabase()->getEvents(array('ORDER BY' => 'createdDate DESC'));
 		$connections = $this->getDatabase()->getConnections(array('ORDER BY' => 'createdDate DESC'));
@@ -48,38 +52,32 @@ core\AjaxControllerProvider, core\DatabaseProvider, core\ViewController {
 		return array_merge(
 			array_map(function ($record) {
 
-				$record = get_object_vars($record);
-				$record["type"] = "ProjectHub.project";
-
-				return array_merge($record, $this->_getPinsForRecord($record), $this->_getArchivedForRecord($record));
+				return $this->_feedItem($record ,"project");
 
 			}, $projects),
 			array_map(function ($record) {
 
-				$record = get_object_vars($record);
-				$record["type"] = "ProjectHub.event";
-				return array_merge($record, $this->_getPinsForRecord($record), $this->_getArchivedForRecord($record));
+				return $this->_feedItem($record ,"event");
 
 			}, $events),
 			array_map(function ($record) {
 
-				$record = get_object_vars($record);
-				$record["type"] = "ProjectHub.connection";
-				return array_merge($record, $this->_getPinsForRecord($record), $this->_getArchivedForRecord($record));
+				return $this->_feedItem($record ,"connection");
+
 
 			}, $connections),
 			array_map(function ($record) {
 
-				$record = get_object_vars($record);
-				$record["type"] = "ProjectHub.request";
-				return array_merge($record, $this->_getPinsForRecord($record), $this->_getArchivedForRecord($record));
+				return $this->_feedItem($record ,"request");
 
 			}, $requests),
+
 			array_map(function ($record) {
 
-				$record = get_object_vars($record);
-				$record["type"] = "ProjectHub.profile";
-				return array_merge($record, $this->_getPinsForRecord($record), $this->_getArchivedForRecord($record));
+				
+				$profile = $this->_feedItem($record ,"profile");
+				$profile["attributes"]=(new attributes\Record('profileAttributes'))->getValues($profile['id'], $profile["type"]);
+				return $profile;
 
 			}, $profiles) //,
 			//json_decode(file_get_contents(__DIR__.'/sampleFeed.json'),true)
@@ -89,7 +87,43 @@ core\AjaxControllerProvider, core\DatabaseProvider, core\ViewController {
 
 	}
 
+	public function getFeedTypes(){
+
+		return array('project','event','connection','request','profile');
+
+	}
+
+	public function _feedItem($record ,$type){
+
+		if(!in_array($type, $this->getFeedTypes())){
+			throw new Exception('Invalid type: '.$type);
+		}
+
+		$record = get_object_vars($record);
+		$record["type"] = "ProjectHub.".$type;
+		return array_merge($record, $this->_getPinsForRecord($record), $this->_getArchivedForRecord($record), $this->_getAttributesForRecord($record));
+
+	}	
+
+	public function getFeedItemRecord($id, $type){
+		if(!in_array($type, $this->getFeedTypes())){
+			throw new Exception('Invalid type: '.$type);
+		}
+
+		$method='get'.ucfirst($type);
+		if($records=$this->getDatabase()->$method($id)){
+			return $this->_feedItem($records[0], $type);
+		}
+
+		throw new Exception('Invalid item: '.$id.' '.$type);
+
+
+	}
+
 	private function _getPinsForRecord($record){
+
+		$result=array('pinned'=>false);
+
 		$pins=$this->getDatabase()->getWatchs(array(
 			"uid"=>GetClient()->getUserId(),
 			"itemType"=>$record["type"],
@@ -97,11 +131,22 @@ core\AjaxControllerProvider, core\DatabaseProvider, core\ViewController {
 			"watchType"=>"pin"
 		));
 		if($pins){
-			return array("pinned"=>true);
+			$result["pinned"]=true;
 		}
-		return array("pinned"=>false);
+
+		$result['numberofpins']=$this->getDatabase()->countWatchs(array(
+			"itemType"=>$record["type"],
+			"itemId"=>$record['id'],
+			"watchType"=>"pin"
+		));
+
+
+		return $result;
 	}
 	private function _getArchivedForRecord($record){
+
+		$result=array("archived"=>false);
+
 		$archived=$this->getDatabase()->getIgnores(array(
 			"uid"=>GetClient()->getUserId(),
 			"itemType"=>$record["type"],
@@ -109,9 +154,25 @@ core\AjaxControllerProvider, core\DatabaseProvider, core\ViewController {
 			"ignoreType"=>"archive"
 		));
 		if($archived){
-			return array("archived"=>true);
+			$result["archived"]=true;
 		}
-		return array("archived"=>false);
+
+		$result['numberofarchives']=$this->getDatabase()->countIgnores(array(
+			"itemType"=>$record["type"],
+			"itemId"=>$record['id'],
+			"ignoreType"=>"archive"
+		));
+
+		return $result;
+	}
+
+	private function _getAttributesForRecord($record){
+
+		
+		GetPlugin('Attributes');
+
+		return array('attributes'=>(new attributes\Record('eventAttributes'))->getValues($record['id'], $record["type"]));
+
 	}
 
 
@@ -156,6 +217,11 @@ core\AjaxControllerProvider, core\DatabaseProvider, core\ViewController {
 
 		$profile["type"] = "ProjectHub.profile";
 		$profile["published"] = boolval($profile["published"]);
+
+
+		GetPlugin('Attributes');
+		$profile["attributes"]=(new attributes\Record('profileAttributes'))->getValues($profile['id'], $profile["type"]);
+
 		return $profile;
 		
 
