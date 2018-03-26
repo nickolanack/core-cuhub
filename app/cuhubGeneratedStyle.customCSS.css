@@ -143,6 +143,12 @@ span.ui-navigation-menu ul.menu-main li {
                 background-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ', 1)', $ui->getParameter('color-for-'.$type)));?>;
     }
     
+    
+    .ui-view.<?php echo $type; ?>-feed-item .ui-post-view {
+  
+        background-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ',0.1)', $ui->getParameter('color-for-'.$type)));?>;
+    }
+    
     <?php
 }?>
 
