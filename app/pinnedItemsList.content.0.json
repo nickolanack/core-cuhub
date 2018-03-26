@@ -5,17 +5,22 @@
         "className": "feed-item pinned-item",
         "viewType": "view",
         "namedView": "feedItemDetail",
+        "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
+        "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "return item",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
         "getItemListScript": " \n if(AppClient.getUserType()==\"guest\"){\n     return [];\n }\n EventList.SharedInstance(function(el){\n    callback(el.getPinnedEvents());\n     \n    listModule.addWeakEvent(el, \"pinnedItem\", function(item){\n        listModule.addItem(item);\n    });\n     \n })",
         "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "childView.getElement().addClass((child.getType().split('.').pop())+'-feed-item');\nchildView.getElement().addClass('feed-item-'+child.getId());\nchildView.getElement().addEvent('click',function(){\n    var me=this;\n    if(me.hasClass('active')){\n        me.removeClass('active');\n    }else{\n        me.addClass('active');\n    }\n});\n\nchildView.addWeakEvent(child, \"archive\", function(){\n    childView.remove();\n});\n\nchildView.addWeakEvent(child, \"unpin\", function(){\n    childView.remove();\n});\n\nchildView.addWeakEvent(child, \"remove\", function(){\n    childView.remove();\n});",
-        "formatModuleScript": "",
-        "itemButtonsScript": "return [];",
+        "formatListItemModuleScript": "childView.getElement().addClass((child.getType().split('.').pop())+'-feed-item');\nchildView.getElement().addClass('feed-item-'+child.getId());\n\nchildView.addWeakEvent(child, \"activate\", function(){\n   me.addClass('active');\n});\n\nchildView.addWeakEvent(child, \"deactivate\", function(){\n   me.removeClass('active');\n});\n\nchildView.addWeakEvent(child, \"archive\", function(){\n    childView.remove();\n});\n\nchildView.addWeakEvent(child, \"unpin\", function(){\n    childView.remove();\n});\n\nchildView.addWeakEvent(child, \"remove\", function(){\n    childView.remove();\n});",
         "emptyNamedView": "emptyPinnedListView",
-        "namedViewScript": "return namedView",
-        "filterModulesScript": "return list"
+        "filterItemsScript": "return true;",
+        "sortItemsScript": ""
     }
 }
