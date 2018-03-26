@@ -2595,9 +2595,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "",
-            "target": "none",
-            "templateName": "{target}",
+            "widgetTitle": "defaultPostDetail",
+            "target": "defaultPostDetail",
+            "templateName": "defaultPostDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
             "metadata": {
@@ -2607,7 +2607,7 @@
                     },
                     "content": {
                         "modules": [
-                            "widget.DetailView.47.metadata.positions.content.modules.0.json"
+                            "defaultPostDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
