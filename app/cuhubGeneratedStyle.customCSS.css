@@ -52,6 +52,24 @@
             }
             <?php
         }
+        
+        
+        
+        
+        
+        
+        
+        $discussionImage=$ui->getParameter('icon-for-discussion', array());
+        if(!empty($discussionImage)){
+          
+            $discussionImage=$discussionImage[0];
+            ?>
+
+            .count-posts.has-posts .field-value {
+                background-image: url("<?php echo UrlFrom($discussionImage); ?>?tint=rgb(200,200,200)");
+            }
+            <?php
+        }
 
 ?>
 
@@ -141,6 +159,12 @@ span.ui-navigation-menu ul.menu-main li {
         
     .calendar span.events .event-data.calendar-item-<?php echo $type; ?>{
                 background-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ', 1)', $ui->getParameter('color-for-'.$type)));?>;
+    }
+    
+    
+    .ui-view.<?php echo $type; ?>-feed-item .ui-post-view {
+  
+        background-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ',0.1)', $ui->getParameter('color-for-'.$type)));?>;
     }
     
     <?php
