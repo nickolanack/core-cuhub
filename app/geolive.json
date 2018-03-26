@@ -678,9 +678,9 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return \"Comments\";",
-                                    "fieldValueScript": "feedItemDetail.metadata.positions.content.modules.2.config.fieldValueScript.js",
-                                    "formatElementScript": "el.addClass('feed-item-label')"
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             },
                             {
