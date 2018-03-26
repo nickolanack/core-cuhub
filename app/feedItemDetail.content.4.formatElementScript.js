@@ -1,1 +1,0 @@
-el.addClass('feed-item-short-desc')

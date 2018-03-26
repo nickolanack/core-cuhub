@@ -5,22 +5,17 @@
         "className": "feed-item archived-item",
         "viewType": "view",
         "namedView": "feedItemDetail",
-        "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
-        "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
-        "formatModuleScript": "",
-        "resolveItemScript": "return item",
-        "filterModulesScript": "return list",
-        "itemButtonsScript": "return [];",
-        "insertAtTop": false,
         "getItemListScript": " EventList.SharedInstance(function(el){\n     callback(el.getArchivedEvents());\n     \n     listModule.addWeakEvent(el, \"archivedItem\", function(item){\n         listModule.addItem(item);\n     });\n });",
         "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "childView.getElement().addClass((child.getType().split('.').pop())+'-feed-item');\nchildView.getElement().addClass('feed-item-'+child.getId());\n\n\nchildView.addWeakEvent(child, \"activate\", function(){\n   childView.getElement().addClass('active');\n});\n\nchildView.addWeakEvent(child, \"deactivate\", function(){\n   childView.getElement().removeClass('active');\n});\n\n\nchildView.getElement().addClass('expandable');\nchildView.getElement().setAttribute('data-published-date', child.getDateFromNow());\n\n\nchildView.addWeakEvent(child, \"unarchive\", function(){\n    childView.remove();\n});\nchildView.addWeakEvent(child, \"pin\", function(){\n    childView.remove();\n});\n\nchildView.addWeakEvent(child, \"remove\", function(){\n    childView.remove();\n});",
+        "formatListItemModuleScript": "childView.getElement().addClass((child.getType().split('.').pop())+'-feed-item');\nchildView.getElement().addClass('feed-item-'+child.getId());\nchildView.getElement().addEvent('click',function(e){\n    \n    var me=this;\n   \n    if(me.hasClass('active')){\n        me.removeClass('active');\n    }else{\n        me.addClass('active');\n    }\n});\nchildView.getElement().addClass('expandable');\nchildView.getElement().setAttribute('data-published-date', child.getDateFromNow());\n\n\nchildView.addWeakEvent(child, \"unarchive\", function(){\n    childView.remove();\n});\nchildView.addWeakEvent(child, \"pin\", function(){\n    childView.remove();\n});\n\nchildView.addWeakEvent(child, \"remove\", function(){\n    childView.remove();\n});",
+        "formatModuleScript": "",
+        "itemButtonsScript": "return [];",
         "emptyNamedView": "emptyListView",
-        "filterItemsScript": "return true;",
-        "sortItemsScript": ""
+        "namedViewScript": "return namedView",
+        "filterModulesScript": "return list"
     }
 }

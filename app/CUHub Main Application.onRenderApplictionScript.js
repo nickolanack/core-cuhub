@@ -38,5 +38,3 @@ GetWidget('requestForm')->display($targetInstance);
 
 GetWidget('profileForm')->display($targetInstance);
 GetWidget('dialogForm')->display($targetInstance);
-
-GetWidget('defaultPostDetail')->display($targetInstance);

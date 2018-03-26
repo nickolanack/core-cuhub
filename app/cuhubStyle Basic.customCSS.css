@@ -221,10 +221,6 @@ span.ui-navigation-menu ul>label {
     min-height: 30px;
 }
 
-.ui-view.pinned-item.active, .ui-view.archived-item.active {
-    height: auto;
-}
-
 .ui-view.pinned-item .feed-item-icon, .ui-view.archived-item .feed-item-icon{
     height: 19px;
     width: 19px;
@@ -370,7 +366,7 @@ span.ui-navigation-menu ul>label {
     display: inline-block;
 }
 
-.btn-tag, .form-btn, .WizardButton, .t-btn{
+.btn-tag, .form-btn, .WizardButton{
     border: 1px solid rgba(0,0,0,0.3);
     border-radius: 2px;
     margin: 2px;
@@ -423,21 +419,14 @@ span.ui-navigation-menu ul>label {
 
 .active.feed-item .ui-view.feed-item-expanded-detail {
     background-color: rgba(0,0,0,0.1);
-    min-height: 300px;
+    height: 300px;
     position: relative;
     transition: height 0.5s, opacity 0.5s;
     opacity: 1.0;
     overflow: visible;
 }
 
-.ui-view.feed-item-expanded-detail {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-}
+
 
 
 .ui-view.feed-item-expanded-detail {
@@ -634,18 +623,10 @@ span.item-connection-to:before {
 span.item-author:before {
     content: " created by";
 }
-span.item-author, span.date-from-now, span.item-connection-to:before, span.event-date-from-now, .ui-post-view .date-from-now{
+span.item-author, span.date-from-now, span.item-connection-to:before, span.event-date-from-now {
     color: slategrey;
     font-style: italic;
     font-size: 13px;
-}
-
-.ui-post-view .date-from-now {
-    text-align: right;
-}
-
-.ui-post-view .date-from-now .field-label {
-    margin-right: 5px;
 }
 
 span.event-date-from-now {
@@ -883,63 +864,3 @@ body.dragover .add-photo .empty.droppable:after, .add-photo .empty.droppable:aft
     text-align: center;
     display: inline-block;
 }
-
-
-
-.discussion .posts.empty:after {
-    line-height: 100px;
-}
-
-.discussion .posts.empty {
-    min-height: 100px;
-}
-
-.ui-post-view {
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.1);
-    margin: 2px;
-    border-radius: 3px;
-}
-
-
-input.discussion-textbox {
-    height: 30px;
-    line-height: 10px;
-    padding: 5px 15px;
-    font-size: 14px;
-    font-weight: 100;
-    border-radius: 3px;
-    border: 1px solid rgba(0,0,0,0.3);
-    width: calc(100% - 150px);
-    box-shadow: 0 0 3px rgba(0,0,0,0.2) inset;
-}
-
-.discussion>.toolbar-icons {
-    top: calc( 100% - 51px );
-}
-
-.discussion>.toolbar-icons button {
-    vertical-align: top;
-    height: 42px;
-    margin: 0 3px;
-    padding: 0 14px;
-}
-
-
-.count-posts .field-value {
- 
-    width: 20px;
-    display: inline-block;
-    text-align: center;
-    text-indent: 0;
-    height: 16px;
-    vertical-align: middle;
-    line-height: 16px;
-    font-size: 11px;
-    border-radius: 10px;
-    background-size: 100% auto;
-    background-position: center;
-  
-}
-
-

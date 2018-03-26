@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        "id": "1",
         "name": "profileAttributes",
         "description": "",
         "label": "",
@@ -11,13 +11,13 @@
             "appliesTo": [
                 "profile"
             ],
-            "id": 1,
+            "id": "1",
             "suffix": "_2608",
             "description": "",
             "fields": [
                 {
                     "visibility": "public",
-                    "tableId": 1,
+                    "tableId": "1",
                     "tableName": "profileAttributes",
                     "tableSuffix": "_2608",
                     "title": "profileIcon",
@@ -49,7 +49,7 @@
                 },
                 {
                     "visibility": "public",
-                    "tableId": 1,
+                    "tableId": "1",
                     "tableName": "profileAttributes",
                     "tableSuffix": "_2608",
                     "title": "email",
@@ -83,9 +83,9 @@
         }
     },
     {
-        "id": 2,
+        "id": "2",
         "name": "eventAttributes",
-        "description": "",
+        "description": null,
         "label": "",
         "suffix": "_3357",
         "metadata": {
@@ -94,13 +94,13 @@
             "appliesTo": [
                 "event"
             ],
-            "id": 2,
+            "id": "2",
             "suffix": "_3357",
-            "description": "",
+            "description": null,
             "fields": [
                 {
                     "visibility": "public",
-                    "tableId": 2,
+                    "tableId": "2",
                     "tableName": "eventAttributes",
                     "tableSuffix": "_3357",
                     "title": "eventIcon",
@@ -132,7 +132,7 @@
                 },
                 {
                     "visibility": "public",
-                    "tableId": 2,
+                    "tableId": "2",
                     "tableName": "eventAttributes",
                     "tableSuffix": "_3357",
                     "title": "tags",
@@ -164,7 +164,7 @@
                 },
                 {
                     "visibility": "public",
-                    "tableId": 2,
+                    "tableId": "2",
                     "tableName": "eventAttributes",
                     "tableSuffix": "_3357",
                     "title": "eventDate",
@@ -196,7 +196,7 @@
                 },
                 {
                     "visibility": "public",
-                    "tableId": 2,
+                    "tableId": "2",
                     "tableName": "eventAttributes",
                     "tableSuffix": "_3357",
                     "title": "eventTime",
@@ -228,7 +228,7 @@
                 },
                 {
                     "visibility": "public",
-                    "tableId": 2,
+                    "tableId": "2",
                     "tableName": "eventAttributes",
                     "tableSuffix": "_3357",
                     "title": "startDate",
@@ -260,7 +260,7 @@
                 },
                 {
                     "visibility": "public",
-                    "tableId": 2,
+                    "tableId": "2",
                     "tableName": "eventAttributes",
                     "tableSuffix": "_3357",
                     "title": "endDate",
