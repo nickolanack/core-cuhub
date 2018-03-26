@@ -704,7 +704,7 @@
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
-                                    "formatModuleScript": "",
+                                    "formatModuleScript": "feedItemDetail.metadata.positions.content.modules.4.config.formatModuleScript.js",
                                     "resolveItemScript": "",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
