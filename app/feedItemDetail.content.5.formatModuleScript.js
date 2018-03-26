@@ -7,6 +7,6 @@ module.getElement().addEvent('click', function(e){
 });
 
 
-module.addWeakEventListener(item, 'deactivate', function(){
+module.addWeakEvent(item, 'deactivate', function(){
     module.empty();
 });
