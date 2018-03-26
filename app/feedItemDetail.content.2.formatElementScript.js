@@ -9,6 +9,7 @@ el.addClass('feed-item-label count-posts loading');
 		                    var posts=resp.metadata.posts;
 		                    el.removeClass('loading');
 		                    if(posts>0){
+		                         el.addClass('has-posts');
 		                         valueEl.innerHTML=resp.metadata.posts;
 		                    }else{
 		                        valueEl.innerHTML=""
