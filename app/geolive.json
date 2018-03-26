@@ -1338,6 +1338,15 @@
                     "limit": 1
                 },
                 {
+                    "type": "images",
+                    "name": "icon-for-discussion",
+                    "default": [],
+                    "label": "icon-for-discussion",
+                    "maxHeight": 64,
+                    "maxWidth": 64,
+                    "limit": 1
+                },
+                {
                     "type": "text",
                     "name": "label-for-events",
                     "label": "label-for-events",
@@ -1494,7 +1503,8 @@
             "icon-for-feed-myprofile": [
                 "components\/com_geolive\/users_files\/user_files_528\/Uploads\/f7_[ImAgE]_tO1_OlO_[G].png"
             ],
-            "site-title": "CUHub"
+            "site-title": "CUHub",
+            "icon-for-discussion": []
         }
     },
     "widget.25": {
