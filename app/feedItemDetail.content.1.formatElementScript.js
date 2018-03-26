@@ -6,7 +6,17 @@ if(item instanceof MyProfileItem&&AppClient.getUserType()=="guest"){
     return;
 }
 
-
+if(item.getType()==="ProjectHub.event"){
+    
+    if(item.hasEventDate()){
+       
+         valueEl.appendChild(new Element('span',{
+        "class":"event-date-from-now",
+        html:' '+item.getEventDateFromNow()}));      
+      
+    }
+    
+}
 
 if(item instanceof ConnectionItem){
     

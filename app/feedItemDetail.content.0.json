@@ -1,7 +1,7 @@
 {
     "type": "WizardScriptElement",
     "config": {
-        "script": "var icon= new ElementModule('div',{\"class\":\"feed-item-icon\"});\n\nif(item.hasIcon()){\n    icon.getElement().addClass('user-icon');\n    icon.getElement().setStyle(\"background-image\",\"url('\"+item.getIcon()+\"')\");\n}\n\nif(item instanceof ConnectionItem&&item.isConnected()){\n    var connectedTo=item.getConnectionTo();\n    if(connectedTo.hasIcon()){\n        icon.getElement().addClass('user-icon connection-icon');\n        icon.getElement().setStyle(\"background-image\",\"url('\"+connectedTo.getIcon()+\"')\");\n        \n        icon.getElement().appendChild(new Element('div',{\"class\":\"feed-item-icon\"}))\n    }\n}\n\n\n\n\n\n\nreturn icon;",
+        "script": "var icon= new ElementModule('div',{\"class\":\"feed-item-icon\"});\n\nif(item.hasIcon()){\n    icon.getElement().addClass('user-icon');\n    icon.getElement().setStyle(\"background-image\",\"url('\"+item.getIcon()+\"')\");\n}\n\nif(item instanceof ConnectionItem&&item.isConnected()){\n    var connectedTo=item.getConnectionTo();\n    if(connectedTo.hasIcon()){\n        icon.getElement().addClass('user-icon connection-icon');\n        icon.getElement().setStyle(\"background-image\",\"url('\"+connectedTo.getIcon()+\"')\");\n        \n        icon.getElement().appendChild(new Element('div',{\"class\":\"feed-item-icon\"}))\n    }\n}\n\nif(item.getType()===\"ProjectHub.event\"&&item.hasEventDate()){\n    icon.getElement().setAttribute('data-event-day', item.getEventDay());\n}\n\n\n\n\n\nreturn icon;",
         "identifier": "customScriptElement"
     }
 }

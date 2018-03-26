@@ -1,9 +1,6 @@
 {
-    "type": "images",
-    "name": "icon-logo",
-    "default": [],
-    "label": "icon-logo",
-    "maxHeight": 64,
-    "maxWidth": 64,
-    "limit": 1
+    "type": "text",
+    "name": "site-title",
+    "label": "site-title",
+    "default": "CUHub Portal"
 }
