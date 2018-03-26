@@ -5,6 +5,6 @@
 		                'channel':'default'
 		                })).addEvent('success',function(resp){
 		                    
-		                    callback(resp.metadata.post);
+		                    callback(resp.metadata.posts);
 		                    
 		                }).execute();
