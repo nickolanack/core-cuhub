@@ -1,7 +1,7 @@
-(new AjaxControlQuery(CoreAjaxUrlRoot, 'count_posts', {
+(new AjaxControlQuery(CoreAjaxUrlRoot, 'discussion_metadata', {
 		                'plugin': "Discussions",
 		                'itemType':item.getType(),
-		                'itemId':item.getId(),
+		                'item':item.getId(),
 		                'channel':'default'
 		                })).addEvent('success',function(r){
 		                    
