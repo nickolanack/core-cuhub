@@ -170,6 +170,11 @@
             "formatMapitemScript": ""
         }
     },
+    "plugin.22": {
+        "name": "Discussion Feed",
+        "instance": "Discussions",
+        "parameters": {}
+    },
     "widget.1": {
         "name": "Detail View",
         "instance": "DetailView",
