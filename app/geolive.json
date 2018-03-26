@@ -2614,7 +2614,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Created\";",
                                     "fieldValueScript": "defaultPostDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
-                                    "formatElementScript": ""
+                                    "formatElementScript": "el.addClass('date-from-now');"
                                 }
                             }
                         ]
