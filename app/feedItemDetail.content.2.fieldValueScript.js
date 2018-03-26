@@ -3,7 +3,8 @@
 		                'itemType':item.getType(),
 		                'item':item.getId(),
 		                'channel':'default'
-		                })).addEvent('success',function(r){
+		                })).addEvent('success',function(resp){
 		                    
-		                    callback(r.count);
+		                    callback(resp.metadata.post);
+		                    
 		                }).execute();
