@@ -217,7 +217,12 @@ span.ui-navigation-menu ul>label {
 
 
 .ui-view.pinned-item, .ui-view.archived-item {
+    height: 30px;
     min-height: 30px;
+}
+
+.ui-view.pinned-item.active, .ui-view.archived-item.active {
+    height: auto;
 }
 
 .ui-view.pinned-item .feed-item-icon, .ui-view.archived-item .feed-item-icon{
