@@ -20,6 +20,7 @@
         "formatItemListScript": "return list;",
         "formatListItemModuleScript": "childView.getElement().addClass((child.getType().split('.').pop())+'-feed-item');\nchildView.getElement().addClass('feed-item-'+child.getId());",
         "emptyNamedView": "emptyListView",
-        "filterItemsScript": "return true;"
+        "filterItemsScript": "return true;",
+        "sortItemsScript": ""
     }
 }

@@ -1,10 +1,53 @@
 {
-    "type": "WizardTitleField",
+    "type": "plugin.Attributes.WizardDescriptionAttribute",
     "config": {
-        "label": "Title",
-        "message": "add a title",
-        "className": "",
+        "attributeFields": [
+            {
+                "visibility": "public",
+                "tableId": 1,
+                "tableName": "profileAttributes",
+                "tableSuffix": "_1792",
+                "title": "profileIcon",
+                "label": "profileIcon",
+                "description": "",
+                "fieldType": "text",
+                "color": "rgb(undefined, undefined, undefined)",
+                "searchability": "public",
+                "editability": "registered",
+                "fieldTextOptions": {
+                    "textType": "input",
+                    "inputOptions": {
+                        "buildAutocomplete": false,
+                        "requireModeration": false,
+                        "limitMaxChars": 0,
+                        "limitMaxWords": 0,
+                        "allowHtml": false,
+                        "allowMedia": true,
+                        "allowLinks": true
+                    },
+                    "listOptions": {
+                        "takeSugesstions": true,
+                        "buildTree": false,
+                        "iconize": false,
+                        "colorize": false
+                    }
+                },
+                "allowMultiple": false
+            }
+        ],
+        "label": "{field.label}",
+        "message": "add a description",
+        "lines": 3,
+        "mandatory": false,
+        "showAudios": false,
+        "showImages": true,
+        "showDocuments": false,
+        "showVideos": false,
+        "className": "add-photo",
         "maxChars": 0,
-        "textFormatScript": ""
+        "showExpandInput": false,
+        "toolbarPosition": "bottom",
+        "textFormatScript": "",
+        "onRenderModuleFn": ""
     }
 }

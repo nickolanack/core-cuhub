@@ -1,7 +1,7 @@
 {
     "type": "WizardScriptElement",
     "config": {
-        "script": "return new ElementModule('h1',{'class':\"site-logo\",\"html\":\"CUhub<span> Portal<\/span>\"});",
+        "script": "return new ElementModule('h1',{'class':\"site-logo\",\"html\":<?php echo json_encode(GetWidget('interfaceConfig')->getParameter('site-title'));?>});",
         "identifier": "customScriptElement"
     }
 }

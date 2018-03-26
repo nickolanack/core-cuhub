@@ -118,6 +118,13 @@ span.ui-navigation-menu ul li {
 
 
 
+span.ui-navigation-menu {
+    background-color: rgba(0,0,0,0.05);
+    text-align: right;
+}
+span.ui-navigation-menu .site {
+    margin-right: 10px;
+}
 
 span.ui-navigation-menu ul li button {
     margin: 5px;
@@ -616,13 +623,15 @@ span.item-connection-to:before {
 span.item-author:before {
     content: " created by";
 }
-span.item-author, span.date-from-now, span.item-connection-to:before {
+span.item-author, span.date-from-now, span.item-connection-to:before, span.event-date-from-now {
     color: slategrey;
     font-style: italic;
     font-size: 13px;
 }
 
-
+span.event-date-from-now {
+    color: #b03b3c;
+}
 
 .ui-view.myprofile-feed-item .btn-action{
     position:relative;
@@ -844,4 +853,14 @@ body.dragover .add-photo .empty.droppable:after, .add-photo .empty.droppable:aft
     background-color: rgba(0,0,0,0.5);
     margin:1px;
     border-radius:100%;
+}
+
+.event-feed-item .feed-item-icon:after {
+    content: attr(data-event-day);
+    position: absolute;
+    top: 16px;
+    left: 10px;
+    width: 20px;
+    text-align: center;
+    display: inline-block;
 }
