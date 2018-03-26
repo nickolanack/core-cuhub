@@ -366,7 +366,7 @@ span.ui-navigation-menu ul>label {
     display: inline-block;
 }
 
-.btn-tag, .form-btn, .WizardButton{
+.btn-tag, .form-btn, .WizardButton, .t-btn{
     border: 1px solid rgba(0,0,0,0.3);
     border-radius: 2px;
     margin: 2px;
