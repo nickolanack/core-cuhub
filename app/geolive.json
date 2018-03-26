@@ -948,7 +948,7 @@
                                 "type": "plugin.Discussions.Discussion",
                                 "config": {
                                     "width": 300,
-                                    "constrainHeight": true,
+                                    "constrainHeight": false,
                                     "height": 200,
                                     "inlineEditing": true,
                                     "inlineReply": true,
