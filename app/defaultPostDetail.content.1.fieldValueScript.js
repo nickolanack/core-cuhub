@@ -1,1 +1,1 @@
-return moment((new Date(item.getCreatedDate()).valueOf())+CoreServerDateOffset).dateFromNow();
+return moment((new Date(item.getCreatedDate()).valueOf())+CoreServerDateOffset).fromNow();
