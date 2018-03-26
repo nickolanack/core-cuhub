@@ -678,9 +678,9 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
+                                    "fieldLabelScript": "return \"Field Label Script\";",
+                                    "fieldValueScript": "return \"Field Value Script\";",
+                                    "formatElementScript": "el.addClass('feed-item-label')"
                                 }
                             },
                             {
@@ -688,8 +688,17 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "feedItemDetail.metadata.positions.content.modules.3.config.fieldValueScript.js",
+                                    "fieldValueScript": "return \"\";",
                                     "formatElementScript": "feedItemDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "feedItemDetail.metadata.positions.content.modules.4.config.fieldValueScript.js",
+                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -698,13 +707,13 @@
                                     "className": "feed-item-expanded-detail",
                                     "viewType": "view",
                                     "namedView": "feedItemExpandedDetail",
-                                    "namedViewScript": "feedItemDetail.metadata.positions.content.modules.4.config.namedViewScript.js",
+                                    "namedViewScript": "feedItemDetail.metadata.positions.content.modules.5.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
-                                    "formatModuleScript": "feedItemDetail.metadata.positions.content.modules.4.config.formatModuleScript.js",
+                                    "formatModuleScript": "feedItemDetail.metadata.positions.content.modules.5.config.formatModuleScript.js",
                                     "resolveItemScript": "",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
