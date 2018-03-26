@@ -52,6 +52,24 @@
             }
             <?php
         }
+        
+        
+        
+        
+        
+        
+        
+        $discussionImage=$ui->getParameter('icon-for-discussion', array());
+        if(!empty($discussionImage)){
+          
+            $discussionImage=$discussionImage[0];
+            ?>
+
+            .count-posts.has-posts .field-value {
+                background-image: url("<?php echo UrlFrom($discussionImage); ?>?tint=rgb(200,200,200)");
+            }
+            <?php
+        }
 
 ?>
 
