@@ -2607,7 +2607,16 @@
                     },
                     "content": {
                         "modules": [
-                            "defaultPostDetail.metadata.positions.content.modules.0.json"
+                            "defaultPostDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Created\";",
+                                    "fieldValueScript": "defaultPostDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
+                                    "formatElementScript": ""
+                                }
+                            }
                         ]
                     },
                     "footer": {
