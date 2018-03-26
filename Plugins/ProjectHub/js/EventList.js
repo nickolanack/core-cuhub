@@ -37,11 +37,14 @@ var EventList=(function(){
 
 			if(AppClient.getUserType()=="guest"){
 			    me._clientsProfile = new MyProfileItem();
+			}else{
+
+				(new ProfileQuery()).addEvent('success',function(response){
+					me._clientsProfile =new MyProfileItem(response.result);
+				}).execute();
+				
 			}
 
-			(new ProfileQuery()).addEvent('success',function(response){
-				me._clientsProfile =new MyProfileItem(response.result);
-			}).execute();
 
 
 			(new FeedListQuery()).addEvent('success',function(resp){

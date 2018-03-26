@@ -22,6 +22,39 @@ var EventItem=new Class({
 			"description":""
 		}, config);
 	},
+	isActive:function(){
+		return !!this._active;
+	},
+	deactivate:function(){
+		var me=this;
+		if(me._active){
+			me._active=false;
+			me.fireEvent('deactivate');
+
+			
+		}
+		return me;
+	},
+	activate:function(){
+		var me=this;
+		if(!me._active){
+			me._active=true;
+			me.fireEvent('activate');
+			EventItem.SetActiveItem(me);
+		}
+		return me;
+
+	},
+	toggleActive:function(){
+		var me=this;
+
+		if(me.isActive()){
+			return me.deactivate();
+		}
+
+		return me.activate();
+
+	},
 	hasDate:function(){
 		return !isNaN((new Date(this.config.publishedDate||this.config.createdDate)).valueOf())
 	},
@@ -718,6 +751,30 @@ EventItem.CreateActionButtons=function(item, application){
 	});
 
 };
+
+EventItem.SetActiveItem=function(item){
+
+	if(EventItem._activeItem&&item!==EventItem._activeItem){
+		EventItem.ClearActiveItem();
+	}
+
+	EventItem._activeItem=item;
+}
+EventItem.ClearActiveItem=function(){
+	if(EventItem._activeItem){
+		if(EventItem._activeItem.isActive()){
+			EventItem._activeItem.deactivate();
+		}
+		EventItem._activeItem=null;
+	}
+}
+
+EventItem.GetActiveItem=function(){
+	if(EventItem._activeItem){
+		return EventItem._activeItem;
+	}
+	return null;
+}
 
 EventItem.CreateTagFilterButtons=function(item, application){
 
