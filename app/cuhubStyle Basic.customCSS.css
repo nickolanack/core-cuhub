@@ -636,8 +636,12 @@ span.item-author, span.date-from-now, span.item-connection-to:before, span.event
     font-size: 13px;
 }
 
-.ui-post-view .date-from-now .field-label{
-       
+.ui-post-view .date-from-now {
+    text-align: right;
+}
+
+.ui-post-view .date-from-now .field-label {
+    margin-right: 5px;
 }
 
 span.event-date-from-now {
