@@ -871,3 +871,24 @@ body.dragover .add-photo .empty.droppable:after, .add-photo .empty.droppable:aft
     text-align: center;
     display: inline-block;
 }
+
+
+
+.discussion .posts.empty:after {
+    line-height: 100px;
+}
+
+.discussion .posts.empty {
+    min-height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
