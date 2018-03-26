@@ -678,8 +678,8 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return \"Field Label Script\";",
-                                    "fieldValueScript": "return \"Field Value Script\";",
+                                    "fieldLabelScript": "return \"Comments\";",
+                                    "fieldValueScript": "feedItemDetail.metadata.positions.content.modules.2.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('feed-item-label')"
                                 }
                             },
