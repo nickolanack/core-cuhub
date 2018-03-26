@@ -899,10 +899,19 @@ input.discussion-textbox {
     border-radius: 3px;
     border: 1px solid rgba(0,0,0,0.3);
     width: calc(100% - 150px);
-    box-shadow: 0 0 3px rgba(0,0,0,0.3) inset;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2) inset;
 }
 
+.discussion>.toolbar-icons {
+    top: calc( 100% - 51px );
+}
 
+.discussion>.toolbar-icons button {
+    vertical-align: top;
+    height: 42px;
+    margin: 0 3px;
+    padding: 0 14px;
+}
 
 
 
