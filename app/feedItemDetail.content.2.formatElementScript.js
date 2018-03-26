@@ -1,4 +1,4 @@
-el.addClass('feed-item-label count-posts')
+el.addClass('feed-item-label count-posts');
 
 (new AjaxControlQuery(CoreAjaxUrlRoot, 'discussion_metadata', {
 		                'plugin': "Discussions",
@@ -7,6 +7,6 @@ el.addClass('feed-item-label count-posts')
 		                'channel':'default'
 		                })).addEvent('success',function(resp){
 		                    
-		                    valueEl.innerHTML=resp.metadata.posts;
+		                    //valueEl.innerHTML=resp.metadata.posts;
 		                    
 		                }).execute();
