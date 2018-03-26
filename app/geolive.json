@@ -707,7 +707,7 @@
                                     "className": "feed-item-expanded-detail",
                                     "viewType": "view",
                                     "namedView": "feedItemExpandedDetail",
-                                    "shouldRender": true,
+                                    "shouldRender": false,
                                     "namedViewScript": "feedItemDetail.metadata.positions.content.modules.5.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
