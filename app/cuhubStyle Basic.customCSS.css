@@ -419,14 +419,21 @@ span.ui-navigation-menu ul>label {
 
 .active.feed-item .ui-view.feed-item-expanded-detail {
     background-color: rgba(0,0,0,0.1);
-    height: 300px;
+    min-height: 300px;
     position: relative;
     transition: height 0.5s, opacity 0.5s;
     opacity: 1.0;
     overflow: visible;
 }
 
-
+.ui-view.feed-item-expanded-detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
 
 
 .ui-view.feed-item-expanded-detail {
