@@ -217,7 +217,6 @@ span.ui-navigation-menu ul>label {
 
 
 .ui-view.pinned-item, .ui-view.archived-item {
-    height: 30px;
     min-height: 30px;
 }
 
