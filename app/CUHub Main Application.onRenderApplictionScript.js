@@ -44,4 +44,4 @@ GetWidget('defaultPostDetail')->display($targetInstance);
 
 GetWidget('mainPinnedDetail')->display($targetInstance);
 GetWidget('mainSingleDetail')->display($targetInstance);
-
+GetWidget('mainArchiveDetail')->display($targetInstance);
