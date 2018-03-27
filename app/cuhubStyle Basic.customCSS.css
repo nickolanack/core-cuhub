@@ -942,4 +942,7 @@ input.discussion-textbox {
   
 }
 
+.connection-feed-items-list .feed-item-expanded-detail{
+    display:none;
+}
 

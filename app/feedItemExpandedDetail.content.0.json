@@ -4,6 +4,7 @@
         "className": "",
         "viewType": "view",
         "namedView": "feedItemActionsDetail",
+        "shouldRender": true,
         "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",

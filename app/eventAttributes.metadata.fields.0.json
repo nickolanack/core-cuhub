@@ -1,15 +1,23 @@
 {
-    "visibility": "public",
-    "tableId": 2,
-    "tableName": "eventAttributes",
-    "tableSuffix": "_3357",
-    "title": "startDate",
-    "label": "Start Date",
+    "icon": [],
+    "fieldBooleanOptions": {
+        "trueIcon": [],
+        "falseIcon": [],
+        "hideFalse": true,
+        "trueLabel": "",
+        "falseLabel": "",
+        "useFieldIcon": false
+    },
+    "was": "",
+    "title": "eventIcon",
+    "label": "Event Icon",
     "description": "",
-    "fieldType": "text",
-    "color": "rgb(undefined, undefined, undefined)",
-    "searchability": "public",
+    "color": "rgb(NaN, NaN, NaN)",
+    "visibility": "public",
     "editability": "registered",
+    "searchability": "public",
+    "allowMultiple": false,
+    "fieldType": "text",
     "fieldTextOptions": {
         "textType": "input",
         "inputOptions": {
@@ -28,5 +36,9 @@
             "colorize": false
         }
     },
-    "allowMultiple": false
+    "fieldNumberOptions": {
+        "precision": 0,
+        "limitMinValue": "",
+        "limitMaxValue": ""
+    }
 }
