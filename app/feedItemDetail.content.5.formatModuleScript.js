@@ -1,9 +1,11 @@
 module.getElement().addEvent('click', function(e){
-    if(item.isPinned()){
-        application.getNamedValue('navigationController').navigateTo("Pinned", "Main");
+    var nav=application.getNamedValue('navigationController');
+    
+    if(item.isPinned()&&nav.getCurrentView().view!=="Pinned"){
+        nav.navigateTo("Pinned", "Main");
     }
-    if(item.isArchived()){
-        application.getNamedValue('navigationController').navigateTo("Archive", "Main");
+    if(item.isArchived()&&nav.getCurrentView().view!=="Archive"){
+        nav.navigateTo("Archive", "Main");
     }
     item.activate();
 });
