@@ -1547,7 +1547,7 @@
             ],
             "site-title": "CUHub",
             "icon-for-discussion": [
-                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[ImAgE]_Ng_[G]_QeV_4Tp.png"
+                "users_files\/user_files_1\/Uploads\/urh_[ImAgE]_NH_[G]_Fb5.png"
             ]
         }
     },
@@ -2730,12 +2730,12 @@
             "metadata": {
                 "title": "eventAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 429,
+                    "y": 232
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 275
+                    "x": 429,
+                    "y": 232
                 },
                 "appliesTo": [
                     "event"
@@ -2939,6 +2939,50 @@
                         "was": "",
                         "title": "endDate",
                         "label": "End Date",
+                        "description": "",
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
+                        "fieldType": "text",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        }
+                    },
+                    {
+                        "icon": [],
+                        "fieldBooleanOptions": {
+                            "trueIcon": [],
+                            "falseIcon": [],
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false
+                        },
+                        "was": "",
+                        "title": "description",
+                        "label": "Description",
                         "description": "",
                         "color": "rgb(undefined, undefined, undefined)",
                         "visibility": "public",
