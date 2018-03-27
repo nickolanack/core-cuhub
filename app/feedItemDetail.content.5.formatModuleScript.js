@@ -3,7 +3,7 @@ module.getElement().addEvent('click', function(e){
 });
 
 if(item.isActive()){
-     //module.draw();
+     module.draw();
 }
 
 module.addWeakEvent(item, 'deactivate', function(){
