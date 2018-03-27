@@ -1,3 +1,6 @@
+
+HtmlDocument()->META('asldkfjf', 'base');
+
 IncludeJSBlock('
 
 
