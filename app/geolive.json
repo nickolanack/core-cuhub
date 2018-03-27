@@ -2807,19 +2807,19 @@
             "metadata": {
                 "title": "eventAttributes",
                 "_tableDiagramState": {
-                    "x": 354,
-                    "y": 195
+                    "x": 429,
+                    "y": 227
                 },
                 "_diagramState": {
-                    "x": 354,
-                    "y": 195
+                    "x": 429,
+                    "y": 227
                 },
                 "appliesTo": [
                     "event"
                 ],
                 "_typeDiagramState": {
-                    "x": 171,
-                    "y": 362
+                    "x": 100,
+                    "y": 300
                 },
                 "readAccess": "public",
                 "maxEntries": 1,
