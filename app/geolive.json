@@ -3137,5 +3137,16 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.51": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "",
+            "target": "none",
+            "templateName": "{target}",
+            "requireTarget": true,
+            "onRenderApplictionScript": ""
+        }
     }
 }
