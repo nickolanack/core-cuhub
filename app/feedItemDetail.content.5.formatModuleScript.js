@@ -1,4 +1,10 @@
 module.getElement().addEvent('click', function(e){
+    if(item.isPinned()){
+        application.getNamedValue('navigationController').navigateTo("Pinned", "Main");
+    }
+    if(item.isArchived()){
+        application.getNamedValue('navigationController').navigateTo("Archive", "Main");
+    }
     item.activate();
 });
 
