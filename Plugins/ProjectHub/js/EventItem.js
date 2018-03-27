@@ -620,15 +620,31 @@ var ConnectionItem=new Class({
 
 		var me=this;
 		if(me.config&&me.config.item instanceof EventItem){
+
+			//this is set for new unsaved items not previously saved items
+
 			return me.config.item;
 		}
+
+		if(me.config&&me.config.itemIdA&&me.config.itemTypeA){
+			return EventList.SharedInstance().getItem(me.config.itemIdA, me.config.itemTypeA);
+		}
+
 		return new ConnectionPlaceholderItem();
 	},
 	getItemB:function(){
 		var me=this;
 		if(me.config&&me.config.itemB instanceof EventItem){
+
+			//this is set for new unsaved items not previously saved items
+
 			return me.config.itemB;
 		}
+
+		if(me.config&&me.config.itemIdB&&me.config.itemTypeB){
+			return EventList.SharedInstance().getItem(me.config.itemIdB, me.config.itemTypeB);
+		}
+
 		return new ConnectionPlaceholderItem({name:"Empty Connection"});
 	}
 })
@@ -646,6 +662,8 @@ var ConnectionRequestItem=new Class({
 
 
 EventItem.CreateActionButtons=function(item, application){
+
+	EventItem._application=application;
 
 	if(!EventItem.Confirm){
 		EventItem.Confirm=function(question, callback){
@@ -757,12 +775,15 @@ EventItem.SetActiveItem=function(item){
 	if(EventItem._activeItem&&item!==EventItem._activeItem){
 		EventItem.ClearActiveItem();
 	}
-
+	EventItem._application.getNamedValue('navigationController').addUrlSegment(item.getType().split('.').pop()+'-'+item.getId());
 	EventItem._activeItem=item;
 }
 EventItem.ClearActiveItem=function(){
 	if(EventItem._activeItem){
 		if(EventItem._activeItem.isActive()){
+
+			EventItem._application.getNamedValue('navigationController').removeUrlSegment(EventItem._activeItem.getType().split('.').pop()+'-'+EventItem._activeItem.getId());
+
 			EventItem._activeItem.deactivate();
 		}
 		EventItem._activeItem=null;
@@ -778,7 +799,7 @@ EventItem.GetActiveItem=function(){
 
 EventItem.CreateTagFilterButtons=function(item, application){
 
-
+	EventItem._application=application;
 
 	return item.getTags().map(function(tag){
 		return new Element('button',{"class":"btn-tag tag-"+tag, html:tag, title:tag, events:{click:function(e){
