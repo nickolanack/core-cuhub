@@ -1,4 +1,4 @@
-HtmlDocument()->META('asldkfjf', 'base');
+HtmlDocument()->META(HtmlDocument()->website(), 'base');
 
 IncludeJSBlock('
 
