@@ -987,6 +987,15 @@
                                 }
                             },
                             {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Comments\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": ""
+                                }
+                            },
+                            {
                                 "type": "plugin.Discussions.Discussion",
                                 "config": {
                                     "width": 0,
