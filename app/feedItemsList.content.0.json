@@ -5,6 +5,7 @@
         "className": "feed-item",
         "viewType": "view",
         "namedView": "feedItemDetail",
+        "shouldRender": true,
         "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
@@ -18,7 +19,7 @@
         "insertAtTop": false,
         "getItemListScript": "\/\/ var events=EventList.SharedInstance().getEvents();\n\n EventList.SharedInstance(function(el){\n     \/\/if(!events){\n         callback(el.getEvents());\n     \/\/}\n     listModule.addWeakEvent(el, \"unarchivedItem\", function(item){\n         listModule.addItem(item);\n     });\n     \n     listModule.addWeakEvent(el, \"unpinnedItem\", function(item){\n         listModule.addItem(item);\n     });\n     \n     listModule.addWeakEvent(el, \"addItem\", function(item){\n         listModule.addItem(item);\n     });\n })\n \n  \/\/if(events){\n  \/\/    return events;\n  \/\/}",
         "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "childView.getElement().addClass((child.getType().split('.').pop())+'-feed-item');\nchildView.getElement().addClass('feed-item-'+child.getId());\n\n\n\nchildView.addWeakEvent(child, \"activate\", function(){\n   childView.getElement().addClass('active');\n});\n\nchildView.addWeakEvent(child, \"deactivate\", function(){\n   childView.getElement().removeClass('active');\n});\n\n\nchildView.getElement().addClass('expandable');\nchildView.getElement().setAttribute('data-published-date', child.getDateFromNow());\n\n\nchildView.addWeakEvent(child, \"archive\", function(){\n    childView.remove();\n});\n\nchildView.addWeakEvent(child, \"pin\", function(){\n    childView.remove();\n});\n\nchildView.addWeakEvent(child, \"remove\", function(){\n    childView.remove();\n});",
+        "formatListItemModuleScript": "childView.getElement().addClass((child.getType().split('.').pop())+'-feed-item');\nchildView.getElement().addClass('feed-item-'+child.getId());\n\n\nif(child.isActive()){\n    childView.getElement().addClass('active');\n}\nchildView.addWeakEvent(child, \"activate\", function(){\n   childView.getElement().addClass('active');\n});\n\nchildView.addWeakEvent(child, \"deactivate\", function(){\n   childView.getElement().removeClass('active');\n});\n\n\nchildView.getElement().addClass('expandable');\nchildView.getElement().setAttribute('data-published-date', child.getDateFromNow());\n\n\nchildView.addWeakEvent(child, \"archive\", function(){\n    childView.remove();\n});\n\nchildView.addWeakEvent(child, \"pin\", function(){\n    childView.remove();\n});\n\nchildView.addWeakEvent(child, \"remove\", function(){\n    childView.remove();\n});",
         "emptyNamedView": "emptyListView",
         "filterItemsScript": "return !!(viewControllerApp.getNamedValue('feedItemFilter')||function(){return true})(item);",
         "sortItemsScript": "if(!a.hasDate()){\n    return -1;\n}\nif(!b.hasDate()){\n    return 1;\n}\n\nreturn b.getMillisecondDateTime()-a.getMillisecondDateTime();\n"
