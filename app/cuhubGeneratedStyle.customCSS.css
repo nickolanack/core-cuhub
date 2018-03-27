@@ -111,11 +111,6 @@ span.ui-navigation-menu ul.menu-main li {
 <?php foreach(array('connection', 'profile', 'project', 'connection', 'request', 'myprofile', 'event') as $type){
     ?>
     
-    
-    .<?php echo $type; ?>-feed-item .discussion .posts.empty:after {
-        content:"There are no comments on this <?php echo $type; ?>";
-    }
-    
     .ui-view.<?php echo $type; ?>-feed-item {
         border-left-color: <?php echo $ui->getParameter('color-for-'.$type);?>;
     }
@@ -270,9 +265,7 @@ span.ui-navigation-menu ul li.menu-main-calendar,
     span.ui-navigation-menu ul li.menu-main-archive, 
     span.ui-navigation-menu ul li.menu-main-feeditems, 
     span.ui-navigation-menu ul li.menu-main-tags, 
-    span.ui-navigation-menu ul li.menu-main-date,
-    span.ui-navigation-menu ul li.menu-main-pinned,
-    span.ui-navigation-menu ul li.menu-main-single{
+    span.ui-navigation-menu ul li.menu-main-date {
         display: none;
 }
 
