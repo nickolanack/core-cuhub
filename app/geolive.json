@@ -1928,8 +1928,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
-                    "y": 171
+                    "x": 98,
+                    "y": 200
                 },
                 "children": [
                     "projectForm.metadata.children.0.json",
@@ -1940,16 +1940,16 @@
                             "projectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 234,
-                            "y": 282
+                            "x": 244,
+                            "y": 292
                         },
                         "children": [
                             "projectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 194,
-                                    "y": 483
+                                    "x": 204,
+                                    "y": 505
                                 }
                             }
                         ],
@@ -1976,7 +1976,7 @@
                                         {
                                             "type": "WizardDescriptionField",
                                             "config": {
-                                                "label": "Description",
+                                                "label": "Summary",
                                                 "message": "add a description",
                                                 "lines": 3,
                                                 "mandatory": false,
