@@ -1940,16 +1940,16 @@
                             "projectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 208,
-                            "y": 340
+                            "x": 234,
+                            "y": 282
                         },
                         "children": [
                             "projectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 168,
-                                    "y": 541
+                                    "x": 194,
+                                    "y": 483
                                 }
                             }
                         ],
@@ -1994,10 +1994,32 @@
                                             }
                                         },
                                         {
-                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "type": "plugin.Attributes.WizardDescriptionAttribute",
                                             "config": {
                                                 "attributeFields": [
                                                     "projectForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                ],
+                                                "label": "{field.label}",
+                                                "message": "add a description",
+                                                "lines": 3,
+                                                "mandatory": true,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "onRenderModuleFn": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "projectForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
                                                 ],
                                                 "className": "col-2",
                                                 "label": "{field.label}",
@@ -2019,7 +2041,7 @@
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "projectForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                    "projectForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
                                                 ],
                                                 "className": "col-2",
                                                 "label": "{field.label}",
