@@ -396,6 +396,7 @@ span.ui-navigation-menu ul>label {
     width: 20px;
     display: inline-block;
     color: black;
+    overflow: visible;
 }
 
 .ui-view.pinned-item .feed-item-label, .ui-view.archived-item .feed-item-label{
