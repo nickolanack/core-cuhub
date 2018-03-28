@@ -1,10 +1,10 @@
 {
     "type": "UIListView",
     "config": {
-        "listClassName": "archived-items",
+        "listClassName": "feed-item-list",
         "className": "feed-item archived-item",
         "viewType": "view",
-        "namedView": "feedItemDetail feed-item-list",
+        "namedView": "feedItemDetail",
         "shouldRender": true,
         "namedViewScript": "return namedView",
         "showInlineEdit": false,
