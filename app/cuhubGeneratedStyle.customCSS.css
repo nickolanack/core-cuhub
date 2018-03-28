@@ -72,7 +72,7 @@
         }
         
         
-        $shareImage=$ui->getParameter('icon-for-share', array());
+        $shareImage=$ui->getParameter('icon-for-link', array());
         if(!empty($shareImage)){
           
             $shareImage=$shareImage[0];
