@@ -971,6 +971,7 @@ input.discussion-textbox {
     background-position: center;
     background-repeat: no-repeat;
     bottom: 10px;
+    z-index: 2;
 }
 
 .field-value-module.link-to-item:after {
