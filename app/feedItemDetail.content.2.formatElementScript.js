@@ -10,7 +10,7 @@ el.addClass('feed-item-label count-posts loading');
 		                    el.removeClass('loading');
 		                    if(posts>0){
 		                         el.addClass('has-posts');
-		                         valueEl.innerHTML=resp.metadata.posts;
+		                         valueEl.innerHTML=posts;
 		                    }else{
 		                        valueEl.innerHTML=""
 		                    }
@@ -19,8 +19,16 @@ el.addClass('feed-item-label count-posts loading');
 		                   if (resp.subscription) {
                             AjaxControlQuery.Subscribe(resp.subscription, function(result) {
 
-                            	console.log(item);
-                            	console.log(result);
+                            	//console.log(item);
+                            	//console.log(result);
+                            	
+                            	 posts++;
+                            	 el.addClass('has-posts');
+		                         valueEl.innerHTML=posts;
+		                         
+		                         if(item instanceof MyProfileItem){
+		                              NotificationBubble.Make('', 'Someone just sent you a message');
+		                         }
 
                             });
 
