@@ -262,7 +262,10 @@ span.ui-navigation-menu ul>label {
     left: 0;
 }
 
-.left-detail .ui-view.user-detail .user-icon, .left-detail .ui-view.user-detail .feed-item-label, .left-detail .ui-view.user-detail .feed-item-actions {
+.left-detail .ui-view.user-detail .user-icon, 
+.left-detail .ui-view.user-detail .feed-item-label, 
+.left-detail .ui-view.user-detail .feed-item-actions, 
+.left-detail .ui-view.user-detail .html-content {
    display:none;
 }
 
