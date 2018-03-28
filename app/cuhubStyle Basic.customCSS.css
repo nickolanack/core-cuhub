@@ -518,6 +518,17 @@ span.ui-navigation-menu ul>label {
     top: 0;
 }
 
+.array-module.feed-item-list {
+    
+    /*single, pinned, and archive view detail*/
+    
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+
 .feed-item-list .ui-view.feed-item {
     border-left-width:40px;
 }
