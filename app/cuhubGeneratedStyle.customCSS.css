@@ -188,6 +188,34 @@ span.ui-navigation-menu ul.menu-main li {
         background-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ',0.1)', $ui->getParameter('color-for-'.$type)));?>;
     }
     
+    
+    
+    
+    
+    
+    $shareImage=$ui->getParameter('icon-for-link', array());
+        if(!empty($shareImage)){
+          
+            $shareImage=$shareImage[0];
+            ?>
+
+            .ui-view.<?php echo $type; ?>-feed-item .field-value-module.link-to-item:before {
+                background-image: url("<?php echo UrlFrom($shareImage); ?>?tint=<?php echo $ui->getParameter('color-for-'.$type);?>");
+            }
+            .ui-view.<?php echo $type; ?>-feed-item .field-value-module.link-to-item:after {
+                background-image: url("<?php echo UrlFrom($shareImage); ?>?tint=<?php echo $ui->getParameter('color-for-'.$type);?>");
+            }
+            <?php
+        }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <?php
 }?>
 
