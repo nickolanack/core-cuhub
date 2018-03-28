@@ -66,7 +66,7 @@
             ?>
 
             .count-posts.has-posts .field-value {
-                background-image: url("<?php echo UrlFrom($discussionImage); ?>?tint=rgb(200,200,200)");
+                background-image: url("<?php echo UrlFrom($discussionImage); ?>?tint=rgb(255,255,255)");
             }
             <?php
         }
