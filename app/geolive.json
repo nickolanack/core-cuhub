@@ -957,7 +957,7 @@
                                     "siteDescription": "",
                                     "formatClass": "s-icon",
                                     "getTitleScript": "feedItemExpandedDetail.metadata.positions.content.modules.3.config.getTitleScript.js",
-                                    "getUrlScript": ""
+                                    "getUrlScript": "feedItemExpandedDetail.metadata.positions.content.modules.3.config.getUrlScript.js"
                                 }
                             },
                             {
