@@ -16,8 +16,8 @@ el.addClass('feed-item-label count-posts loading');
 		                    }
 		                    
 		                   
-		                   if (response.subscription) {
-                            AjaxControlQuery.Subscribe(response.subscription, function(result) {
+		                   if (resp.subscription) {
+                            AjaxControlQuery.Subscribe(resp.subscription, function(result) {
 
                             	console.log(item);
                             	console.log(result);
