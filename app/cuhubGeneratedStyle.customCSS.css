@@ -70,6 +70,22 @@
             }
             <?php
         }
+        
+        
+        $shareImage=$ui->getParameter('icon-for-share', array());
+        if(!empty($shareImage)){
+          
+            $shareImage=$shareImage[0];
+            ?>
+
+            .field-value-module.link-to-item:before {
+                background-image: url("<?php echo UrlFrom($shareImage); ?>?tint=rgb(200,200,200)");
+            }
+            .field-value-module.link-to-item:after {
+                background-image: url("<?php echo UrlFrom($shareImage); ?>?tint=rgb(50,50,50)");
+            }
+            <?php
+        }
 
 ?>
 
