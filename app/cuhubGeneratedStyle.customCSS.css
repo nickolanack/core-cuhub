@@ -310,7 +310,9 @@ span.ui-navigation-menu ul li.menu-main-calendar,
     span.ui-navigation-menu ul li.menu-main-tags, 
     span.ui-navigation-menu ul li.menu-main-date,
     span.ui-navigation-menu ul li.menu-main-pinned,
-    span.ui-navigation-menu ul li.menu-main-single{
+    span.ui-navigation-menu ul li.menu-main-single,
+    span.ui-navigation-menu ul li.menu-main-about,
+    span.ui-navigation-menu ul li.menu-main-contact{
         display: none;
 }
 
