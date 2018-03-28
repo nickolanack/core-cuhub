@@ -134,8 +134,8 @@ span.ui-navigation-menu ul li button {
     border: 1px solid lightgray;
     border-radius: 2px;
     color: #555555;
-    font-size: 20px;
-        font-weight: 200;
+    font-size: 1em;
+    font-weight: 200;
 }
 
 span.ui-navigation-menu .menu-main {
@@ -176,7 +176,7 @@ span.ui-navigation-menu .menu-main li {
 span.ui-navigation-menu .menu-main li>label {
     color: #999999;
     font-weight: 100;
-    font-size: 12px;
+    font-size: 0.6em;
     text-align: left;
     display: inline-block;
 }
