@@ -4,7 +4,7 @@
         "listClassName": "archived-items",
         "className": "feed-item archived-item",
         "viewType": "view",
-        "namedView": "feedItemDetail",
+        "namedView": "feedItemDetail feed-item-list",
         "shouldRender": true,
         "namedViewScript": "return namedView",
         "showInlineEdit": false,
