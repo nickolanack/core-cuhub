@@ -192,7 +192,7 @@ span.ui-navigation-menu ul.menu-main li {
     
     
     
-    
+    <?php
     $shareImage=$ui->getParameter('icon-for-link', array());
         if(!empty($shareImage)){
           
@@ -208,9 +208,9 @@ span.ui-navigation-menu ul.menu-main li {
             <?php
         }
     
+    ?>
     
-    
-    
+    <?php
 }?>
 
 
