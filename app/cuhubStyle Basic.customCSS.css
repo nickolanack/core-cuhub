@@ -958,3 +958,29 @@ input.discussion-textbox {
     display:none;
 }
 
+
+
+.field-value-module.link-to-item:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -33px;
+    background-size: 60% auto;
+    margin: 2px;
+    background-position: center;
+    background-repeat: no-repeat;
+    bottom: 10px;
+}
+
+.field-value-module.link-to-item:after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-size: 60% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    display:inline-block;
+    vertical-align: bottom;
+    margin-left: 5px;
+}
