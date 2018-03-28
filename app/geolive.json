@@ -1017,7 +1017,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Link\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": ""
+                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.7.config.formatElementScript.js"
                                 }
                             }
                         ]
