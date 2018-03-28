@@ -16,5 +16,17 @@ el.addClass('feed-item-label count-posts loading');
 		                    }
 		                    
 		                   
+		                   if (response.subscription) {
+                            AjaxControlQuery.Subscribe(response.subscription, function(result) {
+
+                            	console.log(item);
+                            	console.log(result);
+
+                            });
+
+
+                           }
+		                   
+		                   
 		                    
 		                }).execute();
