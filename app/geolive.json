@@ -955,7 +955,9 @@
                                     "siteTitle": "CUHub Portal",
                                     "siteURL": "cuhub.geolive.ca",
                                     "siteDescription": "",
-                                    "formatClass": "s-icon"
+                                    "formatClass": "s-icon",
+                                    "getTitleScript": "return '';",
+                                    "getUrlScript": ""
                                 }
                             },
                             {
