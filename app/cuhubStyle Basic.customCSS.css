@@ -221,10 +221,25 @@ span.ui-navigation-menu ul>label {
     min-height: 30px;
 }
 
-.ui-view.pinned-item .btn-action, .ui-view.archived-item .btn-action{
+
+.field-value-module.feed-item-short-desc {
+    display: none;
+}
+
+.feed-item-list .field-value-module.feed-item-short-desc{
+    display:block;
+    margin-top: 20px;
+    height: 30px;
+    text-indent: 10px;
+}
+
+
+.ui-view.pinned-item .btn-action, .ui-view.archived-item .btn-action, 
+.ui-view.pinned-item .feed-item-short-desc, .ui-view.archived-item .feed-item-short-desc{
     display:none;
 }
-.ui-view.pinned-item.active .btn-action, .ui-view.archived-item.active .btn-action{
+.ui-view.pinned-item.active .btn-action, .ui-view.archived-item.active .btn-action,
+.ui-view.pinned-item.active .feed-item-short-desc, .ui-view.archived-item.active .feed-item-short-desc{
     display:inline-block;
 }
 
@@ -733,16 +748,7 @@ button.clear-filter.form-btn {
     width: 100px;
 }
 
-.field-value-module.feed-item-short-desc {
-    display: none;
-}
 
-.feed-item-list .field-value-module.feed-item-short-desc{
-    display:block;
-    margin-top: 20px;
-    height: 30px;
-    text-indent: 10px;
-}
 
 .feed-item-list .active .ui-view.feed-item-expanded-detail {
     text-align: left;
