@@ -3148,7 +3148,7 @@
                             {
                                 "type": "UIListView",
                                 "config": {
-                                    "listClassName": "",
+                                    "listClassName": "feed-item-list",
                                     "className": "feed-item pinned-item",
                                     "viewType": "view",
                                     "namedView": "feedItemDetail",
