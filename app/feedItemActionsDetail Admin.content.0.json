@@ -1,7 +1,7 @@
 {
     "type": "WizardScriptElement",
     "config": {
-        "script": "if(item instanceof MyProfileItem){\n    return 'This is your profile';\n}\n\n\nreturn 'This is a '+item.getTypeName();",
+        "script": "if(item instanceof MyProfileItem||(item instanceof ProfileItem&&item.clientOwns())){\n    return 'This is your public profile';\n}\n\n\nreturn 'This is a '+item.getTypeName()+(item.clientOwns()?', You can modify this item':'');",
         "identifier": "customScriptElement"
     }
 }
