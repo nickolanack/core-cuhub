@@ -356,6 +356,15 @@ span.ui-navigation-menu ul>label {
     top: 10px;
 }
 
+.ui-view.user-detail.top-right .field-value-module.count-posts {
+    left: 40px;
+    top: 40px;
+    position: absolute;
+    width: 20px;
+    display: inline-block;
+    color: black;
+}
+
 .ui-view.pinned-item .feed-item-label, .ui-view.archived-item .feed-item-label{
     top: 0;
 }
