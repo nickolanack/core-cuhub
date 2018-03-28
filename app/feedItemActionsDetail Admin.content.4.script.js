@@ -1,16 +1,24 @@
-if(item.isPublished()){
+
+//if(!item.canCreate('request')){
     return null;
-}
+//}
+
 return (new ModalFormButtonModule(application, 
-    item, {
-    "label":"Publish your profile",
-    "formName":"profileForm",
+    new ConnectionRequestItem({
+        "item":item,
+    }).addEvent("save", function(){
+        var item=this;
+        EventList.SharedInstance(function(el){
+            
+            el.addItem(item);
+            
+        });
+    }), {
+    "label":(item instanceof MyProfileItem)?"Add Connection Request":"Add "+item.getTypeName()+" Connection Request",
+    "formName":"requestForm",
     "formOptions":{
         "template":"form",
-        "className":"profile-form"
+        "className":"request-form"
     },
-    "className":"action-profile",
-    events:{click:function(){
-        item.setPublished(true);
-    }}
+    "className":"action-request"
 }))

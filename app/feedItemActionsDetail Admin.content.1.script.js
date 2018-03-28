@@ -1,10 +1,10 @@
 
-if(!item.canCreate('project')){
+
+if(!item.canCreate('event')){
     return null;
 }
-
 return (new ModalFormButtonModule(application, 
-    new ProjectItem({
+    new EventItem({
         "item":item,
     }).addEvent("save", function(){
         var item=this;
@@ -16,17 +16,17 @@ return (new ModalFormButtonModule(application,
     }), {
     "label":((item instanceof MyProfileItem)?<?php 
         
-       echo json_encode(($ui=GetWidget('interfaceConfig'))->getParameter('label-for-create-project'));
+       echo json_encode(($ui=GetWidget('interfaceConfig'))->getParameter('label-for-create-event'));
     
         ?>:<?php 
         
-       echo json_encode($ui->getParameter('label-for-item-create-project'));
+       echo json_encode($ui->getParameter('label-for-item-create-event'));
     
     ?>).replace('{type}', item.getTypeName()),
-    "formName":"projectForm",
+    "formName":"eventForm",
     "formOptions":{
         "template":"form",
-        "className":"project-form"
+        "className":"event-form"
     },
-    "className":"action-project"
+    "className":"action-event"
 }))
