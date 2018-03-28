@@ -379,6 +379,15 @@ span.ui-navigation-menu ul>label {
     top: 10px;
 }
 
+
+.feed-item-label {
+    
+    max-width: calc( 100% - 50px );
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .ui-view.user-detail.top-right .field-value-module.count-posts {
     left: 40px;
     top: 40px;
