@@ -1,1 +1,5 @@
-return window.location.href.split('#')[0].split('?')[0];
+return window.location.protocol+"//"+(window.location.href.split('//').pop()
+    .split('/').shift()
+    .split('#').shift()
+    .split('?').shift())+'/Single/'+(item.getType().spit('.').pop())+'-'+item.getId();
+    
