@@ -10,7 +10,7 @@ module.getElement().addEvent('click', function(e){
     item.activate();
 });
 
-if(item.isActive()){
+if(item.isActive()||item instanceof MyProfileItem){
      module.draw();
 }
 
