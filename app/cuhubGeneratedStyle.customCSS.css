@@ -66,7 +66,7 @@
             ?>
 
             .count-posts.has-posts .field-value {
-                background-image: url("<?php echo UrlFrom($discussionImage); ?>?tint=rgb(255,255,255)");
+                background-image: url("<?php echo UrlFrom($discussionImage); ?>?tint=rgb(200,200,200)");
             }
             <?php
         }
@@ -79,7 +79,7 @@
             ?>
 
             .field-value-module.link-to-item:before {
-                background-image: url("<?php echo UrlFrom($shareImage); ?>?tint=rgb(200,200,200)");
+                background-image: url("<?php echo UrlFrom($shareImage); ?>?tint=rgb(255,255,255)");
             }
             .field-value-module.link-to-item:after {
                 background-image: url("<?php echo UrlFrom($shareImage); ?>?tint=rgb(50,50,50)");
