@@ -4,7 +4,7 @@
         "listClassName": "",
         "className": "feed-item",
         "viewType": "view",
-        "namedView": "feedItemDetail",
+        "namedView": "feedItemDetail feed-item-list",
         "shouldRender": true,
         "namedViewScript": "return namedView",
         "showInlineEdit": false,
