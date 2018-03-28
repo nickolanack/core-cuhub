@@ -1398,6 +1398,15 @@
                     "limit": 1
                 },
                 {
+                    "type": "images",
+                    "name": "icon-for-link",
+                    "default": [],
+                    "label": "icon-for-link",
+                    "maxHeight": 64,
+                    "maxWidth": 64,
+                    "limit": 1
+                },
+                {
                     "type": "text",
                     "name": "label-for-events",
                     "label": "label-for-events",
@@ -1557,7 +1566,8 @@
             "site-title": "CUHub",
             "icon-for-discussion": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[ImAgE]_t2B_j1c_wFH_[G].png"
-            ]
+            ],
+            "icon-for-link": []
         }
     },
     "widget.25": {
