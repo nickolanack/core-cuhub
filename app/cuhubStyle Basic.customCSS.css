@@ -238,11 +238,12 @@ span.ui-navigation-menu ul>label {
 .ui-view.pinned-item .feed-item-short-desc, .ui-view.archived-item .feed-item-short-desc{
     display:none;
 }
-.ui-view.pinned-item.active .btn-action, .ui-view.archived-item.active .btn-action,
-.ui-view.pinned-item.active .feed-item-short-desc, .ui-view.archived-item.active .feed-item-short-desc{
+.ui-view.pinned-item.active .btn-action, .ui-view.archived-item.active .btn-action{
     display:inline-block;
 }
-
+.ui-view.pinned-item.active .feed-item-short-desc, .ui-view.archived-item.active .feed-item-short-desc{
+    display:block;
+}
 
 .ui-view.pinned-item.active, .ui-view.archived-item.active {
     height: auto;
