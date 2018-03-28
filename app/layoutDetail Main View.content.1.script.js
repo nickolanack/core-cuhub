@@ -2,15 +2,35 @@ var navigationController=new NavigationMenuModule({
       "Site":[
         {
           "html":"Portal",
-          "link":""
+          "events":{
+              "click":function(){
+                  application.getNamedValue('navigationController', navigationController).navigateTo("FeedItems", "Main");
+              }
+          }
         },
         {
           html:"About",
-          "link":""
+          "events":{
+              "click":function(){
+                  application.getNamedValue('navigationController', navigationController).navigateTo("About", "Main");
+              }
+          }
         },
         {
           html:"Contact",
-          "link":""
+          "events":{
+              "click":function(){
+                  application.getNamedValue('navigationController', navigationController).navigateTo("Contact", "Main");
+              }
+          }
+        },
+        {
+          html:"Archive",
+          "events":{
+              "click":function(){
+                  application.getNamedValue('navigationController', navigationController).navigateTo("Archive", "Main");
+              }
+          }
         }
       ]   
         
@@ -18,5 +38,5 @@ var navigationController=new NavigationMenuModule({
         manipulateHistory:false
     });
     
-application.setNamedValue('navigationController', navigationController);
+//application.setNamedValue('navigationController', navigationController);
 return navigationController;
