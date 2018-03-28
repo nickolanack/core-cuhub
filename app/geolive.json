@@ -956,7 +956,7 @@
                                     "siteURL": "cuhub.geolive.ca",
                                     "siteDescription": "",
                                     "formatClass": "s-icon",
-                                    "getTitleScript": "return '';",
+                                    "getTitleScript": "feedItemExpandedDetail.metadata.positions.content.modules.3.config.getTitleScript.js",
                                     "getUrlScript": ""
                                 }
                             },

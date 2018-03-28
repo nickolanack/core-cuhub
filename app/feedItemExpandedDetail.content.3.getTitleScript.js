@@ -1,0 +1,1 @@
+return "Check this out, "+item.getName()+" on The CUHub at the University of British Columbia";
