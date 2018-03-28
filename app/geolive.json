@@ -1010,6 +1010,15 @@
                                     "namedView": "defaultPostDetail",
                                     "reverseOrder": false
                                 }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Link\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": ""
+                                }
                             }
                         ]
                     },
