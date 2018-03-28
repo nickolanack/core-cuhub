@@ -221,6 +221,14 @@ span.ui-navigation-menu ul>label {
     min-height: 30px;
 }
 
+.ui-view.pinned-item .btn-action, .ui-view.archived-item .btn-action{
+    display:none;
+}
+.ui-view.pinned-item.active .btn-action, .ui-view.archived-item.active .btn-action{
+    display:inline-block;
+}
+
+
 .ui-view.pinned-item.active, .ui-view.archived-item.active {
     height: auto;
 }
