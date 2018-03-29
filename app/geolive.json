@@ -2036,16 +2036,16 @@
                             "projectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 254,
-                            "y": 302
+                            "x": 264,
+                            "y": 312
                         },
                         "children": [
                             "projectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 214,
-                                    "y": 515
+                                    "x": 224,
+                                    "y": 538
                                 }
                             }
                         ],
@@ -2174,7 +2174,7 @@
                                                 "hoverColor": "rgb(143, 188, 143)",
                                                 "selectedColor": "rgb(143, 188, 143)",
                                                 "shuffleTags": false,
-                                                "getItemTagsScript": "return defaultTags;"
+                                                "getItemTagsScript": "projectForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.getItemTagsScript.js"
                                             }
                                         }
                                     ]
