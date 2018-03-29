@@ -2232,16 +2232,16 @@
                             "connectionForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 516,
-                            "y": 285
+                            "x": 526,
+                            "y": 295
                         },
                         "children": [
                             "connectionForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 476,
-                                    "y": 473
+                                    "x": 486,
+                                    "y": 483
                                 }
                             }
                         ],
@@ -2296,11 +2296,12 @@
                                                 "showLabel": true,
                                                 "showAddWord": true,
                                                 "label": "{field.label}",
+                                                "addWordPlaceholder": "add a keyword",
                                                 "fontColor": "rgb(0, 0, 0)",
                                                 "hoverColor": "rgb(31, 84, 245)",
                                                 "selectedColor": "rgb(31, 84, 245)",
                                                 "shuffleTags": false,
-                                                "getItemTagsScript": "return defaultTags;"
+                                                "getItemTagsScript": "connectionForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getItemTagsScript.js"
                                             }
                                         }
                                     ]
