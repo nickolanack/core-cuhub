@@ -173,6 +173,10 @@ span.ui-navigation-menu ul.menu-main li {
         border-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ', 1)', $ui->getParameter('color-for-'.$type)));?>;
     }
     
+    .module-wizard.event-form .TagCloudModule .TagCloudSelection>span.selected, .module-wizard.event-form .TagCloudModule .TagCloudSelection>span:hover {
+         background-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ', 1)', $ui->getParameter('color-for-'.$type)));?>
+    }
+    
     body.dragover .module-wizard.<?php echo $type; ?>-form .empty.droppable:after, .module-wizard.<?php echo $type; ?>-form .empty.droppable:after{
             color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ', 1)', $ui->getParameter('color-for-'.$type)));?>;
         }
