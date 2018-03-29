@@ -2036,16 +2036,16 @@
                             "projectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 244,
-                            "y": 292
+                            "x": 254,
+                            "y": 302
                         },
                         "children": [
                             "projectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 204,
-                                    "y": 505
+                                    "x": 214,
+                                    "y": 515
                                 }
                             }
                         ],
@@ -2153,6 +2153,28 @@
                                                 "iconTint": "rgb(100, 149, 237)",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTagCloud",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "projectForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
+                                                ],
+                                                "tags": [
+                                                    "tag one",
+                                                    "tag two"
+                                                ],
+                                                "className": "",
+                                                "showLabel": true,
+                                                "showAddWord": true,
+                                                "label": "{field.label}",
+                                                "addWordPlaceholder": "add a keyword",
+                                                "fontColor": "rgb(0, 0, 0)",
+                                                "hoverColor": "rgb(143, 188, 143)",
+                                                "selectedColor": "rgb(143, 188, 143)",
+                                                "shuffleTags": false,
+                                                "getItemTagsScript": "return defaultTags;"
                                             }
                                         }
                                     ]
