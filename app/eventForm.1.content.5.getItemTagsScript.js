@@ -1,1 +1,0 @@
-return EventItem.DefaultTags(item, application);
