@@ -1841,16 +1841,16 @@
                             "eventForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 316,
-                            "y": 408
+                            "x": 326,
+                            "y": 418
                         },
                         "children": [
                             "eventForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 276,
-                                    "y": 634
+                                    "x": 286,
+                                    "y": 644
                                 }
                             }
                         ],
@@ -1954,10 +1954,10 @@
                                                 "label": "{field.label}",
                                                 "addWordPlaceholder": "add a keyword",
                                                 "fontColor": "rgb(0, 0, 0)",
-                                                "hoverColor": "rgb(176, 59, 59)",
-                                                "selectedColor": "rgb(176, 59, 59)",
+                                                "hoverColor": "rgb(143, 188, 143)",
+                                                "selectedColor": "rgb(143, 188, 143)",
                                                 "shuffleTags": false,
-                                                "getItemTagsScript": "return defaultTags;"
+                                                "getItemTagsScript": "eventForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.getItemTagsScript.js"
                                             }
                                         },
                                         {
