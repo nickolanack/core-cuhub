@@ -383,7 +383,7 @@ span.ui-navigation-menu ul>label {
 
 .feed-item-label {
     
-    max-width: calc( 100% - 50px );
+    max-width: calc( 100% - 75px );
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
