@@ -153,6 +153,11 @@ span.ui-navigation-menu ul.menu-main li {
     }
     
     
+    .ui-view.<?php echo $type; ?>-feed-item.btn-tag.active {
+        background-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ',0.3)', $ui->getParameter('color-for-'.$type)));?>;
+    }
+    
+    
     .form-btn.action-<?php echo $type; ?>.action-user {
         background-color: <?php echo str_replace('rgb(', 'rgba(', str_replace(')', ',0.5)', $ui->getParameter('color-for-'.$type)));?>;
     }
