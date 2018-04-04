@@ -354,15 +354,22 @@
                                 }
                             },
                             {
-                                "type": "Search"
+                                "type": "Search",
+                                "config": {
+                                    "getAggregatorsScript": ""
+                                }
+                            },
+                            {
+                                "type": "TagCloud",
+                                "config": []
                             },
                             {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "leftDetail.metadata.positions.content.modules.3.config.fieldLabelScript.js",
+                                    "fieldLabelScript": "leftDetail.metadata.positions.content.modules.4.config.fieldLabelScript.js",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
+                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
                                 }
                             },
                             {
