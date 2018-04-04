@@ -952,7 +952,7 @@ body.dragover .add-photo .empty.droppable:after, .add-photo .empty.droppable:aft
 }
 
 
-input.discussion-textbox {
+input.discussion-textbox, input.search-input {
     height: 30px;
     line-height: 10px;
     padding: 5px 15px;
@@ -1023,3 +1023,25 @@ input.discussion-textbox {
     vertical-align: bottom;
     margin-left: 5px;
 }
+
+
+input.search-input {
+    width: calc(100% - 350px);
+    border-color: #252525;
+    margin-bottom: 40px;
+}
+
+
+.search-bar-btn.search {
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+    padding-right: 10px;
+    box-sizing: border-box;
+    color: #252525;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+
+
