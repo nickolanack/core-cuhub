@@ -354,12 +354,15 @@
                                 }
                             },
                             {
+                                "type": "Search"
+                            },
+                            {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "leftDetail.metadata.positions.content.modules.2.config.fieldLabelScript.js",
+                                    "fieldLabelScript": "leftDetail.metadata.positions.content.modules.3.config.fieldLabelScript.js",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
+                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
                                 }
                             },
                             {
