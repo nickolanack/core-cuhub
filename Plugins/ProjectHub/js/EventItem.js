@@ -796,13 +796,26 @@ EventItem.GetActiveItem=function(){
 	}
 	return null;
 }
+EventItem.DefaultTags=function(item, application){
 
+
+	return ['one', 'two', 'three'];
+
+
+}
 EventItem.CreateTagFilterButtons=function(item, application){
 
 	EventItem._application=application;
 
 	return item.getTags().map(function(tag){
-		return new Element('button',{"class":"btn-tag tag-"+tag, html:tag, title:tag, events:{click:function(e){
+
+		var current=application.getNamedValue('tagFilter');
+		isActive='';
+		if(current&&current.tags&&current.tags.indexOf(tag)>=0){
+			isActive=' active';
+		}
+
+		return new Element('button',{"class":"btn-tag tag-"+tag+isActive, html:tag, title:tag, events:{click:function(e){
 
 			application.setNamedValue('tagFilter',{tags:[tag]});
 			application.getNamedValue('navigationController').navigateTo("Tags", "Main");

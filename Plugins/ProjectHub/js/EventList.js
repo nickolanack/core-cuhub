@@ -284,6 +284,11 @@ var EventList=(function(){
 
 	});
 
+
+
+	
+
+
 	var sharedInstance=null;
 
 	return {
@@ -303,5 +308,45 @@ var EventList=(function(){
 
 })();
 
+
+EventList.DefaultTags=function(application){
+
+
+			return ['engagement', 'software', 'hub', 'students', 'social media', 'analysis', 'community', 'research', 'mobile', 'spatial'];
+
+
+	}
+
+
+EventList.SearchAggregator = new Class({
+    Extends: SearchAggregator,
+    initialize: function(map, search, options) {
+        var me=this;
+        me.map=map;
+        this.parent(search, Object.append({
+
+            PreviousTemplate: ListAggregator.PreviousTemplate,
+            MoreTemplate: ListAggregator.MoreTemplate,
+            ResultTemplate: MarkerSearchAggregator.DefaultTemplate
+
+        }, options));
+    },
+    _getRequest: function(filters) {
+        var me = this;
+        var string = me.currentSearchString;
+
+        var args={
+            search: string,
+            searchOptions: filters
+        };
+        if(me.map){
+            args.mapId= me.map.getId();
+        }
+
+        return new AjaxControlQuery(CoreAjaxUrlRoot, 'mapitems_search', Object.append({'plugin':'Search'}, args));
+
+     
+    }
+});
 
 
