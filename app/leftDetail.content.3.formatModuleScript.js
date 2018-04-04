@@ -8,8 +8,16 @@ module.addEvent('selectWord',function(tag){
     
 });
 
-module.addEvent('addWord',function(tag){
+module.addEvent('addWord',function(tag, el){
     
     //if matches current tag, then highlight
+    el.addClass('btn-tag');
+    
+    
+    var current=application.getNamedValue('tagFilter');
+	
+	if(current&&current.tags&&current.tags.indexOf(tag)>=0){
+	     el.addClass('active');
+	}
     
 })
