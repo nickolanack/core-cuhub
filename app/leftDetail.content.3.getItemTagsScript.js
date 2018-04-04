@@ -1,1 +1,4 @@
-return EventList.DefaultTags(item, application)
+
+
+return EventList.DefaultTags(item, application);
+
