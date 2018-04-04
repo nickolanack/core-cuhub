@@ -361,7 +361,11 @@
                             },
                             {
                                 "type": "TagCloud",
-                                "config": []
+                                "config": {
+                                    "tags": "[\n   \"tag one\",\n   \"tag two\"\n]",
+                                    "getItemTagsScript": "leftDetail.metadata.positions.content.modules.3.config.getItemTagsScript.js",
+                                    "formatModuleScript": ""
+                                }
                             },
                             {
                                 "type": "FieldValue",
