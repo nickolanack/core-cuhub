@@ -1025,10 +1025,13 @@ input.discussion-textbox, input.search-input {
 }
 
 
+.search-bar-content {
+    margin: 40px 0;
+}
+
 input.search-input {
     width: calc(100% - 350px);
     border-color: #252525;
-    margin-bottom: 40px;
 }
 
 
