@@ -972,6 +972,9 @@ input.discussion-textbox, input.search-input {
     width: calc(100% - 150px);
     box-shadow: 0 0 3px rgba(0,0,0,0.2) inset;
 }
+input.discussion-textbox {
+    width: calc( 100% - 220px );
+}
 
 .discussion>.toolbar-icons {
     top: calc( 100% - 51px );
