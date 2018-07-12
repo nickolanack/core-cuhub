@@ -311,6 +311,15 @@ span.ui-navigation-menu ul>label {
     top: -1px;
 }
 
+.left-detail .ui-view.user-detail .form-btn.action-event:after, 
+.left-detail .ui-view.user-detail .form-btn.action-project:after {
+    content: "+";
+    position: absolute;
+    left: 2px;
+    top: 4px;
+    color: #1f53f5;
+}
+
 .left-detail .myprofile-feed-item .feed-item-icon {
     position: relative;
     top: -30px;
