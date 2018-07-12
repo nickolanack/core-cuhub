@@ -1,0 +1,20 @@
+{
+    "type": "UIView",
+    "config": {
+        "className": "",
+        "viewType": "view",
+        "namedView": "feedItemDetail",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultView",
+        "formOptions": "\"{}\"",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "formatModuleScript": "",
+        "resolveItemScript": "return EventList.SharedInstance().getItem(item.id, item.type);",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false
+    }
+}

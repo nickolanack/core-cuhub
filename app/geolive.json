@@ -254,7 +254,8 @@
                             {
                                 "type": "Search",
                                 "config": {
-                                    "getAggregatorsScript": ""
+                                    "getAggregatorsScript": "leftDetail.metadata.positions.content.modules.2.config.getAggregatorsScript.js",
+                                    "placeholder": "search items"
                                 }
                             },
                             {
@@ -3406,12 +3407,38 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "",
-            "target": "none",
-            "templateName": "{target}",
+            "widgetTitle": "eventFeedSearchItemDetail",
+            "target": "eventFeedSearchItemDetail",
+            "templateName": "eventFeedSearchItemDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
-            "notifyViewer": false
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "eventFeedSearchItemDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
         }
     }
 }
