@@ -966,29 +966,10 @@
                                 }
                             },
                             {
-                                "type": "ShareLinks",
-                                "config": {
-                                    "className": "",
-                                    "label": "Share this item on social media",
-                                    "googleIcon": [],
-                                    "fbid": "",
-                                    "facebookIcon": [],
-                                    "twitVia": "@cuhub-projects",
-                                    "hashtag": "",
-                                    "twitterIcon": [],
-                                    "siteTitle": "CUHub Portal",
-                                    "siteURL": "cuhub.geolive.ca",
-                                    "siteDescription": "",
-                                    "formatClass": "s-icon",
-                                    "getTitleScript": "feedItemExpandedDetail.metadata.positions.content.modules.4.config.getTitleScript.js",
-                                    "getUrlScript": "feedItemExpandedDetail.metadata.positions.content.modules.4.config.getUrlScript.js"
-                                }
-                            },
-                            {
                                 "type": "plugin.Attributes.DescriptionAttribute",
                                 "config": {
                                     "attributeFieldArray": [
-                                        "feedItemExpandedDetail.metadata.positions.content.modules.5.config.attributeFieldArray.0.json"
+                                        "feedItemExpandedDetail.metadata.positions.content.modules.4.config.attributeFieldArray.0.json"
                                     ],
                                     "className": "",
                                     "imageWidth": 300,
@@ -1045,7 +1026,26 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Link\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.8.config.formatElementScript.js"
+                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.7.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "ShareLinks",
+                                "config": {
+                                    "className": "",
+                                    "label": "Share this item on social media",
+                                    "googleIcon": [],
+                                    "fbid": "",
+                                    "facebookIcon": [],
+                                    "twitVia": "@cuhub-projects",
+                                    "hashtag": "",
+                                    "twitterIcon": [],
+                                    "siteTitle": "CUHub Portal",
+                                    "siteURL": "cuhub.geolive.ca",
+                                    "siteDescription": "",
+                                    "formatClass": "s-icon",
+                                    "getTitleScript": "feedItemExpandedDetail.metadata.positions.content.modules.8.config.getTitleScript.js",
+                                    "getUrlScript": "feedItemExpandedDetail.metadata.positions.content.modules.8.config.getUrlScript.js"
                                 }
                             }
                         ]
