@@ -51,3 +51,4 @@ GetWidget('mainArchiveDetail')->display($targetInstance);
 GetWidget('mainContactDetail')->display($targetInstance);
 GetWidget('mainAboutDetail')->display($targetInstance);
 
+GetWidget('eventFeedSearchItemDetail')->display($targetInstance);
