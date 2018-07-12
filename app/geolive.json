@@ -921,6 +921,26 @@
                                 "config": {
                                     "className": "",
                                     "viewType": "view",
+                                    "namedView": "feedItemActionsDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "viewType": "view",
                                     "namedView": "feedItemInteractionDetail",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
@@ -942,33 +962,33 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
+                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
                                 }
                             },
                             {
                                 "type": "ShareLinks",
                                 "config": {
-                                    "googleIcon": [],
-                                    "facebookIcon": [],
-                                    "twitterIcon": [],
                                     "className": "",
                                     "label": "Share this item on social media",
+                                    "googleIcon": [],
                                     "fbid": "",
+                                    "facebookIcon": [],
                                     "twitVia": "@cuhub-projects",
                                     "hashtag": "",
+                                    "twitterIcon": [],
                                     "siteTitle": "CUHub Portal",
                                     "siteURL": "cuhub.geolive.ca",
                                     "siteDescription": "",
                                     "formatClass": "s-icon",
-                                    "getTitleScript": "feedItemExpandedDetail.metadata.positions.content.modules.3.config.getTitleScript.js",
-                                    "getUrlScript": "feedItemExpandedDetail.metadata.positions.content.modules.3.config.getUrlScript.js"
+                                    "getTitleScript": "feedItemExpandedDetail.metadata.positions.content.modules.4.config.getTitleScript.js",
+                                    "getUrlScript": "feedItemExpandedDetail.metadata.positions.content.modules.4.config.getUrlScript.js"
                                 }
                             },
                             {
                                 "type": "plugin.Attributes.DescriptionAttribute",
                                 "config": {
                                     "attributeFieldArray": [
-                                        "feedItemExpandedDetail.metadata.positions.content.modules.4.config.attributeFieldArray.0.json"
+                                        "feedItemExpandedDetail.metadata.positions.content.modules.5.config.attributeFieldArray.0.json"
                                     ],
                                     "className": "",
                                     "imageWidth": 300,
@@ -1009,12 +1029,14 @@
                                     "height": 200,
                                     "inlineEditing": true,
                                     "inlineReply": true,
+                                    "inlineReplyNamedForm": "",
                                     "emptyMessage": "There are no entries",
                                     "channel": "default",
                                     "resolveItemScript": "return item;",
                                     "initialPostsScript": "return null;",
                                     "namedView": "defaultPostDetail",
-                                    "reverseOrder": false
+                                    "reverseOrder": false,
+                                    "className": ""
                                 }
                             },
                             {
@@ -1023,7 +1045,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Link\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.7.config.formatElementScript.js"
+                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.8.config.formatElementScript.js"
                                 }
                             }
                         ]

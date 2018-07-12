@@ -1,20 +1,8 @@
 {
-    "type": "UIView",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "",
-        "viewType": "view",
-        "namedView": "feedItemActionsDetail",
-        "shouldRender": true,
-        "namedViewScript": "return namedView",
-        "showInlineEdit": false,
-        "namedFormView": "defaultFormView",
-        "formOptions": "{}",
-        "showDeleteButton": false,
-        "deleteItemScript": "",
-        "formatModuleScript": "",
-        "resolveItemScript": "",
-        "filterModulesScript": "return list",
-        "itemButtonsScript": "return [];",
-        "insertAtTop": false
+        "name": "My Custom Script",
+        "script": "return new ElementModule('label',{\n    html:item.getType().split('.').pop()\n})",
+        "description": "Info about my custom script"
     }
 }
