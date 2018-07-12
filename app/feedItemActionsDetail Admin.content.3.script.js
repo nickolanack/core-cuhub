@@ -1,10 +1,10 @@
 
-if(!item.canCreate('connection')){
+//if(!item.canCreate('request')){
     return null;
-}
+//}
 
 return (new ModalFormButtonModule(application, 
-    new ConnectionItem({
+    new ConnectionRequestItem({
         "item":item,
     }).addEvent("save", function(){
         var item=this;
@@ -14,19 +14,11 @@ return (new ModalFormButtonModule(application,
             
         });
     }), {
-    "label":((item instanceof MyProfileItem)?<?php 
-        
-       echo json_encode(($ui=GetWidget('interfaceConfig'))->getParameter('label-for-create-connection'));
-    
-        ?>:<?php 
-        
-       echo json_encode($ui->getParameter('label-for-item-create-connection'));
-    
-    ?>).replace('{type}', item.getTypeName()),
-    "formName":"connectionForm",
+    "label":(item instanceof MyProfileItem)?"Add Connection Request":"Add "+item.getTypeName()+" Connection Request",
+    "formName":"requestForm",
     "formOptions":{
         "template":"form",
-        "className":"connection-form"
+        "className":"request-form"
     },
-    "className":"action-connection"
+    "className":"action-request"
 }))
