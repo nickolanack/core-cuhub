@@ -184,6 +184,7 @@
             "templateName": "cuhub",
             "requireTarget": false,
             "onRenderApplictionScript": "CUHub Main Application.onRenderApplictionScript.js",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -221,6 +222,7 @@
             "templateName": "layoutDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -325,6 +327,7 @@
             "templateName": "leftDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -356,7 +359,8 @@
                             {
                                 "type": "Search",
                                 "config": {
-                                    "getAggregatorsScript": ""
+                                    "getAggregatorsScript": "leftDetail.metadata.positions.content.modules.2.config.getAggregatorsScript.js",
+                                    "placeholder": "search items"
                                 }
                             },
                             {
@@ -425,6 +429,7 @@
             "templateName": "rightDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -509,6 +514,7 @@
             "templateName": "topDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -546,6 +552,7 @@
             "templateName": "bottomDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -611,6 +618,7 @@
             "templateName": "navigationDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -648,6 +656,7 @@
             "templateName": "feedItemDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -741,6 +750,7 @@
             "templateName": "feedItemsList",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -778,6 +788,7 @@
             "templateName": "emptyListView",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -848,6 +859,7 @@
             "templateName": "calendarDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -895,6 +907,7 @@
             "templateName": "feedItemExpandedDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -1042,6 +1055,7 @@
             "templateName": "userDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -1079,6 +1093,7 @@
             "templateName": "pinnedItemsList",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -1116,6 +1131,7 @@
             "templateName": "emptyPinnedListView",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -1574,6 +1590,7 @@
             "templateName": "guestExpandedDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -1710,6 +1727,7 @@
             "templateName": "feedItemActionsDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -1782,6 +1800,7 @@
             "templateName": "profileExpandedDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -2582,6 +2601,7 @@
             "templateName": "archivedItemsList",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -2707,6 +2727,7 @@
             "templateName": "feedItemInteractionDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -2751,6 +2772,7 @@
             "templateName": "defaultPostDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -3173,6 +3195,7 @@
             "templateName": "mainPinnedDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -3237,6 +3260,7 @@
             "templateName": "mainSingleDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -3274,6 +3298,7 @@
             "templateName": "mainArchiveDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -3311,6 +3336,7 @@
             "templateName": "mainAboutDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {
@@ -3348,6 +3374,7 @@
             "templateName": "mainContactDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
+            "notifyViewer": false,
             "metadata": {
                 "positions": {
                     "title": {

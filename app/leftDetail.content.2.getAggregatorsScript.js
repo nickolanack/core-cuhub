@@ -1,0 +1,1 @@
+return [new EventList.SearchAggregator(application, search, {})];
