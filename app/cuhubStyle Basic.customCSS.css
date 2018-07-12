@@ -1103,3 +1103,14 @@ input.search-input {
 .left-detail .ui-view.user-detail .form-btn.action-connection {
     display: none;
 }
+
+
+label.item-type-label {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    text-transform: capitalize;
+    color: #cecece;
+    font-size: 50px;
+    font-weight: 100;
+}
