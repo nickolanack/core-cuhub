@@ -12,7 +12,7 @@
         "showDeleteButton": false,
         "deleteItemScript": "defaultBehaviorFn()",
         "formatModuleScript": "",
-        "resolveItemScript": "return EventList.getItem(item.id, item.type);",
+        "resolveItemScript": "return EventList.SharedInstance().getItem(item.id, item.type);",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
         "insertAtTop": false
