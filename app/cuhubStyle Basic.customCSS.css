@@ -1063,4 +1063,13 @@ input.search-input {
 
 
 
+.search-container {
+    position: relative;
+}
+
+
+.search-result-list span.result-clickable {
+    height: auto;
+}
+
 
