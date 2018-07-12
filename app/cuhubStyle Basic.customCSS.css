@@ -1071,6 +1071,7 @@ input.search-input {
 
 .search-result-list span.result-clickable {
     height: auto;
+    background-color: #e0e0e0;
 }
 
 .search-result-list:before {
