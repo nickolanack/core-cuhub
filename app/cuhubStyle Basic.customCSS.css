@@ -1032,6 +1032,7 @@ input.discussion-textbox, input.search-input {
 input.search-input {
     width: calc(100% - 350px);
     border-color: #252525;
+    z-index:2;
 }
 
 
@@ -1070,6 +1071,17 @@ input.search-input {
 
 .search-result-list span.result-clickable {
     height: auto;
+}
+
+.search-result-list:before {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    content: "";
+    left: 0;
+    top: 0;
+    z-index: -1;
 }
 
 
