@@ -4,6 +4,17 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 {
     use core\PluginMemberTrait;
 
+
+
+    protected function search($json){
+
+        $results=$this->getPlugin()->searchFeedItems($json->search);
+
+        return array('results'=>$results);
+
+    }
+
+
     protected function listFeedItems($task, $json)
     {
 

@@ -22,6 +22,17 @@ class ProjectHubPlugin extends Plugin implements
 
 
 	}
+
+
+	public function searchFeedItems($searchKeyword){
+
+		return $this->listFeedItems(array('name'=>array(
+			'value'=>'%'.$searchKeyword.'%',
+			'comparator'=>'LIKE'
+		)));
+
+	}
+
 	public function listPinnedFeedItems() {
 		return array_map(function ($item) {
 
@@ -39,15 +50,17 @@ class ProjectHubPlugin extends Plugin implements
 
 		}, json_decode(file_get_contents(__DIR__ . '/samplePinned.json'), true));
 	}
-	public function listFeedItems() {
+	public function listFeedItems($filter=array()) {
 
 		GetPlugin('Attributes');
 
-		$projects = $this->getDatabase()->getProjects(array('ORDER BY' => 'createdDate DESC'));
-		$events = $this->getDatabase()->getEvents(array('ORDER BY' => 'createdDate DESC'));
-		$connections = $this->getDatabase()->getConnections(array('ORDER BY' => 'createdDate DESC'));
-		$requests = $this->getDatabase()->getRequests(array('ORDER BY' => 'createdDate DESC'));
-		$profiles = $this->getDatabase()->getProfiles(array('ORDER BY' => 'createdDate DESC', "published" => true));
+		$filter['ORDER BY'] = 'createdDate DESC';
+
+		$projects = $this->getDatabase()->getProjects($filter);
+		$events = $this->getDatabase()->getEvents($filter);
+		$connections = $this->getDatabase()->getConnections($filter);
+		$requests = $this->getDatabase()->getRequests($filter);
+		$profiles = $this->getDatabase()->getProfiles(array_merge(array("published" => true), $filter));
 
 		return array_merge(
 			array_map(function ($record) {

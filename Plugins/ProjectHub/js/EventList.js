@@ -319,15 +319,21 @@ EventList.DefaultTags=function(application){
 
 
 EventList.SearchAggregator = new Class({
-    Extends: SearchAggregator,
-    initialize: function(map, search, options) {
+    Extends: UISearchListAggregator,
+    initialize: function(application, search, options) {
         var me=this;
-        me.map=map;
         this.parent(search, Object.append({
 
-            PreviousTemplate: ListAggregator.PreviousTemplate,
-            MoreTemplate: ListAggregator.MoreTemplate,
-            ResultTemplate: MarkerSearchAggregator.DefaultTemplate
+            PreviousTemplate: UIListAggregator.PreviousTemplate,
+            MoreTemplate: UIListAggregator.MoreTemplate,
+            ResultTemplate: UIListAggregator.NamedViewTemplate(application, {
+            	namedView:"eventFeedSearchItemDetail",
+            	events:{
+            		click:function(){
+            			application.getNamedValue('navigationController').navigateTo("Single", "Main");
+            		}
+            	}
+            })
 
         }, options));
     },
@@ -339,11 +345,8 @@ EventList.SearchAggregator = new Class({
             search: string,
             searchOptions: filters
         };
-        if(me.map){
-            args.mapId= me.map.getId();
-        }
-
-        return new AjaxControlQuery(CoreAjaxUrlRoot, 'mapitems_search', Object.append({'plugin':'Search'}, args));
+        
+        return new AjaxControlQuery(CoreAjaxUrlRoot, 'search', Object.append({'plugin':'ProjectHub'}, args));
 
      
     }
