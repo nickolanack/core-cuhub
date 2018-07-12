@@ -3407,9 +3407,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "eventFeedSearchItemView",
-            "target": "eventFeedSearchItemView",
-            "templateName": "eventFeedSearchItemView",
+            "widgetTitle": "eventFeedSearchItemDetail",
+            "target": "eventFeedSearchItemDetail",
+            "templateName": "eventFeedSearchItemDetail",
             "requireTarget": true,
             "onRenderApplictionScript": "",
             "notifyViewer": false,
@@ -3423,17 +3423,17 @@
                 "positions": {
                     "title": {
                         "modules": [
-                            "eventFeedSearchItemView.metadata.positions.title.modules.0.json"
+                            "eventFeedSearchItemDetail.metadata.positions.title.modules.0.json"
                         ]
                     },
                     "content": {
                         "modules": [
-                            "eventFeedSearchItemView.metadata.positions.content.modules.0.json"
+                            "eventFeedSearchItemDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
                         "modules": [
-                            "eventFeedSearchItemView.metadata.positions.footer.modules.0.json"
+                            "eventFeedSearchItemDetail.metadata.positions.footer.modules.0.json"
                         ]
                     },
                     "menu": {
