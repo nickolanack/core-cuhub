@@ -336,8 +336,9 @@
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
+                                    "name": "My Custom Script",
                                     "script": "layoutDetail Main View.metadata.positions.content.modules.1.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
@@ -363,9 +364,9 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "top-detail  flex-layout",
+                                    "className": "bottom-detail  flex-layout",
                                     "viewType": "view",
-                                    "namedView": "topDetail",
+                                    "namedView": "bottomDetail",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
@@ -383,9 +384,9 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "bottom-detail  flex-layout",
+                                    "className": "top-detail  flex-layout",
                                     "viewType": "view",
-                                    "namedView": "bottomDetail",
+                                    "namedView": "topDetail",
                                     "shouldRender": true,
                                     "namedViewScript": "return namedView",
                                     "showInlineEdit": false,
