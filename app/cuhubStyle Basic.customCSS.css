@@ -1167,6 +1167,7 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems{
     background-color: #1f54f5;
     border: 1px solid rgba(0,0,0,0.3);
     box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    width: 170px;
 
 }
 span.ui-navigation-menu .menu-main li.menu-main-feeditems.active{
