@@ -1,14 +1,12 @@
-@media screen and (max-width: 1000px){
-    
-    
-    
-    span.ui-navigation-menu .menu-main li {
-        width: 150px;
-        font-size: 15px;
+@media screen and (max-width: 1600px){
+
+    .ui-view.user-detail.top-right .myprofile-feed-item>div>div>* {
+        display: none;
     }
-    
-    
-    
+    .ui-view.user-detail.top-right .myprofile-feed-item>div>div>.feed-item-icon.user-icon{
+        display:inline-block;
+    }
+
 }
 
 @media screen and (max-width: 1500px){
@@ -29,15 +27,23 @@
 
 @media screen and (max-width: 1250px){
 
-    .ui-view.user-detail.top-right .myprofile-feed-item>div>div>* {
-        display: none;
-    }
-    .ui-view.user-detail.top-right .myprofile-feed-item>div>div>.feed-item-icon.user-icon{
-        display:inline-block;
-    }
+    
     
     .ui-view.user-detail.top-right{
         left: 125px;
         right:auto;
     }
+}
+
+@media screen and (max-width: 1000px){
+    
+    
+    
+    span.ui-navigation-menu .menu-main li {
+        width: 150px;
+        font-size: 15px;
+    }
+    
+    
+    
 }
