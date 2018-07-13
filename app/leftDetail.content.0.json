@@ -1,8 +1,20 @@
 {
-    "type": "WizardScriptElement",
+    "type": "UIView",
     "config": {
-        "name": "My Custom Script",
-        "script": "\nreturn EventList.CreateClearButton(application);",
-        "description": "Info about my custom script"
+        "className": "user-detail",
+        "viewType": "view",
+        "namedView": "userDetail",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultFormView",
+        "formOptions": "{}",
+        "showDeleteButton": false,
+        "deleteItemScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false
     }
 }

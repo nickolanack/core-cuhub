@@ -232,29 +232,9 @@
                         "modules": [
                             "leftDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "user-detail",
-                                    "viewType": "view",
-                                    "namedView": "userDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false
-                                }
-                            },
-                            {
                                 "type": "Search",
                                 "config": {
-                                    "getAggregatorsScript": "leftDetail.metadata.positions.content.modules.2.config.getAggregatorsScript.js",
+                                    "getAggregatorsScript": "leftDetail.metadata.positions.content.modules.1.config.getAggregatorsScript.js",
                                     "placeholder": "search items"
                                 }
                             },
@@ -262,17 +242,17 @@
                                 "type": "TagCloud",
                                 "config": {
                                     "tags": "[\n   \"tag one\",\n   \"tag two\"\n]",
-                                    "getItemTagsScript": "leftDetail.metadata.positions.content.modules.3.config.getItemTagsScript.js",
-                                    "formatModuleScript": "leftDetail.metadata.positions.content.modules.3.config.formatModuleScript.js"
+                                    "getItemTagsScript": "leftDetail.metadata.positions.content.modules.2.config.getItemTagsScript.js",
+                                    "formatModuleScript": "leftDetail.metadata.positions.content.modules.2.config.formatModuleScript.js"
                                 }
                             },
                             {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "leftDetail.metadata.positions.content.modules.4.config.fieldLabelScript.js",
+                                    "fieldLabelScript": "leftDetail.metadata.positions.content.modules.3.config.fieldLabelScript.js",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
+                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
                                 }
                             },
                             {
