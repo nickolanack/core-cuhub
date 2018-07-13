@@ -1150,3 +1150,32 @@ ul.ShareLinksModule{
 span.ui-navigation-menu .menu-main li{
    top:80px;
 }
+
+li.menu-main-feeditems:after {
+    display: none;
+}
+
+span.ui-navigation-menu .menu-main li button.menu-main-feeditems {
+    display: none;
+}
+
+span.ui-navigation-menu .menu-main li.menu-main-feeditems{
+    height: 50px;
+    margin-top: 65px;
+    padding-top: 10px;
+    background-color: #1f54f5;
+    border: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+
+}
+span.ui-navigation-menu .menu-main li.menu-main-feeditems.active{
+    background-color:transparent;
+    box-shadow: 0 0 3px rgba(255,255,255,0.3);
+}
+
+span.ui-navigation-menu .menu-main li.menu-main-feeditems label{
+    color:white;
+}
+span.ui-navigation-menu .menu-main li.menu-main-feeditems.active label{
+    color:grey  ;
+}
