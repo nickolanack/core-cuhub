@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\n if(application.getNamedValue('navigationController').getCurrentView().view==\"FeedItems\"){\n     return null;\n }\nreturn new ElementModule('button',{\n    html:\"Show All\",\n    events:{click:function(){\n        application.getNamedValue('navigationController').navigateTo(\"FeedItems\", \"Main\");\n    }},\n    \"class\":\"clear-filter form-btn\"\n})",
+        "script": "\nreturn EventList.MakeClearButton(application);",
         "description": "Info about my custom script"
     }
 }
