@@ -457,7 +457,10 @@ span.ui-navigation-menu ul>label {
     color: #eeeeee;
     margin-left: 5px;
 }
-
+.uilist-pageination:after {
+    content: attr(data-list-count);
+    color: #1f54f5;
+}
 
 .form-btn, .WizardButton {
     background-color: #1f54f5;
