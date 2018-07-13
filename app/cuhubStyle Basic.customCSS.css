@@ -1143,3 +1143,10 @@ ul.ShareLinksModule{
 .share-links img {
     vertical-align:middle;
 }
+
+.ui-view.bottom-detail {
+    padding-top: 100px;
+}
+span.ui-navigation-menu .menu-main li{
+   top:80px;
+}
