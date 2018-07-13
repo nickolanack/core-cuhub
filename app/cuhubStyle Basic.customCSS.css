@@ -442,7 +442,7 @@ span.ui-navigation-menu ul>label {
     display: inline-block;
 }
 
-.btn-tag, .form-btn, .WizardButton, .t-btn{
+.btn-tag, .form-btn, .WizardButton, .t-btn, .uilist-pageination button{
     border: 1px solid rgba(0,0,0,0.3);
     border-radius: 2px;
     margin: 2px;
@@ -450,6 +450,12 @@ span.ui-navigation-menu ul>label {
     text-transform: capitalize;
     padding: 2px 7px;
     cursor:pointer;
+}
+
+.uilist-pageination button {
+    background-color: #1f54f5;
+    color: #eeeeee;
+    margin-left: 5px;
 }
 
 
