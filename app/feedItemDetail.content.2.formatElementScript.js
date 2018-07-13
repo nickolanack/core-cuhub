@@ -37,4 +37,4 @@ el.addClass('feed-item-label count-posts loading');
 		                   
 		                   
 		                    
-		                }).execute();
+		                }).limit(1).execute();
