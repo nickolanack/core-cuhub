@@ -23,6 +23,6 @@
         "emptyNamedView": "emptyListView",
         "filterItemsScript": "return !!(viewControllerApp.getNamedValue('feedItemFilter')||function(){return true})(item);",
         "sortItemsScript": "if(!a.hasDate()){\n    return -1;\n}\nif(!b.hasDate()){\n    return 1;\n}\n\nreturn b.getMillisecondDateTime()-a.getMillisecondDateTime();\n",
-        "maxItems": "-1"
+        "maxItems": "10"
     }
 }
