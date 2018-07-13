@@ -166,6 +166,7 @@ span.ui-navigation-menu .menu-main {
     top: -145px;
     height: 0px;
     width: 100%;
+    left:-145px;
 }
 
 span.ui-navigation-menu .menu-main li {
