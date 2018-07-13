@@ -21,4 +21,23 @@
         text-align:left;
         left:0;
     }
+    
+    
+    
+    
+}
+
+@media screen and (max-width: 1250px){
+
+    .ui-view.user-detail.top-right .myprofile-feed-item>div>div>* {
+        display: none;
+    }
+    .ui-view.user-detail.top-right .myprofile-feed-item>div>div>.feed-item-icon.user-icon{
+        display:inline-block;
+    }
+    
+    .ui-view.user-detail.top-right{
+        left: 125px;
+        right:auto;
+    }
 }
