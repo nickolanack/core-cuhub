@@ -1,13 +1,18 @@
 module.getElement().addEvent('click', function(e){
+    item.activate();
     var nav=application.getNamedValue('navigationController');
     
     if(item.isPinned()&&nav.getCurrentView().view!=="Pinned"){
         nav.navigateTo("Pinned", "Main");
+        return;
     }
+    
     if(item.isArchived()&&nav.getCurrentView().view!=="Archive"){
         nav.navigateTo("Archive", "Main");
+        return;
     }
-    item.activate();
+    nav.navigateTo("Single", "Main");
+   
 });
 
 if(item.isActive()||item instanceof MyProfileItem){
