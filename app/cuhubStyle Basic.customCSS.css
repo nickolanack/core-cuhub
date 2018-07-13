@@ -1060,7 +1060,7 @@ input.discussion-textbox {
 }
 
 input.search-input {
-    width: calc(100% - 350px);
+    width: calc(100% - 200px);
     border-color: #252525;
     z-index:2;
 }
