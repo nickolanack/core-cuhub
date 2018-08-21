@@ -183,6 +183,7 @@
             "target": "cuhub",
             "templateName": "cuhub",
             "requireTarget": false,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "CUHub Main Application.onRenderApplictionScript.js",
             "notifyViewer": false,
             "metadata": {
@@ -221,6 +222,7 @@
             "target": "leftDetail",
             "templateName": "leftDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -303,6 +305,7 @@
             "target": "layoutDetail",
             "templateName": "layoutDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -409,6 +412,7 @@
             "target": "rightDetail",
             "templateName": "rightDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -494,6 +498,7 @@
             "target": "topDetail",
             "templateName": "topDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -542,6 +547,7 @@
             "target": "bottomDetail",
             "templateName": "bottomDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -598,6 +604,7 @@
             "target": "navigationDetail",
             "templateName": "navigationDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -646,6 +653,7 @@
             "target": "feedItemDetail",
             "templateName": "feedItemDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -740,6 +748,7 @@
             "target": "feedItemsList",
             "templateName": "feedItemsList",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -778,6 +787,7 @@
             "target": "emptyListView",
             "templateName": "emptyListView",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -839,6 +849,7 @@
             "target": "calendarDetail",
             "templateName": "calendarDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -887,6 +898,7 @@
             "target": "feedItemExpandedDetail",
             "templateName": "feedItemExpandedDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -1057,6 +1069,7 @@
             "target": "userDetail",
             "templateName": "userDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -1095,6 +1108,7 @@
             "target": "pinnedItemsList",
             "templateName": "pinnedItemsList",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -1133,6 +1147,7 @@
             "target": "emptyPinnedListView",
             "templateName": "emptyPinnedListView",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -1592,6 +1607,7 @@
             "target": "guestExpandedDetail",
             "templateName": "guestExpandedDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -1729,6 +1745,7 @@
             "target": "feedItemActionsDetail",
             "templateName": "feedItemActionsDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -1799,6 +1816,7 @@
             "target": "profileExpandedDetail",
             "templateName": "profileExpandedDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -2600,6 +2618,7 @@
             "target": "archivedItemsList",
             "templateName": "archivedItemsList",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -2726,6 +2745,7 @@
             "target": "feedItemInteractionDetail",
             "templateName": "feedItemInteractionDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -2771,6 +2791,7 @@
             "target": "defaultPostDetail",
             "templateName": "defaultPostDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -3194,6 +3215,7 @@
             "target": "mainPinnedDetail",
             "templateName": "mainPinnedDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -3259,6 +3281,7 @@
             "target": "mainSingleDetail",
             "templateName": "mainSingleDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -3297,6 +3320,7 @@
             "target": "mainArchiveDetail",
             "templateName": "mainArchiveDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -3335,6 +3359,7 @@
             "target": "mainAboutDetail",
             "templateName": "mainAboutDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -3373,6 +3398,7 @@
             "target": "mainContactDetail",
             "templateName": "mainContactDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
@@ -3411,6 +3437,7 @@
             "target": "eventFeedSearchItemDetail",
             "templateName": "eventFeedSearchItemDetail",
             "requireTarget": true,
+            "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {

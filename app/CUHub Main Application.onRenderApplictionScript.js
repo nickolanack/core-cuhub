@@ -1,5 +1,6 @@
 HtmlDocument()->META(HtmlDocument()->website(), 'base');
 
+
 IncludeJSBlock('
 
 
@@ -13,7 +14,16 @@ TemplateModule.SetTemplate(\'default\',\'<div data-template="content" class="tem
  * Add all views that wont be autoloaded. (any view that is rendered programatically and not by default) 
  */
 
-GetPlugin('ProjectHub')->includeScripts();
+$projectHub=GetPlugin('ProjectHub');
+
+$projectHub->setDocumentMetadata();
+
+$projectHub->includeScripts();
+
+
+
+
+
 
 GetWidget('cuhubStyle')->display($targetInstance);
 GetWidget('calendarStyle')->display($targetInstance);
