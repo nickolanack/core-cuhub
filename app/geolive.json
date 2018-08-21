@@ -3467,5 +3467,14 @@
             },
             "readAccess": "public"
         }
+    },
+    "widget.56": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Error",
+            "widgetTitle": "site.error.html",
+            "target": "site.error.html"
+        }
     }
 }
