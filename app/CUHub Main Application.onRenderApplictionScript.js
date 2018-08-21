@@ -20,6 +20,12 @@ $projectHub->setDocumentMetadata();
 
 $projectHub->includeScripts();
 
+IncludeJSBlock('
+
+    window.FeedItemListResponse='.json_encode($projectHub->listFeedItemsAjax()).';
+
+');
+
 
 
 
