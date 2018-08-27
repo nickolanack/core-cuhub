@@ -284,6 +284,7 @@ var EventItem=new Class({
 		var actions=[
 			this.isPinned()?'unpin':'pin', 
 			this.isArchived()?'unarchive':'archive', 
+			'focus'
 		];
 		 
 		if(this.clientCanEdit()){
@@ -763,6 +764,13 @@ EventItem.CreateActionButtons=function(item, application){
 				return;
 			}
 
+			if(action==='focus'){
+				
+				application.getNamedValue('navigationController').navigateTo("FeedItems", "Main");
+
+				return;
+			}
+
 			console.warn('item does not define function named: '+action);
 			
 		}}});
@@ -828,4 +836,46 @@ EventItem.CreateTagFilterButtons=function(item, application){
 	});
 
 };
+
+
+EventItem.CreateItemIcon=function(item, application){
+	
+	var icon= new ElementModule('div',{"class":"feed-item-icon"});
+
+	if(item.hasIcon()){
+	    icon.getElement().addClass('user-icon');
+	    icon.getElement().setStyle("background-image","url('"+item.getIcon()+"')");
+	}
+
+	if(item instanceof ConnectionItem&&item.isConnected()){
+	    var connectedTo=item.getConnectionTo();
+	    if(connectedTo.hasIcon()){
+	        icon.getElement().addClass('user-icon connection-icon');
+	        icon.getElement().setStyle("background-image","url('"+connectedTo.getIcon()+"')");
+	        
+	        icon.getElement().appendChild(new Element('div',{"class":"feed-item-icon"}))
+	    }
+	}
+
+	if(item.getType()==="ProjectHub.event"&&item.hasEventDate()){
+	    icon.getElement().setAttribute('data-event-day', item.getEventDay());
+	}
+
+
+	if(item instanceof MyProfileItem){
+		icon.getElement().addEvent('click',function(){
+			//EventList.SharedInstance(function(el){
+				//resolve profile item!
+				application.getNamedValue('navigationController').navigateTo("Single", "Main");
+			//})
+			
+		});
+	}
+
+
+	return icon;
+
+
+
+}
 

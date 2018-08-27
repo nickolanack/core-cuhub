@@ -37,17 +37,24 @@ var EventList=(function(){
 
 			if(AppClient.getUserType()=="guest"){
 			    me._clientsProfile = new MyProfileItem();
+			    me._loadFeedItems();
 			}else{
 
 				(new ProfileQuery()).addEvent('success',function(response){
 					me._clientsProfile =new MyProfileItem(response.result);
+					me._loadFeedItems();
 				}).execute();
 				
 			}
 
 
 
-			(new FeedListQuery()).addEvent('success',function(resp){
+			
+
+		},
+		_loadFeedItems:function(then){
+			var me=this;
+			var listHandler=function(resp){
 
 				me._events=resp.results.map(function(data){
 
@@ -105,7 +112,16 @@ var EventList=(function(){
 					
 				}
 
-			}).execute();
+			}
+
+			if(window.FeedItemListResponse){
+				setTimeout(function(){
+					listHandler(window.FeedItemListResponse);
+				},50);
+			}else{
+				(new FeedListQuery()).addEvent('success', listHandler).execute();
+			}
+			
 
 		},
 		getClientProfile:function(){
@@ -317,6 +333,155 @@ EventList.DefaultTags=function(application){
 
 	}
 
+EventList.CreateNavigationController=function(labels, application){
+	var labelContent=labels;
+	var navigationController=(new NavigationMenuModule({
+      "Main":[
+        {
+          "html":"Activity",
+          "name":"FeedItems",
+          "class":"menu-main-feeditems",
+          "namedView":"bottomDetail",
+          "labelContent":"Show All Recent Activity Feed Items",
+           filterItem:function(item){
+              return true; 
+           }
+        },
+        {
+          "html":"Events",
+          "namedView":"bottomDetail",
+          "labelContent":labelContent['label-for-events'],
+           filterItem:function(item){
+              return item.getType()==="ProjectHub.event";   
+           }
+        },
+        {
+          html:"Projects",
+          "namedView":"bottomDetail",
+          "labelContent":labelContent['label-for-projects'],
+           filterItem:function(item){
+              return item.getType()==="ProjectHub.project";   
+           }
+        },
+        {
+          html:"Connections",
+          "namedView":"bottomDetail",
+          "labelContent":labelContent['label-for-connections'],
+           filterItem:function(item){
+              return item.getType()==="ProjectHub.connection";   
+           }
+        },
+         {
+          html:"Profiles",
+          "namedView":"bottomDetail",
+          "labelContent":labelContent['label-for-profiles'],
+           filterItem:function(item){
+              return item.getType()==="ProjectHub.profile";   
+           }
+        },
+        // {
+        //   html:"Requests",
+        //   "view":"bottomDetail",
+        //   "labelContent":"user requests",
+        //   filterItem:function(item){
+        //       return item.getType()==="ProjectHub.request";   
+        //   }
+        // },
+        {
+          html:"Calendar"
+        },
+        {
+          "html":"Tags",
+          "namedView":"bottomDetail",
+           filterItem:function(item){
+              return EventList.SharedInstance().itemMatchesFilter(item, application.getNamedValue('tagFilter')); 
+           },
+           urlComponent:function(stub){
+               var filter=application.getNamedValue('tagFilter');
+               if(!filter){
+                   return stub;
+               }
+               return stub+'/'+(filter.tags.length>1?'match-all/':"")+filter.tags.map(function(t){return t.split(' ').join('-'); }).join('/');
+           }
+        },
+        {
+          "html":"Date",
+          "namedView":"bottomDetail",
+           filterItem:function(item){
+              return EventList.SharedInstance().itemMatchesFilter(item, application.getNamedValue('dateFilter')); 
+           },
+           urlComponent:function(stub){
+               var filter=application.getNamedValue('dateFilter');
+               if(!filter){
+                   return stub;
+               }
+               return stub+'/'+(filter.dates.length>1?'match-any/':"")+filter.dates.map(function(t){return t.split(' ').join('-'); }).join('/');
+           }
+        },
+        {
+          html:"Archive"
+        },
+        {
+          html:"Pinned"
+        },
+        {
+          html:"Single",
+        },
+        {
+          html:"About"
+        },
+        {
+          html:"Contact"
+        }
+      ]   
+        
+    },{
+        initialView:{"section":"Main", "view":"FeedItems"},
+        targetUIView:function(button, section, viewer){
+            return  viewer.getApplication().getChildView('content',0).getChildView('content',3)
+        },
+        templateView:function(button, section){
+            return button.namedView||(section.toLowerCase()+button.html+"Detail");
+        },
+        buttonClass:function(button, section){
+            return button["class"]||("menu-"+section.toLowerCase()+"-"+button.html.toLowerCase())
+        },
+        sectionClass:function(section){
+            return "menu-"+section.toLowerCase()
+        },
+        formatEl:function(li, button){
+            if(button&&button.labelContent){
+                li.appendChild(new Element('label', {html:button.labelContent}));
+            }
+        }
+    })).addEvent('navigationStart', function(button){
+        application.setNamedValue('feedItemFilter', function(item){
+            return button.filterItem?button.filterItem(item):true;
+        });
+    });
+    
+application.setNamedValue('navigationController', navigationController);
+return navigationController;
+
+
+
+
+};
+
+EventList.CreateClearButton=function(application){
+
+	if(application.getNamedValue('navigationController').getCurrentView().view=="FeedItems"){
+	    return null;
+	}
+
+	return new ElementModule('button',{
+	    html:"Show All",
+	    events:{click:function(){
+	        application.getNamedValue('navigationController').navigateTo("FeedItems", "Main");
+	    }},
+	    "class":"clear-filter form-btn"
+	});
+}
 
 EventList.SearchAggregator = new Class({
     Extends: UISearchListAggregator,

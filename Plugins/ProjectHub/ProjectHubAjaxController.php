@@ -18,22 +18,9 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
     protected function listFeedItems($task, $json)
     {
 
-     
+        return $this->getPlugin()->listFeedItemsAjax();
 
-        $response=array('results'=>$this->getPlugin()->listFeedItems());
-
-
-
-
-        $userCanSubscribe = !Core::Client()->isGuest();
-        if ($userCanSubscribe) {
-            $response['subscription'] = array(
-                'eventfeed.'.Core::Client()->getUserId()=>'update',
-                'eventlist'=>'update',
-            );
-        }
-
-        return $response;
+        
 
     }
 
