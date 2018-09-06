@@ -3,9 +3,12 @@
 
 
 /**
- * ProjectHub website plugin. Manages publishable feeditems consisting of primarily of profiles, projects and events. 
+ * ProjectHub website plugin. Manages publishable 'feeditems' consisting of primarily of profiles, projects and events. 
+ * 
  * An additional feeditem type, 'connection' can be made from profiles to other primary types to create a web/graph.  
  * projects and events all have a root profile (can be created by a user/profile). and projects can have sub projects and events
+ *
+ * For logged in users, feed items can be pinned and archived
  */
 class ProjectHubPlugin extends Plugin implements 
 	core\AjaxControllerProvider, core\DatabaseProvider, core\ViewController, core\PluginDataTypeProvider, core\EventListener {
@@ -18,12 +21,249 @@ class ProjectHubPlugin extends Plugin implements
 	protected $name = 'Project Hub Plugin';
 	protected $description = 'Provides project and connection management';
 
+
+
+	/**
+	 * searches and returns of list of feeditems containing the keyword in the name
+	 * @param  string $searchKeyword some search keyword
+	 * @return array feeditem list
+	 */
+	public function searchFeedItems($searchKeyword){
+
+		return $this->listFeedItems(array('name'=>array(
+			'value'=>'%'.$searchKeyword.'%',
+			'comparator'=>'LIKE'
+		)));
+
+	}
+
+	/**
+	 * TODO: this is using sampleResults!
+	 * returns the list of pinned feeditems
+	 * @return array feeditem list
+	 */
+	public function listPinnedFeedItems() {
+		return array_map(function ($item) {
+
+			$item['pinned'] = true;
+			return $item;
+
+		}, json_decode(file_get_contents(__DIR__ . '/samplePinned.json'), true));
+	}
+
+	/**
+	 * TODO: this is using sampleResults!
+	 * returns the list of archived feeditems
+	 * @return array feeditem list
+	 */
+	public function listArchivedFeedItems() {
+		return array_map(function ($item) {
+
+			$item['archived'] = true;
+			return $item;
+
+		}, json_decode(file_get_contents(__DIR__ . '/samplePinned.json'), true));
+	}
+
+
+	/**
+	 * returns the list of feeditems formatted for an ajax response. 
+	 * ie: ["results"=>array, "subscription"=>array];
+	 * @return array feeditem list ajax response
+	 */
+	public function listFeedItemsAjax(){
+
+		$response=array('results'=>$this->listFeedItems());
+
+
+
+
+        $userCanSubscribe = !GetClient()->isGuest();
+        if ($userCanSubscribe) {
+            $response['subscription'] = array(
+                'eventfeed.'.GetClient()->getUserId()=>'update',
+                'eventlist'=>'update',
+            );
+        }
+
+        return $response;
+
+
+
+	}
+
+	/**
+	 * returns the list of formatted (possibly filtered) feeditems
+	 * @return array feeditem list
+	 */
+	public function listFeedItems($filter=array()) {
+
+		GetPlugin('Attributes');
+
+		$filter['ORDER BY'] = 'createdDate DESC';
+
+		$projects = $this->getDatabase()->getProjects($filter);
+		$events = $this->getDatabase()->getEvents($filter);
+		$connections = $this->getDatabase()->getConnections($filter);
+		$requests = $this->getDatabase()->getRequests($filter);
+		$profiles = $this->getDatabase()->getProfiles(array_merge(array("published" => true), $filter));
+
+		return array_merge(
+			array_map(function ($record) {
+
+				return $this->_feedItem($record ,"project");
+
+			}, $projects),
+			array_map(function ($record) {
+
+				return $this->_feedItem($record ,"event");
+
+			}, $events),
+			array_map(function ($record) {
+
+				return $this->_feedItem($record ,"connection");
+
+
+			}, $connections),
+			array_map(function ($record) {
+
+				return $this->_feedItem($record ,"request");
+
+			}, $requests),
+
+			array_map(function ($record) {
+
+				
+				$profile = $this->_feedItem($record ,"profile");
+				$profile["attributes"]=(new attributes\Record('profileAttributes'))->getValues($profile['id'], $profile["type"]);
+				return $profile;
+
+			}, $profiles) //,
+			//json_decode(file_get_contents(__DIR__.'/sampleFeed.json'),true)
+			//$this->listPinnedFeedItems(),
+			//$this->listArchivedFeedItems()
+		);
+
+	}
+
+	/**
+	 * get the list of feeditem types
+	 * @return array types
+	 */
+	public function getFeedTypes(){
+
+		return array('project','event','connection','request','profile');
+
+	}
+
+	
+	/**
+	 * 
+	 * returns a single formatted feeditem given the id and type
+	 * @param  int $id   database id
+	 * @param  string $type must be a valid type @see getFeedTypes
+	 * @return array     formatted feeditem
+	 */
+	public function getFeedItemRecord($id, $type){
+		if(!in_array($type, $this->getFeedTypes())){
+			throw new Exception('Invalid type: '.$type);
+		}
+
+		$method='get'.ucfirst($type);
+		if($records=$this->getDatabase()->$method($id)){
+			return $this->_feedItem($records[0], $type);
+		}
+
+		throw new Exception('Invalid item: '.$id.' '.$type);
+
+
+	}
+
+	/**
+	 * TODO: BUG. using current user to create new item!?
+	 *   
+	 * returns a single formatted profile feeditem (users profile). creating it if it does not exist
+	 * @param  int $id (optional) user id, if
+	 * @return array     formatted feeditem
+	 */
+	public function usersProfileItem($userid) {
+
+	
+
+		$client=GetClient();
+
+		if($client->isGuest()){
+
+		}
+
+		$profile=false;
+
+		if ($profiles = $this->getDatabase()->getProfiles(array("itemId" => $userid))) {
+			$profile = get_object_vars($profiles[0]);
+		}
+
+		if(!$profile){
+			$id=$this->getDatabase()->createProfile($fields=array(
+
+	            'itemType'=>"user",
+	            'itemId'=>$client->getUserId(),
+
+	            'name'=>$client->getRealName(),
+	            'description'=>"",
+
+	            'metadata'=>json_encode((object)array()),
+	            'createdDate'=>$now=date('Y-m-d H:i:s'),
+	            'modifiedDate'=>$now,
+	            "readAccess"=>"public",
+	            "writeAccess"=>"registered",
+	            "published"=>false,
+	            'publishedDate'=>$now,
+
+	        ));
+	        $profile=array_merge($fields, array('id'=>$id));
+		}
+		
+		
+
+		$profile["type"] = "ProjectHub.profile";
+		$profile["published"] = boolval($profile["published"]);
+
+
+		GetPlugin('Attributes');
+		$profile["attributes"]=(new attributes\Record('profileAttributes'))->getValues($profile['id'], $profile["type"]);
+
+		return $profile;
+		
+
+
+	}
+
+	public function printFeedItemLinksHtml($list=null){
+
+		include_once __DIR__.'/lib/DocumentMetadata.php';
+		$documentMetadata=new \ProjectHub\DocumentMetadata();
+		?><noscript><?php
+			echo $documentMetadata->renderFeedItemIndex();
+		?></noscript><?php
+	}
+
+	public function setDocumentMetadata(){
+
+		include_once __DIR__.'/lib/DocumentMetadata.php';
+		$documentMetadata=new \ProjectHub\DocumentMetadata();
+		HtmlDocument()->META($documentMetadata->getSiteTitle(), 'title');
+		HtmlDocument()->META($documentMetadata->getSiteDescription(), 'description');
+	}
+
+	/**
+	 * Uses system methods to include javascript dependencies.
+	 * This should be called by the root DetailView 
+	 */
 	public function includeScripts() {
 
 		IncludeJS(__DIR__ . '/js/EventList.js');
 		IncludeJS(__DIR__ . '/js/EventItem.js');
 		IncludeJS('{core}/bower_components/moment/moment.js');
-
 
 	}
 
@@ -107,111 +347,10 @@ class ProjectHubPlugin extends Plugin implements
 	}
 
 
-	public function searchFeedItems($searchKeyword){
-
-		return $this->listFeedItems(array('name'=>array(
-			'value'=>'%'.$searchKeyword.'%',
-			'comparator'=>'LIKE'
-		)));
-
-	}
-
-	public function listPinnedFeedItems() {
-		return array_map(function ($item) {
-
-			$item['pinned'] = true;
-			return $item;
-
-		}, json_decode(file_get_contents(__DIR__ . '/samplePinned.json'), true));
-	}
-
-	public function listArchivedFeedItems() {
-		return array_map(function ($item) {
-
-			$item['archived'] = true;
-			return $item;
-
-		}, json_decode(file_get_contents(__DIR__ . '/samplePinned.json'), true));
-	}
-
-	public function listFeedItemsAjax(){
-
-		$response=array('results'=>$this->listFeedItems());
 
 
 
-
-        $userCanSubscribe = !GetClient()->isGuest();
-        if ($userCanSubscribe) {
-            $response['subscription'] = array(
-                'eventfeed.'.GetClient()->getUserId()=>'update',
-                'eventlist'=>'update',
-            );
-        }
-
-        return $response;
-
-
-
-	}
-
-	public function listFeedItems($filter=array()) {
-
-		GetPlugin('Attributes');
-
-		$filter['ORDER BY'] = 'createdDate DESC';
-
-		$projects = $this->getDatabase()->getProjects($filter);
-		$events = $this->getDatabase()->getEvents($filter);
-		$connections = $this->getDatabase()->getConnections($filter);
-		$requests = $this->getDatabase()->getRequests($filter);
-		$profiles = $this->getDatabase()->getProfiles(array_merge(array("published" => true), $filter));
-
-		return array_merge(
-			array_map(function ($record) {
-
-				return $this->_feedItem($record ,"project");
-
-			}, $projects),
-			array_map(function ($record) {
-
-				return $this->_feedItem($record ,"event");
-
-			}, $events),
-			array_map(function ($record) {
-
-				return $this->_feedItem($record ,"connection");
-
-
-			}, $connections),
-			array_map(function ($record) {
-
-				return $this->_feedItem($record ,"request");
-
-			}, $requests),
-
-			array_map(function ($record) {
-
-				
-				$profile = $this->_feedItem($record ,"profile");
-				$profile["attributes"]=(new attributes\Record('profileAttributes'))->getValues($profile['id'], $profile["type"]);
-				return $profile;
-
-			}, $profiles) //,
-			//json_decode(file_get_contents(__DIR__.'/sampleFeed.json'),true)
-			//$this->listPinnedFeedItems(),
-			//$this->listArchivedFeedItems()
-		);
-
-	}
-
-	public function getFeedTypes(){
-
-		return array('project','event','connection','request','profile');
-
-	}
-
-	public function _feedItem($record ,$type){
+	private function _feedItem($record ,$type){
 
 		if(!in_array($type, $this->getFeedTypes())){
 			throw new Exception('Invalid type: '.$type);
@@ -225,21 +364,6 @@ class ProjectHubPlugin extends Plugin implements
 		return array_merge($record, $this->_getPinsForRecord($record), $this->_getArchivedForRecord($record), $this->_getAttributesForRecord($record));
 
 	}	
-
-	public function getFeedItemRecord($id, $type){
-		if(!in_array($type, $this->getFeedTypes())){
-			throw new Exception('Invalid type: '.$type);
-		}
-
-		$method='get'.ucfirst($type);
-		if($records=$this->getDatabase()->$method($id)){
-			return $this->_feedItem($records[0], $type);
-		}
-
-		throw new Exception('Invalid item: '.$id.' '.$type);
-
-
-	}
 
 	private function _getPinsForRecord($record){
 
@@ -297,72 +421,5 @@ class ProjectHubPlugin extends Plugin implements
 	}
 
 
-	public function usersProfileItem($userid) {
-
 	
-
-		$client=GetClient();
-
-		if($client->isGuest()){
-
-		}
-
-		$profile=false;
-
-		if ($profiles = $this->getDatabase()->getProfiles(array("itemId" => $userid))) {
-			$profile = get_object_vars($profiles[0]);
-		}
-
-		if(!$profile){
-			$id=$this->getDatabase()->createProfile($fields=array(
-
-	            'itemType'=>"user",
-	            'itemId'=>$client->getUserId(),
-
-	            'name'=>$client->getRealName(),
-	            'description'=>"",
-
-	            'metadata'=>json_encode((object)array()),
-	            'createdDate'=>$now=date('Y-m-d H:i:s'),
-	            'modifiedDate'=>$now,
-	            "readAccess"=>"public",
-	            "writeAccess"=>"registered",
-	            "published"=>false,
-	            'publishedDate'=>$now,
-
-	        ));
-	        $profile=array_merge($fields, array('id'=>$id));
-		}
-		
-		
-
-		$profile["type"] = "ProjectHub.profile";
-		$profile["published"] = boolval($profile["published"]);
-
-
-		GetPlugin('Attributes');
-		$profile["attributes"]=(new attributes\Record('profileAttributes'))->getValues($profile['id'], $profile["type"]);
-
-		return $profile;
-		
-
-
-	}
-
-	public function printFeedItemLinksHtml($list=null){
-
-		include_once __DIR__.'/lib/DocumentMetadata.php';
-		$documentMetadata=new \ProjectHub\DocumentMetadata();
-		?><noscript><?php
-			echo $documentMetadata->renderFeedItemIndex();
-		?></noscript><?php
-	}
-
-	public function setDocumentMetadata(){
-
-		include_once __DIR__.'/lib/DocumentMetadata.php';
-		$documentMetadata=new \ProjectHub\DocumentMetadata();
-		HtmlDocument()->META($documentMetadata->getSiteTitle(), 'title');
-		HtmlDocument()->META($documentMetadata->getSiteDescription(), 'description');
-	}
 }
