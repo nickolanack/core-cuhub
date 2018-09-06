@@ -1,6 +1,7 @@
 <?php
 
 
+namespace Plugin;
 
 /**
  * ProjectHub website plugin. Manages publishable 'feeditems' consisting of primarily of profiles, projects and events. 
@@ -10,13 +11,13 @@
  *
  * For logged in users, feed items can be pinned and archived
  */
-class ProjectHubPlugin extends Plugin implements 
-	core\AjaxControllerProvider, core\DatabaseProvider, core\ViewController, core\PluginDataTypeProvider, core\EventListener {
+class ProjectHub extends \Plugin implements 
+	\core\AjaxControllerProvider, \core\DatabaseProvider, \core\ViewController, \core\PluginDataTypeProvider, \core\EventListener {
 		
-	use core\AjaxControllerProviderTrait;
-	use core\DatabaseProviderTrait;
-	use core\PluginDataTypeProviderTrait;
-	use core\EventListenerTrait;
+	use \core\AjaxControllerProviderTrait;
+	use \core\DatabaseProviderTrait;
+	use \core\PluginDataTypeProviderTrait;
+	use \core\EventListenerTrait;
 
 	protected $name = 'Project Hub Plugin';
 	protected $description = 'Provides project and connection management';
@@ -135,7 +136,7 @@ class ProjectHubPlugin extends Plugin implements
 
 				
 				$profile = $this->_feedItem($record ,"profile");
-				$profile["attributes"]=(new attributes\Record('profileAttributes'))->getValues($profile['id'], $profile["type"]);
+				$profile["attributes"]=(new \attributes\Record('profileAttributes'))->getValues($profile['id'], $profile["type"]);
 				return $profile;
 
 			}, $profiles) //,
@@ -166,7 +167,7 @@ class ProjectHubPlugin extends Plugin implements
 	 */
 	public function getFeedItemRecord($id, $type){
 		if(!in_array($type, $this->getFeedTypes())){
-			throw new Exception('Invalid type: '.$type);
+			throw new \Exception('Invalid type: '.$type);
 		}
 
 		$method='get'.ucfirst($type);
@@ -174,7 +175,7 @@ class ProjectHubPlugin extends Plugin implements
 			return $this->_feedItem($records[0], $type);
 		}
 
-		throw new Exception('Invalid item: '.$id.' '.$type);
+		throw new \Exception('Invalid item: '.$id.' '.$type);
 
 
 	}
@@ -229,7 +230,7 @@ class ProjectHubPlugin extends Plugin implements
 
 
 		GetPlugin('Attributes');
-		$profile["attributes"]=(new attributes\Record('profileAttributes'))->getValues($profile['id'], $profile["type"]);
+		$profile["attributes"]=(new \attributes\Record('profileAttributes'))->getValues($profile['id'], $profile["type"]);
 
 		return $profile;
 		
@@ -352,7 +353,7 @@ class ProjectHubPlugin extends Plugin implements
 	private function _feedItem($record ,$type){
 
 		if(!in_array($type, $this->getFeedTypes())){
-			throw new Exception('Invalid type: '.$type);
+			throw new \Exception('Invalid type: '.$type);
 		}
 
 		$record = get_object_vars($record);
@@ -415,7 +416,7 @@ class ProjectHubPlugin extends Plugin implements
 		
 		GetPlugin('Attributes');
 
-		return array('attributes'=>(new attributes\Record('eventAttributes'))->getValues($record['id'], $record["type"]));
+		return array('attributes'=>(new \attributes\Record('eventAttributes'))->getValues($record['id'], $record["type"]));
 
 	}
 
