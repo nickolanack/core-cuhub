@@ -49,10 +49,10 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 
 
 
-        $userCanSubscribe = !Core::Client()->isGuest();
+        $userCanSubscribe = !GetClient()->isGuest();
         if ($userCanSubscribe) {
             $response['subscription'] = array(
-                'channel' => 'pinnedfeed.'.Core::Client()->getUserId(),
+                'channel' => 'pinnedfeed.'.GetClient()->getUserId(),
                 'event' => 'update',
             );
         }
@@ -71,10 +71,10 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 
 
 
-        $userCanSubscribe = !Core::Client()->isGuest();
+        $userCanSubscribe = !GetClient()->isGuest();
         if ($userCanSubscribe) {
             $response['subscription'] = array(
-                'channel' => 'pinnedfeed.'.Core::Client()->getUserId(),
+                'channel' => 'pinnedfeed.'.GetClient()->getUserId(),
                 'event' => 'update',
             );
         }

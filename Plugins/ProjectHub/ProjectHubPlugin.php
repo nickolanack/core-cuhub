@@ -138,10 +138,10 @@ class ProjectHubPlugin extends Plugin implements
 
 
 
-        $userCanSubscribe = !Core::Client()->isGuest();
+        $userCanSubscribe = !GetClient()->isGuest();
         if ($userCanSubscribe) {
             $response['subscription'] = array(
-                'eventfeed.'.Core::Client()->getUserId()=>'update',
+                'eventfeed.'.GetClient()->getUserId()=>'update',
                 'eventlist'=>'update',
             );
         }
