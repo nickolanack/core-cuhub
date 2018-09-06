@@ -180,18 +180,17 @@ class ProjectHubPlugin extends Plugin implements
 	}
 
 	/**
-	 * TODO: BUG. using current user to create new item!?
 	 *   
-	 * returns a single formatted profile feeditem (users profile). creating it if it does not exist
+	 * returns a single formatted profile feeditem (current users profile). creating it if it does not exist
 	 * @param  int $id (optional) user id, if
 	 * @return array     formatted feeditem
 	 */
-	public function usersProfileItem($userid) {
+	public function currentUsersProfileItem() {
 
 	
 
 		$client=GetClient();
-
+		$userid=$client->getUserId();
 		if($client->isGuest()){
 
 		}

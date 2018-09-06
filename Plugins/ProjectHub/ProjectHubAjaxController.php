@@ -29,7 +29,7 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 
      
         
-        $response=array('result'=>$this->getPlugin()->usersProfileItem(GetClient()->getUserId()));
+        $response=array('result'=>$this->getPlugin()->currentUsersProfileItem());
 
 
 
