@@ -1,7 +1,8 @@
 <?php
 
+namespace DataType;
 
-class ProjectDataType extends core\DataType{
+class Project extends \core\DataType{
 
 
 	public function getParentTypes() {

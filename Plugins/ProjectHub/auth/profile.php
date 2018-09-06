@@ -1,7 +1,8 @@
 <?php
 
+namespace DataType;
 
-class ProfileDataType extends core\DataType{
+class Profile extends \core\DataType{
 
 
 	public function getParentTypes() {

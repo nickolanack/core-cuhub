@@ -1,7 +1,8 @@
 <?php
 
+namespace DataType;
 
-class RequestDataType extends core\DataType{
+class Request extends \core\DataType{
 
 
 	public function getParentTypes() {

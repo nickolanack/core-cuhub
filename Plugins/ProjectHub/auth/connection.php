@@ -1,7 +1,8 @@
 <?php
 
+namespace DataType;
 
-class ConnectionDataType extends core\DataType{
+class Connection extends \core\DataType{
 
 
 	public function getParentTypes() {

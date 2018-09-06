@@ -1,7 +1,8 @@
 <?php
 
+namespace DataType;
 
-class EventDataType extends core\DataType{
+class Event extends \core\DataType{
 
 
 
