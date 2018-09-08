@@ -75,7 +75,7 @@ class DocumentMetadata{
 
 
 		if(!$list){
-			$list=GetPlugin('ProjectHub')->listFeedItemsAjax();
+			$list=$this->listFeedItems($url);
 		}
 
 		
@@ -84,6 +84,13 @@ class DocumentMetadata{
 		return (new \core\Template($template, 'Feed Items List'))
                         ->render($list);
 
+	}
+
+	private function listFeedItems($url=null){
+		$url=$this->getUrl($url);
+		//TODO use url to get feed item list!
+		//
+		return GetPlugin('ProjectHub')->listFeedItemsAjax();
 	}
 
 
@@ -115,10 +122,10 @@ class DocumentMetadata{
 		$itemStr=$parts[1];
 		$parts=explode('-', $itemStr);
 		$type=$parts[0];
-		$id=intval($parts[1]);
+		$feedItemId=intval($parts[1]);
 
 		$getType='get'.ucfirst($type);
-		if($result=GetPlugin('ProjectHub')->getDatabase()->$getType($id)){
+		if($result=GetPlugin('ProjectHub')->getDatabase()->$getType($feedItemIds)){
 			$this->currentItem=$result[0];
 			return $result[0];
 		}
