@@ -477,7 +477,7 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
             $json->itemId
         );
 
-        return array;
+        return true;
             
     }
 
