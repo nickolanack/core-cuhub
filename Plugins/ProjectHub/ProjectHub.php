@@ -161,21 +161,21 @@ class ProjectHub extends \Plugin implements
 	/**
 	 * 
 	 * returns a single formatted feeditem given the id and type
-	 * @param  int $id   database id
-	 * @param  string $type must be a valid type @see getFeedTypes
+	 * @param  int $itemId   database id
+	 * @param  string $itemType must be a valid type @see getFeedTypes
 	 * @return array     formatted feeditem
 	 */
-	public function getFeedItemRecord($id, $type){
-		if(!in_array($type, $this->getFeedTypes())){
-			throw new \Exception('Invalid type: '.$type);
+	public function getFeedItemRecord($itemId, $itemType){
+		if(!in_array($itemType, $this->getFeedTypes())){
+			throw new \Exception('Invalid type: '.$itemType);
 		}
 
-		$method='get'.ucfirst($type);
-		if($records=$this->getDatabase()->$method($id)){
-			return $this->_feedItem($records[0], $type);
+		$method='get'.ucfirst($itemType);
+		if($records=$this->getDatabase()->$method($itemId)){
+			return $this->_feedItem($records[0], $itemType);
 		}
 
-		throw new \Exception('Invalid item: '.$id.' '.$type);
+		throw new \Exception('Invalid item: '.$itemId.' '.$itemType);
 
 
 	}
@@ -203,7 +203,7 @@ class ProjectHub extends \Plugin implements
 		}
 
 		if(!$profile){
-			$id=$this->getDatabase()->createProfile($fields=array(
+			$profileId=$this->getDatabase()->createProfile($fields=array(
 
 	            'itemType'=>"user",
 	            'itemId'=>$client->getUserId(),
@@ -220,7 +220,7 @@ class ProjectHub extends \Plugin implements
 	            'publishedDate'=>$now,
 
 	        ));
-	        $profile=array_merge($fields, array('id'=>$id));
+	        $profile=array_merge($fields, array('id'=>$profileId));
 		}
 		
 		
@@ -243,7 +243,7 @@ class ProjectHub extends \Plugin implements
 		include_once __DIR__.'/lib/DocumentMetadata.php';
 		$documentMetadata=new \ProjectHub\DocumentMetadata();
 		?><noscript><?php
-			echo $documentMetadata->renderFeedItemIndex();
+			echo $documentMetadata->renderFeedItemIndex($list);
 		?></noscript><?php
 	}
 
@@ -285,8 +285,8 @@ class ProjectHub extends \Plugin implements
 
 		if(strpos($itemType, "ProjectHub.")===0){
 
-			$p=explode(".", $itemType);
-			$type=$p[1];
+			$typeParts=explode(".", $itemType);
+			$type=$typeParts[1];
 			
 			
 			Emit("onHubPost", $eventData=array(
@@ -310,13 +310,13 @@ class ProjectHub extends \Plugin implements
 			
 			$eventData['sandboxed']=true;
 
-			if(!$eventData['sandboxed']){
-
-			}else{
+			if($eventData['sandboxed']){
 				GetPlugin('Email')->getMailerWithTemplate("pinned.update", $eventData)->to("nickblackwell82@gmail.com")->send();
 				GetPlugin('Email')->getMailerWithTemplate($type.".update", $eventData)->to("nickblackwell82@gmail.com")->send();
+				return;
 			}
 
+			//TODO: actually send!
 			
 
 		}
@@ -324,11 +324,11 @@ class ProjectHub extends \Plugin implements
 
 	}
 
-	private function _getPinners($id, $type){
+	private function _getPinners($itemId, $itemType){
 
 		$pins = $this->getDatabase()->getWatchs(array(
-			"itemId"=> $id,
-			"itemType"=>$type,
+			"itemId"=> $itemId,
+			"itemType"=>$itemType,
 			"watchType"=>"pin"
 		));
 		// return array(
@@ -337,8 +337,8 @@ class ProjectHub extends \Plugin implements
 		// );
 
 		if($pins){
-			return array_map(function($r){
-				return GetClient()->userMetadataFor($r->uid);
+			return array_map(function($pinRecord){
+				return GetClient()->userMetadataFor($pinRecord->uid);
 			},$pins);
 		}
 
