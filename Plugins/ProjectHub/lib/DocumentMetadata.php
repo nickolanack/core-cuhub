@@ -125,7 +125,7 @@ class DocumentMetadata{
 		$feedItemId=intval($parts[1]);
 
 		$getType='get'.ucfirst($type);
-		if($result=GetPlugin('ProjectHub')->getDatabase()->$getType($feedItemIds)){
+		if($result=GetPlugin('ProjectHub')->getDatabase()->$getType($feedItemId)){
 			$this->currentItem=$result[0];
 			return $result[0];
 		}
