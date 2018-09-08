@@ -8,9 +8,7 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 
     protected function search($json){
 
-        $results=$this->getPlugin()->searchFeedItems($json->search);
-
-        return array('results'=>$results);
+        return array('results'=>$this->getPlugin()->searchFeedItems($json->search));
 
     }
 
@@ -20,22 +18,12 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 
         return $this->getPlugin()->listFeedItemsAjax();
 
-        
-
     }
 
     protected function usersProfile()
     {
-
      
-        
-        $response=array('result'=>$this->getPlugin()->currentUsersProfileItem());
-
-
-
-
-        
-        return $response;
+        return array('result'=>$this->getPlugin()->currentUsersProfileItem());
 
     }
 
