@@ -37,6 +37,8 @@ if(UrlVar('tpl',false)){
     GetWidget('cuhubDebugStyle')->display($targetInstance);
 }
 
+GetWidget('stickyRightPanelStyle')->display($targetInstance);
+
 GetWidget('cuhubResponsiveStyle')->display($targetInstance);
 
 
