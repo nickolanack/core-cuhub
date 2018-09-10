@@ -3646,5 +3646,18 @@
             "widgetTitle": "Sticky Right Panel",
             "readAccess": "public"
         }
+    },
+    "widget.65": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "",
+            "target": "none",
+            "templateName": "{target}",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "notifyViewer": false
+        }
     }
 }
