@@ -3629,7 +3629,10 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "target": "none"
+            "target": "stickyRightPanelStyle",
+            "customCSS": "Sticky Right Panel.customCSS.css",
+            "widgetTitle": "Sticky Right Panel",
+            "readAccess": "public"
         }
     }
 }
