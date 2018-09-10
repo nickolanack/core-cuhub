@@ -1,5 +1,11 @@
 var nav=application.getNamedValue('navigationController');
+
 module.getElement().addEvent('click', function(e){
+    
+    if(item.isActive()&&nav.getCurrentView().view=="Single"){
+        return;
+    }
+    
     item.activate();
    
     
@@ -12,6 +18,9 @@ module.getElement().addEvent('click', function(e){
     //     nav.navigateTo("Archive", "Main");
     //     return;
     // }
+    
+  
+    
     nav.navigateTo("Single", "Main");
    
 });

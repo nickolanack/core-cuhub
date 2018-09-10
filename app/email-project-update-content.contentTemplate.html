@@ -1,0 +1,52 @@
+<html><body style="
+    background-color: rgba(0,0,0,0.1);
+">
+	<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "EmailMessage",
+  "potentialAction": {
+    "@type": "ViewAction",
+    "target": "https://cuhub.geolive.ca{{item.link}}",
+    "name": "View Item"
+    },
+  "description": "View '{{item.name}}' at CuHub"
+}
+	</script>
+	<section style="
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    padding: 10px 20px;
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,0.3);
+    margin-bottom:20px;
+     background-color: white;
+">
+	<div style="text-align: left">
+		<h2 style="
+    font-family: sans-serif;
+    color: #0b6dd3;
+    font-weight: 100;
+">Your {{item.type|split('.')|last|capitalize}} was {{action.action}}</h2>
+<h2 style="
+    font-family: sans-serif;
+    color: #0b6dd3;
+    font-weight: 100;
+">{{item.name}}</h2>
+	
+		<h3>{{action.label}}</h3>
+		<p>{{action.content|raw}}</p>
+		<h3>View your {{item.type|split('.')|last}} on the Hub</h3>
+		<p>
+			<a href="https://cuhub.geolive.ca{{item.link}}">{{item.name}}</a>.
+		</p>
+
+		<div>
+
+
+	</div>
+	</section>
+		
+</body></html>

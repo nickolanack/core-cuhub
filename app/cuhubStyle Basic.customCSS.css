@@ -661,13 +661,19 @@ span.ui-navigation-menu ul>label {
     margin-right: 50px;
 }
 
-.ui-view.feed-item.expandable.active .feed-item-actions:after {
+button.btn-action.action-focus {
+    padding: 0;
+    width: 0;
+}
+
+
+.ui-view.feed-item.expandable.active .action-focus:after {
     transform: rotate(180deg);
     transition: transform 1.5s;
 }
 
 
-.ui-view.feed-item.expandable .feed-item-actions:after {
+.ui-view.feed-item.expandable .action-focus:after {
     content: "▼";
     color: #666666;
     height: 20px;
@@ -1070,8 +1076,14 @@ input.discussion-textbox {
 
 input.search-input {
     width: calc(100% - 200px);
-    border-color: #252525;
-    z-index:2;
+    border-color: rgba(0,0,0,0.3);
+    z-index: 2;
+    border-radius: 1px;
+}
+input.search-input:focus {
+    box-shadow: 0 0 3px rgba(0,0,0,0.2) inset, 0 0 3px rgba(6, 134, 180, 0.5);
+    outline: none;
+    border-color: rgb(6, 134, 180);
 }
 
 
@@ -1113,7 +1125,7 @@ input.search-input {
     background-color: #e0e0e0;
 }
 
-.search-result-list:before {
+.search-container .search-result-list:before {
     position: fixed;
     height: 100%;
     width: 100%;

@@ -1,0 +1,22 @@
+<section>
+    <h1>CUHUB Recent Feed Items</h1>
+    <p></p>
+{% for result in results %}
+    
+    <article>
+        <header>
+            <h2>{{result.type|split('.')|last}} {{result.name}}</h2>
+            <p>Last Modified {{result.createdDate}}</p>
+            <p>{{result.description}}</p>
+        </header>
+        
+        <p>{{result.description | slice(0, 50)}} ... <a href="/Single/{{result.type|split('.')|last}}-{{result.id}}">Read More</a></p>
+        
+        <footer>
+        <p>Created By </p>
+        <p>Created On {{result.createdDate}}</p>
+        </footer>
+        
+    </article>
+{% endfor %}
+</section>

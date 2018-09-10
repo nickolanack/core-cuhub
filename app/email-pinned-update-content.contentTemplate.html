@@ -1,0 +1,113 @@
+<html><body style="
+    background-color: rgba(0,0,0,0.1);
+">
+	<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "EmailMessage",
+  "potentialAction": {
+    "@type": "ViewAction",
+    "target": "https://cuhub.geolive.ca{{item.link}}",
+    "name": "View Item"
+    },
+  "description": "View '{{item.name}}' at CuHub"
+}
+	</script>
+	
+	<section style="
+        max-width: 640px;
+        text-align: center;
+        margin: auto;
+        box-shadow: 0 0 3px rgba(0,0,0,0.2);
+        padding: 0;
+        border-radius: 2px;
+        border: 1px solid rgba(0,0,0,0.3);
+        margin-bottom:0;
+        background-color: black;
+        margin-top: 10px;
+    "><h2 style="
+    font-family: sans-serif;
+    color: white;
+    font-weight: 100;
+    background-color: black;
+    text-align: left;
+    padding-left: 10px;
+"><img style="
+    height: 30px;
+    vertical-align: bottom;
+" src="https://cuhub.geolive.ca/components/com_geolive/users_files/user_files_527/Uploads/ji3_VC9_4zi_[G]_[ImAgE].png">
+	    CuHub</h2></section>
+	<section style="
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    padding: 10px 20px;
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,0.3);
+    margin-bottom:20px;
+     background-color: white;
+">
+	<div style="text-align: left">
+	
+	    
+	
+		<h2 style="
+    font-family: sans-serif;
+    color: #0b6dd3;
+    font-weight: 100;
+">Your pinned {{item.type|split('.')|last}}: {{item.name}}, was {{action.action}}</h2>
+<h2 style="
+    font-family: sans-serif;
+    color: #0b6dd3;
+    font-weight: 100;
+">{{item.name}}</h2>
+	
+		<h3>{{action.label}}</h3>
+		<p>{{action.content|raw}}</p>
+		<h3>View this {{item.type|split('.')|last}} on the Hub</h3>
+		<p>
+			<a href="https://cuhub.geolive.ca{{item.link}}">{{item.name}}</a>.
+		</p>
+
+		<div>
+
+
+	</div>
+	</section>
+	
+	<p style="
+    text-align: center;
+    color: gray;
+">Unsubscribe from this {{item.type|split('.')|last}} - <a href="https://cuhub.geolive.ca{{item.link}}/unsubscribe" style="
+    color: gray;
+">click here</a></p>
+	
+
+{% if sandboxed == true %}
+
+<section style="
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    padding: 10px 20px;
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,0.3);
+    margin-bottom:20px;
+     background-color: white;
+"><div style="text-align: left">
+		<h2 style="
+    font-family: sans-serif;
+    color: #0b6dd3;
+    font-weight: 100;
+">Sandbox Data</h2>
+    <ul>
+        <label>Pinners</label>
+    {% for user in pinners %}
+        <li>{{ user.name }} {{ user.email }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+</div></section>
+</body></html>
