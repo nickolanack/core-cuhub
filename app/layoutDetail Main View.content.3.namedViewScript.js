@@ -1,5 +1,5 @@
 //return namedView
 
-EventList.SetInitialFilter();
+EventList.SetInitialFilter(viewControllerApp);
 EventList.InitialView(viewControllerApp,callback);
 
