@@ -1,5 +1,5 @@
 //return namedView
 
 
-EventList.CurrentView(viewControllerApp,callback);
+EventList.InitialView(viewControllerApp,callback);
 
