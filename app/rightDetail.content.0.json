@@ -4,6 +4,6 @@
         "loadAsync": false,
         "fieldLabelScript": "return \"Your Pinned Items\";",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": "el.addClass(\"section-item-icon\")"
+        "formatElementScript": "el.addClass(\"section-item-icon\")\nel.addEvent('click',function(){\n  application.getNamedValue('navigationController').navigateTo(\"Pinned\", \"Main\"); \n});"
     }
 }
