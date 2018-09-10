@@ -68,7 +68,7 @@ GetWidget('mainArchiveDetail')->display($targetInstance);
 
 GetWidget('mainContactDetail')->display($targetInstance);
 GetWidget('mainAboutDetail')->display($targetInstance);
-
+GetWidget('mainCalendarDetail')->display($targetInstance);
 
 
 
