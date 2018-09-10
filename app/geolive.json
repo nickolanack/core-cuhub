@@ -394,7 +394,7 @@
                                     "viewType": "view",
                                     "namedView": "bottomDetail",
                                     "shouldRender": true,
-                                    "namedViewScript": "return namedView",
+                                    "namedViewScript": "layoutDetail Main View.metadata.positions.content.modules.3.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
