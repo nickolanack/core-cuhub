@@ -691,11 +691,11 @@ button.btn-action.action-focus {
 }
 
 
-.feed-item.inset-layout {
+.feed-item.inset-layout-item {
     margin-left: 45px;
 }
 
-.feed-item.inset-layout:after {
+.feed-item.inset-layout-item:after {
     content: "▼";
     color: #6495ed;
     height: 20px;
