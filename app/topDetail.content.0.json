@@ -1,8 +1,22 @@
 {
-    "type": "WizardScriptElement",
+    "type": "UIView",
     "config": {
-        "name": "My Custom Script",
-        "script": "\n\n\nvar banner=new ElementModule(\"div\", {\"class\":\"banner-image\"});\n\n\nreturn banner;\n\/\/return new Asset.image(\"https:\/\/okmain.cms.ok.ubc.ca\/wp-content\/uploads\/sites\/26\/2018\/08\/Back-to-School-1920x780-2.jpg\");\n\n\/\/<img src=\"https:\/\/okmain.cms.ok.ubc.ca\/wp-content\/uploads\/sites\/26\/2018\/08\/Back-to-School-1920x780-2.jpg\" alt=\"\" class=\"hidden-phone\">",
-        "description": "Info about my custom script"
+        "className": "banner-image",
+        "viewType": "view",
+        "namedView": "defaultView",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultView",
+        "formOptions": "\"{}\"",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "initModuleScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "return item",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": ""
     }
 }
