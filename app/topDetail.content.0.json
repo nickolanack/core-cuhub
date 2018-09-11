@@ -3,7 +3,7 @@
     "config": {
         "className": "banner-image",
         "viewType": "view",
-        "namedView": "defaultView",
+        "namedView": "rightStickyDetail",
         "shouldRender": true,
         "namedViewScript": "return namedView",
         "showInlineEdit": false,
