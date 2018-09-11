@@ -1,0 +1,1 @@
+return !!(viewControllerApp.getNamedValue('feedItemFilter')||function(){return true})(item);
