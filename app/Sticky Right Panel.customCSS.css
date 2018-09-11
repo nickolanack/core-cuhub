@@ -21,7 +21,20 @@
         position: relative;
         height: 400px;
         z-index: 1;
-        background-image:url("https://okmain.cms.ok.ubc.ca/wp-content/uploads/sites/26/2018/08/Back-to-School-1920x780-2.jpg")
+        background-image:url("https://okmain.cms.ok.ubc.ca/wp-content/uploads/sites/26/2018/08/Back-to-School-1920x780-2.jpg");
+        background-size:cover;
+    }
+    
+    .banner-image:after{
+        content:"";
+        position:absolute;
+        width:100%;
+        height:100%;
+        background: -webkit-linear-gradient(transparent 20%, #002145 100%);
+        background: -o-linear-gradient(transparent 20%, #002145 100%);
+        background: -moz-linear-gradient(transparent 20%, #002145 100%);
+        background: linear-gradient(transparent 20%, #002145 100%);
+        
     }
     
     
