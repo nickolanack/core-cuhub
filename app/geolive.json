@@ -3774,6 +3774,13 @@
                                     "fieldValueScript": "return \"\";",
                                     "formatElementScript": "rightStickyDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
+                            },
+                            {
+                                "type": "Search",
+                                "config": {
+                                    "getAggregatorsScript": "rightStickyDetail.metadata.positions.content.modules.2.config.getAggregatorsScript.js",
+                                    "placeholder": "search items"
+                                }
                             }
                         ]
                     },
