@@ -1,2 +1,0 @@
-
-EventList.FormatActiveItemFeedListChildModule(childView, child);
