@@ -22,7 +22,7 @@
     
     
     <?php 
-    if($banner=GetWidget('interfaceConfig')->getParameter('banner')){
+    if(!empty($banner=GetWidget('interfaceConfig')->getParameter('banner-image'))){
     ?>
       .banner-image{
       
