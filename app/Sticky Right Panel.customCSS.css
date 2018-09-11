@@ -39,7 +39,7 @@
 
 .banner-image .section-item-icon:after {
     content: "";
-    background: #b03b3a;
+    background: rgba(176, 59, 58, 0.7);
     width: 200px;
     height: 30px;
     position: absolute;
