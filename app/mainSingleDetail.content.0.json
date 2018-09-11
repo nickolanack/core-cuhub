@@ -19,7 +19,7 @@
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
-        "getItemListScript": "\/\/ var events=EventList.SharedInstance().getEvents();\n\n EventList.SharedInstance(function(el){\n     \/\/if(!events){\n         callback(\n             el.getEvents().filter(function(e){return e.isActive();}).concat(\n                    el.getPinnedEvents().filter(function(e){return e.isActive();})\n                 ).concat(\n                    el.getArchivedEvents().filter(function(e){return e.isActive();})    \n                 )\n             \n             );\n     \/\/}\n    \/\/  listModule.addWeakEvent(el, \"unarchivedItem\", function(item){\n    \/\/      listModule.addItem(item);\n    \/\/  });\n     \n    \/\/  listModule.addWeakEvent(el, \"unpinnedItem\", function(item){\n    \/\/      listModule.addItem(item);\n    \/\/  });\n     \n    \/\/  listModule.addWeakEvent(el, \"addItem\", function(item){\n    \/\/      listModule.addItem(item);\n    \/\/  });\n })\n \n  \/\/if(events){\n  \/\/    return events;\n  \/\/}",
+        "getItemListScript": "\/\/ var events=EventList.SharedInstance().getEvents();\n\n EventList.SharedInstance(function(el){\n    \n         callback(\n             el.getActiveItems());\n    \n })\n \n  ",
         "formatItemListScript": "return list;",
         "formatListItemModuleScript": "\nEventList.FormatActiveItemFeedListChildModule(childView, child);",
         "emptyNamedView": "emptyListView",
