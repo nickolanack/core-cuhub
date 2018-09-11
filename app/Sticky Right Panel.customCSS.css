@@ -67,3 +67,9 @@
     cursor: pointer;
     top: -5px;
 }
+
+
+.search-container {
+    display: inline-block;
+    width: calc( 100% - 200px );
+}
