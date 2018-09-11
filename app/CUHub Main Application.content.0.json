@@ -4,16 +4,19 @@
         "className": "root-container flex-layout",
         "viewType": "view",
         "namedView": "layoutDetail",
+        "shouldRender": true,
         "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
         "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
-        "formatModuleScript": "<?php\n\nif(!GetWidget('interfaceConfig')->getParameter('show-banner')){\n    ?>\n    module.getElement().addClass('no-banner');\n\n    <?php\n}\n\n?>",
+        "initModuleScript": "",
+        "formatModuleScript": "<?php\n\nif(!GetWidget('interfaceConfig')->getParameter('show-background')){\n    ?>\n    module.getElement().addClass('no-banner');\n\n    <?php\n}\n\n?>",
         "resolveItemScript": "",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
-        "insertAtTop": false
+        "insertAtTop": false,
+        "targetName": ""
     }
 }
