@@ -691,6 +691,21 @@ button.btn-action.action-focus {
 }
 
 
+.feed-item.inset-layout {
+    margin-left: 45px;
+}
+
+.feed-item.inset-layout:after {
+    content: "▼";
+    color: #6495ed;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: -65px;
+    top: 1px;
+    transform: rotate(-90deg);
+}
+
 
 .sso-btn {
     display: inline-block;
