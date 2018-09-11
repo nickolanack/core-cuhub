@@ -1,4 +1,8 @@
 {
     "type": "WizardScriptElement",
-    "config": {}
+    "config": {
+        "name": "My Custom Script",
+        "script": "\nreturn new Asset.image(\"https:\/\/okmain.cms.ok.ubc.ca\/wp-content\/uploads\/sites\/26\/2018\/08\/Back-to-School-1920x780-2.jpg\");\n\n\/\/<img src=\"https:\/\/okmain.cms.ok.ubc.ca\/wp-content\/uploads\/sites\/26\/2018\/08\/Back-to-School-1920x780-2.jpg\" alt=\"\" class=\"hidden-phone\">",
+        "description": "Info about my custom script"
+    }
 }
