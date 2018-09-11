@@ -1655,7 +1655,7 @@
             "label-for-projects": "Create and follow research projects",
             "label-for-connections": "Discover and connection with cuhub users",
             "label-for-profiles": "View and contact community and university members",
-            "show-banner": false,
+            "show-banner": true,
             "label-for-create-event": "Share Event",
             "label-for-create-project": "Share Project",
             "label-for-create-connection": "Connect",
@@ -1674,7 +1674,7 @@
             "icon-for-link": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[G]_ZHg_GU8_[ImAgE]_q4e.png"
             ],
-            "show-background": true,
+            "show-background": false,
             "banner-image": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/FPQ_lJn_ErV_[G]_[ImAgE].jpeg"
             ]
