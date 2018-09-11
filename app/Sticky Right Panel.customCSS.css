@@ -11,6 +11,10 @@
         width: 70px;
     }
     
+    .ui-view.bottom-detail>.ui-template>.template-content>.ui-view.right-detail .section-item-icon {
+        display: none;
+    }
+    
     
     .banner-image{
         
