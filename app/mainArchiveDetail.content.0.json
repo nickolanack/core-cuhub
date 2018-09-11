@@ -12,16 +12,19 @@
         "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
+        "initModuleScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "return item",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
+        "targetName": "",
         "getItemListScript": " EventList.SharedInstance(function(el){\n     callback(el.getArchivedEvents());\n     \n     listModule.addWeakEvent(el, \"archivedItem\", function(item){\n         listModule.addItem(item);\n     });\n });",
         "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "childView.getElement().addClass((child.getType().split('.').pop())+'-feed-item');\nchildView.getElement().addClass('feed-item-'+child.getId());\n\n\nif(child.isActive()){\n   childView.getElement().addClass('active');\n}\n\nchildView.addWeakEvent(child, \"activate\", function(){\n   childView.getElement().addClass('active');\n});\n\nchildView.addWeakEvent(child, \"deactivate\", function(){\n   childView.getElement().removeClass('active');\n});\n\n\nchildView.getElement().addClass('expandable');\nchildView.getElement().setAttribute('data-published-date', child.getDateFromNow());\n\n\nchildView.addWeakEvent(child, \"unarchive\", function(){\n    childView.remove();\n});\nchildView.addWeakEvent(child, \"pin\", function(){\n    childView.remove();\n});\n\nchildView.addWeakEvent(child, \"remove\", function(){\n    childView.remove();\n});",
+        "formatListItemModuleScript": "EventList.FormatArchivedItemsFeedListChildModule(childView, child);",
         "emptyNamedView": "emptyListView",
         "filterItemsScript": "return true;",
-        "sortItemsScript": ""
+        "sortItemsScript": "",
+        "maxItems": "-1"
     }
 }
