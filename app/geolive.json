@@ -1640,7 +1640,7 @@
             "label-for-projects": "Create and follow research projects",
             "label-for-connections": "Discover and connection with cuhub users",
             "label-for-profiles": "View and contact community and university members",
-            "show-banner": true,
+            "show-banner": false,
             "label-for-create-event": "Share Event",
             "label-for-create-project": "Share Project",
             "label-for-create-connection": "Connect",
