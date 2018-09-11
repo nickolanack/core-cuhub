@@ -36,7 +36,7 @@
         background: -o-linear-gradient(transparent 20%, #333 100%);
         background: -moz-linear-gradient(transparent 20%, #333 100%);
         background: linear-gradient(transparent 20%, #333 100%);
-        
+        z-index:-1;
     }
     
     
