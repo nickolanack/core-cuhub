@@ -705,8 +705,8 @@ button.btn-action.action-focus {
     height: 20px;
     width: 20px;
     position: absolute;
-    left: -65px;
-    top: 1px;
+    left: -35px;
+    top: 6px;
 }
 
 .feed-item.parent-layout-item {
@@ -716,7 +716,7 @@ button.btn-action.action-focus {
 .feed-item.parent-layout-item:after {
     content: "↘";
     position: absolute;
-    left: -25px;
+    left: -5px;
     bottom: -25px;
     color: #6495ed;
 }
