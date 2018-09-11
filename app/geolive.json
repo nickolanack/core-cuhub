@@ -3755,7 +3755,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"View Calendar\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": ""
+                                    "formatElementScript": "rightStickyDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             }
                         ]
