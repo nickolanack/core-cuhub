@@ -1269,6 +1269,21 @@
                 },
                 {
                     "type": "boolean",
+                    "name": "show-background",
+                    "default": true,
+                    "label": "show-background"
+                },
+                {
+                    "type": "images",
+                    "name": "banner-image",
+                    "default": [],
+                    "label": "banner-image",
+                    "maxHeight": 256,
+                    "maxWidth": 256,
+                    "limit": 1
+                },
+                {
+                    "type": "boolean",
                     "name": "show-banner",
                     "default": true,
                     "label": "show-banner"
@@ -1658,7 +1673,9 @@
             ],
             "icon-for-link": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[G]_ZHg_GU8_[ImAgE]_q4e.png"
-            ]
+            ],
+            "show-background": true,
+            "banner-image": []
         }
     },
     "widget.25": {
