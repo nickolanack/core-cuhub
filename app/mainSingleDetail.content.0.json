@@ -1,10 +1,10 @@
 {
     "type": "UIListView",
     "config": {
-        "listClassName": "",
-        "className": "",
+        "listClassName": "feed-item-list",
+        "className": "feed-item",
         "viewType": "view",
-        "namedView": "defaultView",
+        "namedView": "feedItemDetail",
         "shouldRender": true,
         "namedViewScript": "return namedView",
         "showInlineEdit": false,
@@ -19,7 +19,7 @@
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
-        "getItemListScript": "return item;",
+        "getItemListScript": "return [];",
         "formatItemListScript": "return list;",
         "formatListItemModuleScript": "return item;",
         "emptyNamedView": "emptyListView",
