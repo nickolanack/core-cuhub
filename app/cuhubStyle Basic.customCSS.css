@@ -649,6 +649,10 @@ span.ui-navigation-menu ul>label {
     padding: 10px;
 }
 
+.feed-item-list .thin-layout-item.feed-item {
+    border-left-width: 7px;
+}
+
 
 
 .calendar {
