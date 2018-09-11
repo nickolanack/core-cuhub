@@ -705,6 +705,18 @@ button.btn-action.action-focus {
     top: 1px;
 }
 
+.feed-item.parent-layout-item {
+    margin-bottom: 35px;
+}
+
+.feed-item.parent-layout-item:after {
+    content: "↘";
+    position: absolute;
+    left: -25px;
+    bottom: -25px;
+    color: #6495ed;
+}
+
 
 .sso-btn {
     display: inline-block;
