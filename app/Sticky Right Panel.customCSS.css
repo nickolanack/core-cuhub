@@ -75,12 +75,12 @@
     content: "";
     background: rgba(176, 59, 58, 0.7);
     width: 200px;
-    height: 30px;
+    height: 40px;
     position: absolute;
     left: -5px;
     z-index: -1;
     cursor: pointer;
-    top: -5px;
+    top: -10px;
 }
 
 
