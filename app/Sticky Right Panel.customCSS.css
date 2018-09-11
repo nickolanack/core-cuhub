@@ -24,3 +24,15 @@
         float: unset;
         margin-right: 100px;
     }
+    
+    
+.section-item-icon.pinned-label {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+}
+.section-item-icon.calendar-label {
+    position: absolute;
+    right: 50px;
+    top: 100px;
+}
