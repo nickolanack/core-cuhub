@@ -248,6 +248,11 @@ span.ui-navigation-menu ul>label {
     margin-top: 20px;
     height: 30px;
     text-indent: 10px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc( 100% - 40px );
 }
 
 
