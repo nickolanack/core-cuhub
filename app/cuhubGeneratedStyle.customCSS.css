@@ -8,7 +8,7 @@
 
 <?php
 
-    if($ui->getParameter('show-banner', true)){
+    if($ui->getParameter('show-background', true)){
         $backgroundImage=$ui->getParameter('background-image', array());
         if(!empty($backgroundImage)){
           
