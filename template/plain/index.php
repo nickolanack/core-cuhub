@@ -13,13 +13,13 @@ defined('_JEXEC') or die;
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-	<head>
+	<head typeof="og:article">
 
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes"/>
         <meta name="HandheldFriendly" content="true" />
         <meta name="apple-mobile-web-app-capable" content="YES" />
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="templates/plain/favicon.ico" type="image/x-icon">
 		<jdoc:include type="head" />
 	</head>
 	<body>

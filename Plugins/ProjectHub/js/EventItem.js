@@ -35,6 +35,12 @@ var EventItem=new Class({
 		}
 		return me;
 	},
+	getChildItems:function(){
+		var me=this;
+		return EventList.SharedInstance().getAllEvents().filter(function(e){
+			return(e.hasOwner()&&e.getOwner().isEqualTo(me));
+		})
+	},
 	activate:function(){
 		var me=this;
 		if(!me._active){
@@ -201,7 +207,7 @@ var EventItem=new Class({
 		}
 
 		var me=this;
-		if(me.getId()+""===id+""&&me.getType()===type){
+		if(me.getId()+""===id+""&&(me.getType()===type||me.getType()==="ProjectHub."+type)){
 			return true;
 		}
 		return false;
@@ -315,6 +321,34 @@ var EventItem=new Class({
 			return true;
 		}
 		return false;
+
+
+	},
+	getOwner:function(){
+		var me=this;
+
+		if(me.config.itemId&&me.config.itemType){
+			if(EventList.SharedInstance().hasItem(me.config.itemId,me.config.itemType)){
+				var ownerItem= EventList.SharedInstance().getItem(me.config.itemId,me.config.itemType);
+				return ownerItem;
+				
+			}
+			throw 'Owner item is set but is not available..! ';
+		}
+		throw 'No Owner!';
+	},
+	getOwners:function(){
+		var me=this;
+		if(!me.hasOwner()){
+			return [];
+		}
+
+		var list=[me.getOwner()];
+		if(list[0].hasOwner()){
+			list=list[0].getOwners().concat(list);
+		}
+		return list;
+
 
 
 	},
@@ -548,6 +582,31 @@ var ConnectionItem=new Class({
 
 		return parentItem
 
+	},
+	hasOwner:function(){
+		var me=this;
+		if(me instanceof ProfileItem){
+			return false;
+		}
+		if(me.config.itemIdA&&me.config.itemTypeA){
+			return true;
+		}
+		return false;
+
+
+	},
+	getOwner:function(){
+		var me=this;
+
+		if(me.config.itemIdA&&me.config.itemTypeA){
+			if(EventList.SharedInstance().hasItem(me.config.itemIdA,me.config.itemTypeA)){
+				var ownerItem= EventList.SharedInstance().getItem(me.config.itemIdA,me.config.itemTypeA);
+				return ownerItem;
+				
+			}
+			throw 'Owner item is set but is not available..! ';
+		}
+		throw 'No Owner!';
 	},
 	isConnected:function(){
 
@@ -844,14 +903,14 @@ EventItem.CreateItemIcon=function(item, application){
 
 	if(item.hasIcon()){
 	    icon.getElement().addClass('user-icon');
-	    icon.getElement().setStyle("background-image","url('"+item.getIcon()+"')");
+	    icon.getElement().setStyle("background-image","url('"+item.getIcon()+"?thumb=>60x>60')");
 	}
 
 	if(item instanceof ConnectionItem&&item.isConnected()){
 	    var connectedTo=item.getConnectionTo();
 	    if(connectedTo.hasIcon()){
 	        icon.getElement().addClass('user-icon connection-icon');
-	        icon.getElement().setStyle("background-image","url('"+connectedTo.getIcon()+"')");
+	        icon.getElement().setStyle("background-image","url('"+connectedTo.getIcon()+"?thumb=>60x>60')");
 	        
 	        icon.getElement().appendChild(new Element('div',{"class":"feed-item-icon"}))
 	    }
@@ -863,9 +922,18 @@ EventItem.CreateItemIcon=function(item, application){
 
 
 	if(item instanceof MyProfileItem){
-		icon.getElement().addEvent('click',function(){
+		icon.getElement().addEvent('click',function(e){
+
+			e.stop();
 			//EventList.SharedInstance(function(el){
 				//resolve profile item!
+				//
+				var feeditem=EventList.SharedInstance().getItem(item);
+				if(feeditem.isActive()&&nav.getCurrentView().view=="Single"){
+			        return;
+			    }
+			    
+			    feeditem.activate();
 				application.getNamedValue('navigationController').navigateTo("Single", "Main");
 			//})
 			

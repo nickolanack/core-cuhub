@@ -251,8 +251,11 @@ class ProjectHub extends \Plugin implements
 
 		include_once __DIR__.'/lib/DocumentMetadata.php';
 		$documentMetadata=new \ProjectHub\DocumentMetadata();
-		HtmlDocument()->META($documentMetadata->getSiteTitle(), 'title');
-		HtmlDocument()->META($documentMetadata->getSiteDescription(), 'description');
+		
+
+
+		$documentMetadata->setPageMetadata();
+
 	}
 
 	/**
