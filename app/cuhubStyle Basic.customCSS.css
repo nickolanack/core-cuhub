@@ -715,15 +715,16 @@ button.btn-action.action-focus {
 }
 
 .feed-item.parent-layout-item {
-    margin-bottom: 35px;
+    
 }
 
 .feed-item.parent-layout-item:after {
-    content: "↘";
+    content: "⤴";
     position: absolute;
-    left: -5px;
-    bottom: -25px;
+    left: -20px;
+    bottom: -15px;
     color: #6495ed;
+    transform: rotate(135deg);
 }
 
 
