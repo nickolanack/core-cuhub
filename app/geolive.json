@@ -132,6 +132,7 @@
         "name": "Monolog Plugin",
         "instance": "Monolog",
         "parameters": {
+            "enabled": false,
             "logPath": "{front}\/..\/logs",
             "logToSentry": false
         }
