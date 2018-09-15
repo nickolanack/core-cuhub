@@ -50,7 +50,7 @@ if(item.hasOwner()){
     
     if(owner.hasIcon()){
         icon.addClass('user-icon');
-        icon.setStyle("background-image","url('"+owner.getIcon()+"')");
+        icon.setStyle("background-image","url('"+owner.getIcon()+"?thumb=>60x>60')");
     }
     
     userEl.appendChild(icon);
