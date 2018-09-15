@@ -3450,7 +3450,7 @@
         "instance": "CustomContent",
         "parameters": {
             "target": "dependencies",
-            "customScript": "",
+            "customScript": "dependencies.customScript.js",
             "widgetTitle": "dependencies",
             "language": "php",
             "returnsValue": false,
