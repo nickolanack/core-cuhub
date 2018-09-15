@@ -3033,6 +3033,13 @@
             "readAccess": "public"
         }
     },
+    "widget.67": {
+        "name": "Content",
+        "instance": "CustomContent",
+        "parameters": {
+            "target": "none"
+        }
+    },
     "widget.52": {
         "name": "Detail View",
         "instance": "DetailView",
