@@ -79,8 +79,8 @@ class DocumentMetadata{
 			
 		}
 
-		$ldJson["_type"]=$this->currentType;
-		$ldJson["_item"]=$this->currentItem;
+		// $ldJson["_type"]=$this->currentType;
+		// $ldJson["_item"]=$this->currentItem;
 
 
 		HtmlDocument()->META(json_encode($ldJson, JSON_PRETTY_PRINT),'ld+json');
