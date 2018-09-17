@@ -74,9 +74,9 @@
         "name": "System Parameters",
         "instance": "SystemParameters",
         "parameters": {
-            "JSFileObfuscationEnabled": false,
-            "JSInlineObfuscationEnabled": false,
-            "CSSFileObfuscationEnabled": false,
+            "JSFileObfuscationEnabled": true,
+            "JSInlineObfuscationEnabled": true,
+            "CSSFileObfuscationEnabled": true,
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": true,
@@ -84,7 +84,7 @@
             "ExternalizeWidgetScripts": true,
             "PrettyPrintJson": true,
             "showFrontEndEditButtons": false,
-            "JSCacheObfuscationEnabled": false,
+            "JSCacheObfuscationEnabled": true,
             "phase": "production",
             "ForceHTTPS": false,
             "allowProxiesFrom": [
