@@ -242,6 +242,15 @@
             "readAccess": "public"
         }
     },
+    "widget.68": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Subject",
+            "widgetTitle": "email.profile.update.subject",
+            "target": "email.profile.update.subject"
+        }
+    },
     "widget.5": {
         "name": "Detail View",
         "instance": "DetailView",
@@ -836,6 +845,15 @@
                 "_diagramState": []
             },
             "readAccess": "public"
+        }
+    },
+    "widget.69": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Message Content",
+            "widgetTitle": "email.profile.update.content",
+            "target": "email.profile.update.content"
         }
     },
     "widget.13": {
