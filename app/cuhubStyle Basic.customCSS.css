@@ -1,3 +1,15 @@
+<?php 
+IncludeExternalCSS('https://fonts.googleapis.com/css?family=Roboto+Slab'); 
+?>
+
+
+body {
+    margin: 0;
+    
+     font-family: 'Roboto Slab', serif;
+     
+}
+
 .edit-widget-btns {
     position: fixed;
     bottom: 0;
@@ -50,12 +62,6 @@ h1.site-logo {
     overflow: scroll;
 }
 
-body {
-    margin: 0;
-    
-     font-family: sans-serif;
-     
-}
 
 .ui-view>.ui-template {
     display: inline;
