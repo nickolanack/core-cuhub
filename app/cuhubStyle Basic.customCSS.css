@@ -112,6 +112,19 @@ h1.site-logo {
     text-align: left;
     margin:auto;
 }
+.ui-view.feed-item-list{
+    max-width: 900px;
+    text-align: left;
+    margin:auto;
+}
+
+.ui-view.feed-item-bottom-detail {
+    height: 40px;
+    background-color: rgba(0,0,0,0.06);
+    margin-left: -40px;
+    line-height: 40px;
+    padding-left: 50px;
+}
 
 .ui-view.right-detail {
     padding-right: 40px;
