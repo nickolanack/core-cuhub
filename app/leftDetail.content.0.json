@@ -1,22 +1,8 @@
 {
-    "type": "UIView",
+    "type": "TagCloud",
     "config": {
-        "className": "user-detail",
-        "viewType": "view",
-        "namedView": "userDetail",
-        "shouldRender": true,
-        "namedViewScript": "return namedView",
-        "showInlineEdit": false,
-        "namedFormView": "defaultFormView",
-        "formOptions": "{}",
-        "showDeleteButton": false,
-        "deleteItemScript": "",
-        "initModuleScript": "",
-        "formatModuleScript": "",
-        "resolveItemScript": "",
-        "filterModulesScript": "return list",
-        "itemButtonsScript": "return [];",
-        "insertAtTop": false,
-        "targetName": ""
+        "tags": "[\n   \"tag one\",\n   \"tag two\"\n]",
+        "getItemTagsScript": "\n\nreturn EventList.DefaultTags(item, application);\n\n",
+        "formatModuleScript": "\n\nmodule.addEvent('selectWord',function(tag){\n    \n    application.setNamedValue('tagFilter',{tags:[tag]});\n\tapplication.getNamedValue('navigationController').navigateTo(\"Tags\", \"Main\");\n    \n    \n});\n\nmodule.addEvent('addWord',function(tag, el){\n    \n    \/\/if matches current tag, then highlight\n    el.addClass('btn-tag');\n    \n    \n    var current=application.getNamedValue('tagFilter');\n\t\n\tif(current&&current.tags&&current.tags.indexOf(tag)>=0){\n\t     el.addClass('active');\n\t}\n    \n})"
     }
 }

@@ -271,20 +271,12 @@
                         "modules": [
                             "leftDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "TagCloud",
-                                "config": {
-                                    "tags": "[\n   \"tag one\",\n   \"tag two\"\n]",
-                                    "getItemTagsScript": "leftDetail.metadata.positions.content.modules.1.config.getItemTagsScript.js",
-                                    "formatModuleScript": "leftDetail.metadata.positions.content.modules.1.config.formatModuleScript.js"
-                                }
-                            },
-                            {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "leftDetail.metadata.positions.content.modules.2.config.fieldLabelScript.js",
+                                    "fieldLabelScript": "leftDetail.metadata.positions.content.modules.1.config.fieldLabelScript.js",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
+                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             },
                             {
