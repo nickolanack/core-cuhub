@@ -4,15 +4,19 @@
         "className": "left-detail  flex-layout",
         "viewType": "view",
         "namedView": "leftDetail",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
+        "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
+        "initModuleScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "",
-        "itemButtonsScript": "return [];",
-        "namedViewScript": "return namedView",
         "filterModulesScript": "return list",
-        "formOptions": "{}"
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": ""
     }
 }
