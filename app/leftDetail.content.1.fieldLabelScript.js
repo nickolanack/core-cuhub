@@ -1,1 +1,1 @@
-return "Project Hub Portal Items";
+return EventList.CurrentListLabel();
