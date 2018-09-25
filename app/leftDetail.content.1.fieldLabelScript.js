@@ -1,1 +1,1 @@
-return EventList.CurrentListLabel();
+return EventList.CurrentListLabel(application);
