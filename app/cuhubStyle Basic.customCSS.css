@@ -78,6 +78,7 @@ h1.site-logo {
 }
 .ui-view.bottom-detail>.ui-template>.template-content {
     flex-direction: row;
+    text-align: center;
 }
 
 .ui-view.bottom-detail>.ui-template>.template-content>.ui-view {
@@ -107,7 +108,9 @@ h1.site-logo {
 
 .ui-view.left-detail {
     width: 60%;
-    padding-left: 200px;
+    max-width: 900px;
+    text-align: left;
+    margin:auto;
 }
 
 .ui-view.right-detail {
