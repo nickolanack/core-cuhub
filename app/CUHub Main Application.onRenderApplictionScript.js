@@ -31,7 +31,7 @@ Behavior('ajax');
 		//IncludeCSS('{plugins}/Attributes/Widgets/AttributesSearch/css/AttributesSearch.css');
 		IncludeJS('{scripts}/Controls/UISearchControl.js');
 
-		IncludeJS($this->getPath().'/js/SearchModule.js');
+		IncludeJS('{modules}/Search/js/SearchModule.js');
 
 IncludeJSBlock('
 
