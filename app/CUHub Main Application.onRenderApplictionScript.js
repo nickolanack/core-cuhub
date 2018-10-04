@@ -18,20 +18,7 @@ $projectHub=GetPlugin('ProjectHub');
 $projectHub->setDocumentMetadata();
 
 $projectHub->includeScripts();
-Behavior('ajax');
-		Behavior('spinner');
-		IncludeJS('{scripts}/Controls/UIControl.js');
-		IncludeJS('{scripts}/Controls/UIButton.js');
-		IncludeJS('{plugins}/Attributes/js/AttributeFilter.js');
-		IncludeJS('{plugins}/Attributes/js/AttributeQueries.js');
-		Behavior('aggregator');
-		IncludeJS('{plugins}/Maps/js/GeoliveSearchAggregators.js');
-		IncludeJS('{plugins}/Attributes/js/AttributeAggregators.js');
-		IncludeJS('{plugins}/Attributes/Widgets/AttributesSearch/js/DropDownMenu.js');
-		//IncludeCSS('{plugins}/Attributes/Widgets/AttributesSearch/css/AttributesSearch.css');
-		IncludeJS('{scripts}/Controls/UISearchControl.js');
 
-		IncludeJS('{modules}/Search/js/SearchModule.js');
 
 IncludeJSBlock('
 
