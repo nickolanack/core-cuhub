@@ -1,7 +1,7 @@
 @media screen and (max-width: 1600px){
 
     .ui-view.user-detail.top-right .myprofile-feed-item>div>div>* {
-        display: none;
+        /*display: none;*/
     }
     .ui-view.user-detail.top-right .myprofile-feed-item>div>div>.feed-item-icon.user-icon{
         display:inline-block;
@@ -18,7 +18,7 @@
 @media screen and (max-width: 1500px){
 
     h1.site-logo{
-        font-size:0;
+        /*font-size:0;*/
     }
     
     .no-banner ul.menu-main {
