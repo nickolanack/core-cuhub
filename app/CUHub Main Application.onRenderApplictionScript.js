@@ -18,6 +18,7 @@ $projectHub=GetPlugin('ProjectHub');
 $projectHub->setDocumentMetadata();
 
 $projectHub->includeScripts();
+Behavior('aggregator');
 
 IncludeJSBlock('
 
