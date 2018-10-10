@@ -240,8 +240,11 @@ class DocumentMetadata{
 		}
 		$type=$parts[0];
 		$feedItemId=intval($parts[1]);
+		if(!in_array($type, GetPlugin('ProjectHub')->getFeedTypes())){
+			return false;
+		}
 
-		$getType='get'.ucfirst($type);
+		//$getType='get'.ucfirst($type);
 		if($item=GetPlugin('ProjectHub')->getFeedItemRecord($feedItemId, $type)){
 			$this->currentItem=$item;
 			$this->currentType=$type;

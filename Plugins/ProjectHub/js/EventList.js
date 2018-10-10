@@ -509,6 +509,32 @@ EventList.FormatActiveItemFeedListChildModule = function(childView, child) {
 }
 
 
+EventList.CurrentListLabel=function(app){
+
+	var menu=EventList.Menu(app);
+	if(menu){
+		var view=menu.getCurrentView().view;
+		if((['Events', 'Projects', 'Connections', 'Profiles']).indexOf(view)>=0){
+			return "Project Hub Portal "+view;
+		}
+		if(view=='Tags'){
+			var tags=app.getNamedValue('tagFilter').tags;
+			return "Project Hub Portal Items With Tag"+(tags.length>1?"s":"")+": "+tags.join(", ");
+		}
+		return view;
+	}
+
+	return "Project Hub Portal Items";
+
+
+}
+
+
+EventList.Menu=function(app){
+	return app.getNamedValue('navigationController');
+}
+
+
 EventList.CreateNavigationController = function(labels, application) {
 	var labelContent = labels;
 	var navigationController = (new NavigationMenuModule({
@@ -566,7 +592,12 @@ EventList.CreateNavigationController = function(labels, application) {
 				filterItem: function(item) {
 					return EventList.SharedInstance().itemMatchesFilter(item, application.getNamedValue('tagFilter'));
 				},
-				urlComponent: function(stub) {
+				urlComponent: function(stub, segments) {
+
+					if (segments && segments.length) {
+						application.setNamedValue('tagFilter', {"tags":[segments[0]]});
+					}
+
 					var filter = application.getNamedValue('tagFilter');
 					if (!filter) {
 						return stub;
@@ -581,9 +612,15 @@ EventList.CreateNavigationController = function(labels, application) {
 				filterItem: function(item) {
 					return EventList.SharedInstance().itemMatchesFilter(item, application.getNamedValue('dateFilter'));
 				},
-				urlComponent: function(stub) {
+				urlComponent: function(stub, segments) {
+
+					if (segments && segments.length) {
+						application.setNamedValue('dateFilter', {"dates":[segments[0]]});
+					}
+
 					var filter = application.getNamedValue('dateFilter');
 					if (!filter) {
+
 						return stub;
 					}
 					return stub + '/' + (filter.dates.length > 1 ? 'match-any/' : "") + filter.dates.map(function(t) {
@@ -654,7 +691,6 @@ EventList.CreateNavigationController = function(labels, application) {
 };
 
 
-
 EventList.CreateClearButton = function(application) {
 
 	if (application.getNamedValue('navigationController').getCurrentView().view == "FeedItems") {
@@ -672,38 +708,42 @@ EventList.CreateClearButton = function(application) {
 	});
 }
 
-EventList.SearchAggregator = new Class({
-	Extends: UISearchListAggregator,
-	initialize: function(application, search, options) {
-		var me = this;
-		this.parent(search, Object.append({
+if(window.UISearchListAggregator){
+	
+	EventList.SearchAggregator = new Class({
+		Extends: UISearchListAggregator,
+		initialize: function(application, search, options) {
+			var me = this;
+			this.parent(search, Object.append({
 
-			PreviousTemplate: UIListAggregator.PreviousTemplate,
-			MoreTemplate: UIListAggregator.MoreTemplate,
-			ResultTemplate: UIListAggregator.NamedViewTemplate(application, {
-				namedView: "eventFeedSearchItemDetail",
-				events: {
-					click: function() {
-						application.getNamedValue('navigationController').navigateTo("Single", "Main");
+				PreviousTemplate: UIListAggregator.PreviousTemplate,
+				MoreTemplate: UIListAggregator.MoreTemplate,
+				ResultTemplate: UIListAggregator.NamedViewTemplate(application, {
+					namedView: "eventFeedSearchItemDetail",
+					events: {
+						click: function() {
+							application.getNamedValue('navigationController').navigateTo("Single", "Main");
+						}
 					}
-				}
-			})
+				})
 
-		}, options));
-	},
-	_getRequest: function(filters) {
-		var me = this;
-		var string = me.currentSearchString;
+			}, options));
+		},
+		_getRequest: function(filters) {
+			var me = this;
+			var string = me.currentSearchString;
 
-		var args = {
-			search: string,
-			searchOptions: filters
-		};
+			var args = {
+				search: string,
+				searchOptions: filters
+			};
 
-		return new AjaxControlQuery(CoreAjaxUrlRoot, 'search', Object.append({
-			'plugin': 'ProjectHub'
-		}, args));
+			return new AjaxControlQuery(CoreAjaxUrlRoot, 'search', Object.append({
+				'plugin': 'ProjectHub'
+			}, args));
 
 
-	}
-});
+		}
+	});
+
+}
