@@ -3953,6 +3953,10 @@
                                     "fieldValueScript": "return \"\";",
                                     "formatElementScript": "rightDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
+                            },
+                            {
+                                "type": "ShareLinks",
+                                "config": []
                             }
                         ]
                     },
