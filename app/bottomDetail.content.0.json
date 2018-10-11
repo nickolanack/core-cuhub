@@ -3,7 +3,7 @@
     "config": {
         "className": "left-detail  flex-layout",
         "viewType": "view",
-        "namedView": "leftDetail",
+        "namedView": "mainContentDetail",
         "shouldRender": true,
         "namedViewScript": "return namedView",
         "showInlineEdit": false,
