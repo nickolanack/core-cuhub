@@ -1,7 +1,7 @@
 {
     "type": "UIView",
     "config": {
-        "className": "root-container flex-layout",
+        "className": "root-container",
         "viewType": "view",
         "namedView": "layoutDetail",
         "shouldRender": true,
