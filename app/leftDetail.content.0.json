@@ -4,6 +4,6 @@
         "loadAsync": false,
         "fieldLabelScript": "return \"Content Filter\";",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": ""
+        "formatElementScript": "el.addClass(\"section-item-icon\")"
     }
 }
