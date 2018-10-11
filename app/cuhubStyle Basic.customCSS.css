@@ -425,6 +425,10 @@ span.ui-navigation-menu ul>label {
     display: none;
 }
 
+.ui-view.user-detail.top-right .ui-view.feed-item-bottom-detail{
+    display: none;
+}
+
 
 .feed-item-label {
     display: inline-block;

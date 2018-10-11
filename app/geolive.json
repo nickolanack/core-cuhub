@@ -1671,7 +1671,7 @@
             "label-for-projects": "Create and follow research projects",
             "label-for-connections": "Discover and connection with cuhub users",
             "label-for-profiles": "View and contact community and university members",
-            "show-banner": true,
+            "show-banner": false,
             "label-for-create-event": "Share Event",
             "label-for-create-project": "Share Project",
             "label-for-create-connection": "Connect",
@@ -3845,13 +3845,6 @@
                                     "fieldLabelScript": "return \"View Calendar\";",
                                     "fieldValueScript": "return \"\";",
                                     "formatElementScript": "rightStickyDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
-                                }
-                            },
-                            {
-                                "type": "Search",
-                                "config": {
-                                    "getAggregatorsScript": "rightStickyDetail.metadata.positions.content.modules.2.config.getAggregatorsScript.js",
-                                    "placeholder": "search items"
                                 }
                             }
                         ]

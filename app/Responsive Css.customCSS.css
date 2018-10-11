@@ -1,7 +1,7 @@
 @media screen and (max-width: 1600px){
 
     .ui-view.user-detail.top-right .myprofile-feed-item>div>div>* {
-        display: none;
+        /*display: none;*/
     }
     .ui-view.user-detail.top-right .myprofile-feed-item>div>div>.feed-item-icon.user-icon{
         display:inline-block;
@@ -9,8 +9,8 @@
 
     
     .ui-view.user-detail.top-right{
-            right: 0;
-            width: 100px;
+            /*right: 0;
+            width: 100px;*/
      }
 
 }
@@ -18,7 +18,7 @@
 @media screen and (max-width: 1500px){
 
     h1.site-logo{
-        font-size:0;
+        /*font-size:0;*/
     }
     
     .no-banner ul.menu-main {
@@ -36,8 +36,8 @@
     
     
     .ui-view.user-detail.top-right{
-        left: 125px;
-        right:auto;
+        /*left: 125px;
+        right:auto;*/
     }
     
     

@@ -1,7 +1,7 @@
 {
     "type": "UIView",
     "config": {
-        "className": "banner-image",
+        "className": "",
         "viewType": "view",
         "namedView": "rightStickyDetail",
         "shouldRender": true,
