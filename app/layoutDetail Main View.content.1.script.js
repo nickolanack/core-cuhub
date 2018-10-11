@@ -1,0 +1,1 @@
+return new ElementModule('h1',{'class':"site-logo","html":<?php echo json_encode(GetWidget('interfaceConfig')->getParameter('site-title'));?>});
