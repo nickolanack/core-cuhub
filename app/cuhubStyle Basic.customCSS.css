@@ -60,6 +60,19 @@ h1.site-logo {
    background-color: #252525;
 }
 
+ul.header-menu {
+    text-align: center;
+    display: inline;
+    position: relative;
+}
+
+ul.header-menu li {
+    display: inline;
+    color: white;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
 .ui-view.root-container {
     width: 100%;
     height: 100%;
