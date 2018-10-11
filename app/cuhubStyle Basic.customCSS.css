@@ -1274,6 +1274,8 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.active label{
     display: inline-block;
     width: 0;
     height: 0;
+    position: relative;
+    z-index:1;
 }
 
 .ui-view.left-detail>div {
@@ -1289,6 +1291,7 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.active label{
     width: 0;
     height: 0;
     position: relative;
+    z-index:1;
 }
 
 .ui-view.right-detail>div {
