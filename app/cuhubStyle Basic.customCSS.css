@@ -1288,10 +1288,17 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.active label{
     display: inline-block;
     width: 0;
     height: 0;
+    position: relative;
 }
 
 .ui-view.right-detail>div {
     display: inline-block;
     width: 200px;
     margin: 20px;
+    
+    
+    position: absolute;
+    left: -200px;    
+    
+    
 }
