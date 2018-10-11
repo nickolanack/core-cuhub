@@ -106,7 +106,7 @@ h1.site-logo {
 }
 
 
-.ui-view.left-detail {
+.ui-view.main-content-detail {
     width: 60%;
     max-width: 900px;
     text-align: left;
@@ -327,26 +327,26 @@ span.ui-navigation-menu ul>label {
 }
 
 
-.left-detail .ui-view.user-detail {
+.main-content-detail .ui-view.user-detail {
     position: absolute;
     width: 200px;
     left: 0;
 }
 
-.left-detail .ui-view.user-detail .user-icon, 
-.left-detail .ui-view.user-detail .feed-item-label, 
-.left-detail .ui-view.user-detail .feed-item-actions, 
-.left-detail .ui-view.user-detail .html-content {
+.main-content-detail .ui-view.user-detail .user-icon, 
+.main-content-detail .ui-view.user-detail .feed-item-label, 
+.main-content-detail .ui-view.user-detail .feed-item-actions, 
+.main-content-detail .ui-view.user-detail .html-content {
    display:none;
 }
 
-.left-detail .ui-view.user-detail .form-btn{
+.main-content-detail .ui-view.user-detail .form-btn{
     margin-left:20px;
     position:relative;
 }
 
 
-.left-detail .ui-view.user-detail .form-btn:before {
+.main-content-detail .ui-view.user-detail .form-btn:before {
     content: "";
     width: 25px;
     height: 25px;
@@ -358,8 +358,8 @@ span.ui-navigation-menu ul>label {
     top: -1px;
 }
 
-.left-detail .ui-view.user-detail .form-btn.action-event:after, 
-.left-detail .ui-view.user-detail .form-btn.action-project:after {
+.main-content-detail .ui-view.user-detail .form-btn.action-event:after, 
+.main-content-detail .ui-view.user-detail .form-btn.action-project:after {
     content: "+";
     position: absolute;
     left: 2px;
@@ -367,7 +367,7 @@ span.ui-navigation-menu ul>label {
     color: #1f53f5;
 }
 
-.left-detail .myprofile-feed-item .feed-item-icon {
+.main-content-detail .myprofile-feed-item .feed-item-icon {
     position: relative;
     top: -30px;
     left: 24px;
@@ -1207,7 +1207,7 @@ input.search-input:focus {
 }
 
 
-.left-detail .ui-view.user-detail .form-btn.action-connection {
+.main-content-detail .ui-view.user-detail .form-btn.action-connection {
     display: none;
 }
 

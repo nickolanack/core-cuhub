@@ -255,9 +255,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "leftDetail",
-            "target": "leftDetail",
-            "templateName": "leftDetail",
+            "widgetTitle": "mainContentDetail",
+            "target": "mainContentDetail",
+            "templateName": "mainContentDetail",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
@@ -269,14 +269,14 @@
                     },
                     "content": {
                         "modules": [
-                            "leftDetail.metadata.positions.content.modules.0.json",
+                            "mainContentDetail.metadata.positions.content.modules.0.json",
                             {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "leftDetail.metadata.positions.content.modules.1.config.fieldLabelScript.js",
+                                    "fieldLabelScript": "mainContentDetail.metadata.positions.content.modules.1.config.fieldLabelScript.js",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                    "formatElementScript": "mainContentDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             },
                             {
