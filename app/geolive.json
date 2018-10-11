@@ -271,15 +271,6 @@
                         "modules": [
                             "mainContentDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "mainContentDetail.metadata.positions.content.modules.1.config.fieldLabelScript.js",
-                                    "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "mainContentDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
-                                }
-                            },
-                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "feed-item-list",
