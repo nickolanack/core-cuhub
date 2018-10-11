@@ -1,4 +1,4 @@
-var ul=new ElementModule('ul');
+var ul=new ElementModule('ul',{"class":"header-menu"});
 
 var addView=function(view){
     ul.appendChild(new Element('li',{
