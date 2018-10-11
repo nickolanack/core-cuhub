@@ -451,9 +451,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "rightDetail",
-            "target": "rightDetail",
-            "templateName": "rightDetail",
+            "widgetTitle": "rightDetailDeprecated",
+            "target": "rightDetailDeprecated",
+            "templateName": "rightDetailDeprecated",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
@@ -465,7 +465,7 @@
                     },
                     "content": {
                         "modules": [
-                            "rightDetail.metadata.positions.content.modules.0.json",
+                            "rightDetailDeprecated.metadata.positions.content.modules.0.json",
                             {
                                 "type": "UIView",
                                 "config": {
@@ -494,7 +494,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Calendar\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "rightDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
+                                    "formatElementScript": "rightDetailDeprecated.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             },
                             {
