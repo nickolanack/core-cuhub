@@ -1267,3 +1267,35 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems label{
 span.ui-navigation-menu .menu-main li.menu-main-feeditems.active label{
     color:grey  ;
 }
+
+
+
+
+
+
+.ui-view.left-detail {
+    float: left;
+    display: inline-block;
+    width: 0;
+    height: 0;
+}
+
+.ui-view.left-detail>div {
+    display: inline-block;
+    width: 200px;
+    margin: 20px;
+}
+
+
+.ui-view.right-detail {
+    float: right;
+    display: inline-block;
+    width: 0;
+    height: 0;
+}
+
+.ui-view.right-detail>div {
+    display: inline-block;
+    width: 200px;
+    margin: 20px;
+}
