@@ -192,6 +192,7 @@ span.ui-navigation-menu .menu-main {
 .no-banner ul.menu-main {
     width: 100%;
     left:-145px;
+    padding: 40px;
 }
 
 span.ui-navigation-menu .menu-main li {
