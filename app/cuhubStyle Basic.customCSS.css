@@ -71,6 +71,7 @@ ul.header-menu li {
     color: white;
     padding: 5px 10px;
     font-size: 16px;
+    cursor:pointer;
 }
 
 .ui-view.root-container {
