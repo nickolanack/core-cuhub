@@ -1286,7 +1286,10 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.active label{
 
 
 
-
+.left-detail .tag-cloud-container {
+    margin-top: 10px;
+    display: inline-block;
+}
 
 
 .ui-view.left-detail {
