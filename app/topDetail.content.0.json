@@ -4,7 +4,7 @@
         "className": "",
         "viewType": "view",
         "namedView": "rightStickyDetail",
-        "shouldRender": true,
+        "shouldRender": false,
         "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultView",
