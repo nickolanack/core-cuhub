@@ -271,15 +271,6 @@
                         "modules": [
                             "mainContentDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "FieldValue",
-                                "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "mainContentDetail.metadata.positions.content.modules.1.config.fieldLabelScript.js",
-                                    "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "mainContentDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
-                                }
-                            },
-                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "feed-item-list",
@@ -365,11 +356,33 @@
                             {
                                 "type": "UIView",
                                 "config": {
+                                    "className": "left-detail",
+                                    "viewType": "view",
+                                    "namedView": "leftDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
                                     "className": "bottom-detail  flex-layout main-view",
                                     "viewType": "view",
                                     "namedView": "bottomDetail",
                                     "shouldRender": true,
-                                    "namedViewScript": "layoutDetail Main View.metadata.positions.content.modules.2.config.namedViewScript.js",
+                                    "namedViewScript": "layoutDetail Main View.metadata.positions.content.modules.3.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
@@ -388,7 +401,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "layoutDetail Main View.metadata.positions.content.modules.3.config.script.js",
+                                    "script": "layoutDetail Main View.metadata.positions.content.modules.4.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
@@ -522,29 +535,7 @@
                     },
                     "content": {
                         "modules": [
-                            "topDetail.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "",
-                                    "viewType": "view",
-                                    "namedView": "navigationDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": ""
-                                }
-                            }
+                            "topDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
@@ -3794,6 +3785,45 @@
             "target": "stickyRightPanelStyle",
             "customCSS": "Sticky Right Panel.customCSS.css",
             "widgetTitle": "Sticky Right Panel",
+            "readAccess": "public"
+        }
+    },
+    "widget.72": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "leftDetail",
+            "target": "leftDetail",
+            "templateName": "leftDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "leftDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
             "readAccess": "public"
         }
     },
