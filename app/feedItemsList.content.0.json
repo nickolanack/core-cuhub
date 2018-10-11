@@ -19,7 +19,7 @@
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
-        "getItemListScript": "\/\/ var events=EventList.SharedInstance().getEvents();\n\n EventList.SharedInstance(function(el){\n     \/\/if(!events){\n     \n        var list=el.getEvents();\n        for(var i=3;i<list.length;i+=10){\n            list.splice(i, 0, new MockDataTypeItem({type:\"advertisement\"}))\n        }\n         callback(list);\n     \/\/}\n     listModule.addWeakEvent(el, \"unarchivedItem\", function(item){\n         listModule.addItem(item);\n     });\n     \n     listModule.addWeakEvent(el, \"unpinnedItem\", function(item){\n         listModule.addItem(item);\n     });\n     \n     listModule.addWeakEvent(el, \"addItem\", function(item){\n         listModule.addItem(item);\n     });\n })\n \n  \/\/if(events){\n  \/\/    return events;\n  \/\/}",
+        "getItemListScript": "\/\/ var events=EventList.SharedInstance().getEvents();\n\n EventList.SharedInstance(function(el){\n     \/\/if(!events){\n         callback(el.getEvents());\n     \/\/}\n     listModule.addWeakEvent(el, \"unarchivedItem\", function(item){\n         listModule.addItem(item);\n     });\n     \n     listModule.addWeakEvent(el, \"unpinnedItem\", function(item){\n         listModule.addItem(item);\n     });\n     \n     listModule.addWeakEvent(el, \"addItem\", function(item){\n         listModule.addItem(item);\n     });\n })\n \n  \/\/if(events){\n  \/\/    return events;\n  \/\/}",
         "formatItemListScript": "return list;",
         "formatListItemModuleScript": "EventList.FormatGenericItemFeedListChildModule(childView, child);",
         "emptyNamedView": "emptyListView",
