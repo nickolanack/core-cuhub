@@ -8,9 +8,7 @@ var addView=function(view){
         }}
     }));
 }
-
-(["Events", "Projects", "Connections", "Profiles"]).forEach(function(v){
-    addView(v);
-});
+var events=["Events", "Projects", "Connections", "Profiles"];
+events.forEach(addView);
 
 return ul;
