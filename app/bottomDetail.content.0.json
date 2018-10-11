@@ -1,7 +1,7 @@
 {
     "type": "UIView",
     "config": {
-        "className": "left-detail  flex-layout",
+        "className": "left-detail  flex-layout main-content-detail",
         "viewType": "view",
         "namedView": "mainContentDetail",
         "shouldRender": true,
