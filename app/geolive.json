@@ -3892,9 +3892,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "rightStickyDetail",
-            "target": "rightStickyDetail",
-            "templateName": "rightStickyDetail",
+            "widgetTitle": "rightDetail",
+            "target": "rightDetail",
+            "templateName": "rightDetail",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
@@ -3906,14 +3906,14 @@
                     },
                     "content": {
                         "modules": [
-                            "rightStickyDetail.metadata.positions.content.modules.0.json",
+                            "rightDetail.metadata.positions.content.modules.0.json",
                             {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"View Calendar\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "rightStickyDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                    "formatElementScript": "rightDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             }
                         ]
