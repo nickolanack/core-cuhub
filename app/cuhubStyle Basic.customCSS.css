@@ -262,6 +262,12 @@ span.ui-navigation-menu .menu-main li button {
     outline:none;
 }
 
+span.ui-navigation-menu .menu-main li, 
+span.ui-navigation-menu .menu-main li>label,
+span.ui-navigation-menu .menu-main li button{
+    cursor:pointer;
+}
+
 span.ui-navigation-menu ul>label {
     display: none;
 }
