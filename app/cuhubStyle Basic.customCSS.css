@@ -1233,10 +1233,6 @@ ul.ShareLinksModule{
     vertical-align:middle;
 }
 
-.ui-view.main-view {
-    padding-top: 100px;
-}
-
 
 li.menu-main-feeditems:after {
     display: none;
