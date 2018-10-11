@@ -271,7 +271,7 @@ span.ui-navigation-menu ul.menu-main li {
              background-image:url(<?php echo json_encode(UrlFrom($value[0])); ?>);
         }
         
-        .left-detail .ui-view.user-detail button.form-btn.action-<?php echo $type; ?>:before{
+        .main-content-detail .ui-view.user-detail button.form-btn.action-<?php echo $type; ?>:before{
              background-image:url(<?php echo json_encode(UrlFrom($value[0])."?tint=rgb(31, 84, 245)"); ?>);
         }
         

@@ -124,10 +124,10 @@
         width: 70px;
     }
     
-    .ui-view.left-detail {
+    .ui-view.main-content-detail {
         padding-left:70px;
     }
-    .left-detail .ui-view.user-detail{
+    .main-content-detail .ui-view.user-detail{
         width: 70px;
     }
     
