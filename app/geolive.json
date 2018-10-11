@@ -365,7 +365,7 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "bottom-detail  flex-layout",
+                                    "className": "bottom-detail  flex-layout main-view",
                                     "viewType": "view",
                                     "namedView": "bottomDetail",
                                     "shouldRender": true,
