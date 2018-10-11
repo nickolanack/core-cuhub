@@ -3914,9 +3914,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "rightDetail",
-            "target": "rightDetail",
-            "templateName": "rightDetail",
+            "widgetTitle": "rightDetailX",
+            "target": "rightDetailX",
+            "templateName": "rightDetailX",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
@@ -3928,14 +3928,14 @@
                     },
                     "content": {
                         "modules": [
-                            "rightDetail.metadata.positions.content.modules.0.json",
+                            "rightDetailX.metadata.positions.content.modules.0.json",
                             {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"View Calendar\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "rightDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                    "formatElementScript": "rightDetailX.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             }
                         ]
