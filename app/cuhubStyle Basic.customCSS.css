@@ -51,10 +51,13 @@ h1.site-logo {
     font-weight: 100;
     font-size: 50px;
     text-transform: capitalize;
-    background-color: #252525;
+    
     z-index: 1;
     color: white;
     text-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+.header-detail{
+   background-color: #252525;
 }
 
 .ui-view.root-container {
@@ -76,28 +79,28 @@ h1.site-logo {
     display: flex;
     flex-direction: column;
 }
-.ui-view.bottom-detail>.ui-template>.template-content {
+.ui-view.main-view>.ui-template>.template-content {
     flex-direction: row;
     text-align: center;
 }
 
-.ui-view.bottom-detail>.ui-template>.template-content>.ui-view {
+.ui-view.main-view>.ui-template>.template-content>.ui-view {
     min-height: 300px;
 }
 
 
-.ui-view.bottom-detail>.ui-template>.template-content>.ui-view {
+.ui-view.main-view>.ui-template>.template-content>.ui-view {
     min-height: 300px;
     min-width: 200px;
 }
 
-.ui-view.bottom-detail {
+.ui-view.main-view {
     background-color: rgba(0,0,0,0.05);
     padding-top: 40px;
     text-align:center;
 }
 
-.ui-view.bottom-detail>div {
+.ui-view.main-view>div {
     max-width: 1700px;
     margin: auto;
     display: inline-block;
@@ -183,15 +186,14 @@ span.ui-navigation-menu .menu-main {
     display: block;
     text-align: center;
     position: relative;
-    top: 30px;
+    padding: 40px;
+
 }
 
 .no-banner ul.menu-main {
-    position: absolute;
-    top: -145px;
-    height: 0px;
     width: 100%;
     left:-145px;
+    
 }
 
 span.ui-navigation-menu .menu-main li {
@@ -1231,12 +1233,10 @@ ul.ShareLinksModule{
     vertical-align:middle;
 }
 
-.ui-view.bottom-detail {
+.ui-view.main-view {
     padding-top: 100px;
 }
-span.ui-navigation-menu .menu-main li{
-   top:80px;
-}
+
 
 li.menu-main-feeditems:after {
     display: none;

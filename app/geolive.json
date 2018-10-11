@@ -343,28 +343,6 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "user-detail top-right",
-                                    "viewType": "view",
-                                    "namedView": "userDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": ""
-                                }
-                            },
-                            {
-                                "type": "UIView",
-                                "config": {
                                     "className": "top-detail  flex-layout",
                                     "viewType": "view",
                                     "namedView": "topDetail",
@@ -387,11 +365,11 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "bottom-detail  flex-layout",
+                                    "className": "bottom-detail  flex-layout main-view",
                                     "viewType": "view",
                                     "namedView": "bottomDetail",
                                     "shouldRender": true,
-                                    "namedViewScript": "layoutDetail Main View.metadata.positions.content.modules.3.config.namedViewScript.js",
+                                    "namedViewScript": "layoutDetail Main View.metadata.positions.content.modules.2.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
@@ -410,7 +388,7 @@
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "layoutDetail Main View.metadata.positions.content.modules.4.config.script.js",
+                                    "script": "layoutDetail Main View.metadata.positions.content.modules.3.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
@@ -1197,6 +1175,67 @@
                     "content": {
                         "modules": [
                             "pinnedItemsList.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.71": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "headerDetail",
+            "target": "headerDetail",
+            "templateName": "headerDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "headerDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "user-detail top-right",
+                                    "viewType": "view",
+                                    "namedView": "userDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            }
                         ]
                     },
                     "footer": {
