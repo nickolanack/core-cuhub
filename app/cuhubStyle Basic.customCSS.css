@@ -1234,9 +1234,7 @@ ul.ShareLinksModule{
 .ui-view.bottom-detail {
     padding-top: 100px;
 }
-span.ui-navigation-menu .menu-main li{
-   top:80px;
-}
+
 
 li.menu-main-feeditems:after {
     display: none;
