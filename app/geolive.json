@@ -3836,7 +3836,15 @@
                     },
                     "content": {
                         "modules": [
-                            "leftDetail.metadata.positions.content.modules.0.json"
+                            "leftDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "TagCloud",
+                                "config": {
+                                    "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
+                                    "getItemTagsScript": "leftDetail.metadata.positions.content.modules.1.config.getItemTagsScript.js",
+                                    "formatModuleScript": "leftDetail.metadata.positions.content.modules.1.config.formatModuleScript.js"
+                                }
+                            }
                         ]
                     },
                     "footer": {
