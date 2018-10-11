@@ -3836,7 +3836,9 @@
                         "modules": []
                     },
                     "content": {
-                        "modules": []
+                        "modules": [
+                            "leftDetail.metadata.positions.content.modules.0.json"
+                        ]
                     },
                     "footer": {
                         "modules": []

@@ -1,0 +1,8 @@
+{
+    "type": "TagCloud",
+    "config": {
+        "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
+        "getItemTagsScript": "return EventList.DefaultTags(item, application);",
+        "formatModuleScript": "EventList.FormatTagCloudModule(module, application);"
+    }
+}
