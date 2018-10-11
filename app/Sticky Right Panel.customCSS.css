@@ -1,17 +1,17 @@
-.ui-view.bottom-detail>.ui-template>.template-content>.ui-view.right-detail {
+.ui-view.main-view>.ui-template>.template-content>.ui-view.right-detail {
         width: 70px;
         min-width: 70px;
         max-width: 70px;
     }
-    .ui-view.bottom-detail>.ui-template>.template-content>.ui-view.right-detail .ui-view {
+    .ui-view.main-view>.ui-template>.template-content>.ui-view.right-detail .ui-view {
         display:none;
     }
-    .ui-view.bottom-detail>.ui-template>.template-content>.ui-view.right-detail .section-item-icon .field-label{
+    .ui-view.main-view>.ui-template>.template-content>.ui-view.right-detail .section-item-icon .field-label{
         white-space: normal;
         width: 70px;
     }
     
-    .ui-view.bottom-detail>.ui-template>.template-content>.ui-view.right-detail .section-item-icon {
+    .ui-view.main-view>.ui-template>.template-content>.ui-view.right-detail .section-item-icon {
         display: none;
     }
     
