@@ -186,13 +186,10 @@ span.ui-navigation-menu .menu-main {
     display: block;
     text-align: center;
     position: relative;
-    top: 30px;
+
 }
 
 .no-banner ul.menu-main {
-    position: absolute;
-    top: -145px;
-    height: 0px;
     width: 100%;
     left:-145px;
 }
