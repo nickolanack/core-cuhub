@@ -51,10 +51,13 @@ h1.site-logo {
     font-weight: 100;
     font-size: 50px;
     text-transform: capitalize;
-    background-color: #252525;
+    
     z-index: 1;
     color: white;
     text-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+.header-detail{
+   background-color: #252525;
 }
 
 .ui-view.root-container {
