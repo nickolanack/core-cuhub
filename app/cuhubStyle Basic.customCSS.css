@@ -121,7 +121,7 @@ h1.site-logo {
     margin:auto;
 }
 
-.ui-view.feed-item-main-view {
+.ui-view.feed-item-bottom-detail {
     height: 40px;
     background-color: rgba(0,0,0,0.06);
     margin-left: -40px;
@@ -427,7 +427,7 @@ span.ui-navigation-menu ul>label {
     display: none;
 }
 
-.ui-view.user-detail.top-right .ui-view.feed-item-main-view{
+.ui-view.user-detail.top-right .ui-view.feed-item-bottom-detail{
     display: none;
 }
 
