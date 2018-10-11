@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "var h=new Element('h1',{'class':\"site-logo\",\"html\":<?php \n    echo json_encode(GetWidget('interfaceConfig')\n            ->getParameter('site-title'));\n    ?>});\n    \n    \nvar a =new ElementModule('a', {href:\"\"});\na.appendChild(h);\nreturn a;",
+        "script": "var h=new Element('h1',{'class':\"site-logo\",\"html\":<?php \n    echo json_encode(GetWidget('interfaceConfig')\n            ->getParameter('site-title'));\n    ?>});\n    \n    \nvar a =new ElementModule('a', {href:\"\", events:{click:function(e){\n    \n    try{\n        application.getNamedValue('navigationController').navigateTo(view, \"Main\");\n        e.stop();\n    }catch(e){}\n    \n}}});\na.appendChild(h);\nreturn a;",
         "description": "Info about my custom script"
     }
 }
