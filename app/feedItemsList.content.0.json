@@ -6,7 +6,7 @@
         "viewType": "view",
         "namedView": "feedItemDetail",
         "shouldRender": true,
-        "namedViewScript": "return namedView",
+        "namedViewScript": "\nif(item.getType()==\"advertisement\"){\n    return \"advertisementDetail\";\n}\nreturn namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
         "formOptions": "{}",
