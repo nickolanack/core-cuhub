@@ -79,28 +79,28 @@ h1.site-logo {
     display: flex;
     flex-direction: column;
 }
-.ui-view.bottom-detail>.ui-template>.template-content {
+.ui-view.main-view>.ui-template>.template-content {
     flex-direction: row;
     text-align: center;
 }
 
-.ui-view.bottom-detail>.ui-template>.template-content>.ui-view {
+.ui-view.main-view>.ui-template>.template-content>.ui-view {
     min-height: 300px;
 }
 
 
-.ui-view.bottom-detail>.ui-template>.template-content>.ui-view {
+.ui-view.main-view>.ui-template>.template-content>.ui-view {
     min-height: 300px;
     min-width: 200px;
 }
 
-.ui-view.bottom-detail {
+.ui-view.main-view {
     background-color: rgba(0,0,0,0.05);
     padding-top: 40px;
     text-align:center;
 }
 
-.ui-view.bottom-detail>div {
+.ui-view.main-view>div {
     max-width: 1700px;
     margin: auto;
     display: inline-block;
@@ -121,7 +121,7 @@ h1.site-logo {
     margin:auto;
 }
 
-.ui-view.feed-item-bottom-detail {
+.ui-view.feed-item-main-view {
     height: 40px;
     background-color: rgba(0,0,0,0.06);
     margin-left: -40px;
@@ -427,7 +427,7 @@ span.ui-navigation-menu ul>label {
     display: none;
 }
 
-.ui-view.user-detail.top-right .ui-view.feed-item-bottom-detail{
+.ui-view.user-detail.top-right .ui-view.feed-item-main-view{
     display: none;
 }
 
@@ -1233,7 +1233,7 @@ ul.ShareLinksModule{
     vertical-align:middle;
 }
 
-.ui-view.bottom-detail {
+.ui-view.main-view {
     padding-top: 100px;
 }
 
