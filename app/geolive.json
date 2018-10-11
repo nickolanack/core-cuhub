@@ -398,10 +398,32 @@
                                 }
                             },
                             {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "right-detail",
+                                    "viewType": "view",
+                                    "namedView": "rightDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
                                 "type": "WizardScriptElement",
                                 "config": {
                                     "name": "My Custom Script",
-                                    "script": "layoutDetail Main View.metadata.positions.content.modules.4.config.script.js",
+                                    "script": "layoutDetail Main View.metadata.positions.content.modules.5.config.script.js",
                                     "description": "Info about my custom script"
                                 }
                             }
