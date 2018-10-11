@@ -3,7 +3,7 @@
     "config": {
         "loadAsync": false,
         "fieldLabelScript": "return \"Content Filter\";",
-        "fieldValueScript": "return \"Field Value Script\";",
+        "fieldValueScript": "return \"\";",
         "formatElementScript": ""
     }
 }
