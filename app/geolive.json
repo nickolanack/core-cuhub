@@ -378,28 +378,6 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "bottom-detail  flex-layout main-view",
-                                    "viewType": "view",
-                                    "namedView": "bottomDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "layoutDetail Main View.metadata.positions.content.modules.3.config.namedViewScript.js",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": "bottomDetail"
-                                }
-                            },
-                            {
-                                "type": "UIView",
-                                "config": {
                                     "className": "right-detail",
                                     "viewType": "view",
                                     "namedView": "rightDetail",
@@ -417,6 +395,28 @@
                                     "itemButtonsScript": "return [];",
                                     "insertAtTop": false,
                                     "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "bottom-detail  flex-layout main-view",
+                                    "viewType": "view",
+                                    "namedView": "bottomDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "layoutDetail Main View.metadata.positions.content.modules.4.config.namedViewScript.js",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "bottomDetail"
                                 }
                             },
                             {
