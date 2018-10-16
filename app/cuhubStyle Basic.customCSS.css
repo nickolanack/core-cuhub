@@ -176,10 +176,6 @@ span.ui-navigation-menu ul li {
 
 
 
-span.ui-navigation-menu {
-    background-color: rgba(0,0,0,0.05);
-    text-align: right;
-}
 span.ui-navigation-menu .site {
     margin-right: 10px;
 }
