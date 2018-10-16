@@ -422,7 +422,7 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "",
+                                    "className": "footer-detail",
                                     "viewType": "view",
                                     "namedView": "footerDetail",
                                     "shouldRender": true,
