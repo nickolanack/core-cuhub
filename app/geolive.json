@@ -420,11 +420,25 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
+                                "type": "UIView",
                                 "config": {
-                                    "name": "My Custom Script",
-                                    "script": "layoutDetail Main View.metadata.positions.content.modules.5.config.script.js",
-                                    "description": "Info about my custom script"
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "footerDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             }
                         ]
