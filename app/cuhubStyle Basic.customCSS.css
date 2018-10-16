@@ -29,6 +29,12 @@ span.ui-navigation-menu ul.site button {
     border:none;
 }
 
+.ui-view.footer-detail {
+    text-align: center;
+    min-height: 100px;
+    padding: 100px 0;
+}
+
 
 
 span.ui-navigation-menu ul li.menu-main-calendar, 
