@@ -21,6 +21,16 @@ body {
 }
 
 
+span.ui-navigation-menu ul.site li {
+    display: block;
+}
+
+span.ui-navigation-menu ul.site button {
+    border:none;
+}
+
+
+
 span.ui-navigation-menu ul li.menu-main-calendar, 
     span.ui-navigation-menu ul li.menu-main-archive, 
     /*span.ui-navigation-menu ul li.menu-main-feeditems, */
