@@ -180,7 +180,7 @@ span.ui-navigation-menu .site {
     margin-right: 10px;
 }
 
-span.ui-navigation-menu ul li button, .tag-cloud .btn-tag {
+span.ui-navigation-menu ul.menu-main li button, .tag-cloud .btn-tag {
     margin: 5px;
     height: 40px;
     padding: 0 30px;
@@ -249,7 +249,7 @@ span.ui-navigation-menu ul.menu-main li:after {
     background-size: 50%;
 }
 
-span.ui-navigation-menu .menu-main li button {
+span.ui-navigation-menu ul.menu-main li button {
     border: none;
     background: transparent;
     display: block;
