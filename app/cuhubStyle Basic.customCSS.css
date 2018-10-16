@@ -21,6 +21,9 @@ body {
 }
 
 
+
+
+
 span.ui-navigation-menu ul.site li {
     display: block;
 }
@@ -74,6 +77,16 @@ h1.site-logo {
 }
 .header-detail{
    background-color: #252525;
+}
+
+.header-detail{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+.header-detail + * {
+    margin-top: 124px;
 }
 
 ul.header-menu {
