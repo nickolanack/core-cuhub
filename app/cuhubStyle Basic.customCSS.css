@@ -1340,3 +1340,13 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.active label{
     
     
 }
+
+.right-detail .share-links {
+    position: absolute;
+    top: 150px;
+    right:60px;
+}
+.right-detail .share-links li{
+    display:block;
+    margin-bottom:10px;
+}
