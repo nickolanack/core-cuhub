@@ -1080,7 +1080,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return \"Comments\";",
+                                    "fieldLabelScript": "return \"Public Discussion\";",
                                     "fieldValueScript": "return \"\";",
                                     "formatElementScript": ""
                                 }
