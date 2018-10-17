@@ -851,6 +851,11 @@ span.item-connection-to {
 span.item-connection-to:before {
     content: " to";
 }
+span.item-author{
+    z-index: 1;
+    position: relative;
+    cursor: pointer;
+}
 span.item-author:before {
     content: " created by";
 }
