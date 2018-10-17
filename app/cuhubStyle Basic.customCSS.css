@@ -22,7 +22,16 @@ body {
 
 
 
-
+.static-map {
+    background-position: center;
+    position: absolute;
+    height: 124px;
+    width: 100%;
+    background-size: 100%;
+    left: 0;
+    opacity: 0.4;
+    z-index: -1;
+}
 
 span.ui-navigation-menu ul.site li {
     display: block;
