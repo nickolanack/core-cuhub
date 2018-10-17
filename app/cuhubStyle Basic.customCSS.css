@@ -834,6 +834,7 @@ button.btn-action.action-focus {
     height: 18px;
     width: 18px;
     vertical-align: bottom;
+        background-image: url("https://cuhub.geolive.ca/components/com_geolive/users_files/user_files_528/Uploads/f7_[ImAgE]_tO1_OlO_[G].png?tint=rgb(112, 128, 144)");
 }
 
 .feed-item-icon>.feed-item-icon {float: none;left: 100%;top: -6px;background-color: transparent;}
