@@ -33,6 +33,10 @@ body {
     z-index: -1;
 }
 
+.ui-view.event-feed-item{
+    z-index:1;
+}
+
 span.ui-navigation-menu ul.site li {
     display: block;
 }
