@@ -2992,7 +2992,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"By\";",
                                     "fieldValueScript": "return item.getUserId();",
-                                    "formatElementScript": "el.addClass('user')"
+                                    "formatElementScript": "el.addClass('post-author')"
                                 }
                             }
                         ]
