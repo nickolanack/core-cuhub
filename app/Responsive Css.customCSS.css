@@ -82,11 +82,11 @@
     }
     
     span.ui-navigation-menu .menu-main li label{
-        color: transparent;
+        color: slategray;
         padding:0 30px;
     }
     span.ui-navigation-menu .menu-main li.active label{
-        color: transparent;
+        color: slategray;
     }
 
     
