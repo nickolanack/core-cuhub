@@ -4,10 +4,5 @@ if(id<=0){
     return 'a guest';
 }
 
+return '';
 
-var user=EventList.SharedInstance().getProfileForUserId(id);
-if(user){
-    return user.getName();
-}
-
-return id;
