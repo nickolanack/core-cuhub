@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return EventItem.CreateMapTileUrl(item);",
+        "script": "\nreturn EventItem.CreateItemIcon(item, application);",
         "description": "Info about my custom script"
     }
 }

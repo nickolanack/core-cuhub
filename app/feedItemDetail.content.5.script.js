@@ -1,2 +1,1 @@
-
-return EventItem.CreateItemIcon(item, application);
+return EventItem.CreateMapTileUrl(item);
