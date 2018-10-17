@@ -891,6 +891,9 @@ span.item-author{
 span.item-author:before {
     content: " created by";
 }
+.post-author span.item-author:before {
+    display: "none";
+}
 span.item-author, 
 span.date-from-now, 
 span.item-connection-to:before, 
