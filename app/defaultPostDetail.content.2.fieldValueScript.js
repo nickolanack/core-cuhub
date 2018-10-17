@@ -5,9 +5,9 @@ if(id<=0){
 }
 
 
-var eList=EventList.SharedInstance();
-if(eList.hasItem(id, 'profile')){
-    return eList.getItem(id, 'profile').getName();
+var user=EventList.SharedInstance().getProfileForUserId(id);
+if(user){
+    return user.getName();
 }
 
 return id;
