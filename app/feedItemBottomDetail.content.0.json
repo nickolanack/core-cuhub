@@ -1,9 +1,8 @@
 {
-    "type": "InlineHtml",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "",
-        "text": "Test",
-        "template": "",
-        "templateVariablesScript": ""
+        "name": "My Custom Script",
+        "script": "return EventItem.CreateConnectionButton(item, application, <?php \n        \n       echo json_encode(($ui=GetWidget('interfaceConfig'))->getParameter('label-for-item-connect'));\n    \n        ?>);",
+        "description": "Info about my custom script"
     }
 }
