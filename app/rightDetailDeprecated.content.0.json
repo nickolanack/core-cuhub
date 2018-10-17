@@ -4,6 +4,6 @@
         "loadAsync": false,
         "fieldLabelScript": "return \"Your Pinned Items\";",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": "EventList.FormatFieldLabel(el, application, 'Pinned');"
+        "formatElementScript": "\nEventList.FormatFieldLabel(el, application, 'Pinned');"
     }
 }

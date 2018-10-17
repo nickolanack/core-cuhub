@@ -1,8 +1,9 @@
 {
-    "type": "TagCloud",
+    "type": "FieldValue",
     "config": {
-        "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-        "getItemTagsScript": "return EventList.DefaultTags(item, application);",
-        "formatModuleScript": "EventList.FormatTagCloudModule(module, application);"
+        "loadAsync": false,
+        "fieldLabelScript": "return \"Content Filter\";",
+        "fieldValueScript": "return \"\";",
+        "formatElementScript": "el.addClass(\"section-item-icon\")"
     }
 }

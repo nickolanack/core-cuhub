@@ -1,0 +1,1 @@
+EventList.FormatTagCloudModule(module, application);

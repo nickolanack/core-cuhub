@@ -143,7 +143,7 @@
         "parameters": {
             "clientSecretUrl": "XXXX-XXXX",
             "clientPublicUrl": "https:\/\/37dd48bce18a414aa12b27105fa642d3@sentry.io\/293816",
-            "enabled": false
+            "enabled": true
         }
     },
     "plugin.17": {
@@ -378,11 +378,33 @@
                             {
                                 "type": "UIView",
                                 "config": {
+                                    "className": "right-detail",
+                                    "viewType": "view",
+                                    "namedView": "rightDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
+                                "type": "UIView",
+                                "config": {
                                     "className": "bottom-detail  flex-layout main-view",
                                     "viewType": "view",
                                     "namedView": "bottomDetail",
                                     "shouldRender": true,
-                                    "namedViewScript": "layoutDetail Main View.metadata.positions.content.modules.3.config.namedViewScript.js",
+                                    "namedViewScript": "layoutDetail Main View.metadata.positions.content.modules.4.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
@@ -398,11 +420,25 @@
                                 }
                             },
                             {
-                                "type": "WizardScriptElement",
+                                "type": "UIView",
                                 "config": {
-                                    "name": "My Custom Script",
-                                    "script": "layoutDetail Main View.metadata.positions.content.modules.4.config.script.js",
-                                    "description": "Info about my custom script"
+                                    "className": "footer-detail",
+                                    "viewType": "view",
+                                    "namedView": "footerDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             }
                         ]
@@ -429,9 +465,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "rightDetail",
-            "target": "rightDetail",
-            "templateName": "rightDetail",
+            "widgetTitle": "rightDetailDeprecated",
+            "target": "rightDetailDeprecated",
+            "templateName": "rightDetailDeprecated",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
@@ -443,7 +479,7 @@
                     },
                     "content": {
                         "modules": [
-                            "rightDetail.metadata.positions.content.modules.0.json",
+                            "rightDetailDeprecated.metadata.positions.content.modules.0.json",
                             {
                                 "type": "UIView",
                                 "config": {
@@ -472,7 +508,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Calendar\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "rightDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
+                                    "formatElementScript": "rightDetailDeprecated.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -1205,6 +1241,14 @@
                     "content": {
                         "modules": [
                             "headerDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "headerDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
                             {
                                 "type": "UIView",
                                 "config": {
@@ -2885,14 +2929,7 @@
                     },
                     "content": {
                         "modules": [
-                            "feedItemInteractionDetail User.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "script": "feedItemInteractionDetail User.metadata.positions.content.modules.1.config.script.js",
-                                    "identifier": "customScriptElement"
-                                }
-                            }
+                            "feedItemInteractionDetail User.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
@@ -3806,7 +3843,15 @@
                     },
                     "content": {
                         "modules": [
-                            "leftDetail.metadata.positions.content.modules.0.json"
+                            "leftDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "TagCloud",
+                                "config": {
+                                    "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
+                                    "getItemTagsScript": "leftDetail.metadata.positions.content.modules.1.config.getItemTagsScript.js",
+                                    "formatModuleScript": "leftDetail.metadata.positions.content.modules.1.config.formatModuleScript.js"
+                                }
+                            }
                         ]
                     },
                     "footer": {
@@ -3892,9 +3937,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "rightStickyDetail",
-            "target": "rightStickyDetail",
-            "templateName": "rightStickyDetail",
+            "widgetTitle": "rightDetail",
+            "target": "rightDetail",
+            "templateName": "rightDetail",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
@@ -3906,16 +3951,59 @@
                     },
                     "content": {
                         "modules": [
-                            "rightStickyDetail.metadata.positions.content.modules.0.json",
+                            "rightDetail.metadata.positions.content.modules.0.json",
                             {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"View Calendar\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "rightStickyDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                    "formatElementScript": "rightDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
+                            },
+                            {
+                                "type": "ShareLinks",
+                                "config": []
                             }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.73": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "footerDetail",
+            "target": "footerDetail",
+            "templateName": "footerDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "footerDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {

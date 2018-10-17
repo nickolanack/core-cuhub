@@ -31,7 +31,7 @@
     
 }
 
-@media screen and (max-width: 1250px){
+/*@media screen and (max-width: 1600px){ */
 
     
     
@@ -69,6 +69,7 @@
         box-shadow: 0 0 3px rgba(0,0,0,0.3);
         width: calc( 25% - 100px );
         min-width: 75px;
+            max-width: 200px;
     
     }
     span.ui-navigation-menu .menu-main li.menu-main-feeditems{
@@ -92,7 +93,7 @@
     
     
     
-}
+/*}*/
 
 @media screen and (max-width: 1000px){
     

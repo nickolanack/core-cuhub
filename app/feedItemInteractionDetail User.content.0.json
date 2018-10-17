@@ -1,7 +1,8 @@
 {
     "type": "WizardScriptElement",
     "config": {
-        "script": "if(!item.canCreateConnectionFrom(EventList.SharedInstance().getClientProfile())){\n    return null;\n}\n\nreturn (new ModalFormButtonModule(application, \n    new ConnectionItem({\n        \"item\":EventList.SharedInstance().getClientProfile(),\n        \"itemB\":item,\n    }).addEvent(\"save\", function(){\n        var item=this;\n        EventList.SharedInstance(function(el){\n            el.addItem(item);\n        });\n    }), {\n    \"label\":(<?php \n        \n       echo json_encode(($ui=GetWidget('interfaceConfig'))->getParameter('label-for-item-connect'));\n    \n        ?>).replace('{type}', item.getTypeName()),\n    \"formName\":\"connectionForm\",\n    \"formOptions\":{\n        \"template\":\"form\",\n        \"className\":\"connection-form\"\n    },\n    \"className\":\"action-connection action-user\"\n}))",
-        "identifier": "customScriptElement"
+        "name": "My Custom Script",
+        "script": "\nreturn EventItem.CreateConnectionToOwnerProfileButton(item, application, <?php \n        \n       echo json_encode(($ui=GetWidget('interfaceConfig'))->getParameter('label-for-item-owner-connect'));\n    \n        ?>);",
+        "description": "Info about my custom script"
     }
 }

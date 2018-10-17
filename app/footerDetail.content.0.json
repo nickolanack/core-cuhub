@@ -1,0 +1,8 @@
+{
+    "type": "WizardScriptElement",
+    "config": {
+        "name": "My Custom Script",
+        "script": "return [\n    EventList.CreateBottomNavigation(application),\n    EventList.CreateBottomNavigation(application),\n    EventList.CreateBottomNavigation(application)\n    ];",
+        "description": "Info about my custom script"
+    }
+}
