@@ -2933,8 +2933,9 @@
                             {
                                 "type": "WizardScriptElement",
                                 "config": {
+                                    "name": "My Custom Script",
                                     "script": "feedItemInteractionDetail User.metadata.positions.content.modules.1.config.script.js",
-                                    "identifier": "customScriptElement"
+                                    "description": "Info about my custom script"
                                 }
                             }
                         ]
