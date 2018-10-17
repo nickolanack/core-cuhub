@@ -2981,7 +2981,7 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return \"Created\";",
+                                    "fieldLabelScript": "return \"Posted\";",
                                     "fieldValueScript": "defaultPostDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('date-from-now');"
                                 }
@@ -2990,9 +2990,9 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return \"\";",
+                                    "fieldLabelScript": "return \"by \";",
                                     "fieldValueScript": "return item.getUserId();",
-                                    "formatElementScript": "defaultPostDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
+                                    "formatElementScript": "el.addClass('post-author')"
                                 }
                             }
                         ]
