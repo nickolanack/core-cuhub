@@ -1,1 +1,0 @@
-return EventItem.CreateMapTileUrl(item);

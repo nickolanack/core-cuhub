@@ -710,20 +710,12 @@
                         "modules": [
                             "feedItemDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "WizardScriptElement",
-                                "config": {
-                                    "name": "My Custom Script",
-                                    "script": "feedItemDetail.metadata.positions.content.modules.1.config.script.js",
-                                    "description": "Info about my custom script"
-                                }
-                            },
-                            {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "feedItemDetail.metadata.positions.content.modules.2.config.fieldValueScript.js",
-                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
+                                    "fieldValueScript": "feedItemDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
+                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -732,7 +724,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"...\";",
-                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
+                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -741,7 +733,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
+                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -749,8 +741,16 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "feedItemDetail.metadata.positions.content.modules.5.config.fieldValueScript.js",
-                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.5.config.formatElementScript.js"
+                                    "fieldValueScript": "feedItemDetail.metadata.positions.content.modules.4.config.fieldValueScript.js",
+                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "feedItemDetail.metadata.positions.content.modules.5.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
