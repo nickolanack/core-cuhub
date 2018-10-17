@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return EventItem.CreateConnectionButton(item, application, <?php \n        \n       echo json_encode(($ui=GetWidget('interfaceConfig'))->getParameter('label-for-item-connect'));\n    \n        ?>);",
+        "script": "\nreturn EventItem.CreateConnectionToOwnerProfileButton(item, application, <?php \n        \n       echo json_encode(($ui=GetWidget('interfaceConfig'))->getParameter('label-for-item-owner-connect'));\n    \n        ?>);",
         "description": "Info about my custom script"
     }
 }
