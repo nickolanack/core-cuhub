@@ -475,7 +475,10 @@ span.ui-navigation-menu ul>label {
     display: none;
 }
 
-.ui-view.user-detail.top-right .ui-view.feed-item-bottom-detail{
+.ui-view.user-detail.top-right .ui-view.feed-item-bottom-detail, 
+.thin-layout-item .ui-view.feed-item-bottom-detail,
+.connection-form .ui-view.feed-item-bottom-detail
+{
     display: none;
 }
 
