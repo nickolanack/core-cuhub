@@ -32,6 +32,9 @@ body {
     opacity: 0.4;
     z-index: -1;
 }
+.active .static-map {
+    position: relative;
+}
 
 .ui-view.event-feed-item{
     z-index:1;
