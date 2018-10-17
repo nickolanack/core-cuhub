@@ -1,1 +1,1 @@
-return EventItem.CreateMapTileUrl();
+return EventItem.CreateMapTileUrl(item);
