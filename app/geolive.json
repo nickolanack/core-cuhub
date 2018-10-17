@@ -710,12 +710,11 @@
                         "modules": [
                             "feedItemDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "FieldValue",
+                                "type": "WizardScriptElement",
                                 "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "feedItemDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
-                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                    "name": "My Custom Script",
+                                    "script": "feedItemDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
@@ -723,7 +722,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return \"...\";",
+                                    "fieldValueScript": "feedItemDetail.metadata.positions.content.modules.2.config.fieldValueScript.js",
                                     "formatElementScript": "feedItemDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             },
@@ -732,7 +731,7 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "return \"\";",
+                                    "fieldValueScript": "return \"...\";",
                                     "formatElementScript": "feedItemDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
                                 }
                             },
@@ -741,8 +740,17 @@
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
-                                    "fieldValueScript": "feedItemDetail.metadata.positions.content.modules.4.config.fieldValueScript.js",
+                                    "fieldValueScript": "return \"\";",
                                     "formatElementScript": "feedItemDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "feedItemDetail.metadata.positions.content.modules.5.config.fieldValueScript.js",
+                                    "formatElementScript": "feedItemDetail.metadata.positions.content.modules.5.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -752,14 +760,14 @@
                                     "viewType": "view",
                                     "namedView": "feedItemExpandedDetail",
                                     "shouldRender": true,
-                                    "namedViewScript": "feedItemDetail.metadata.positions.content.modules.5.config.namedViewScript.js",
+                                    "namedViewScript": "feedItemDetail.metadata.positions.content.modules.6.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "module.setRenderOnLoad(false);",
-                                    "formatModuleScript": "feedItemDetail.metadata.positions.content.modules.5.config.formatModuleScript.js",
+                                    "formatModuleScript": "feedItemDetail.metadata.positions.content.modules.6.config.formatModuleScript.js",
                                     "resolveItemScript": "",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
