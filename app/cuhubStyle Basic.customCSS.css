@@ -20,7 +20,9 @@ body {
     z-index: 1;
 }
 
-
+.ui-view.thin-layout-item .static-map{
+    display:none;
+}
 
 .static-map {
     background-position: center;
