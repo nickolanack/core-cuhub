@@ -1,0 +1,1 @@
+el.addClass('post-author item-author')

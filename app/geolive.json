@@ -2990,9 +2990,9 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return \"By\";",
+                                    "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return item.getUserId();",
-                                    "formatElementScript": "el.addClass('post-author')"
+                                    "formatElementScript": "defaultPostDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             }
                         ]
