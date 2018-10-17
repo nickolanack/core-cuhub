@@ -171,6 +171,8 @@ ul.header-menu li {
     margin-left: -40px;
     line-height: 40px;
     padding-left: 50px;
+        text-align: right;
+    padding-right: 10px;
 }
 
 .ui-view.right-detail {
