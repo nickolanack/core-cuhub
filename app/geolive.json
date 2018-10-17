@@ -2985,6 +2985,15 @@
                                     "fieldValueScript": "defaultPostDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('date-from-now');"
                                 }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"By\";",
+                                    "fieldValueScript": "return item.getUserId();",
+                                    "formatElementScript": "el.addClass('user')"
+                                }
                             }
                         ]
                     },

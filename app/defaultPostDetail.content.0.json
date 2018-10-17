@@ -2,6 +2,7 @@
     "type": "FormattedText",
     "config": {
         "textValueScript": "return item.getText();",
+        "formatModuleScript": "",
         "className": "",
         "imageWidth": 300,
         "imageHeight": 240,
