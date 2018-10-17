@@ -1,6 +1,6 @@
 var id=item.getUserId();
 
-if(id>=0){
+if(id<=0){
     return 'a guest';
 }
 
