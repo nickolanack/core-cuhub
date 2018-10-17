@@ -354,6 +354,20 @@ span.ui-navigation-menu ul>label {
     margin: 5px;
 }
 
+.expandable.feed-item {
+    cursor: pointer;
+}
+.expandable.feed-item:hover {
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+active.expandable.feed-item:hover {
+    box-shadow: 0 0 2px rgba(0,0,0,0.1);
+}
+.active.expandable.feed-item {
+    cursor: default;
+}
+
+
 
 .ui-view.thin-layout-item, .ui-view.archived-item {
     height: 30px;
