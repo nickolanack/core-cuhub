@@ -1420,6 +1420,18 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.active label{
 }
 
 
+span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-new {
+    background-color: #00d200;
+    position:absolute;
+    top: -108px;
+}
+
+span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-new label {
+    color: black;
+    font-size: 16px;
+}
+
+
 
 .left-detail .tag-cloud-container {
     margin-top: 10px;
