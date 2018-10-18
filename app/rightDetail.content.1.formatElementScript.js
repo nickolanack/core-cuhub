@@ -1,1 +1,1 @@
-EventList.FormatFieldLabel(el, application, 'Pinned');
+EventList.FormatFieldLabel(el, application, 'Calendar');

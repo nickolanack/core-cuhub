@@ -4015,18 +4015,31 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return \"Your Pinned Items\";",
+                                    "fieldLabelScript": "return \"View Calendar\";",
                                     "fieldValueScript": "return \"\";",
                                     "formatElementScript": "rightDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             },
                             {
-                                "type": "FieldValue",
+                                "type": "UIView",
                                 "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"View Calendar\";",
-                                    "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "rightDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "tagFilters",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             },
                             {
