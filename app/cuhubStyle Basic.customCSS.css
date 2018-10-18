@@ -524,7 +524,7 @@ active.expandable.feed-item:hover {
     width: 60px;
     margin: 0;
     border: 2px solid black;
-    box-shadow: 0 0 6px rgba(255,255,255,0.6);
+    box-shadow: 0 0 6px rgba(0,0,0,0.8) inset;
     top: -3px;
     cursor:pointer;
 }
