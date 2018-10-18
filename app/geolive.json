@@ -3934,11 +3934,20 @@
                         "modules": [
                             "leftDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Content Filter\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "leftDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                }
+                            },
+                            {
                                 "type": "TagCloud",
                                 "config": {
                                     "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-                                    "getItemTagsScript": "leftDetail.metadata.positions.content.modules.1.config.getItemTagsScript.js",
-                                    "formatModuleScript": "leftDetail.metadata.positions.content.modules.1.config.formatModuleScript.js"
+                                    "getItemTagsScript": "leftDetail.metadata.positions.content.modules.2.config.getItemTagsScript.js",
+                                    "formatModuleScript": "leftDetail.metadata.positions.content.modules.2.config.formatModuleScript.js"
                                 }
                             }
                         ]
