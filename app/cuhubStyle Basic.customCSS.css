@@ -288,10 +288,9 @@ span.ui-navigation-menu .menu-main {
 span.ui-navigation-menu .menu-main li {
     display: block;
     margin: 5px;
-    height: 40px;
-    padding: 0 30px;
+
     background-color: white;
-    border: 1px solid lightgray;
+   
     border-radius: 2px;
     color: #555555;
     font-size: 20px;
@@ -300,11 +299,16 @@ span.ui-navigation-menu .menu-main li {
     height: 110px;
     position: relative;
     z-index: 1;
-    padding-top: 20px;
+ 
     box-sizing: border-box;
     white-space: normal;
     width: 200px;
     vertical-align: top;
+    
+     height: 50px;
+        padding:0;
+        border: 1px solid rgba(0,0,0,0.3);
+        box-shadow: 0 0 3px rgba(0,0,0,0.3);
 }
 span.ui-navigation-menu .menu-main li>label {
     color: #999999;
