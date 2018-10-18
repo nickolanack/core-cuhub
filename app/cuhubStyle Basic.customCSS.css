@@ -780,7 +780,7 @@ active.expandable.feed-item:hover {
     top: 46px;
 }
 
-.feed-item-icon, .section-item-icon {
+.feed-item-icon{
     width: 40px;
     height: 40px;
     display: inline-block;
@@ -791,15 +791,19 @@ active.expandable.feed-item:hover {
     position:relative;
 }
 
+
 .section-item-icon {
+    text-align: left;
+    line-height: 30px;
+}
+.section-item-icon:after {
+    content:"";
     width: 20px;
     height: 20px;
-}
-.section-item-icon .field-label {
-    position: absolute;
-    left: calc( 100% + 10px );
-    white-space: nowrap;
-    top: calc( 50% - 6px );
+    float:left;
+    background: rgba(0,0,0,0.1);
+    border-radius: 100%;
+    margin: 6px;
 }
 
 
