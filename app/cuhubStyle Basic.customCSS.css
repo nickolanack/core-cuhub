@@ -208,6 +208,7 @@ ul.header-menu li {
     max-width: 900px;
     text-align: left;
     margin:auto;
+    margin-bottom: 70px;
 }
 .ui-view.feed-item-list{
     max-width: 900px;
