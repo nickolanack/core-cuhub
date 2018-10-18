@@ -1,1 +1,0 @@
-el.addClass("section-item-icon")
