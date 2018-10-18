@@ -4015,14 +4015,39 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return \"View Calendar\";",
+                                    "fieldLabelScript": "return \"Your Pinned Items\";",
                                     "fieldValueScript": "return \"\";",
                                     "formatElementScript": "rightDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
                                 }
                             },
                             {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"View Calendar\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "rightDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
+                                }
+                            },
+                            {
                                 "type": "ShareLinks",
-                                "config": []
+                                "config": {
+                                    "className": "",
+                                    "label": "",
+                                    "googleIcon": [],
+                                    "fbid": "",
+                                    "facebookIcon": [],
+                                    "twitVia": "",
+                                    "hashtag": "",
+                                    "twitterIcon": [],
+                                    "siteTitle": "Some Site Name",
+                                    "siteURL": "{website}",
+                                    "siteDescription": "s-icon",
+                                    "formatClass": "s-icon",
+                                    "getTitleScript": "",
+                                    "getUrlScript": "",
+                                    "setPageMeta": true
+                                }
                             }
                         ]
                     },

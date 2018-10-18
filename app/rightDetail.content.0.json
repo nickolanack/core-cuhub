@@ -1,9 +1,22 @@
 {
-    "type": "FieldValue",
+    "type": "UIView",
     "config": {
-        "loadAsync": false,
-        "fieldLabelScript": "return \"Your Pinned Items\";",
-        "fieldValueScript": "return \"\";",
-        "formatElementScript": "EventList.FormatFieldLabel(el, application, 'Pinned');"
+        "className": "",
+        "viewType": "view",
+        "namedView": "tagFilters",
+        "shouldRender": true,
+        "namedViewScript": "return namedView",
+        "showInlineEdit": false,
+        "namedFormView": "defaultView",
+        "formOptions": "\"{}\"",
+        "showDeleteButton": false,
+        "deleteItemScript": "defaultBehaviorFn()",
+        "initModuleScript": "",
+        "formatModuleScript": "",
+        "resolveItemScript": "return item",
+        "filterModulesScript": "return list",
+        "itemButtonsScript": "return [];",
+        "insertAtTop": false,
+        "targetName": ""
     }
 }
