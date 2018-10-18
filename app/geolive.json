@@ -4113,9 +4113,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "singleContentDetail",
-            "target": "singleContentDetail",
-            "templateName": "singleContentDetail",
+            "widgetTitle": "mainSingleDetail",
+            "target": "mainSingleDetail",
+            "templateName": "mainSingleDetail",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
@@ -4130,17 +4130,17 @@
                 "positions": {
                     "title": {
                         "modules": [
-                            "singleContentDetail.metadata.positions.title.modules.0.json"
+                            "mainSingleDetail.metadata.positions.title.modules.0.json"
                         ]
                     },
                     "content": {
                         "modules": [
-                            "singleContentDetail.metadata.positions.content.modules.0.json"
+                            "mainSingleDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
                         "modules": [
-                            "singleContentDetail.metadata.positions.footer.modules.0.json"
+                            "mainSingleDetail.metadata.positions.footer.modules.0.json"
                         ]
                     },
                     "menu": {
