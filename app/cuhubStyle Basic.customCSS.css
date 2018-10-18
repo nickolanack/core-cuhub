@@ -1059,6 +1059,12 @@ body.dragover .add-photo .empty.droppable:after, .add-photo .empty.droppable:aft
     color: #666666;
 }
 
+.action-contact.action-user.action-for-Profile {
+    float: left;
+    margin: 10px 0;
+    color: white;
+}
+
 .form-btn.action-user:hover {
     color: black;
 }
