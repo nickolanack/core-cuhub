@@ -96,7 +96,8 @@ span.ui-navigation-menu ul li.menu-main-calendar,
     span.ui-navigation-menu ul li.menu-main-pinned,
     span.ui-navigation-menu ul li.menu-main-single,
     span.ui-navigation-menu ul li.menu-main-about,
-    span.ui-navigation-menu ul li.menu-main-contact{
+    span.ui-navigation-menu ul li.menu-main-contact,
+    span.ui-navigation-menu ul li.menu-main-connections{
         display: none;
 }
 span.ui-navigation-menu ul li.menu-main-feeditems{
