@@ -4041,7 +4041,7 @@
                                 "type": "InlineHtml",
                                 "config": {
                                     "className": "intro-text",
-                                    "text": "<p>Designed by Capstone Team. Copyright \u00a9 2018 CUHub. All Rights Reserved.\nVersion 0.18.1008 Beta<\/p>",
+                                    "text": "<p style=\"\n    padding: 10px;\n    max-width: 600px;\n\">Designed by Capstone Team. Copyright \u00a9 2018 CUHub. All Rights Reserved.\nVersion 0.18.1008 Beta<\/p>",
                                     "template": "",
                                     "templateVariablesScript": ""
                                 }
