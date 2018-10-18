@@ -61,14 +61,12 @@
     
     
 .section-item-icon.pinned-label {
-    position: absolute;
+    position: relative;
     left: 50px;
-    top: 50px;
 }
 .section-item-icon.calendar-label {
-    position: absolute;
+    position: relative;
     left: 50px;
-    top: 100px;
 }
 
 .banner-image .section-item-icon:after {
