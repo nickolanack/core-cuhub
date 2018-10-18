@@ -342,28 +342,6 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "top-detail  flex-layout",
-                                    "viewType": "view",
-                                    "namedView": "topDetail",
-                                    "shouldRender": false,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": ""
-                                }
-                            },
-                            {
-                                "type": "UIView",
-                                "config": {
                                     "className": "left-detail",
                                     "viewType": "view",
                                     "namedView": "leftDetail",
@@ -412,7 +390,7 @@
                                     "viewType": "view",
                                     "namedView": "bottomDetail",
                                     "shouldRender": true,
-                                    "namedViewScript": "layoutDetail Main View.metadata.positions.content.modules.5.config.namedViewScript.js",
+                                    "namedViewScript": "layoutDetail Main View.metadata.positions.content.modules.4.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
