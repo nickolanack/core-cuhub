@@ -1,21 +1,8 @@
 {
-    "type": "FormTextField",
+    "type": "WizardScriptElement",
     "config": {
-        "className": "",
-        "label": "Your Email",
-        "placeholder": "email address",
-        "lines": 1,
-        "maxChars": 0,
-        "mandatory": true,
-        "multiEntry": false,
-        "muliTemplate": "lines",
-        "multiMessage": "add another value",
-        "formatter": "none",
-        "onRenderTextFieldScript": "",
-        "formatValueScript": "",
-        "getValueScript": " return \"\"; ",
-        "updateValueScript": " object.value=value ",
-        "submitValueScript": "",
-        "validateValueScript": " return defaultValidationFn() "
+        "name": "My Custom Script",
+        "script": "return new ElementModule('div',{\n    html:'You can send '+item.getName()+' a message directly but you will need to validate your email address before it will be sent!'\n});",
+        "description": "Info about my custom script"
     }
 }

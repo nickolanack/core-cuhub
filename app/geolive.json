@@ -2991,8 +2991,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
-                    "y": 171
+                    "x": 60,
+                    "y": 322
                 },
                 "children": [
                     "contactForm.metadata.children.0.json",
@@ -3003,16 +3003,16 @@
                             "contactForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 168,
-                            "y": 300
+                            "x": 178,
+                            "y": 310
                         },
                         "children": [
                             "contactForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 128,
-                                    "y": 466
+                                    "x": 138,
+                                    "y": 476
                                 }
                             }
                         ],
@@ -3026,6 +3026,27 @@
                                 "content": {
                                     "modules": [
                                         "contactForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Your Email",
+                                                "placeholder": "email address",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": true,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
                                         {
                                             "type": "FormTextField",
                                             "config": {
