@@ -309,6 +309,8 @@ span.ui-navigation-menu .menu-main li {
         padding:0;
         border: 1px solid rgba(0,0,0,0.3);
         box-shadow: 0 0 3px rgba(0,0,0,0.3);
+        
+            margin-bottom: 45px;
 }
 span.ui-navigation-menu .menu-main li>label {
     color: #999999;
