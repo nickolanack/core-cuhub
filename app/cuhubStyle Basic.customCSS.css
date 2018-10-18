@@ -303,7 +303,7 @@ span.ui-navigation-menu .menu-main li {
     padding-top: 20px;
     box-sizing: border-box;
     white-space: normal;
-    width: 220px;
+    width: 200px;
     vertical-align: top;
 }
 span.ui-navigation-menu .menu-main li>label {
@@ -1388,13 +1388,11 @@ span.ui-navigation-menu .menu-main li button.menu-main-feeditems {
 
 span.ui-navigation-menu .menu-main li.menu-main-feeditems{
     height: 50px;
-   /* margin-top: 65px;*/
-    padding-top: 10px;
+
     background-color: #1f54f5;
     border: 1px solid rgba(0,0,0,0.3);
     box-shadow: 0 0 3px rgba(0,0,0,0.3);
-    width: 170px;
-    padding-left:10px;
+    padding:10px;
 
 }
 span.ui-navigation-menu .menu-main li.menu-main-feeditems.active{
