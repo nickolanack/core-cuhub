@@ -1477,9 +1477,9 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-new label {
 }
 
 .right-detail .share-links {
-    position: absolute;
-    top: 150px;
-    right:60px;
+    position: relative;
+    margin-top: 100px;
+    right: 60px;
 }
 .right-detail .share-links li{
     display:block;
