@@ -1004,6 +1004,14 @@
                         "modules": [
                             "feedItemExpandedDetail.metadata.positions.content.modules.0.json",
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "feedItemExpandedDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "",
@@ -1053,14 +1061,14 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
+                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.4.config.formatElementScript.js"
                                 }
                             },
                             {
                                 "type": "plugin.Attributes.DescriptionAttribute",
                                 "config": {
                                     "attributeFieldArray": [
-                                        "feedItemExpandedDetail.metadata.positions.content.modules.4.config.attributeFieldArray.0.json"
+                                        "feedItemExpandedDetail.metadata.positions.content.modules.5.config.attributeFieldArray.0.json"
                                     ],
                                     "className": "",
                                     "imageWidth": 300,
@@ -1117,7 +1125,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Link\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.7.config.formatElementScript.js"
+                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.8.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -1135,8 +1143,8 @@
                                     "siteURL": "cuhub.geolive.ca",
                                     "siteDescription": "",
                                     "formatClass": "s-icon",
-                                    "getTitleScript": "feedItemExpandedDetail.metadata.positions.content.modules.8.config.getTitleScript.js",
-                                    "getUrlScript": "feedItemExpandedDetail.metadata.positions.content.modules.8.config.getUrlScript.js",
+                                    "getTitleScript": "feedItemExpandedDetail.metadata.positions.content.modules.9.config.getTitleScript.js",
+                                    "getUrlScript": "feedItemExpandedDetail.metadata.positions.content.modules.9.config.getUrlScript.js",
                                     "setPageMeta": false
                                 }
                             }
