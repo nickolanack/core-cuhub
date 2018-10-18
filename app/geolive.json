@@ -3558,9 +3558,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "mainSingleDetail",
-            "target": "mainSingleDetail",
-            "templateName": "mainSingleDetail",
+            "widgetTitle": "singleDetail",
+            "target": "singleDetail",
+            "templateName": "singleDetail",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
@@ -3572,7 +3572,7 @@
                     },
                     "content": {
                         "modules": [
-                            "mainSingleDetail.metadata.positions.content.modules.0.json"
+                            "singleDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
