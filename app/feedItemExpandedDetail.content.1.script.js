@@ -1,1 +1,1 @@
-return EventItem.CreateActionButtons(item, application);
+return EventItem.CreateFeedItemButtons(item, application);
