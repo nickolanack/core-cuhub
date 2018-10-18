@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\nvar labelContent=<?php\n\n$ui=GetWidget('interfaceConfig');\n\n$labels=$ui->getConfigurationValues(array(\n    'label-for-events',\n    'label-for-projects',\n    'label-for-connections',\n    'label-for-profiles'\n    ));\n\n\necho json_encode($labels,JSON_PRETTY_PRINT);\n?>\n\n\nreturn EventList.CreateNavigationController(labelContent, application);\n\n\n\n\n\n\n",
+        "script": "\nvar labelContent=<?php\n\n$ui=GetWidget('interfaceConfig');\n\n$labels=array_filter($ui->getConfigurationValues(),function($v,$k){ return strpos($k, 'label-')===0;});\n\n\necho json_encode($labels,JSON_PRETTY_PRINT);\n?>\n\n\nreturn EventList.CreateNavigationController(labelContent, application);\n\n\n\n\n\n\n",
         "description": "Info about my custom script"
     }
 }
