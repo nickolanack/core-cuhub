@@ -1437,9 +1437,14 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-new label {
 
 
 
-.left-detail .tag-cloud-container {
-    margin-top: 10px;
-    display: inline-block;
+
+
+.right-detail .tag-cloud span.tag-el {
+    display: block;
+    text-align: left;
+    border: none;
+    background: none;
+    text-indent: 40px;
 }
 
 
