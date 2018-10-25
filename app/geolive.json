@@ -1027,30 +1027,25 @@
                                 }
                             },
                             {
-                                "type": "FieldValue",
+                                "type": "UIView",
                                 "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"Public Discussion\";",
-                                    "fieldValueScript": "return \"\";",
-                                    "formatElementScript": ""
-                                }
-                            },
-                            {
-                                "type": "plugin.Discussions.Discussion",
-                                "config": {
-                                    "width": 0,
-                                    "constrainHeight": false,
-                                    "height": 200,
-                                    "inlineEditing": true,
-                                    "inlineReply": true,
-                                    "inlineReplyNamedForm": "",
-                                    "emptyMessage": "There are no entries",
-                                    "channel": "default",
-                                    "resolveItemScript": "return item;",
-                                    "initialPostsScript": "return null;",
-                                    "namedView": "defaultPostDetail",
-                                    "reverseOrder": false,
-                                    "className": ""
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "discussionDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             },
                             {
@@ -1059,7 +1054,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Link\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.6.config.formatElementScript.js"
+                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.5.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -1077,8 +1072,8 @@
                                     "siteURL": "cuhub.geolive.ca",
                                     "siteDescription": "",
                                     "formatClass": "s-icon",
-                                    "getTitleScript": "feedItemExpandedDetail.metadata.positions.content.modules.7.config.getTitleScript.js",
-                                    "getUrlScript": "feedItemExpandedDetail.metadata.positions.content.modules.7.config.getUrlScript.js",
+                                    "getTitleScript": "feedItemExpandedDetail.metadata.positions.content.modules.6.config.getTitleScript.js",
+                                    "getUrlScript": "feedItemExpandedDetail.metadata.positions.content.modules.6.config.getUrlScript.js",
                                     "setPageMeta": false
                                 }
                             }
