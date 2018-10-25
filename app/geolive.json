@@ -4305,32 +4305,47 @@
             "onRenderApplictionScript": "",
             "notifyViewer": false,
             "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "discussionDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "plugin.Discussions.Discussion",
+                                "config": {
+                                    "width": 300,
+                                    "constrainHeight": true,
+                                    "height": 200,
+                                    "inlineEditing": true,
+                                    "inlineReply": true,
+                                    "inlineReplyNamedForm": "",
+                                    "emptyMessage": "There are no entries",
+                                    "channel": "default",
+                                    "resolveItemScript": "return item;",
+                                    "initialPostsScript": "return null;",
+                                    "namedView": "defaultPostDetail",
+                                    "reverseOrder": false,
+                                    "className": ""
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
                 "positionList": [
                     "title",
                     "content",
                     "footer",
                     "menu"
                 ],
-                "positions": {
-                    "title": {
-                        "modules": [
-                            "discussionDetail.metadata.positions.title.modules.0.json"
-                        ]
-                    },
-                    "content": {
-                        "modules": [
-                            "discussionDetail.metadata.positions.content.modules.0.json"
-                        ]
-                    },
-                    "footer": {
-                        "modules": [
-                            "discussionDetail.metadata.positions.footer.modules.0.json"
-                        ]
-                    },
-                    "menu": {
-                        "modules": []
-                    }
-                }
+                "_diagramState": []
             },
             "readAccess": "public"
         }
