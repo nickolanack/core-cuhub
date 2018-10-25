@@ -42,6 +42,11 @@ body {
         color: black;
     font-size: 16px;
         margin-right: 70px;
+        cursor:pointer;
+}
+
+.ui-template-form button.menu-main-feeditems.create-new:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 
 button.menu-main-feeditems.create-new.new-event {
