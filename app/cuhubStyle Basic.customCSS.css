@@ -44,6 +44,13 @@ body {
         margin-right: 70px;
 }
 
+button.menu-main-feeditems.create-new.new-event {
+    background-color: rgba(176, 59, 59, 1);
+}
+button.menu-main-feeditems.create-new.new-project {
+    background-color: rgba(232, 137, 0, 1);
+}
+
 .edit-widget-btns {
     position: fixed;
     bottom: 0;
