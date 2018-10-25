@@ -87,23 +87,10 @@ span.ui-navigation-menu ul.site button {
     padding: 100px 0;
 }
 
-
-
-span.ui-navigation-menu ul li.menu-main-calendar, 
-    span.ui-navigation-menu ul li.menu-main-archive, 
-    /*span.ui-navigation-menu ul li.menu-main-feeditems, */
-    span.ui-navigation-menu ul li.menu-main-tags, 
-    span.ui-navigation-menu ul li.menu-main-date,
-    span.ui-navigation-menu ul li.menu-main-pinned,
-    span.ui-navigation-menu ul li.menu-main-single,
-    span.ui-navigation-menu ul li.menu-main-about,
-    span.ui-navigation-menu ul li.menu-main-contact,
-    span.ui-navigation-menu ul li.menu-main-connections{
-        display: none;
+span.ui-navigation-menu ul li.hidden {
+    display: none;
 }
-span.ui-navigation-menu ul li.menu-main-feeditems{
-    
-}
+
 
 h1.site-logo {
     position: relative;
