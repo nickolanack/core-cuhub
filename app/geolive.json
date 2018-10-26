@@ -4403,6 +4403,7 @@
                                     "inlineReplyNamedForm": "",
                                     "emptyMessage": "There are no entries",
                                     "channel": "default",
+                                    "resolveChannelScript": "return defaultChannel;",
                                     "resolveItemScript": "return item;",
                                     "initialPostsScript": "return null;",
                                     "namedView": "defaultPostDetail",
