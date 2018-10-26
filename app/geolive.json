@@ -1039,7 +1039,7 @@
                                     "formOptions": "\"{}\"",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "",
+                                    "initModuleScript": "\nmodule.setRenderOnLoad(false);",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
