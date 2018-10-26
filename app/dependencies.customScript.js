@@ -38,6 +38,7 @@ GetWidget('mainAboutDetail')->display($targetInstance);
 GetWidget('mainCalendarDetail')->display($targetInstance);
 
 GetWidget('contactForm')->display($targetInstance);
+GetWidget('directChatForm')->display($targetInstance);
 
 GetWidget('createItemsMenuForm')->display($targetInstance);
 
