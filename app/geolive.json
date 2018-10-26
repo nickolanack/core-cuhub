@@ -4097,16 +4097,16 @@
                             "createItemsMenuForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 243,
-                            "y": 235
+                            "x": 253,
+                            "y": 245
                         },
                         "children": [
                             "createItemsMenuForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 203,
-                                    "y": 401
+                                    "x": 213,
+                                    "y": 411
                                 }
                             }
                         ],
@@ -4119,7 +4119,15 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "createItemsMenuForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "createItemsMenuForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "createItemsMenuForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.script.js",
+                                                "description": "Info about my custom script"
+                                            }
+                                        }
                                     ]
                                 },
                                 "footer": {

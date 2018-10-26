@@ -1,8 +1,9 @@
 {
-    "type": "WizardScriptElement",
+    "type": "InlineHtml",
     "config": {
-        "name": "My Custom Script",
-        "script": "return EventList.CreateNewFeedItemNavigation(application, wizard);",
-        "description": "Info about my custom script"
+        "className": "into-text",
+        "text": "<p>You can create ...<\/p>",
+        "template": "",
+        "templateVariablesScript": ""
     }
 }

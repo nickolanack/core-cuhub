@@ -1,0 +1,1 @@
+return EventList.CreateNewFeedItemNavigation(application, wizard);
