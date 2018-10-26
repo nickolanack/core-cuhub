@@ -4296,6 +4296,13 @@
             "readAccess": "public"
         }
     },
+    "widget.79": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "none"
+        }
+    },
     "widget.78": {
         "name": "Detail View",
         "instance": "DetailView",
