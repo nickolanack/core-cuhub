@@ -14,7 +14,7 @@
         "deleteItemScript": "",
         "initModuleScript": "",
         "formatModuleScript": "",
-        "resolveItemScript": "return item",
+        "resolveItemScript": "application.getNamedValue('feedItemMap', function(map) {\n\t\tcallback(map(item));\n});",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
         "insertAtTop": false,

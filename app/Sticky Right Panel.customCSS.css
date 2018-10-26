@@ -60,15 +60,17 @@
     }
     
     
-.section-item-icon.pinned-label {
-    position: absolute;
-    left: 50px;
-    top: 50px;
-}
-.section-item-icon.calendar-label {
-    position: absolute;
-    left: 50px;
-    top: 100px;
+.section-item-icon.pinned-label, .section-item-icon.calendar-label {
+    position: relative;
+    right: 0;
+    display: inline-block;
+    text-align: left;
+    width: 250px;
+    background: #2749f8;
+    margin-bottom: 10px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
 }
 
 .banner-image .section-item-icon:after {

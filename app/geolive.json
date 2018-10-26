@@ -80,7 +80,7 @@
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": true,
-            "CachingEnabled": true,
+            "CachingEnabled": false,
             "ExternalizeWidgetScripts": true,
             "PrettyPrintJson": true,
             "showFrontEndEditButtons": false,
@@ -143,7 +143,7 @@
         "parameters": {
             "clientSecretUrl": "XXXX-XXXX",
             "clientPublicUrl": "https:\/\/37dd48bce18a414aa12b27105fa642d3@sentry.io\/293816",
-            "enabled": true
+            "enabled": false
         }
     },
     "plugin.17": {
@@ -332,25 +332,11 @@
                         "modules": [
                             "layoutDetail Main View.metadata.positions.content.modules.0.json",
                             {
-                                "type": "UIView",
+                                "type": "WizardScriptElement",
                                 "config": {
-                                    "className": "top-detail  flex-layout",
-                                    "viewType": "view",
-                                    "namedView": "topDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": ""
+                                    "name": "My Custom Script",
+                                    "script": "layoutDetail Main View.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
@@ -746,20 +732,28 @@
                                 }
                             },
                             {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "feedItemDetail.metadata.positions.content.modules.5.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            },
+                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "feed-item-expanded-detail",
                                     "viewType": "view",
                                     "namedView": "feedItemExpandedDetail",
                                     "shouldRender": true,
-                                    "namedViewScript": "feedItemDetail.metadata.positions.content.modules.5.config.namedViewScript.js",
+                                    "namedViewScript": "feedItemDetail.metadata.positions.content.modules.6.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "",
                                     "initModuleScript": "module.setRenderOnLoad(false);",
-                                    "formatModuleScript": "feedItemDetail.metadata.positions.content.modules.5.config.formatModuleScript.js",
+                                    "formatModuleScript": "feedItemDetail.metadata.positions.content.modules.6.config.formatModuleScript.js",
                                     "resolveItemScript": "",
                                     "filterModulesScript": "return list",
                                     "itemButtonsScript": "return [];",
@@ -988,47 +982,11 @@
                         "modules": [
                             "feedItemExpandedDetail.metadata.positions.content.modules.0.json",
                             {
-                                "type": "UIView",
+                                "type": "WizardScriptElement",
                                 "config": {
-                                    "className": "",
-                                    "viewType": "view",
-                                    "namedView": "feedItemActionsDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": ""
-                                }
-                            },
-                            {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "",
-                                    "viewType": "view",
-                                    "namedView": "feedItemInteractionDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": ""
+                                    "name": "My Custom Script",
+                                    "script": "feedItemExpandedDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
                                 }
                             },
                             {
@@ -1037,14 +995,14 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.3.config.formatElementScript.js"
+                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             },
                             {
                                 "type": "plugin.Attributes.DescriptionAttribute",
                                 "config": {
                                     "attributeFieldArray": [
-                                        "feedItemExpandedDetail.metadata.positions.content.modules.4.config.attributeFieldArray.0.json"
+                                        "feedItemExpandedDetail.metadata.positions.content.modules.3.config.attributeFieldArray.0.json"
                                     ],
                                     "className": "",
                                     "imageWidth": 300,
@@ -1069,30 +1027,25 @@
                                 }
                             },
                             {
-                                "type": "FieldValue",
+                                "type": "UIView",
                                 "config": {
-                                    "loadAsync": false,
-                                    "fieldLabelScript": "return \"Comments\";",
-                                    "fieldValueScript": "return \"\";",
-                                    "formatElementScript": ""
-                                }
-                            },
-                            {
-                                "type": "plugin.Discussions.Discussion",
-                                "config": {
-                                    "width": 0,
-                                    "constrainHeight": false,
-                                    "height": 200,
-                                    "inlineEditing": true,
-                                    "inlineReply": true,
-                                    "inlineReplyNamedForm": "",
-                                    "emptyMessage": "There are no entries",
-                                    "channel": "default",
-                                    "resolveItemScript": "return item;",
-                                    "initialPostsScript": "return null;",
-                                    "namedView": "defaultPostDetail",
-                                    "reverseOrder": false,
-                                    "className": ""
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "discussionDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "feedItemExpandedDetail.metadata.positions.content.modules.4.config.initModuleScript.js",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
                                 }
                             },
                             {
@@ -1101,7 +1054,7 @@
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Link\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.7.config.formatElementScript.js"
+                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.5.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -1119,8 +1072,8 @@
                                     "siteURL": "cuhub.geolive.ca",
                                     "siteDescription": "",
                                     "formatClass": "s-icon",
-                                    "getTitleScript": "feedItemExpandedDetail.metadata.positions.content.modules.8.config.getTitleScript.js",
-                                    "getUrlScript": "feedItemExpandedDetail.metadata.positions.content.modules.8.config.getUrlScript.js",
+                                    "getTitleScript": "feedItemExpandedDetail.metadata.positions.content.modules.6.config.getTitleScript.js",
+                                    "getUrlScript": "feedItemExpandedDetail.metadata.positions.content.modules.6.config.getUrlScript.js",
                                     "setPageMeta": false
                                 }
                             }
@@ -1724,7 +1677,7 @@
             "color-for-myprofile": "rgb(84, 167, 0)",
             "color-for-primary-btn": "rgb(31, 84, 245)",
             "icon-logo": [
-                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/ji3_VC9_4zi_[G]_[ImAgE].png"
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/I8B_[G]_RSB_eVb_[ImAgE].png"
             ],
             "icon-for-action-login": [
                 "components\/com_geolive\/users_files\/user_files_528\/Uploads\/[G]_Qim_k5g_[ImAgE]_nH7.png"
@@ -1743,7 +1696,7 @@
             ],
             "label-for-events": "Share and view events in the community",
             "label-for-projects": "Create and follow research projects",
-            "label-for-connections": "Discover and connection with cuhub users",
+            "label-for-connections": "Discover and connect with cuhub users",
             "label-for-profiles": "View and contact community and university members",
             "show-banner": false,
             "label-for-create-event": "Share Event",
@@ -2950,6 +2903,106 @@
             "readAccess": "public"
         }
     },
+    "widget.74": {
+        "name": "Generic Wizard",
+        "instance": "WizardBuilder",
+        "parameters": {
+            "widgetTitle": "contactForm",
+            "target": "contactForm",
+            "templateName": "contactForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": 60,
+                    "y": 322
+                },
+                "children": [
+                    "contactForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "contactForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 198,
+                            "y": 330
+                        },
+                        "children": [
+                            "contactForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 158,
+                                    "y": 506
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "contactForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "contactForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
+                                                "label": "Your Message",
+                                                "placeholder": "write a message",
+                                                "lines": 4,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"Hello World\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "contactForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "readAccess": "public"
+        }
+    },
     "widget.47": {
         "name": "Detail View",
         "instance": "DetailView",
@@ -2973,9 +3026,18 @@
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
-                                    "fieldLabelScript": "return \"Created\";",
+                                    "fieldLabelScript": "return \"Posted\";",
                                     "fieldValueScript": "defaultPostDetail.metadata.positions.content.modules.1.config.fieldValueScript.js",
                                     "formatElementScript": "el.addClass('date-from-now');"
+                                }
+                            },
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"by\";",
+                                    "fieldValueScript": "defaultPostDetail.metadata.positions.content.modules.2.config.fieldValueScript.js",
+                                    "formatElementScript": "defaultPostDetail.metadata.positions.content.modules.2.config.formatElementScript.js"
                                 }
                             }
                         ]
@@ -3491,9 +3553,9 @@
         "name": "Detail View",
         "instance": "DetailView",
         "parameters": {
-            "widgetTitle": "mainSingleDetail",
-            "target": "mainSingleDetail",
-            "templateName": "mainSingleDetail",
+            "widgetTitle": "singleDetail",
+            "target": "singleDetail",
+            "templateName": "singleDetail",
             "requireTarget": true,
             "resolveItemScript": "return item",
             "onRenderApplictionScript": "",
@@ -3505,7 +3567,7 @@
                     },
                     "content": {
                         "modules": [
-                            "mainSingleDetail.metadata.positions.content.modules.0.json"
+                            "singleDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
@@ -3843,15 +3905,7 @@
                     },
                     "content": {
                         "modules": [
-                            "leftDetail.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "TagCloud",
-                                "config": {
-                                    "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
-                                    "getItemTagsScript": "leftDetail.metadata.positions.content.modules.1.config.getItemTagsScript.js",
-                                    "formatModuleScript": "leftDetail.metadata.positions.content.modules.1.config.formatModuleScript.js"
-                                }
-                            }
+                            "leftDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
@@ -3962,8 +4016,46 @@
                                 }
                             },
                             {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "tagFilters",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
                                 "type": "ShareLinks",
-                                "config": []
+                                "config": {
+                                    "className": "",
+                                    "label": "",
+                                    "googleIcon": [],
+                                    "fbid": "",
+                                    "facebookIcon": [],
+                                    "twitVia": "",
+                                    "hashtag": "",
+                                    "twitterIcon": [],
+                                    "siteTitle": "Some Site Name",
+                                    "siteURL": "{website}",
+                                    "siteDescription": "s-icon",
+                                    "formatClass": "s-icon",
+                                    "getTitleScript": "",
+                                    "getUrlScript": "",
+                                    "setPageMeta": true
+                                }
                             }
                         ]
                     },
@@ -3985,6 +4077,91 @@
             "readAccess": "public"
         }
     },
+    "widget.77": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "createItemsMenuForm",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "createItemsMenuForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "createItemsMenuForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 263,
+                            "y": 255
+                        },
+                        "children": [
+                            "createItemsMenuForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 223,
+                                    "y": 421
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "createItemsMenuForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "createItemsMenuForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "createItemsMenuForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.script.js",
+                                                "description": "Info about my custom script"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": []
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "widgetTitle": "createItemsMenuForm",
+            "templateName": "createItemsMenuForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "readAccess": "public"
+        }
+    },
     "widget.73": {
         "name": "Detail View",
         "instance": "DetailView",
@@ -4003,7 +4180,159 @@
                     },
                     "content": {
                         "modules": [
-                            "footerDetail.metadata.positions.content.modules.0.json"
+                            "footerDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "InlineHtml",
+                                "config": {
+                                    "className": "intro-text",
+                                    "text": "<p style=\"\n    padding: 10px;\n    max-width: 600px;\n\">Designed by Capstone Team. Copyright \u00a9 2018 CUHub. All Rights Reserved.\nVersion 0.18.1008 Beta<\/p>",
+                                    "template": "",
+                                    "templateVariablesScript": ""
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.75": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "mainSingleDetail",
+            "target": "mainSingleDetail",
+            "templateName": "mainSingleDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "mainSingleDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.76": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "tagFilters",
+            "target": "tagFilters",
+            "templateName": "tagFilters",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "tagFilters.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "TagCloud",
+                                "config": {
+                                    "tags": "[\n    \"tag one\",\n    \"tag two\"\n]",
+                                    "getItemTagsScript": "tagFilters.metadata.positions.content.modules.1.config.getItemTagsScript.js",
+                                    "formatModuleScript": "tagFilters.metadata.positions.content.modules.1.config.formatModuleScript.js"
+                                }
+                            }
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.78": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "discussionDetail",
+            "target": "discussionDetail",
+            "templateName": "discussionDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "discussionDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "plugin.Discussions.Discussion",
+                                "config": {
+                                    "width": 0,
+                                    "constrainHeight": false,
+                                    "height": 200,
+                                    "inlineEditing": true,
+                                    "inlineReply": true,
+                                    "inlineReplyNamedForm": "",
+                                    "emptyMessage": "There are no entries",
+                                    "channel": "default",
+                                    "resolveItemScript": "return item;",
+                                    "initialPostsScript": "return null;",
+                                    "namedView": "defaultPostDetail",
+                                    "reverseOrder": false,
+                                    "className": ""
+                                }
+                            }
                         ]
                     },
                     "footer": {

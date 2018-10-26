@@ -1,0 +1,21 @@
+{
+    "type": "FormTextField",
+    "config": {
+        "className": "",
+        "label": "Your Email",
+        "placeholder": "email address",
+        "lines": 1,
+        "maxChars": 0,
+        "mandatory": true,
+        "multiEntry": false,
+        "muliTemplate": "lines",
+        "multiMessage": "add another value",
+        "formatter": "none",
+        "onRenderTextFieldScript": "",
+        "formatValueScript": "",
+        "getValueScript": " return \"\"; ",
+        "updateValueScript": " object.value=value ",
+        "submitValueScript": "",
+        "validateValueScript": " return defaultValidationFn() "
+    }
+}

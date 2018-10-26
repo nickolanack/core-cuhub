@@ -37,7 +37,9 @@ GetWidget('mainContactDetail')->display($targetInstance);
 GetWidget('mainAboutDetail')->display($targetInstance);
 GetWidget('mainCalendarDetail')->display($targetInstance);
 
+GetWidget('contactForm')->display($targetInstance);
 
+GetWidget('createItemsMenuForm')->display($targetInstance);
 
 
 GetWidget('eventFeedSearchItemDetail')->display($targetInstance);

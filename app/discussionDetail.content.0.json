@@ -1,0 +1,9 @@
+{
+    "type": "FieldValue",
+    "config": {
+        "loadAsync": false,
+        "fieldLabelScript": "return \"Public Discussion\";",
+        "fieldValueScript": "return \"\";",
+        "formatElementScript": ""
+    }
+}

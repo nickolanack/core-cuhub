@@ -1,0 +1,9 @@
+{
+    "type": "InlineHtml",
+    "config": {
+        "className": "intro-text",
+        "text": "<p>You can create ...<\/p>",
+        "template": "",
+        "templateVariablesScript": ""
+    }
+}
