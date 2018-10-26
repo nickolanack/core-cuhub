@@ -1031,6 +1031,11 @@ span.event-date-from-now {
     height: 50px;
 }
 
+.connection-feed-items-list .feed-item-expanded-detail{
+    display:none;
+}
+
+
 button.clear-filter.form-btn {
     width: 100px;
 }
@@ -1276,12 +1281,6 @@ input.discussion-textbox {
     background-position: center;
   
 }
-
-.connection-feed-items-list .feed-item-expanded-detail{
-    display:none;
-}
-
-
 
 .field-value-module.link-to-item:before {
     content: "";
