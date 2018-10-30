@@ -27,6 +27,11 @@
     }
     
     
+   .ui-view.main-content-detail {
+       max-width: calc( 100% - 600px );
+   }
+    
+    
     
     
 }
