@@ -4569,5 +4569,23 @@
             "onLoadScript": "",
             "readAccess": "public"
         }
+    },
+    "widget.81": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Subject",
+            "widgetTitle": "email.email.activate.subject",
+            "target": "email.email.activate.subject"
+        }
+    },
+    "widget.82": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Message Content",
+            "widgetTitle": "email.email.activate.content",
+            "target": "email.email.activate.content"
+        }
     }
 }
