@@ -5,7 +5,7 @@
         "onSuccessfulRegistrationScript": "defaultBehaviorFn();",
         "formatRegistrationFieldsScript": "return fields;",
         "validateRegistrationFieldsScript": "return defaultValidationFn();",
-        "showCancel": true,
+        "showCancel": false,
         "labelForCancel": "cancel",
         "labelForSubmit": "Register",
         "showName": true,
