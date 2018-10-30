@@ -10,7 +10,7 @@ var ForgotUser=new Class({
         },
         save:function(cb){
             
-            
+        var me=this;
              
         (new AjaxControlQuery(CoreAjaxUrlRoot,'send_magic_link', {
 		  'plugin': "Users",
