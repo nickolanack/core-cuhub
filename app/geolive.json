@@ -1771,8 +1771,8 @@
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
-                    "y": 171
+                    "x": 56,
+                    "y": 173
                 },
                 "children": [
                     "loginForm.metadata.children.0.json",
@@ -1783,16 +1783,66 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 178,
-                            "y": 310
+                            "x": 248,
+                            "y": 192
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 138,
-                                    "y": 486
+                                    "x": 208,
+                                    "y": 368
+                                }
+                            },
+                            {
+                                "title": "New Empty Step",
+                                "class": "AttributesTableNode",
+                                "fields": [
+                                    "loginForm.metadata.children.1.children.2.fields.0.json"
+                                ],
+                                "_diagramState": {
+                                    "x": 679,
+                                    "y": 191
+                                },
+                                "children": [
+                                    "loginForm.metadata.children.1.children.2.children.0.json",
+                                    {
+                                        "class": "InsertNode",
+                                        "_diagramState": {
+                                            "x": 639,
+                                            "y": 357
+                                        }
+                                    }
+                                ],
+                                "builderMetadata": {
+                                    "positions": {
+                                        "title": {
+                                            "modules": [
+                                                "loginForm.metadata.children.1.children.2.builderMetadata.positions.title.modules.0.json"
+                                            ]
+                                        },
+                                        "content": {
+                                            "modules": [
+                                                "loginForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.0.json"
+                                            ]
+                                        },
+                                        "footer": {
+                                            "modules": []
+                                        },
+                                        "menu": {
+                                            "modules": []
+                                        }
+                                    },
+                                    "positionList": [
+                                        "title",
+                                        "content",
+                                        "footer",
+                                        "menu"
+                                    ],
+                                    "_diagramState": {
+                                        "minimized": false
+                                    }
                                 }
                             }
                         ],
@@ -1818,13 +1868,15 @@
                                             "config": {
                                                 "className": "",
                                                 "showCancel": true,
-                                                "labelForCancel": "cancel",
-                                                "labelForSubmit": "Login",
                                                 "labelForUsername": "XXXX-XXXX",
                                                 "labelForPassword": "XXXX-XXXX",
+                                                "labelForCancel": "cancel",
+                                                "labelForSubmit": "Login",
                                                 "onLoginFailedScript": "",
                                                 "reloadOnSuccess": true,
-                                                "reloadUrl": ""
+                                                "reloadUrl": "",
+                                                "showForgotPassword": false,
+                                                "forgotPasswordCustomScript": "XXXX-XXXX"
                                             }
                                         }
                                     ]
