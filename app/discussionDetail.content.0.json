@@ -2,7 +2,7 @@
     "type": "FieldValue",
     "config": {
         "loadAsync": false,
-        "fieldLabelScript": "return \"Public Discussion\";",
+        "fieldLabelScript": "if(item instanceof ProfileItem){\n    return \"This is a private discussion between you and \"+item.getName()\n}\n\nreturn \"Public Discussion\";",
         "fieldValueScript": "return \"\";",
         "formatElementScript": ""
     }

@@ -1766,13 +1766,13 @@
         "name": "Login Wizard Builder",
         "instance": "LoginWizardBuilder",
         "parameters": {
-            "reloadOnSuccess": true,
+            "reloadOnSuccess": false,
             "reloadUrl": "",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
-                    "y": 171
+                    "x": 5,
+                    "y": 250
                 },
                 "children": [
                     "loginForm.metadata.children.0.json",
@@ -1783,16 +1783,66 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 178,
-                            "y": 310
+                            "x": 210,
+                            "y": 198
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 138,
-                                    "y": 486
+                                    "x": 170,
+                                    "y": 386
+                                }
+                            },
+                            {
+                                "title": "New Empty Step",
+                                "class": "AttributesTableNode",
+                                "fields": [
+                                    "loginForm.metadata.children.1.children.2.fields.0.json"
+                                ],
+                                "_diagramState": {
+                                    "x": 685,
+                                    "y": 213
+                                },
+                                "children": [
+                                    "loginForm.metadata.children.1.children.2.children.0.json",
+                                    {
+                                        "class": "InsertNode",
+                                        "_diagramState": {
+                                            "x": 645,
+                                            "y": 379
+                                        }
+                                    }
+                                ],
+                                "builderMetadata": {
+                                    "positions": {
+                                        "title": {
+                                            "modules": [
+                                                "loginForm.metadata.children.1.children.2.builderMetadata.positions.title.modules.0.json"
+                                            ]
+                                        },
+                                        "content": {
+                                            "modules": [
+                                                "loginForm.metadata.children.1.children.2.builderMetadata.positions.content.modules.0.json"
+                                            ]
+                                        },
+                                        "footer": {
+                                            "modules": []
+                                        },
+                                        "menu": {
+                                            "modules": []
+                                        }
+                                    },
+                                    "positionList": [
+                                        "title",
+                                        "content",
+                                        "footer",
+                                        "menu"
+                                    ],
+                                    "_diagramState": {
+                                        "minimized": false
+                                    }
                                 }
                             }
                         ],
@@ -1818,13 +1868,23 @@
                                             "config": {
                                                 "className": "",
                                                 "showCancel": true,
-                                                "labelForCancel": "cancel",
-                                                "labelForSubmit": "Login",
                                                 "labelForUsername": "XXXX-XXXX",
                                                 "labelForPassword": "XXXX-XXXX",
+                                                "labelForCancel": "cancel",
+                                                "labelForSubmit": "Login",
                                                 "onLoginFailedScript": "",
                                                 "reloadOnSuccess": true,
-                                                "reloadUrl": ""
+                                                "reloadUrl": "",
+                                                "showForgotPassword": true,
+                                                "forgotPasswordCustomScript": "XXXX-XXXX"
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardScriptElement",
+                                            "config": {
+                                                "name": "My Custom Script",
+                                                "script": "loginForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.script.js",
+                                                "description": "Info about my custom script"
                                             }
                                         }
                                     ]
@@ -4296,6 +4356,83 @@
             "readAccess": "public"
         }
     },
+    "widget.79": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "directChatForm",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "directChatForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "directChatForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 148,
+                            "y": 280
+                        },
+                        "children": [
+                            "directChatForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 108,
+                                    "y": 446
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "directChatForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "directChatForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": []
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "widgetTitle": "directChatForm",
+            "templateName": "directChatForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "readAccess": "public"
+        }
+    },
     "widget.78": {
         "name": "Detail View",
         "instance": "DetailView",
@@ -4319,13 +4456,14 @@
                                 "type": "plugin.Discussions.Discussion",
                                 "config": {
                                     "width": 0,
-                                    "constrainHeight": false,
+                                    "constrainHeight": true,
                                     "height": 200,
                                     "inlineEditing": true,
                                     "inlineReply": true,
                                     "inlineReplyNamedForm": "",
                                     "emptyMessage": "There are no entries",
                                     "channel": "default",
+                                    "resolveChannelScript": "discussionDetail.metadata.positions.content.modules.1.config.resolveChannelScript.js",
                                     "resolveItemScript": "return item;",
                                     "initialPostsScript": "return null;",
                                     "namedView": "defaultPostDetail",
@@ -4351,6 +4489,143 @@
                 "_diagramState": []
             },
             "readAccess": "public"
+        }
+    },
+    "widget.80": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "forgotPasswordForm",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "forgotPasswordForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "forgotPasswordForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 158,
+                            "y": 290
+                        },
+                        "children": [
+                            "forgotPasswordForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 118,
+                                    "y": 456
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "forgotPasswordForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "forgotPasswordForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "forgotPasswordForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "widgetTitle": "forgotPasswordForm",
+            "templateName": "forgotPasswordForm",
+            "requireTarget": true,
+            "resolveItemScript": "forgotPasswordForm.resolveItemScript.js",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.81": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "email-email-activate-subject.contentTemplate.html",
+            "widgetTitle": "email.email.activate.subject",
+            "target": "email.email.activate.subject",
+            "comments": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.82": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "email-email-activate-content.contentTemplate.html",
+            "widgetTitle": "email.email.activate.content",
+            "target": "email.email.activate.content",
+            "comments": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.83": {
+        "name": "Article",
+        "instance": "Article",
+        "parameters": {
+            "articleTitle": "You did it! Thanks.",
+            "articleHtml": "",
+            "target": "Links.action-view.Article.onActivateEmailLink"
+        }
+    },
+    "widget.84": {
+        "name": "Article",
+        "instance": "Article",
+        "parameters": {
+            "articleTitle": "That link is expired or invalid",
+            "articleHtml": "",
+            "target": "Links.action-view.Article.error"
+        }
+    },
+    "widget.85": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Here is your magic login link",
+            "widgetTitle": "email.MagicLoginLink.subject",
+            "target": "email.MagicLoginLink.subject"
+        }
+    },
+    "widget.86": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "email-MagicLoginLink-content.contentTemplate.html",
+            "widgetTitle": "email.MagicLoginLink.content",
+            "target": "email.MagicLoginLink.content"
         }
     }
 }
