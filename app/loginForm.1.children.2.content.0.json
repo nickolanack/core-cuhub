@@ -5,11 +5,12 @@
         "onSuccessfulRegistrationScript": "defaultBehaviorFn();",
         "formatRegistrationFieldsScript": "return fields;",
         "validateRegistrationFieldsScript": "return defaultValidationFn();",
-        "showCancel": true,
+        "showCancel": false,
+        "showNext": false,
         "labelForCancel": "cancel",
         "labelForSubmit": "Register",
         "showName": true,
-        "showUsername": false,
-        "showReenterPassword": false
+        "showUsername": true,
+        "showReenterPassword": true
     }
 }
