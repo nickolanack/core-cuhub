@@ -11,6 +11,6 @@
         "labelForSubmit": "Register",
         "showName": false,
         "showUsername": false,
-        "showReenterPassword": true
+        "showReenterPassword": false
     }
 }
