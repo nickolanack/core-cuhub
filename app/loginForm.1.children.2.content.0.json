@@ -1,4 +1,15 @@
 {
     "type": "WizardRegistration",
-    "config": {}
+    "config": {
+        "className": "",
+        "onSuccessfulRegistrationScript": "defaultBehaviorFn();",
+        "formatRegistrationFieldsScript": "return fields;",
+        "validateRegistrationFieldsScript": "return defaultValidationFn();",
+        "showCancel": true,
+        "labelForCancel": "cancel",
+        "labelForSubmit": "Register",
+        "showName": true,
+        "showUsername": true,
+        "showReenterPassword": true
+    }
 }
