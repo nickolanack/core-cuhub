@@ -9,8 +9,8 @@
         "showNext": false,
         "labelForCancel": "cancel",
         "labelForSubmit": "Register",
-        "showName": true,
-        "showUsername": true,
-        "showReenterPassword": true
+        "showName": false,
+        "showUsername": false,
+        "showReenterPassword": false
     }
 }
