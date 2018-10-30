@@ -2,14 +2,14 @@
     "type": "WizardRegistration",
     "config": {
         "className": "",
-        "onSuccessfulRegistrationScript": "defaultBehaviorFn();",
+        "onSuccessfulRegistrationScript": "\n NotificationBubble.Make('', 'Your account is created. You should recieve an email to activate it shortly');\n\ndefaultBehaviorFn();",
         "formatRegistrationFieldsScript": "return fields;",
         "validateRegistrationFieldsScript": "return defaultValidationFn();",
         "showCancel": false,
         "showNext": false,
         "labelForCancel": "cancel",
         "labelForSubmit": "Register",
-        "showName": false,
+        "showName": true,
         "showUsername": false,
         "showReenterPassword": false
     }
