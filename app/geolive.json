@@ -4609,5 +4609,23 @@
             "articleHtml": "",
             "target": "Links.action-view.Article.error"
         }
+    },
+    "widget.85": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Here is your magic login link",
+            "widgetTitle": "email.MagicLoginLink.subject",
+            "target": "email.MagicLoginLink.subject"
+        }
+    },
+    "widget.86": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "email-MagicLoginLink-content.contentTemplate.html",
+            "widgetTitle": "email.MagicLoginLink.content",
+            "target": "email.MagicLoginLink.content"
+        }
     }
 }
