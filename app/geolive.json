@@ -4585,9 +4585,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Message Content",
+            "contentTemplate": "email-email-activate-content.contentTemplate.html",
             "widgetTitle": "email.email.activate.content",
-            "target": "email.email.activate.content"
+            "target": "email.email.activate.content",
+            "comments": "",
+            "readAccess": "public"
         }
     }
 }
