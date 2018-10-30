@@ -4561,7 +4561,7 @@
             "widgetTitle": "forgotPasswordForm",
             "templateName": "forgotPasswordForm",
             "requireTarget": true,
-            "resolveItemScript": "return item;",
+            "resolveItemScript": "forgotPasswordForm.resolveItemScript.js",
             "beforeSubmitScript": "",
             "onCreateScript": "",
             "onUpdateScript": "",
