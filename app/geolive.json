@@ -1783,16 +1783,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 130,
-                            "y": 118
+                            "x": 140,
+                            "y": 128
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 90,
-                                    "y": 306
+                                    "x": 100,
+                                    "y": 316
                                 }
                             },
                             {
@@ -1802,66 +1802,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 572,
-                                    "y": 132
+                                    "x": 615,
+                                    "y": 143
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 532,
-                                            "y": 298
-                                        }
-                                    },
-                                    {
-                                        "title": "New Empty Step",
-                                        "class": "AttributesTableNode",
-                                        "fields": [
-                                            "loginForm.metadata.children.1.children.2.children.2.fields.0.json"
-                                        ],
-                                        "_diagramState": {
-                                            "x": 995,
-                                            "y": 132
-                                        },
-                                        "children": [
-                                            "loginForm.metadata.children.1.children.2.children.2.children.0.json",
-                                            {
-                                                "class": "InsertNode",
-                                                "_diagramState": {
-                                                    "x": 955,
-                                                    "y": 298
-                                                }
-                                            }
-                                        ],
-                                        "builderMetadata": {
-                                            "positions": {
-                                                "title": {
-                                                    "modules": [
-                                                        "loginForm.metadata.children.1.children.2.children.2.builderMetadata.positions.title.modules.0.json"
-                                                    ]
-                                                },
-                                                "content": {
-                                                    "modules": [
-                                                        "loginForm.metadata.children.1.children.2.children.2.builderMetadata.positions.content.modules.0.json"
-                                                    ]
-                                                },
-                                                "footer": {
-                                                    "modules": []
-                                                },
-                                                "menu": {
-                                                    "modules": []
-                                                }
-                                            },
-                                            "positionList": [
-                                                "title",
-                                                "content",
-                                                "footer",
-                                                "menu"
-                                            ],
-                                            "_diagramState": {
-                                                "minimized": false
-                                            }
+                                            "x": 575,
+                                            "y": 309
                                         }
                                     }
                                 ],
