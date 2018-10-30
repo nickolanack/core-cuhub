@@ -1,5 +1,5 @@
 var ForgotUser=new Class({
-        Extends:MockDataTypeItem
+        Extends:MockDataTypeItem,
         save:function(cb){
             
             callback(true);
