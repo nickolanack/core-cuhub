@@ -2694,16 +2694,16 @@
                             "profileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 348,
-                            "y": 480
+                            "x": 358,
+                            "y": 490
                         },
                         "children": [
                             "profileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 308,
-                                    "y": 681
+                                    "x": 318,
+                                    "y": 691
                                 }
                             }
                         ],
@@ -2725,6 +2725,50 @@
                                                 "className": "",
                                                 "maxChars": 0,
                                                 "textFormatScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "profileForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "{field.label}",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "autocomplete": true,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "profileForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "{field.label}",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "autocomplete": true,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
                                             }
                                         },
                                         {
@@ -2754,8 +2798,8 @@
                                                 "label": "Publish My Profile",
                                                 "mandatory": false,
                                                 "getValueScript": "\nreturn item.isPublished()",
-                                                "updateValueScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.updateValueScript.js",
-                                                "submitValueScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
+                                                "updateValueScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.updateValueScript.js",
+                                                "submitValueScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.submitValueScript.js",
                                                 "validateValueScript": "",
                                                 "formatElementScript": ""
                                             }
@@ -2764,7 +2808,7 @@
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "profileForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                    "profileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "label": "{field.label}",
