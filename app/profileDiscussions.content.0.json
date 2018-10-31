@@ -19,7 +19,7 @@
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
-        "getItemListScript": "var myProfile=item;\nif(item.getType()==\"ProjectHub.profile\"&&item.clientOwns()&&!(item instanceof MyProfileItem)){\n    myProfile=EventList.SharedInstance().getClientProfile();\n}\n\n\nif(myProfile instanceof MyProfileItem){\n    (new DiscussionListRequest({\n            'item': item.getId(),\n            'itemtype': item.getType(),\n         \/\/   'channel':me.options.channel\n        })).addEvent('success',function(resp){\n            console.log(resp);\n            callback([]);\n        }).execute();\n        return;\n}\n\nreturn [];",
+        "getItemListScript": "var myProfile=item;\nif(item.getType()==\"ProjectHub.profile\"&&item.clientOwns()&&!(item instanceof MyProfileItem)){\n    myProfile=EventList.SharedInstance().getClientProfile();\n}\n\n\nif(myProfile instanceof MyProfileItem){\n    (new DiscussionListRequest({\n            'item': item.getId(),\n            'itemtype': item.getType(),\n         \/\/   'channel':me.options.channel\n        })).addEvent('success',function(resp){\n            \/\/console.log(resp);\n            \/\/callback([]);\n            \n            callback(resp.discussions.filter(function(d){return parseInt(d.posts)>0;}))\n            \n        }).execute();\n        return;\n}\n\nreturn [];",
         "formatItemListScript": "return list;",
         "formatListItemModuleScript": "return item;",
         "emptyNamedView": "emptyListView",
