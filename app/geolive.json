@@ -4821,16 +4821,16 @@
                             "connectWithUserForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 138,
-                            "y": 270
+                            "x": 148,
+                            "y": 280
                         },
                         "children": [
                             "connectWithUserForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 98,
-                                    "y": 436
+                                    "x": 108,
+                                    "y": 446
                                 }
                             }
                         ],
@@ -4843,7 +4843,16 @@
                                 },
                                 "content": {
                                     "modules": [
-                                        "connectWithUserForm.metadata.children.1.builderMetadata.positions.content.modules.0.json"
+                                        "connectWithUserForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "InlineHtml",
+                                            "config": {
+                                                "className": "",
+                                                "text": "When you connect with another member you will receive notifications about new activities and events related to that member.  ",
+                                                "template": "",
+                                                "templateVariablesScript": ""
+                                            }
+                                        }
                                     ]
                                 },
                                 "footer": {
