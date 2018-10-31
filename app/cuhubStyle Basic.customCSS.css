@@ -961,6 +961,14 @@ span.item-author:before {
 .post-author span.item-author:before {
     display: "none";
 }
+
+.private-chat span.item-author:before {
+    content: "discussion with";
+}
+.private-chat span.item-author{
+    line-height:30px;
+    margin-left: 10px;
+}
 span.item-author, 
 span.date-from-now, 
 span.item-connection-to:before, 
