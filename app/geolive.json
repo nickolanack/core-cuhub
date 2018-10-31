@@ -4649,5 +4649,14 @@
             "comments": "",
             "readAccess": "public"
         }
+    },
+    "widget.89": {
+        "name": "Article",
+        "instance": "Article",
+        "parameters": {
+            "articleTitle": "You did it! Thanks.",
+            "articleHtml": "",
+            "target": "Links.action-view.Article.onVerifyDirectMessage"
+        }
     }
 }
