@@ -1,10 +1,9 @@
 {
-    "type": "WizardTitleField",
+    "type": "InlineHtml",
     "config": {
-        "label": "Title",
-        "message": "add a title",
         "className": "",
-        "maxChars": 0,
-        "textFormatScript": ""
+        "text": "When you connect with another member you will receive notifications about new activities and events related to that member.  ",
+        "template": "",
+        "templateVariablesScript": ""
     }
 }
