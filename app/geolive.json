@@ -2694,16 +2694,16 @@
                             "profileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 358,
-                            "y": 490
+                            "x": 368,
+                            "y": 500
                         },
                         "children": [
                             "profileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 318,
-                                    "y": 691
+                                    "x": 328,
+                                    "y": 726
                                 }
                             }
                         ],
@@ -2734,7 +2734,7 @@
                                                     "profileForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
-                                                "label": "{field.label}",
+                                                "label": "Job\/Occupation",
                                                 "message": "",
                                                 "lines": 1,
                                                 "maxChars": 0,
