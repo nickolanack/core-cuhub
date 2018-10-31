@@ -4627,5 +4627,14 @@
             "widgetTitle": "email.MagicLoginLink.content",
             "target": "email.MagicLoginLink.content"
         }
+    },
+    "widget.87": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Subject",
+            "widgetTitle": "email.email.verify.directMessage.subject",
+            "target": "email.email.verify.directMessage.subject"
+        }
     }
 }
