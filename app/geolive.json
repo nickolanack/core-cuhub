@@ -4032,7 +4032,7 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "",
+                                    "className": "main-content-detail",
                                     "viewType": "view",
                                     "namedView": "calendarDetail",
                                     "shouldRender": true,
