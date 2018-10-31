@@ -2,7 +2,7 @@
     "type": "InlineHtml",
     "config": {
         "className": "intro-text",
-        "text": "<p>You can create ...<\/p>",
+        "text": "<p>You can create Calendar Events and Projects.<\/p>",
         "template": "",
         "templateVariablesScript": ""
     }

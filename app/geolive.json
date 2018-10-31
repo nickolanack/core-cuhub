@@ -4181,16 +4181,16 @@
                             "createItemsMenuForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 263,
-                            "y": 255
+                            "x": 273,
+                            "y": 265
                         },
                         "children": [
                             "createItemsMenuForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 223,
-                                    "y": 421
+                                    "x": 233,
+                                    "y": 431
                                 }
                             }
                         ],
