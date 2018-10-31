@@ -2,8 +2,8 @@
     "type": "FieldValue",
     "config": {
         "loadAsync": false,
-        "fieldLabelScript": "return \"Discussion with:\";",
-        "fieldValueScript": "return item.getName();",
-        "formatElementScript": "el.addClass('post-author')\n\nvar id=item.getId();\nel.addClass('user-id-'+id);\nif(id<=0){\n    return;\n}\nvar user=item;\nif(user){\n    valueEl.appendChild(EventItem.CreateAuthorLabel(user, application))\n}\n\n"
+        "fieldLabelScript": "return \"\";",
+        "fieldValueScript": "return \"\";",
+        "formatElementScript": "el.addClass('post-author private-chat')\n\nvar id=item.getId();\nel.addClass('user-id-'+id);\nif(id<=0){\n    return;\n}\nvar user=item;\nif(user){\n    valueEl.appendChild(EventItem.CreateAuthorLabel(user, application))\n}\n\n"
     }
 }
