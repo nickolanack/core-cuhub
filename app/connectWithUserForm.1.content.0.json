@@ -1,8 +1,8 @@
 {
     "type": "InlineHtml",
     "config": {
-        "className": "intro-text",
-        "text": "<p>You can create Calendar Events and Projects.<\/p>",
+        "className": "",
+        "text": "<h2>Create connection with<\/h2>",
         "template": "",
         "templateVariablesScript": ""
     }

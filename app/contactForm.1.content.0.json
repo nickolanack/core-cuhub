@@ -6,7 +6,7 @@
         "placeholder": "email address",
         "lines": 1,
         "maxChars": 0,
-        "mandatory": true,
+        "mandatory": false,
         "multiEntry": false,
         "muliTemplate": "lines",
         "multiMessage": "add another value",
@@ -15,7 +15,7 @@
         "formatValueScript": "",
         "getValueScript": " return \"\"; ",
         "updateValueScript": " object.value=value ",
-        "submitValueScript": "",
+        "submitValueScript": "wizardDataSet.email=object.value",
         "validateValueScript": " return defaultValidationFn() "
     }
 }

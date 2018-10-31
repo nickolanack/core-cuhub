@@ -143,7 +143,7 @@
         "parameters": {
             "clientSecretUrl": "XXXX-XXXX",
             "clientPublicUrl": "https:\/\/37dd48bce18a414aa12b27105fa642d3@sentry.io\/293816",
-            "enabled": false
+            "enabled": true
         }
     },
     "plugin.17": {
@@ -246,9 +246,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Subject",
+            "contentTemplate": "Member post",
             "widgetTitle": "email.profile.update.subject",
-            "target": "email.profile.update.subject"
+            "target": "email.profile.update.subject",
+            "comments": "",
+            "readAccess": "public"
         }
     },
     "widget.5": {
@@ -1049,12 +1051,34 @@
                                 }
                             },
                             {
+                                "type": "UIView",
+                                "config": {
+                                    "className": "",
+                                    "viewType": "view",
+                                    "namedView": "profileDiscussions",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultView",
+                                    "formOptions": "\"{}\"",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "defaultBehaviorFn()",
+                                    "initModuleScript": "feedItemExpandedDetail.metadata.positions.content.modules.5.config.initModuleScript.js",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": ""
+                                }
+                            },
+                            {
                                 "type": "FieldValue",
                                 "config": {
                                     "loadAsync": false,
                                     "fieldLabelScript": "return \"Link\";",
                                     "fieldValueScript": "return \"\";",
-                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.5.config.formatElementScript.js"
+                                    "formatElementScript": "feedItemExpandedDetail.metadata.positions.content.modules.6.config.formatElementScript.js"
                                 }
                             },
                             {
@@ -1072,8 +1096,8 @@
                                     "siteURL": "cuhub.geolive.ca",
                                     "siteDescription": "",
                                     "formatClass": "s-icon",
-                                    "getTitleScript": "feedItemExpandedDetail.metadata.positions.content.modules.6.config.getTitleScript.js",
-                                    "getUrlScript": "feedItemExpandedDetail.metadata.positions.content.modules.6.config.getUrlScript.js",
+                                    "getTitleScript": "feedItemExpandedDetail.metadata.positions.content.modules.7.config.getTitleScript.js",
+                                    "getUrlScript": "feedItemExpandedDetail.metadata.positions.content.modules.7.config.getUrlScript.js",
                                     "setPageMeta": false
                                 }
                             }
@@ -2050,16 +2074,16 @@
                             "eventForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 149,
-                            "y": 180
+                            "x": 169,
+                            "y": 200
                         },
                         "children": [
                             "eventForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 109,
-                                    "y": 406
+                                    "x": 129,
+                                    "y": 426
                                 }
                             }
                         ],
@@ -2157,15 +2181,12 @@
                                                 "showLabel": true,
                                                 "showAddWord": true,
                                                 "label": "{field.label}",
-                                                "addWordPlaceholder": "add a keyword",
+                                                "addWordPlaceholder": "add custom tag",
                                                 "fontColor": "rgb(0, 0, 0)",
                                                 "hoverColor": "rgb(143, 188, 143)",
                                                 "selectedColor": "rgb(143, 188, 143)",
                                                 "shuffleTags": false,
-                                                "tags": [
-                                                    "tag one",
-                                                    "tag two"
-                                                ],
+                                                "tags": "[\n   \"tag one\",\n   \"tag two\"\n]",
                                                 "getItemTagsScript": "eventForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.getItemTagsScript.js",
                                                 "formatModule": ""
                                             }
@@ -2248,16 +2269,16 @@
                             "projectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 274,
-                            "y": 322
+                            "x": 294,
+                            "y": 342
                         },
                         "children": [
                             "projectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 234,
-                                    "y": 548
+                                    "x": 254,
+                                    "y": 568
                                 }
                             }
                         ],
@@ -2373,20 +2394,18 @@
                                                 "attributeFields": [
                                                     "projectForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
                                                 ],
-                                                "tags": [
-                                                    "tag one",
-                                                    "tag two"
-                                                ],
                                                 "className": "",
                                                 "showLabel": true,
                                                 "showAddWord": true,
                                                 "label": "{field.label}",
-                                                "addWordPlaceholder": "add a keyword",
+                                                "addWordPlaceholder": "add custom tag",
                                                 "fontColor": "rgb(0, 0, 0)",
                                                 "hoverColor": "rgb(143, 188, 143)",
                                                 "selectedColor": "rgb(143, 188, 143)",
                                                 "shuffleTags": false,
-                                                "getItemTagsScript": "projectForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.getItemTagsScript.js"
+                                                "tags": "[\n   \"tag one\",\n   \"tag two\"\n]",
+                                                "getItemTagsScript": "projectForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.getItemTagsScript.js",
+                                                "formatModule": ""
                                             }
                                         }
                                     ]
@@ -2422,7 +2441,8 @@
             "templateName": "projectForm",
             "widgetTitle": "projectForm",
             "target": "projectForm",
-            "readAccess": "public"
+            "readAccess": "public",
+            "resolveItemScript": "return item;"
         }
     },
     "widget.32": {
@@ -2674,16 +2694,16 @@
                             "profileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 338,
-                            "y": 470
+                            "x": 368,
+                            "y": 500
                         },
                         "children": [
                             "profileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 298,
-                                    "y": 658
+                                    "x": 328,
+                                    "y": 726
                                 }
                             }
                         ],
@@ -2700,11 +2720,55 @@
                                         {
                                             "type": "WizardTitleField",
                                             "config": {
-                                                "label": "Title",
+                                                "label": "Name",
                                                 "message": "add a title",
                                                 "className": "",
                                                 "maxChars": 0,
                                                 "textFormatScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "profileForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "Job\/Occupation",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "autocomplete": true,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "profileForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "label": "{field.label}",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "autocomplete": true,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "none",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
                                             }
                                         },
                                         {
@@ -2734,16 +2798,17 @@
                                                 "label": "Publish My Profile",
                                                 "mandatory": false,
                                                 "getValueScript": "\nreturn item.isPublished()",
-                                                "updateValueScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.updateValueScript.js",
-                                                "submitValueScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
-                                                "validateValueScript": ""
+                                                "updateValueScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.updateValueScript.js",
+                                                "submitValueScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.submitValueScript.js",
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
                                             }
                                         },
                                         {
                                             "type": "plugin.Attributes.WizardTextAttribute",
                                             "config": {
                                                 "attributeFields": [
-                                                    "profileForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                    "profileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
                                                 "label": "{field.label}",
@@ -2794,7 +2859,8 @@
             "templateName": "profileForm",
             "widgetTitle": "profileForm",
             "target": "profileForm",
-            "readAccess": "public"
+            "readAccess": "public",
+            "resolveItemScript": "return item;"
         }
     },
     "widget.43": {
@@ -2992,15 +3058,15 @@
                             "contactForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 198,
-                            "y": 330
+                            "x": 208,
+                            "y": 340
                         },
                         "children": [
                             "contactForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 158,
+                                    "x": 168,
                                     "y": 506
                                 }
                             }
@@ -3030,9 +3096,9 @@
                                                 "formatter": "none",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return \"Hello World\"; ",
+                                                "getValueScript": " return \"\"; ",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "",
+                                                "submitValueScript": "contactForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
@@ -3471,12 +3537,12 @@
             "metadata": {
                 "title": "profileAttributes",
                 "_tableDiagramState": {
-                    "x": 322,
-                    "y": 247
+                    "x": 342,
+                    "y": 227
                 },
                 "_diagramState": {
-                    "x": 322,
-                    "y": 247
+                    "x": 342,
+                    "y": 227
                 },
                 "appliesTo": [
                     "profile"
@@ -3492,19 +3558,11 @@
                 "fields": [
                     "profileAttributes.metadata.fields.0.json",
                     {
-                        "icon": [],
-                        "fieldBooleanOptions": {
-                            "trueIcon": [],
-                            "falseIcon": [],
-                            "hideFalse": true,
-                            "trueLabel": "",
-                            "falseLabel": "",
-                            "useFieldIcon": false
-                        },
                         "was": "",
                         "title": "email",
                         "label": "Email",
                         "description": "",
+                        "icon": [],
                         "color": "rgb(undefined, undefined, undefined)",
                         "visibility": "public",
                         "editability": "registered",
@@ -3533,11 +3591,109 @@
                             "precision": 0,
                             "limitMinValue": "",
                             "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
+                        "was": "",
+                        "title": "job",
+                        "label": "Job Title",
+                        "description": "",
+                        "icon": [],
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
+                        "fieldType": "text",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
+                        }
+                    },
+                    {
+                        "was": "",
+                        "title": "organization",
+                        "label": "Organization",
+                        "description": "",
+                        "icon": [],
+                        "color": "rgb(undefined, undefined, undefined)",
+                        "visibility": "public",
+                        "editability": "registered",
+                        "searchability": "public",
+                        "allowMultiple": false,
+                        "fieldType": "text",
+                        "fieldTextOptions": {
+                            "textType": "input",
+                            "inputOptions": {
+                                "buildAutocomplete": false,
+                                "requireModeration": false,
+                                "limitMaxChars": 0,
+                                "limitMaxWords": 0,
+                                "allowHtml": false,
+                                "allowMedia": true,
+                                "allowLinks": true
+                            },
+                            "listOptions": {
+                                "takeSugesstions": true,
+                                "buildTree": false,
+                                "iconize": false,
+                                "colorize": false
+                            }
+                        },
+                        "fieldNumberOptions": {
+                            "precision": 0,
+                            "limitMinValue": "",
+                            "limitMaxValue": ""
+                        },
+                        "fieldBooleanOptions": {
+                            "hideFalse": true,
+                            "trueLabel": "",
+                            "falseLabel": "",
+                            "useFieldIcon": false,
+                            "trueIcon": [],
+                            "falseIcon": []
                         }
                     }
                 ]
             },
-            "target": "profileAttributes"
+            "target": "profileAttributes",
+            "readAccess": "public",
+            "position": ""
         }
     },
     "widget.50": {
@@ -4008,7 +4164,7 @@
                             {
                                 "type": "UIView",
                                 "config": {
-                                    "className": "",
+                                    "className": "main-content-detail",
                                     "viewType": "view",
                                     "namedView": "calendarDetail",
                                     "shouldRender": true,
@@ -4157,16 +4313,16 @@
                             "createItemsMenuForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 263,
-                            "y": 255
+                            "x": 273,
+                            "y": 265
                         },
                         "children": [
                             "createItemsMenuForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 223,
-                                    "y": 421
+                                    "x": 233,
+                                    "y": 431
                                 }
                             }
                         ],
@@ -4626,6 +4782,277 @@
             "contentTemplate": "email-MagicLoginLink-content.contentTemplate.html",
             "widgetTitle": "email.MagicLoginLink.content",
             "target": "email.MagicLoginLink.content"
+        }
+    },
+    "widget.87": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "email-email-verify-directMessage-subject.contentTemplate.html",
+            "widgetTitle": "email.email.verify.directMessage.subject",
+            "target": "email.email.verify.directMessage.subject",
+            "comments": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.88": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "email-email-verify-directMessage-content.contentTemplate.html",
+            "widgetTitle": "email.email.verify.directMessage.content",
+            "target": "email.email.verify.directMessage.content",
+            "comments": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.89": {
+        "name": "Article",
+        "instance": "Article",
+        "parameters": {
+            "articleTitle": "You did it! Thanks.",
+            "articleHtml": "",
+            "target": "Links.action-view.Article.onVerifyDirectMessage"
+        }
+    },
+    "widget.90": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "email-email-directMessage-subject.contentTemplate.html",
+            "widgetTitle": "email.email.directMessage.subject",
+            "target": "email.email.directMessage.subject",
+            "comments": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.91": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "email-email-directMessage-content.contentTemplate.html",
+            "widgetTitle": "email.email.directMessage.content",
+            "target": "email.email.directMessage.content",
+            "comments": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.92": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "email-email-directMessage-reciept-subject.contentTemplate.html",
+            "widgetTitle": "email.email.directMessage.reciept.subject",
+            "target": "email.email.directMessage.reciept.subject",
+            "comments": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.93": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "email-email-directMessage-reciept-content.contentTemplate.html",
+            "widgetTitle": "email.email.directMessage.reciept.content",
+            "target": "email.email.directMessage.reciept.content",
+            "comments": "",
+            "readAccess": "public"
+        }
+    },
+    "widget.94": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "profileDiscussions",
+            "target": "profileDiscussions",
+            "templateName": "profileDiscussions",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "profileDiscussions.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.95": {
+        "name": "Detail View",
+        "instance": "DetailView",
+        "parameters": {
+            "widgetTitle": "profileDiscussionItemDetail",
+            "target": "profileDiscussionItemDetail",
+            "templateName": "profileDiscussionItemDetail",
+            "requireTarget": true,
+            "resolveItemScript": "return item",
+            "onRenderApplictionScript": "",
+            "notifyViewer": false,
+            "metadata": {
+                "positions": {
+                    "title": {
+                        "modules": []
+                    },
+                    "content": {
+                        "modules": [
+                            "profileDiscussionItemDetail.metadata.positions.content.modules.0.json"
+                        ]
+                    },
+                    "footer": {
+                        "modules": []
+                    },
+                    "menu": {
+                        "modules": []
+                    }
+                },
+                "positionList": [
+                    "title",
+                    "content",
+                    "footer",
+                    "menu"
+                ],
+                "_diagramState": []
+            },
+            "readAccess": "public"
+        }
+    },
+    "widget.96": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "connectWithUserForm",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "connectWithUserForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "connectWithUserForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 188,
+                            "y": 320
+                        },
+                        "children": [
+                            "connectWithUserForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 148,
+                                    "y": 496
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "connectWithUserForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "connectWithUserForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "UIListView",
+                                            "config": {
+                                                "listClassName": "connection-feed-items-list",
+                                                "className": "",
+                                                "viewType": "view",
+                                                "namedView": "feedItemDetail",
+                                                "shouldRender": true,
+                                                "namedViewScript": "return namedView",
+                                                "showInlineEdit": false,
+                                                "namedFormView": "defaultView",
+                                                "formOptions": "\"{}\"",
+                                                "showDeleteButton": false,
+                                                "deleteItemScript": "defaultBehaviorFn()",
+                                                "initModuleScript": "",
+                                                "formatModuleScript": "",
+                                                "resolveItemScript": "return item",
+                                                "filterModulesScript": "return list",
+                                                "itemButtonsScript": "return [];",
+                                                "insertAtTop": false,
+                                                "targetName": "",
+                                                "getItemListScript": "return [item.getItemB()];",
+                                                "formatItemListScript": "return list;",
+                                                "formatListItemModuleScript": "connectWithUserForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatListItemModuleScript.js",
+                                                "emptyNamedView": "emptyListView",
+                                                "filterItemsScript": "return true;",
+                                                "sortItemsScript": "",
+                                                "maxItems": "-1"
+                                            }
+                                        },
+                                        {
+                                            "type": "InlineHtml",
+                                            "config": {
+                                                "className": "intro-text",
+                                                "text": "<p>When you connect with another member you will receive notifications about new activities and events related to that member. Your connections are  also used find relevant projects and events that match your interests<\/p>",
+                                                "template": "",
+                                                "templateVariablesScript": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "connectWithUserForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "widgetTitle": "connectWithUserForm",
+            "templateName": "connectWithUserForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
+            "readAccess": "public"
         }
     }
 }

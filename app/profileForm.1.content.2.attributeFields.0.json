@@ -1,15 +1,15 @@
 {
-    "was": "",
-    "title": "profileIcon",
-    "label": "Profile Icon",
-    "description": "",
-    "icon": [],
-    "color": "rgb(NaN, NaN, NaN)",
     "visibility": "public",
-    "editability": "registered",
-    "searchability": "public",
-    "allowMultiple": false,
+    "tableId": "1",
+    "tableName": "profileAttributes",
+    "tableSuffix": "_2608",
+    "title": "job",
+    "label": "Job Title",
+    "description": "",
     "fieldType": "text",
+    "color": "rgb(undefined, undefined, undefined)",
+    "searchability": "public",
+    "editability": "registered",
     "fieldTextOptions": {
         "textType": "input",
         "inputOptions": {
@@ -28,17 +28,5 @@
             "colorize": false
         }
     },
-    "fieldNumberOptions": {
-        "precision": 0,
-        "limitMinValue": "",
-        "limitMaxValue": ""
-    },
-    "fieldBooleanOptions": {
-        "hideFalse": true,
-        "trueLabel": "",
-        "falseLabel": "",
-        "useFieldIcon": false,
-        "trueIcon": [],
-        "falseIcon": []
-    }
+    "allowMultiple": false
 }
