@@ -3,7 +3,7 @@
     "config": {
         "loadAsync": false,
         "fieldLabelScript": "return \"Discussion with:\";",
-        "fieldValueScript": "return item.name;",
+        "fieldValueScript": "return item.getName();",
         "formatElementScript": ""
     }
 }
