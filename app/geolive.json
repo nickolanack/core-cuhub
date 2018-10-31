@@ -4821,16 +4821,16 @@
                             "connectWithUserForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 178,
-                            "y": 310
+                            "x": 188,
+                            "y": 320
                         },
                         "children": [
                             "connectWithUserForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 138,
-                                    "y": 486
+                                    "x": 148,
+                                    "y": 496
                                 }
                             }
                         ],
@@ -4878,7 +4878,7 @@
                                             "type": "InlineHtml",
                                             "config": {
                                                 "className": "intro-text",
-                                                "text": "<p>When you connect with another member you will receive notifications about new activities and events related to that member. <\/p>",
+                                                "text": "<p>When you connect with another member you will receive notifications about new activities and events related to that member. Your connections are  also used find relevant projects and events that match your interests<\/p>",
                                                 "template": "",
                                                 "templateVariablesScript": ""
                                             }
