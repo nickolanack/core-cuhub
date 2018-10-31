@@ -4658,5 +4658,23 @@
             "articleHtml": "",
             "target": "Links.action-view.Article.onVerifyDirectMessage"
         }
+    },
+    "widget.90": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Subject",
+            "widgetTitle": "email.email.directMessage.subject",
+            "target": "email.email.directMessage.subject"
+        }
+    },
+    "widget.91": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Message Content",
+            "widgetTitle": "email.email.directMessage.content",
+            "target": "email.email.directMessage.content"
+        }
     }
 }
