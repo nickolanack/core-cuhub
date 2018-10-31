@@ -4696,9 +4696,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Message Content",
+            "contentTemplate": "email-email-directMessage-reciept-content.contentTemplate.html",
             "widgetTitle": "email.email.directMessage.reciept.content",
-            "target": "email.email.directMessage.reciept.content"
+            "target": "email.email.directMessage.reciept.content",
+            "comments": "",
+            "readAccess": "public"
         }
     }
 }
