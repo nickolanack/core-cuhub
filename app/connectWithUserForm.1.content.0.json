@@ -2,7 +2,7 @@
     "type": "InlineHtml",
     "config": {
         "className": "",
-        "text": "Create connection with:",
+        "text": "<h2>Create connection with<\/h2>",
         "template": "",
         "templateVariablesScript": ""
     }
