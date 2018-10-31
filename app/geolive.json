@@ -246,9 +246,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Subject",
+            "contentTemplate": "Member post",
             "widgetTitle": "email.profile.update.subject",
-            "target": "email.profile.update.subject"
+            "target": "email.profile.update.subject",
+            "comments": "",
+            "readAccess": "public"
         }
     },
     "widget.5": {
