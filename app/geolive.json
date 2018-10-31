@@ -2694,16 +2694,16 @@
                             "profileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 338,
-                            "y": 470
+                            "x": 348,
+                            "y": 480
                         },
                         "children": [
                             "profileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 298,
-                                    "y": 658
+                                    "x": 308,
+                                    "y": 681
                                 }
                             }
                         ],
@@ -2720,7 +2720,7 @@
                                         {
                                             "type": "WizardTitleField",
                                             "config": {
-                                                "label": "Title",
+                                                "label": "Name",
                                                 "message": "add a title",
                                                 "className": "",
                                                 "maxChars": 0,
@@ -2756,7 +2756,8 @@
                                                 "getValueScript": "\nreturn item.isPublished()",
                                                 "updateValueScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.updateValueScript.js",
                                                 "submitValueScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.submitValueScript.js",
-                                                "validateValueScript": ""
+                                                "validateValueScript": "",
+                                                "formatElementScript": ""
                                             }
                                         },
                                         {
@@ -2814,7 +2815,8 @@
             "templateName": "profileForm",
             "widgetTitle": "profileForm",
             "target": "profileForm",
-            "readAccess": "public"
+            "readAccess": "public",
+            "resolveItemScript": "return item;"
         }
     },
     "widget.43": {
