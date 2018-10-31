@@ -1063,7 +1063,7 @@
                                     "formOptions": "\"{}\"",
                                     "showDeleteButton": false,
                                     "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "",
+                                    "initModuleScript": "feedItemExpandedDetail.metadata.positions.content.modules.5.config.initModuleScript.js",
                                     "formatModuleScript": "",
                                     "resolveItemScript": "return item",
                                     "filterModulesScript": "return list",
