@@ -1,30 +1,9 @@
 {
-    "type": "UIListView",
+    "type": "InlineHtml",
     "config": {
-        "listClassName": "connection-feed-items-list",
         "className": "",
-        "viewType": "view",
-        "namedView": "feedItemDetail",
-        "shouldRender": true,
-        "namedViewScript": "return namedView",
-        "showInlineEdit": false,
-        "namedFormView": "defaultView",
-        "formOptions": "\"{}\"",
-        "showDeleteButton": false,
-        "deleteItemScript": "defaultBehaviorFn()",
-        "initModuleScript": "",
-        "formatModuleScript": "",
-        "resolveItemScript": "return item",
-        "filterModulesScript": "return list",
-        "itemButtonsScript": "return [];",
-        "insertAtTop": false,
-        "targetName": "",
-        "getItemListScript": "return [item.getItemB()];",
-        "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "childView.getElement().addClass((child.getType().split('.').pop())+'-feed-item');\nchildView.getElement().addClass('feed-item-'+child.getId());",
-        "emptyNamedView": "emptyListView",
-        "filterItemsScript": "return true;",
-        "sortItemsScript": "",
-        "maxItems": "-1"
+        "text": "Create connection with:",
+        "template": "",
+        "templateVariablesScript": ""
     }
 }
