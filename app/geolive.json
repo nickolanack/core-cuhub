@@ -2992,15 +2992,15 @@
                             "contactForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 198,
-                            "y": 330
+                            "x": 208,
+                            "y": 340
                         },
                         "children": [
                             "contactForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 158,
+                                    "x": 168,
                                     "y": 506
                                 }
                             }
@@ -3030,9 +3030,9 @@
                                                 "formatter": "none",
                                                 "onRenderTextFieldScript": "",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return \"Hello World\"; ",
+                                                "getValueScript": " return \"\"; ",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "",
+                                                "submitValueScript": "contactForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
