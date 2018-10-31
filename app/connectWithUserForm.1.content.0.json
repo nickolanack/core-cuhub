@@ -19,7 +19,7 @@
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
-        "getItemListScript": "return [item.getItemA()];",
+        "getItemListScript": "return [item.getItemB()];",
         "formatItemListScript": "return list;",
         "formatListItemModuleScript": "childView.getElement().addClass((child.getType().split('.').pop())+'-feed-item');\nchildView.getElement().addClass('feed-item-'+child.getId());",
         "emptyNamedView": "emptyListView",
