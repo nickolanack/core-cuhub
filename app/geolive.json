@@ -4636,5 +4636,14 @@
             "widgetTitle": "email.email.verify.directMessage.subject",
             "target": "email.email.verify.directMessage.subject"
         }
+    },
+    "widget.88": {
+        "name": "Template",
+        "instance": "Template",
+        "parameters": {
+            "contentTemplate": "Message Content",
+            "widgetTitle": "email.email.verify.directMessage.content",
+            "target": "email.email.verify.directMessage.content"
+        }
     }
 }
