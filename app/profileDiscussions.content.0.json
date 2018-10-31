@@ -19,7 +19,7 @@
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
-        "getItemListScript": "return [];",
+        "getItemListScript": "var myProfile=item;\nif(item.getType()==\"ProjectHub.profile\"&&item.clientOwns()&&!(item instanceof MyProfileItem)){\n    myProfile=EventList.SharedInstance().getClientProfile();\n}\n\n\nif(item instanceof MyProfileItem){\n    (new DiscussionListRequest({\n            'item': me.item.getId(),\n            'itemtype': me.item.getType(),\n         \/\/   'channel':me.options.channel\n        })).addEvent('success',function(resp){\n            console.log(resp);\n            callback([]);\n        }).execute();\n}\n\nreturn [];",
         "formatItemListScript": "return list;",
         "formatListItemModuleScript": "return item;",
         "emptyNamedView": "emptyListView",
