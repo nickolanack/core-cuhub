@@ -4,6 +4,6 @@
         "loadAsync": false,
         "fieldLabelScript": "return \"Discussion with:\";",
         "fieldValueScript": "return item.getName();",
-        "formatElementScript": "el.addClass('post-author')\n\nvar id=item.getUserId();\nel.addClass('user-id-'+id);\nif(id<=0){\n    return;\n}\nvar user=EventList.SharedInstance().getProfileForUserId(id);\nif(user){\n    valueEl.appendChild(EventItem.CreateAuthorLabel(user, application))\n}\n\n"
+        "formatElementScript": "el.addClass('post-author')\n\nvar id=item.getId();\nel.addClass('user-id-'+id);\nif(id<=0){\n    return;\n}\nvar user=item;\nif(user){\n    valueEl.appendChild(EventItem.CreateAuthorLabel(user, application))\n}\n\n"
     }
 }
