@@ -23,6 +23,10 @@ GetWidget('forgotPasswordForm')->display($targetInstance);
 GetWidget('eventForm')->display($targetInstance);
 GetWidget('projectForm')->display($targetInstance);
 GetWidget('connectionForm')->display($targetInstance);
+GetWidget('connectWithUserForm')->display($targetInstance);
+
+
+
 GetWidget('requestForm')->display($targetInstance);
 
 GetWidget('profileForm')->display($targetInstance);
