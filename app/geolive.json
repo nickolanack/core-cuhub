@@ -4672,9 +4672,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Message Content",
+            "contentTemplate": "email-email-directMessage-content.contentTemplate.html",
             "widgetTitle": "email.email.directMessage.content",
-            "target": "email.email.directMessage.content"
+            "target": "email.email.directMessage.content",
+            "comments": "",
+            "readAccess": "public"
         }
     }
 }
