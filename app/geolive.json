@@ -4643,9 +4643,11 @@
         "name": "Template",
         "instance": "Template",
         "parameters": {
-            "contentTemplate": "Message Content",
+            "contentTemplate": "email-email-verify-directMessage-content.contentTemplate.html",
             "widgetTitle": "email.email.verify.directMessage.content",
-            "target": "email.email.verify.directMessage.content"
+            "target": "email.email.verify.directMessage.content",
+            "comments": "",
+            "readAccess": "public"
         }
     }
 }
