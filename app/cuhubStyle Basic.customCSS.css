@@ -1410,6 +1410,11 @@ input.search-input:focus {
     display: none;
 }
 
+.disabled.form-btn.action-connection.action-user {
+    border-color: transparent;
+    color: #888888;
+}
+
 
 label.item-type-label {
     position: absolute;
