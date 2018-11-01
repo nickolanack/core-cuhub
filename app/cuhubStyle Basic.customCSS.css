@@ -418,6 +418,10 @@ active.expandable.feed-item:hover {
     display: none;
 }
 
+.feed-item.active .action-delete.action-delete-disabled{
+    display: none;
+}
+
 
 .ui-view.thin-layout-item, .ui-view.archived-item {
     height: 30px;
