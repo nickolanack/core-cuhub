@@ -933,7 +933,11 @@
                     },
                     "content": {
                         "modules": [
-                            "calendarDetail.metadata.positions.content.modules.0.json"
+                            "calendarDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": []
+                            }
                         ]
                     },
                     "footer": {
