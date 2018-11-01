@@ -3765,29 +3765,7 @@
                     },
                     "content": {
                         "modules": [
-                            "mainPinnedDetail.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "main-content-detail",
-                                    "viewType": "view",
-                                    "namedView": "pinnedItemsList",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultView",
-                                    "formOptions": "\"{}\"",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": ""
-                                }
-                            }
+                            "mainPinnedDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
