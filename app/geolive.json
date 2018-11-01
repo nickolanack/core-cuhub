@@ -1178,7 +1178,11 @@
                     },
                     "content": {
                         "modules": [
-                            "pinnedItemsList.metadata.positions.content.modules.0.json"
+                            "pinnedItemsList.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIListView",
+                                "config": []
+                            }
                         ]
                     },
                     "footer": {
