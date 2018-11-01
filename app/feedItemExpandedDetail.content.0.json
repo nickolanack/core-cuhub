@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return new ElementModule('label',{\n    \"class\":\"item-type-label\",\n    html:(item.clientOwns()?\"Your \":\"\")item.getType().split('.').pop()\n})",
+        "script": "return new ElementModule('label',{\n    \"class\":\"item-type-label\",\n    html:(item.clientOwns()?\"Your \":\"\")+item.getType().split('.').pop()\n})",
         "description": "Info about my custom script"
     }
 }
