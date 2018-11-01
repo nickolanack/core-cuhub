@@ -3814,16 +3814,16 @@
                             "connectWithEventForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 170,
-                            "y": 210
+                            "x": 180,
+                            "y": 220
                         },
                         "children": [
                             "connectWithEventForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 130,
-                                    "y": 376
+                                    "x": 140,
+                                    "y": 396
                                 }
                             }
                         ],
@@ -3874,6 +3874,26 @@
                                                 "text": "<p>When you volunteer for an event, your profile information will be shared with the event coordinator. Event coordinators may contact you about this event. Please provide availability information. <\/p>",
                                                 "template": "",
                                                 "templateVariablesScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardDescriptionField",
+                                            "config": {
+                                                "label": "Volunteer Description and Availability",
+                                                "message": "add a availability",
+                                                "lines": 3,
+                                                "mandatory": false,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)",
+                                                "onRenderModuleFn": ""
                                             }
                                         }
                                     ]
