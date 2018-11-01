@@ -1,21 +1,9 @@
 {
-    "type": "FormTextField",
+    "type": "InlineHtml",
     "config": {
-        "className": "",
-        "label": "Your Email",
-        "placeholder": "email address",
-        "lines": 1,
-        "maxChars": 0,
-        "mandatory": false,
-        "multiEntry": false,
-        "muliTemplate": "lines",
-        "multiMessage": "add another value",
-        "formatter": "none",
-        "onRenderTextFieldScript": "",
-        "formatValueScript": "",
-        "getValueScript": " return \"\"; ",
-        "updateValueScript": " object.value=value ",
-        "submitValueScript": "wizardDataSet.email=object.value",
-        "validateValueScript": " return defaultValidationFn() "
+        "className": "intro-text",
+        "text": "<p>To send a message to a user on CUHub without an account, you will be required to verify your email address. <\/p>",
+        "template": "",
+        "templateVariablesScript": ""
     }
 }
