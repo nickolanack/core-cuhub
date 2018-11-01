@@ -3814,16 +3814,16 @@
                             "connectWithEventForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 180,
-                            "y": 220
+                            "x": 190,
+                            "y": 230
                         },
                         "children": [
                             "connectWithEventForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 140,
-                                    "y": 396
+                                    "x": 150,
+                                    "y": 418
                                 }
                             }
                         ],
@@ -3879,7 +3879,7 @@
                                         {
                                             "type": "WizardDescriptionField",
                                             "config": {
-                                                "label": "Volunteer Description and Availability",
+                                                "label": "What is your availability",
                                                 "message": "add a availability",
                                                 "lines": 3,
                                                 "mandatory": false,
