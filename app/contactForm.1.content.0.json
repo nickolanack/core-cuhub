@@ -2,7 +2,7 @@
     "type": "InlineHtml",
     "config": {
         "className": "intro-text",
-        "text": "<p>You are not logged in. You can still send a message to this user but you will be required to verify your email address. <\/p>",
+        "text": "<p>You are not logged in. You can still send a message to this user but you will be required to verify your email address. Your email address will be shared with the user you send a message to.<\/p>",
         "template": "",
         "templateVariablesScript": ""
     }
