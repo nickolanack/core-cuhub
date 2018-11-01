@@ -2,11 +2,16 @@ var nav=application.getNamedValue('navigationController');
 
 module.getElement().addEvent('click', function(e){
     
-    if(item.isActive()&&nav.getCurrentView().view=="Single"){
+    var clickItem=item;
+    if(item instanceof ConnectionItem){
+        clickItem=item.getConnectionTo();
+    }
+    
+    if(clickItem.isActive()&&nav.getCurrentView().view=="Single"){
         return;
     }
     
-    item.activate();
+    clickItem.activate();
    
     
     // if(item.isPinned()&&nav.getCurrentView().view!=="Pinned"){
