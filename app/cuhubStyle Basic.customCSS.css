@@ -45,6 +45,22 @@ body {
         cursor:pointer;
 }
 
+.ui-template-form .ui-navigation-menu li label {
+    position: absolute;
+    left:0;
+    top: calc( 100% + 20px );
+    width: 200px;
+    white-space: pre-wrap;
+    color: slategray;
+    font-weight: 100;
+    text-align: left;
+    display: inline-block;
+    padding: 0 10px;
+}
+.ui-template-form .ui-navigation-menu li{
+    position:relative;
+}
+
 .ui-template-form button.menu-main-feeditems.create-new:hover {
         box-shadow: 0 0 6px rgba(0,0,0,0.6);
 }
