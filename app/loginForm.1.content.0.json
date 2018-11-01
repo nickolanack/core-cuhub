@@ -2,6 +2,6 @@
     "type": "plugin.SingleSignOn.GoogleLogin",
     "config": {
         "reloadOnSuccess": true,
-        "reloadUrl": ""
+        "reloadUrl": "https:\/\/cuhub.geolive.ca\/Single\/me"
     }
 }
