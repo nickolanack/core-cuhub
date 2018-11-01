@@ -1115,7 +1115,7 @@ body.dragover .add-photo .empty.droppable:after, .add-photo .empty.droppable:aft
 }
 
 .form-btn.action-user {
-    color: #666666;
+    color: white;
 }
 
 .action-contact.action-user.action-for-Profile {
