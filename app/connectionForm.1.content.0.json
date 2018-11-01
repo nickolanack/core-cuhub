@@ -12,16 +12,19 @@
         "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "defaultBehaviorFn()",
+        "initModuleScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "return item",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
+        "targetName": "",
         "getItemListScript": "return [item.getItemA(), item.getItemB()];",
         "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "childView.getElement().addClass((child.getType().split('.').pop())+'-feed-item');\nchildView.getElement().addClass('feed-item-'+child.getId());",
+        "formatListItemModuleScript": "EventList._AddClassNames(childView, child);",
         "emptyNamedView": "emptyListView",
         "filterItemsScript": "return true;",
-        "sortItemsScript": ""
+        "sortItemsScript": "",
+        "maxItems": "-1"
     }
 }
