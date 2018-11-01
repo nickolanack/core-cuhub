@@ -1410,7 +1410,7 @@ input.search-input:focus {
     display: none;
 }
 
-.disabled.form-btn.action-connection.action-user {
+.disabled.form-btn.action-connection {
     border-color: transparent;
     color: #888888;
 }
