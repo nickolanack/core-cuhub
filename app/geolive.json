@@ -3814,16 +3814,16 @@
                             "connectWithEventForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 160,
-                            "y": 200
+                            "x": 170,
+                            "y": 210
                         },
                         "children": [
                             "connectWithEventForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 120,
-                                    "y": 366
+                                    "x": 130,
+                                    "y": 376
                                 }
                             }
                         ],
@@ -3835,7 +3835,48 @@
                                     ]
                                 },
                                 "content": {
-                                    "modules": []
+                                    "modules": [
+                                        "connectWithEventForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "UIListView",
+                                            "config": {
+                                                "listClassName": "connection-feed-items-list",
+                                                "className": "",
+                                                "viewType": "view",
+                                                "namedView": "feedItemDetail",
+                                                "shouldRender": true,
+                                                "namedViewScript": "return namedView",
+                                                "showInlineEdit": false,
+                                                "namedFormView": "defaultView",
+                                                "formOptions": "\"{}\"",
+                                                "showDeleteButton": false,
+                                                "deleteItemScript": "defaultBehaviorFn()",
+                                                "initModuleScript": "",
+                                                "formatModuleScript": "",
+                                                "resolveItemScript": "return item",
+                                                "filterModulesScript": "return list",
+                                                "itemButtonsScript": "return [];",
+                                                "insertAtTop": false,
+                                                "targetName": "",
+                                                "getItemListScript": "return [item.getItemB()];",
+                                                "formatItemListScript": "return list;",
+                                                "formatListItemModuleScript": "connectWithEventForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatListItemModuleScript.js",
+                                                "emptyNamedView": "emptyListView",
+                                                "filterItemsScript": "return true;",
+                                                "sortItemsScript": "",
+                                                "maxItems": "-1"
+                                            }
+                                        },
+                                        {
+                                            "type": "InlineHtml",
+                                            "config": {
+                                                "className": "intro-text",
+                                                "text": "<p>When you volunteer for an event, your profile information will be shared with the event coordinator. Event coordinators may contact you about this event. Please provide availability information. <\/p>",
+                                                "template": "",
+                                                "templateVariablesScript": ""
+                                            }
+                                        }
+                                    ]
                                 },
                                 "footer": {
                                     "modules": [

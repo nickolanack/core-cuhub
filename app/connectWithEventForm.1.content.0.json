@@ -1,0 +1,9 @@
+{
+    "type": "InlineHtml",
+    "config": {
+        "className": "intro-text",
+        "text": "<h2>Volunteer for event<\/h2>",
+        "template": "",
+        "templateVariablesScript": ""
+    }
+}
