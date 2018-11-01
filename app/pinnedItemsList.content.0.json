@@ -1,4 +1,9 @@
 {
     "type": "FieldValue",
-    "config": {}
+    "config": {
+        "loadAsync": false,
+        "fieldLabelScript": "return \"Your Pinned Items\";",
+        "fieldValueScript": "return \"\";",
+        "formatElementScript": "el.addClass(\"section-item-icon\")"
+    }
 }
