@@ -39,10 +39,11 @@ body {
     border: 1px solid rgba(0,0,0,0.3);
     box-shadow: 0 0 3px rgba(0,0,0,0.3);
     padding: 10px;
-        color: black;
+    color: black;
     font-size: 16px;
-        margin-right: 70px;
-        cursor:pointer;
+    margin-right: 70px;
+    cursor:pointer;
+    margin-bottom: 75px;
 }
 
 .ui-template-form .ui-navigation-menu li label {
