@@ -3814,16 +3814,16 @@
                             "connectWithEventForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 190,
-                            "y": 230
+                            "x": 200,
+                            "y": 240
                         },
                         "children": [
                             "connectWithEventForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 150,
-                                    "y": 418
+                                    "x": 160,
+                                    "y": 428
                                 }
                             }
                         ],
@@ -3879,7 +3879,7 @@
                                         {
                                             "type": "WizardDescriptionField",
                                             "config": {
-                                                "label": "What is your availability",
+                                                "label": "What is your availability?",
                                                 "message": "add a availability",
                                                 "lines": 3,
                                                 "mandatory": false,

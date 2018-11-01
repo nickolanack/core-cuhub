@@ -124,7 +124,7 @@ span.ui-navigation-menu ul.menu-main li {
 }
 
 
-<?php foreach(array('connection', 'profile', 'project', 'connection', 'request', 'myprofile', 'event') as $type){
+<?php foreach(array('connection', 'profile', 'project', 'request', 'myprofile', 'event') as $type){
     ?>
     
     
