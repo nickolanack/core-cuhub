@@ -2,7 +2,7 @@
     "type": "InlineHtml",
     "config": {
         "className": "intro-text",
-        "text": "<p>You can create Calendar Events and Projects.<\/p>",
+        "text": "<p>Projects and events that you create will be associated with your public profile. You can also create events and sub-projects for projects that you created<\/p>",
         "template": "",
         "templateVariablesScript": ""
     }
