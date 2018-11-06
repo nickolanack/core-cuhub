@@ -143,7 +143,7 @@
         "parameters": {
             "clientSecretUrl": "XXXX-XXXX",
             "clientPublicUrl": "https:\/\/37dd48bce18a414aa12b27105fa642d3@sentry.io\/293816",
-            "enabled": true
+            "enabled": false
         }
     },
     "plugin.17": {
@@ -933,7 +933,15 @@
                     },
                     "content": {
                         "modules": [
-                            "calendarDetail.metadata.positions.content.modules.0.json"
+                            "calendarDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "WizardScriptElement",
+                                "config": {
+                                    "name": "My Custom Script",
+                                    "script": "calendarDetail.metadata.positions.content.modules.1.config.script.js",
+                                    "description": "Info about my custom script"
+                                }
+                            }
                         ]
                     },
                     "footer": {
@@ -1178,7 +1186,37 @@
                     },
                     "content": {
                         "modules": [
-                            "pinnedItemsList.metadata.positions.content.modules.0.json"
+                            "pinnedItemsList.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "UIListView",
+                                "config": {
+                                    "listClassName": "feed-item-list",
+                                    "className": "feed-item pinned-item",
+                                    "viewType": "view",
+                                    "namedView": "feedItemDetail",
+                                    "shouldRender": true,
+                                    "namedViewScript": "return namedView",
+                                    "showInlineEdit": false,
+                                    "namedFormView": "defaultFormView",
+                                    "formOptions": "{}",
+                                    "showDeleteButton": false,
+                                    "deleteItemScript": "",
+                                    "initModuleScript": "",
+                                    "formatModuleScript": "",
+                                    "resolveItemScript": "return item",
+                                    "filterModulesScript": "return list",
+                                    "itemButtonsScript": "return [];",
+                                    "insertAtTop": false,
+                                    "targetName": "",
+                                    "getItemListScript": "pinnedItemsList.metadata.positions.content.modules.1.config.getItemListScript.js",
+                                    "formatItemListScript": "return list;",
+                                    "formatListItemModuleScript": "pinnedItemsList.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
+                                    "emptyNamedView": "emptyPinnedListView",
+                                    "filterItemsScript": "return true;",
+                                    "sortItemsScript": "",
+                                    "maxItems": "-1"
+                                }
+                            }
                         ]
                     },
                     "footer": {
@@ -1807,16 +1845,16 @@
                             "loginForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 210,
-                            "y": 198
+                            "x": 220,
+                            "y": 208
                         },
                         "children": [
                             "loginForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 170,
-                                    "y": 386
+                                    "x": 180,
+                                    "y": 396
                                 }
                             },
                             {
@@ -1826,16 +1864,16 @@
                                     "loginForm.metadata.children.1.children.2.fields.0.json"
                                 ],
                                 "_diagramState": {
-                                    "x": 685,
-                                    "y": 213
+                                    "x": 695,
+                                    "y": 223
                                 },
                                 "children": [
                                     "loginForm.metadata.children.1.children.2.children.0.json",
                                     {
                                         "class": "InsertNode",
                                         "_diagramState": {
-                                            "x": 645,
-                                            "y": 379
+                                            "x": 655,
+                                            "y": 389
                                         }
                                     }
                                 ],
@@ -1884,21 +1922,21 @@
                                             "type": "plugin.SingleSignOn.FacebookLogin",
                                             "config": {
                                                 "reloadOnSuccess": true,
-                                                "reloadUrl": ""
+                                                "reloadUrl": "https:\/\/cuhub.geolive.ca\/Single\/me"
                                             }
                                         },
                                         {
                                             "type": "WizardLogin",
                                             "config": {
                                                 "className": "",
-                                                "showCancel": true,
+                                                "showCancel": false,
                                                 "labelForUsername": "XXXX-XXXX",
                                                 "labelForPassword": "XXXX-XXXX",
                                                 "labelForCancel": "cancel",
                                                 "labelForSubmit": "Login",
                                                 "onLoginFailedScript": "",
                                                 "reloadOnSuccess": true,
-                                                "reloadUrl": "",
+                                                "reloadUrl": "https:\/\/cuhub.geolive.ca\/Single\/me",
                                                 "showForgotPassword": true,
                                                 "forgotPasswordCustomScript": "XXXX-XXXX"
                                             }
@@ -2464,16 +2502,16 @@
                             "connectionForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 526,
-                            "y": 295
+                            "x": 536,
+                            "y": 305
                         },
                         "children": [
                             "connectionForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 486,
-                                    "y": 483
+                                    "x": 496,
+                                    "y": 493
                                 }
                             }
                         ],
@@ -2523,7 +2561,6 @@
                                                 "attributeFields": [
                                                     "connectionForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
                                                 ],
-                                                "tags": "[\"tag one\", \"tag two\"]",
                                                 "className": "",
                                                 "showLabel": true,
                                                 "showAddWord": true,
@@ -2533,7 +2570,9 @@
                                                 "hoverColor": "rgb(31, 84, 245)",
                                                 "selectedColor": "rgb(31, 84, 245)",
                                                 "shuffleTags": false,
-                                                "getItemTagsScript": "connectionForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getItemTagsScript.js"
+                                                "tags": "[\"tag one\", \"tag two\"]",
+                                                "getItemTagsScript": "connectionForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.getItemTagsScript.js",
+                                                "formatModule": ""
                                             }
                                         }
                                     ]
@@ -2569,7 +2608,8 @@
             "templateName": "connectionForm",
             "widgetTitle": "connectionForm",
             "target": "connectionForm",
-            "readAccess": "public"
+            "readAccess": "public",
+            "resolveItemScript": "return item;"
         }
     },
     "widget.33": {
@@ -3058,16 +3098,16 @@
                             "contactForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 208,
-                            "y": 340
+                            "x": 238,
+                            "y": 370
                         },
                         "children": [
                             "contactForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 168,
-                                    "y": 506
+                                    "x": 198,
+                                    "y": 546
                                 }
                             }
                         ],
@@ -3085,6 +3125,27 @@
                                             "type": "FormTextField",
                                             "config": {
                                                 "className": "",
+                                                "label": "Your Email",
+                                                "placeholder": "email address",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "add another value",
+                                                "formatter": "none",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"\"; ",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "contactForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
+                                                "validateValueScript": " return defaultValidationFn() "
+                                            }
+                                        },
+                                        {
+                                            "type": "FormTextField",
+                                            "config": {
+                                                "className": "",
                                                 "label": "Your Message",
                                                 "placeholder": "write a message",
                                                 "lines": 4,
@@ -3098,7 +3159,7 @@
                                                 "formatValueScript": "",
                                                 "getValueScript": " return \"\"; ",
                                                 "updateValueScript": " object.value=value ",
-                                                "submitValueScript": "contactForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.submitValueScript.js",
+                                                "submitValueScript": "contactForm.metadata.children.1.builderMetadata.positions.content.modules.2.config.submitValueScript.js",
                                                 "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
@@ -3714,37 +3775,7 @@
                     },
                     "content": {
                         "modules": [
-                            "mainPinnedDetail.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "UIListView",
-                                "config": {
-                                    "listClassName": "feed-item-list",
-                                    "className": "feed-item pinned-item",
-                                    "viewType": "view",
-                                    "namedView": "feedItemDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultFormView",
-                                    "formOptions": "{}",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": "",
-                                    "getItemListScript": "mainPinnedDetail.metadata.positions.content.modules.1.config.getItemListScript.js",
-                                    "formatItemListScript": "return list;",
-                                    "formatListItemModuleScript": "mainPinnedDetail.metadata.positions.content.modules.1.config.formatListItemModuleScript.js",
-                                    "emptyNamedView": "emptyPinnedListView",
-                                    "filterItemsScript": "return true;",
-                                    "sortItemsScript": "",
-                                    "maxItems": "-1"
-                                }
-                            }
+                            "mainPinnedDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
@@ -3762,6 +3793,144 @@
                 ],
                 "_diagramState": []
             },
+            "readAccess": "public"
+        }
+    },
+    "widget.97": {
+        "name": "Form View",
+        "instance": "UserWizardBuilder",
+        "parameters": {
+            "target": "connectWithEventForm",
+            "metadata": {
+                "class": "DecisionNode",
+                "_diagramState": {
+                    "x": -18,
+                    "y": 171
+                },
+                "children": [
+                    "connectWithEventForm.metadata.children.0.json",
+                    {
+                        "title": "New Empty Step",
+                        "class": "AttributesTableNode",
+                        "fields": [
+                            "connectWithEventForm.metadata.children.1.fields.0.json"
+                        ],
+                        "_diagramState": {
+                            "x": 210,
+                            "y": 250
+                        },
+                        "children": [
+                            "connectWithEventForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 170,
+                                    "y": 438
+                                }
+                            }
+                        ],
+                        "builderMetadata": {
+                            "positions": {
+                                "title": {
+                                    "modules": [
+                                        "connectWithEventForm.metadata.children.1.builderMetadata.positions.title.modules.0.json"
+                                    ]
+                                },
+                                "content": {
+                                    "modules": [
+                                        "connectWithEventForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
+                                        {
+                                            "type": "UIListView",
+                                            "config": {
+                                                "listClassName": "connection-feed-items-list",
+                                                "className": "",
+                                                "viewType": "view",
+                                                "namedView": "feedItemDetail",
+                                                "shouldRender": true,
+                                                "namedViewScript": "return namedView",
+                                                "showInlineEdit": false,
+                                                "namedFormView": "defaultView",
+                                                "formOptions": "\"{}\"",
+                                                "showDeleteButton": false,
+                                                "deleteItemScript": "defaultBehaviorFn()",
+                                                "initModuleScript": "",
+                                                "formatModuleScript": "",
+                                                "resolveItemScript": "return item",
+                                                "filterModulesScript": "return list",
+                                                "itemButtonsScript": "return [];",
+                                                "insertAtTop": false,
+                                                "targetName": "",
+                                                "getItemListScript": "return [item.getItemB()];",
+                                                "formatItemListScript": "return list;",
+                                                "formatListItemModuleScript": "connectWithEventForm.metadata.children.1.builderMetadata.positions.content.modules.1.config.formatListItemModuleScript.js",
+                                                "emptyNamedView": "emptyListView",
+                                                "filterItemsScript": "return true;",
+                                                "sortItemsScript": "",
+                                                "maxItems": "-1"
+                                            }
+                                        },
+                                        {
+                                            "type": "InlineHtml",
+                                            "config": {
+                                                "className": "intro-text",
+                                                "text": "<p>When you volunteer for an event, your profile information will be shared with the event coordinator. Event coordinators may contact you about this event. Please provide availability information. <\/p>",
+                                                "template": "",
+                                                "templateVariablesScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "WizardDescriptionField",
+                                            "config": {
+                                                "label": "What is your availability?",
+                                                "message": "add a availability",
+                                                "lines": 3,
+                                                "mandatory": false,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "mediaIconTint": "rgb(100, 149, 237)",
+                                                "onRenderModuleFn": ""
+                                            }
+                                        }
+                                    ]
+                                },
+                                "footer": {
+                                    "modules": [
+                                        "connectWithEventForm.metadata.children.1.builderMetadata.positions.footer.modules.0.json"
+                                    ]
+                                },
+                                "menu": {
+                                    "modules": []
+                                }
+                            },
+                            "positionList": [
+                                "title",
+                                "content",
+                                "footer",
+                                "menu"
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
+                        }
+                    }
+                ]
+            },
+            "widgetTitle": "connectWithEventForm",
+            "templateName": "connectWithEventForm",
+            "requireTarget": true,
+            "resolveItemScript": "return item;",
+            "beforeSubmitScript": "",
+            "onCreateScript": "",
+            "onUpdateScript": "",
+            "onSaveScript": "",
+            "onLoadScript": "",
             "readAccess": "public"
         }
     },
@@ -4160,29 +4329,7 @@
                     },
                     "content": {
                         "modules": [
-                            "mainCalendarDetail.metadata.positions.content.modules.0.json",
-                            {
-                                "type": "UIView",
-                                "config": {
-                                    "className": "main-content-detail",
-                                    "viewType": "view",
-                                    "namedView": "calendarDetail",
-                                    "shouldRender": true,
-                                    "namedViewScript": "return namedView",
-                                    "showInlineEdit": false,
-                                    "namedFormView": "defaultView",
-                                    "formOptions": "\"{}\"",
-                                    "showDeleteButton": false,
-                                    "deleteItemScript": "defaultBehaviorFn()",
-                                    "initModuleScript": "",
-                                    "formatModuleScript": "",
-                                    "resolveItemScript": "return item",
-                                    "filterModulesScript": "return list",
-                                    "itemButtonsScript": "return [];",
-                                    "insertAtTop": false,
-                                    "targetName": ""
-                                }
-                            }
+                            "mainCalendarDetail.metadata.positions.content.modules.0.json"
                         ]
                     },
                     "footer": {
@@ -4313,16 +4460,16 @@
                             "createItemsMenuForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 273,
-                            "y": 265
+                            "x": 283,
+                            "y": 275
                         },
                         "children": [
                             "createItemsMenuForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 233,
-                                    "y": 431
+                                    "x": 243,
+                                    "y": 441
                                 }
                             }
                         ],
@@ -4957,16 +5104,16 @@
                             "connectWithUserForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 188,
-                            "y": 320
+                            "x": 198,
+                            "y": 330
                         },
                         "children": [
                             "connectWithUserForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 148,
-                                    "y": 496
+                                    "x": 158,
+                                    "y": 506
                                 }
                             }
                         ],

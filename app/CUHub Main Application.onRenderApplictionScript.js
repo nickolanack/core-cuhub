@@ -22,7 +22,7 @@ $projectHub->includeScripts();
 
 IncludeJSBlock('
 
-    window.FeedItemListResponse='.json_encode($feedItemList=$projectHub->listFeedItemsAjax()).';
+    window.FeedItemListResponse='.json_encode($feedItemList=$projectHub->listFeedItemsAjaxCache()).';
 
 ');
 

@@ -1,21 +1,9 @@
 {
-    "type": "FormTextField",
+    "type": "InlineHtml",
     "config": {
-        "className": "",
-        "label": "Your Email",
-        "placeholder": "email address",
-        "lines": 1,
-        "maxChars": 0,
-        "mandatory": false,
-        "multiEntry": false,
-        "muliTemplate": "lines",
-        "multiMessage": "add another value",
-        "formatter": "none",
-        "onRenderTextFieldScript": "",
-        "formatValueScript": "",
-        "getValueScript": " return \"\"; ",
-        "updateValueScript": " object.value=value ",
-        "submitValueScript": "wizardDataSet.email=object.value",
-        "validateValueScript": " return defaultValidationFn() "
+        "className": "intro-text",
+        "text": "<p>You are not logged in. You can still send a message to this user but you will be required to verify your email address. Your email address will be shared with the user you send a message to.<\/p>",
+        "template": "",
+        "templateVariablesScript": ""
     }
 }

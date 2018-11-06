@@ -39,10 +39,27 @@ body {
     border: 1px solid rgba(0,0,0,0.3);
     box-shadow: 0 0 3px rgba(0,0,0,0.3);
     padding: 10px;
-        color: black;
+    color: black;
     font-size: 16px;
-        margin-right: 70px;
-        cursor:pointer;
+    margin-right: 70px;
+    cursor:pointer;
+    margin-bottom: 75px;
+}
+
+.ui-template-form .ui-navigation-menu li label {
+    position: absolute;
+    left:0;
+    top: calc( 100% + 20px );
+    width: 200px;
+    white-space: pre-wrap;
+    color: slategray;
+    font-weight: 100;
+    text-align: left;
+    display: inline-block;
+    padding: 0 10px;
+}
+.ui-template-form .ui-navigation-menu li{
+    position:relative;
 }
 
 .ui-template-form button.menu-main-feeditems.create-new:hover {
@@ -392,6 +409,18 @@ active.expandable.feed-item:hover {
     cursor: default;
 }
 
+
+.feed-item.active .action-edit, .feed-item.active .action-delete {
+    display: inline-block;
+}
+
+.feed-item .action-edit, .feed-item .action-delete {
+    display: none;
+}
+
+.feed-item.active .action-delete.action-delete-disabled{
+    display: none;
+}
 
 
 .ui-view.thin-layout-item, .ui-view.archived-item {
@@ -1098,7 +1127,7 @@ body.dragover .add-photo .empty.droppable:after, .add-photo .empty.droppable:aft
 }
 
 .form-btn.action-user {
-    color: #666666;
+    color: white;
 }
 
 .action-contact.action-user.action-for-Profile {
@@ -1227,6 +1256,12 @@ body.dragover .add-photo .empty.droppable:after, .add-photo .empty.droppable:aft
     width: 20px;
     text-align: center;
     display: inline-block;
+}
+
+.thin-layout-item.event-feed-item .feed-item-icon:after {
+    left: 1px;
+    top: 7px;
+    font-size: 7px;
 }
 
 
@@ -1391,6 +1426,11 @@ input.search-input:focus {
 
 .main-content-detail .ui-view.user-detail .form-btn.action-connection {
     display: none;
+}
+
+.disabled.form-btn.action-connection {
+    border-color: transparent;
+    color: #888888;
 }
 
 

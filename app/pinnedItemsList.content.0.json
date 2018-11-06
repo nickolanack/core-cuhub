@@ -1,30 +1,9 @@
 {
-    "type": "UIListView",
+    "type": "FieldValue",
     "config": {
-        "listClassName": "",
-        "className": "feed-item pinned-item",
-        "viewType": "view",
-        "namedView": "feedItemDetail",
-        "shouldRender": true,
-        "namedViewScript": "return namedView",
-        "showInlineEdit": false,
-        "namedFormView": "defaultFormView",
-        "formOptions": "{}",
-        "showDeleteButton": false,
-        "deleteItemScript": "",
-        "initModuleScript": "",
-        "formatModuleScript": "",
-        "resolveItemScript": "return item",
-        "filterModulesScript": "return list",
-        "itemButtonsScript": "return [];",
-        "insertAtTop": false,
-        "targetName": "",
-        "getItemListScript": " \n if(AppClient.getUserType()==\"guest\"){\n     return [];\n }\n EventList.SharedInstance(function(el){\n    callback(el.getPinnedEvents());\n     \n    listModule.addWeakEvent(el, \"pinnedItem\", function(item){\n        listModule.addItem(item);\n    });\n     \n })",
-        "formatItemListScript": "return list;",
-        "formatListItemModuleScript": "\nEventList.FormatPinnedItemsFeedListChildModule(childView, child);",
-        "emptyNamedView": "emptyPinnedListView",
-        "filterItemsScript": "return true;",
-        "sortItemsScript": "",
-        "maxItems": "-1"
+        "loadAsync": false,
+        "fieldLabelScript": "return \"Your Pinned Items\";",
+        "fieldValueScript": "return \"\";",
+        "formatElementScript": "el.addClass(\"section-item-icon\")"
     }
 }
