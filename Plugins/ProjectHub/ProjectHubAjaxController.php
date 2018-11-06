@@ -13,6 +13,43 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
     }
 
 
+    protected function sendDirectMessage($json)
+    {
+
+        Emit('onSendDirectMessageVerification',
+               $json
+            );
+            $links=GetPlugin('Links');
+            $clientToken=$links->createLinkEventCode('onVerifyDirectMessage', $json);
+            $linkUrl=HtmlDocument()->website().'/'.$links->actionUrlForToken($clientToken);
+
+            //$linkUrl=HtmlDocument()->website().'/'.$this->getPlugin()->urlForView("magiclink", array("token"=>$clientToken));
+
+            // if(($magicLinkUrl=$this->getPlugin()->getParameter("magicLinkUrl", ""))&&(!empty($magicLinkUrl))){
+            //      $linkUrl=HtmlDocument()->website().'/'.$magicLinkUrl."?token=".$clientToken;
+            // }
+
+            //HtmlDocument()->website().'/'.$links->actionUrlForToken($clientToken);
+            $typeParts=explode(".", $json->itemType);
+            $type=$typeParts[1];
+            $item=$this->getPlugin()->getFeedItemRecord($json->itemId, $type);
+
+            $eventData=array_merge(
+                array(
+                    "link"=>$linkUrl,
+                    "profile"=>$item
+                ), 
+                get_object_vars($json));
+           
+            //GetPlugin('Email')->getMailerWithTemplate("email.verify.directMessage", $eventData)->to("nickblackwell82@gmail.com")->send();
+            GetPlugin('Email')->getMailerWithTemplate("email.verify.directMessage", $eventData)->to($json->email)->send();
+            
+
+            return true;
+
+    }
+
+
     protected function listFeedItems()
     {
 

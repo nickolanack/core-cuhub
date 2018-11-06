@@ -67,6 +67,49 @@ class ProjectHub extends \Plugin implements
 	}
 
 
+	public function listFeedItemsAjaxCache(){
+
+
+		$cacheFile=HtmlDocument()->getCachedPageFile('feeditems.ajax.json');
+
+
+		if($cacheFile){
+
+			$response=array(
+				'results'=>json_decode(HtmlDocument()->getCachedPage('feeditems.ajax.json')),
+				'fromCache'=>true
+			);
+
+
+			$userCanSubscribe = !GetClient()->isGuest();
+	        if ($userCanSubscribe) {
+	            $response['subscription'] = array(
+	                'eventfeed.'.GetClient()->getUserId()=>'update',
+	                'eventlist'=>'update',
+	            );
+	        }
+
+	         return $response;
+
+		}
+
+			
+		$response=$this->listFeedItemsAjax();
+
+		HtmlDocument()->setCachedPage('feeditems.ajax.json', json_encode($response['results']));
+
+
+        return $response;
+
+       
+
+
+		
+
+
+
+	}
+
 	/**
 	 * returns the list of feeditems formatted for an ajax response. 
 	 * ie: ["results"=>array, "subscription"=>array];
@@ -107,7 +150,7 @@ class ProjectHub extends \Plugin implements
 		$events = $this->getDatabase()->getEvents($filter);
 		$connections = $this->getDatabase()->getConnections($filter);
 		$requests = $this->getDatabase()->getRequests($filter);
-		$profiles = $this->getDatabase()->getProfiles(array_merge(array("published" => true), $filter));
+		$profiles = $this->getDatabase()->getProfiles(array_merge(array(), $filter));
 
 		return array_merge(
 			array_map(function ($record) {
@@ -231,6 +274,7 @@ class ProjectHub extends \Plugin implements
 
 		GetPlugin('Attributes');
 		$profile["attributes"]=(new \attributes\Record('profileAttributes'))->getValues($profile['id'], $profile["type"]);
+		$profile['client']=$client->getUserMetadata();
 
 		return $profile;
 		
@@ -270,16 +314,93 @@ class ProjectHub extends \Plugin implements
 
 	}
 
+	protected function onVerifyDirectMessage($args){
+
+		$typeParts=explode(".", $args->itemType);
+			$type=$typeParts[1];
+		$item=$this->getFeedItemRecord($args->itemId, $type);
+		$client=GetClient()->userMetadataFor($item['itemId']);
+
+		$eventData=array_merge(get_object_vars($args), array('profile'=>$item, 'client'=>$client));
+
+		Emit('onSendDirectMessage',
+               $eventData
+            );
+
+
+		//GetPlugin('Email')->getMailerWithTemplate("email.directMessage", $eventData)->to("nickblackwell82@gmail.com")->send();
+		
+		GetPlugin('Email')->getMailerWithTemplate("email.directMessage", $eventData)->to($client['email'])->send();
+		GetPlugin('Email')->getMailerWithTemplate("email.directMessage.reciept", $eventData)->to($args->email)->send();
+
+	}
+
+	protected function onCreateUser($args){
+
+		Emit('onSendActivateEmailLink',
+               $args
+            );
+            $links=GetPlugin('Links');
+            $clientToken=$links->createLinkEventCode('onActivateEmailLink', $args);
+            $linkUrl=HtmlDocument()->website().'/'.$links->actionUrlForToken($clientToken);
+
+            //$linkUrl=HtmlDocument()->website().'/'.$this->getPlugin()->urlForView("magiclink", array("token"=>$clientToken));
+
+            // if(($magicLinkUrl=$this->getPlugin()->getParameter("magicLinkUrl", ""))&&(!empty($magicLinkUrl))){
+            //      $linkUrl=HtmlDocument()->website().'/'.$magicLinkUrl."?token=".$clientToken;
+            // }
+
+            //HtmlDocument()->website().'/'.$links->actionUrlForToken($clientToken);
+
+            $eventData=array_merge(array("link"=>$linkUrl), get_object_vars($args));
+
+
+  
+
+
+
+		
+
+
+		//GetPlugin('Email')->getMailerWithTemplate("email.activate", $eventData)->to("nickblackwell82@gmail.com")->send();
+		GetPlugin('Email')->getMailerWithTemplate("email.activate", $eventData)->to($args->email)->send();
+		//GetPlugin('Email')->getMailerWithTemplate("email.activate", $eventData)->to($args->email)->send();
+
+
+	}
 
 
 	protected function onPost($args){
 
 
-		
+		$discussion=GetPlugin("Discussions");
 		$discussionId=$args->discussion;
 		$discussionMeta=GetPlugin("Discussions")->getDiscussionMetadata($discussionId);
 		$itemId=$discussionMeta["itemId"];
 		$itemType=$discussionMeta["itemType"];
+
+
+		$postMeta=$args->metadata;
+		if(is_string($postMeta)&&(!empty($postMeta))){
+			$postMeta=json_decode($postMeta);
+		}
+		
+
+		if(!key_exists('originalPost', $postMeta)){
+			$channel=$discussionMeta["name"];
+			$profiles=explode('-', $channel);
+			array_shift($profiles);
+			$mirrorTo=$profiles[0];
+			if($itemId+""==$mirrorTo+""){
+				$mirrorTo=$profiles[1];
+			}
+
+			$mirrorDiscussion=$discussion->getDiscussionForItem($mirrorTo, $itemType, $channel);
+			$discussion->post($mirrorDiscussion->id, $args->text, $metadata=array(
+				'originalPost'=>$args->id,
+				'originalDiscussion'=>$args->discussion
+			));
+		}
 
 		Emit("onHubRepost", $eventData=array(
 			"args"=>$args,
@@ -308,14 +429,21 @@ class ProjectHub extends \Plugin implements
 				"label"=>$name." posted the following comment:",
 				"content"=>$args->text,
 				"action"=>"posted to",
-				
 			);
+
 			
 			$eventData['sandboxed']=true;
 
 			if($eventData['sandboxed']){
-				GetPlugin('Email')->getMailerWithTemplate("pinned.update", $eventData)->to("nickblackwell82@gmail.com")->send();
-				GetPlugin('Email')->getMailerWithTemplate($type.".update", $eventData)->to("nickblackwell82@gmail.com")->send();
+
+
+				if(!key_exists('originalPost', $postMeta)){
+
+					
+					//GetPlugin('Email')->getMailerWithTemplate("pinned.update", $eventData)->to("nickblackwell82@gmail.com")->send();
+					GetPlugin('Email')->getMailerWithTemplate($type.".update", $eventData)->to("nickblackwell82@gmail.com")->send();
+
+				}
 				return;
 			}
 

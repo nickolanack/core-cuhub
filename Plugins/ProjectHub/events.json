@@ -1,3 +1,5 @@
 [
-	"onPost"
+	"onPost",
+	"onCreateUser",
+	"onVerifyDirectMessage"
 ]

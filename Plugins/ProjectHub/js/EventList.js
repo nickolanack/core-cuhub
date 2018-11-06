@@ -125,6 +125,16 @@ var EventList = (function() {
 			return me._clientsProfile;
 
 		},
+		getProfileForUserId: function(id) {
+			var me = this;
+			for (var i = 0; i < me._events.length; i++) {
+				if (me._events[i].getType()== "ProjectHub.profile"&&me._events[i].getAccountId()+""==id+"") {
+					return me._events[i];
+				}
+			}
+			return null;
+
+		},
 		_instantiateItem: function(data) {
 			var me = this;
 
@@ -365,16 +375,65 @@ EventList.SetInitialFilter = function(application) {
 		application.setNamedValue('feedItemFilter', function(item) {
 			return button.filterItem ? button.filterItem(item) : true;
 		});
+
+		application.setNamedValue('feedItemMap', function(item) {
+			return item;
+		});
+
 	});
 }
 
+
+EventList.FormatTagCloudModule=function(module, application){
+
+
+	module.addEvent('selectWord',function(tag){
+	    
+	    application.setNamedValue('tagFilter',{tags:[tag]});
+		application.getNamedValue('navigationController').navigateTo("Tags", "Main");
+	    
+	    
+	});
+
+	module.addEvent('addWord',function(tag, el){
+	    
+	    //if matches current tag, then highlight
+	    el.addClass('btn-tag');
+	    
+	    
+	    var current=application.getNamedValue('tagFilter');
+		
+		if(current&&current.tags&&current.tags.indexOf(tag)>=0){
+		     el.addClass('active');
+		}
+	    
+	})
+};
 
 
 EventList.FormatFieldLabel = function(el, application, view) {
 
 	el.addClass("section-item-icon");
 	el.addClass(view.toLowerCase() + '-label');
-	el.addEvent('click', function() {
+	el.addEvent('click', function(e) {
+
+		if(view=="Pinned"){
+			if (AppClient.getUserType() == "guest") {
+				
+				e.stop();
+				var wizard = application.getDisplayController().displayPopoverForm(
+					"loginForm",
+					AppClient,
+					{
+						"template": "form"
+					}
+				);
+				return;
+					
+			}
+
+		}
+
 		application.getNamedValue('navigationController').navigateTo(view, "Main");
 	});
 
@@ -426,6 +485,11 @@ EventList._AddClassNames = function(childView, child) {
 	childView.getElement().addClass((child.getType().split('.').pop()) + '-feed-item');
 	childView.getElement().addClass('feed-item-' + child.getId());
 
+	if(child instanceof ConnectionItem){
+		childView.getElement().addClass((child.getConnectionTo().getType().split('.').pop()) + '-feed-item');
+	}
+
+
 }
 
 EventList._ThinLayout = function(childView, child) {
@@ -452,7 +516,7 @@ EventList._AddAttributes = function(childView, child) {
 EventList.FormatPinnedItemsFeedListChildModule = function(childView, child) {
 
 	EventList._AddClassNames(childView, child);
-	EventList._ThinLayout(childView, child);
+	//EventList._ThinLayout(childView, child);
 	//EventList._AddWeakListActivationEvents(childView, child);
 	EventList._AddExpandable(childView, child);
 	EventList._AddWeakListRemoveEvents(childView, child, ["archive", "unpin", "remove"]);
@@ -472,7 +536,7 @@ EventList.FormatGenericItemFeedListChildModule = function(childView, child) {
 
 	EventList._AddClassNames(childView, child);
 	EventList._AddExpandable(childView, child);
-	EventList._AddWeakListRemoveEvents(childView, child, ["archive", "pin", "remove"]);
+	EventList._AddWeakListRemoveEvents(childView, child, ["archive", "remove"]);
 
 }
 
@@ -509,6 +573,9 @@ EventList.FormatActiveItemFeedListChildModule = function(childView, child) {
 }
 
 
+
+
+
 EventList.CurrentListLabel=function(app){
 
 	var menu=EventList.Menu(app);
@@ -534,42 +601,408 @@ EventList.Menu=function(app){
 	return app.getNamedValue('navigationController');
 }
 
+EventList.CreateTopNavigation=function(application){
+
+
+	var navigationController=new NavigationMenuModule({
+      "header-menu":[
+        {
+          "html":"All Events",
+          "name":"Events",
+          "events":{
+              "click":function(){
+                  application.getNamedValue('navigationController').navigateTo("Events", "Main");
+              }
+          },
+          tagName:'span'
+        },
+        {
+          html:"All Projects",
+            name:"Projects",
+          "events":{
+              "click":function(){
+                  application.getNamedValue('navigationController').navigateTo("Projects", "Main");
+              }
+          },
+          tagName:'span'
+        },
+        {
+          html:"All Profiles",
+           name:"Profiles",
+          "events":{
+              "click":function(){
+                  application.getNamedValue('navigationController').navigateTo("Profiles", "Main");
+              }
+          },
+          tagName:'span'
+        }
+      ]   
+        
+    },{
+        manipulateHistory:false
+    });
+
+	return navigationController;
+
+	// var ul=new ElementModule('ul',{"class":"header-menu"});
+
+	// var addView=function(view){
+	//     ul.appendChild(new Element('li',{
+	//         html:view,
+	//         events:{click:function(){
+	//             application.getNamedValue('navigationController').navigateTo(view, "Main");
+	//         }}
+	//     }));
+	// }
+	// var events=["Events", "Projects", "Connections", "Profiles"];
+	// events.forEach(addView);
+
+	// return ul;
+}
+
+EventList.CreateBottomNavigation=function(application){
+
+
+	var navigationController=new NavigationMenuModule({
+      "Site":[
+        {
+          "html":"Portal",
+          "events":{
+              "click":function(){
+                  application.getNamedValue('navigationController').navigateTo("FeedItems", "Main");
+              }
+          }
+        },
+        {
+          html:"About",
+          "events":{
+              "click":function(){
+                  application.getNamedValue('navigationController').navigateTo("About", "Main");
+              }
+          }
+        },
+        {
+          html:"Contact",
+          "events":{
+              "click":function(){
+                  application.getNamedValue('navigationController').navigateTo("Contact", "Main");
+              }
+          }
+        },
+        {
+          html:"Archive",
+          "events":{
+              "click":function(){
+                  application.getNamedValue('navigationController').navigateTo("Archive", "Main");
+              }
+          }
+        }
+      ]   
+        
+    },{
+        manipulateHistory:false
+    });
+    
+	//application.setNamedValue('navigationController', navigationController);
+	return navigationController;
+
+};
+
+
+
+EventList.CreateNewFeedItemNavigation=function(application, parentWizard){
+
+	
+	var navigationController=new NavigationMenuModule({
+      "Main":[
+        {
+			"html": "Create Event",
+			"name": "Create",
+			"class": "menu-main-feeditems create-new new-event",
+			"namedView": "bottomDetail",
+			"labelContent": "Create a new calendar event",
+			events:{
+				click:function(e){
+
+					e.stop();
+					parentWizard.close();
+					
+					var item=EventList.SharedInstance().getClientProfile();
+					var formName ="eventForm";
+
+					var wizard = application.getDisplayController().displayPopoverForm(
+						formName,
+						new EventItem({
+					        "item":item,
+					    }).addEvent("save", function(){
+					        var item=this;
+					        EventList.SharedInstance(function(el){
+					            
+					            el.addItem(item);
+					            
+					        });
+					    }),
+						{
+							"template": "form",
+							"className": "event-form"
+						}
+					);
+
+				}
+			}
+		},
+		{
+			"html": "Create Project",
+			"name": "Create",
+			"class": "menu-main-feeditems create-new new-project",
+			"namedView": "bottomDetail",
+			"labelContent": "Create a new community/research project",
+			events:{
+				click:function(e){
+
+					e.stop();
+					parentWizard.close();
+
+					var item=EventList.SharedInstance().getClientProfile();
+					var formName ="projectForm";
+
+					var wizard = application.getDisplayController().displayPopoverForm(
+						formName,
+						new ProjectItem({
+						        "item":item,
+						    }).addEvent("save", function(){
+						        var item=this;
+						        EventList.SharedInstance(function(el){
+						            
+						            el.addItem(item);
+						            
+						        });
+						    }),
+						{
+							"template": "form",
+							"className": "project-form"
+						}
+					);
+
+				}
+			}
+		}
+      ]   
+        
+    },
+    {
+
+        manipulateHistory:false,
+        formatEl: function(li, button) {
+			if (button && button.labelContent) {
+				li.appendChild(new Element('label', {
+					html: button.labelContent
+				}));
+			}
+		}
+    }
+    );
+    
+	//application.setNamedValue('navigationController', navigationController);
+	return navigationController;
+
+};
+
+EventList.PageDescription=function(state){
+
+
+	var button=EventList._navigationController.getButton(state);
+	if(button.description){
+
+		if(typeof button.description=='function'){
+			return button.description();
+		}
+
+		return button.description;
+	}
+
+	return JSON.stringify(state);
+
+
+}
 
 EventList.CreateNavigationController = function(labels, application) {
 	var labelContent = labels;
+	EventList._labels=labelContent;
+
+
+	var loginGuest=function(config){
+
+		if (AppClient.getUserType() == "guest") {
+			config.events={
+				click:function(e){
+					e.stop();
+					var wizard = application.getDisplayController().displayPopoverForm(
+						"loginForm",
+						AppClient,
+						{
+							"template": "form"
+						}
+					);
+					return;
+				}
+			};
+		}
+
+		return config;
+
+	}
+
 	var navigationController = (new NavigationMenuModule({
 		"Main": [{
+				"html": "Create",
+				"name": "Create",
+				"class": "menu-main-feeditems create-new",
+				"namedView": "bottomDetail",
+				"labelContent": "Create",
+				events:{
+					click:function(){
+
+
+						if (AppClient.getUserType() == "guest") {
+							var wizard = application.getDisplayController().displayPopoverForm(
+								"loginForm",
+								AppClient,
+								{
+									"template": "form"
+								}
+							);
+							return;
+						}
+
+
+						var item=EventList.SharedInstance().getClientProfile();
+						if(!item.isPublished()){
+			
+							var formName = item.getType().split('.').pop() + "Form";
+
+							var wizard = application.getDisplayController().displayPopoverForm(
+								formName,
+								item,
+								{
+									"template": "form",
+									"className": item.getType().split('.').pop() + "-form"
+								}
+							);
+							
+							return;
+						}
+
+						var formName = "createItemsMenuForm";
+
+						var wizard = application.getDisplayController().displayPopoverForm(
+							formName,
+							item,
+							{
+								"template": "form"
+							}
+						);
+
+
+					}
+				}
+			},{
 				"html": "Activity",
 				"name": "FeedItems",
+				"description":"Welcome to CUHub. We are pleased to create and share events, projects, connections, my communities",
 				"class": "menu-main-feeditems",
 				"namedView": "bottomDetail",
 				"labelContent": "Show All Recent Activity Feed Items",
 				filterItem: function(item) {
-					return true;
+					return item.getType() !== "ProjectHub.connection";
 				}
-			}, {
-				"html": "Events",
+			}, loginGuest({
+				"html": "Your Events",
+				"name":"Events",
+				"description":"These are the events taking place soon or took place recently",
+				"namedView": "bottomDetail",
+				"labelContent": labelContent['label-for-events'],
+				filterItem: function(item) {
+					return (item.getType() === "ProjectHub.event"&&item.clientOwns())||(item.getType() === "ProjectHub.connection"&&item.clientOwns()&&item.getConnectionTo().getType()=="ProjectHub.event");
+				},
+				urlComponent: function(stub, segments) {
+					return 'Events/Yours'
+				}
+			}), loginGuest({
+				"html": "Your Projects",
+				"name":"Projects",
+				"description":"These are the recent projects taking place in the community",
+				"namedView": "bottomDetail",
+				"labelContent": labelContent['label-for-projects'],
+				filterItem: function(item) {
+					return (item.getType() === "ProjectHub.project"&&item.clientOwns())||(item.getType() === "ProjectHub.connection"&&item.clientOwns()&&item.getConnectionTo().getType()=="ProjectHub.project");
+				},
+				urlComponent: function(stub, segments) {
+					return 'Projects/Yours'
+				}
+			}), loginGuest({
+				"html": "Your Connections",
+				"class": "menu-main-connections hidden",
+				"name":"Connections",
+				"description":"These are your connections",
+				"namedView": "bottomDetail",
+				"labelContent": labelContent['label-for-connections'],
+				filterItem: function(item) {
+					return item.getType() === "ProjectHub.connection"&&item.clientOwns();
+				},
+				urlComponent: function(stub, segments) {
+					return 'Connections/Yours'
+				}
+			}),loginGuest({
+				"html": "Your Community",
+				"name":"Profiles",
+				"description":"These are your connections to community members",
+				"namedView": "bottomDetail",
+				"labelContent": labelContent['label-for-profiles'],
+				filterItem: function(item) {
+					return item.getType() === "ProjectHub.connection"&&item.clientOwns()&&item.getConnectionTo().getType()=="ProjectHub.profile";
+				},
+				map:function(item){
+					return item.getConnectionTo();
+				},
+				urlComponent: function(stub, segments) {
+					return 'Profiles/Yours'
+				}
+			}),{
+				"html": "All Events",
+				"name":"Events",
+				"class": "menu-main-events hidden",
+				"description":"These are the events taking place soon or took place recently",
 				"namedView": "bottomDetail",
 				"labelContent": labelContent['label-for-events'],
 				filterItem: function(item) {
 					return item.getType() === "ProjectHub.event";
 				}
 			}, {
-				html: "Projects",
+				"html": "All Projects",
+				"name": "Projects",
+				"class": "menu-main-projects hidden",
+				"description":"These are the recent projects taking place in the community",
 				"namedView": "bottomDetail",
 				"labelContent": labelContent['label-for-projects'],
 				filterItem: function(item) {
 					return item.getType() === "ProjectHub.project";
 				}
 			}, {
-				html: "Connections",
+				"html": "Connections",
+				"class": "menu-main-connections hidden",
+				"name":"Connections",
+				"description":"These are connections between members",
 				"namedView": "bottomDetail",
 				"labelContent": labelContent['label-for-connections'],
 				filterItem: function(item) {
 					return item.getType() === "ProjectHub.connection";
 				}
 			}, {
-				html: "Profiles",
+				"html": "Community",
+				"class": "menu-main-profiles hidden",
+				"name":"Profiles",
+				"description":"These are other community members",
 				"namedView": "bottomDetail",
 				"labelContent": labelContent['label-for-profiles'],
 				filterItem: function(item) {
@@ -585,9 +1018,11 @@ EventList.CreateNavigationController = function(labels, application) {
 			//   }
 			// },
 			{
-				html: "Calendar"
+				html: "Calendar",
+				"class": "menu-main-calendar hidden"
 			}, {
 				"html": "Tags",
+				"class": "menu-main-tags hidden",
 				"namedView": "bottomDetail",
 				filterItem: function(item) {
 					return EventList.SharedInstance().itemMatchesFilter(item, application.getNamedValue('tagFilter'));
@@ -608,6 +1043,7 @@ EventList.CreateNavigationController = function(labels, application) {
 				}
 			}, {
 				"html": "Date",
+				"class": "menu-main-date hidden",
 				"namedView": "bottomDetail",
 				filterItem: function(item) {
 					return EventList.SharedInstance().itemMatchesFilter(item, application.getNamedValue('dateFilter'));
@@ -628,15 +1064,25 @@ EventList.CreateNavigationController = function(labels, application) {
 					}).join('/');
 				}
 			}, {
-				html: "Archive"
+				html: "Archive",
+				"class": "menu-main-archive hidden",
 			}, {
-				html: "Pinned"
+				html: "Pinned",
+				"class": "menu-main-pinned hidden"
 			}, {
 				html: "Single",
+				"class": "menu-main-single hidden",
 				urlComponent: function(stub, segments) {
 					if (segments && segments.length) {
-						var item = segments[0].split('-');
+
 						EventList.SharedInstance(function(el) {
+							
+							if(segments[0]==="me"){
+								segments[0]="profile-"+el.getClientProfile().getId();
+							}
+
+							var item = segments[0].split('-');
+						
 							if (el.hasItem(item[1], item[0])) {
 								EventItem._application = application;
 								EventList.SharedInstance().getItem(item[1], item[0]).activate();
@@ -646,9 +1092,11 @@ EventList.CreateNavigationController = function(labels, application) {
 					return 'Single';
 				}
 			}, {
-				html: "About"
+				html: "About",
+				"class": "menu-main-about hidden"
 			}, {
-				html: "Contact"
+				html: "Contact",
+				"class": "menu-main-contact hidden"
 			}
 		]
 
@@ -662,10 +1110,10 @@ EventList.CreateNavigationController = function(labels, application) {
 			return viewer.getApplication().getNamedChildView("bottomDetail");
 		},
 		templateView: function(button, section) {
-			return button.namedView || (section.toLowerCase() + button.html + "Detail");
+			return button.namedView || (section.toLowerCase() + (button.name||button.html) + "Detail");
 		},
 		buttonClass: function(button, section) {
-			return button["class"] || ("menu-" + section.toLowerCase() + "-" + button.html.toLowerCase())
+			return button["class"] || ("menu-" + section.toLowerCase() + "-" + (button.name||button.html).toLowerCase())
 		},
 		sectionClass: function(section) {
 			return "menu-" + section.toLowerCase()
@@ -678,12 +1126,20 @@ EventList.CreateNavigationController = function(labels, application) {
 			}
 		}
 	})).addEvent('navigationStart', function(button) {
+
 		application.setNamedValue('feedItemFilter', function(item) {
 			return button.filterItem ? button.filterItem(item) : true;
 		});
+
+		application.setNamedValue('feedItemMap', function(item) {
+			return button.map ? button.map(item) : item;
+		});
+
 	});
 
 	application.setNamedValue('navigationController', navigationController);
+
+	EventList._navigationController=navigationController;
 	return navigationController;
 
 

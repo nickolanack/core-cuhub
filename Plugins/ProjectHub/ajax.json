@@ -17,5 +17,6 @@
     "unpin_item": {},
     "archive_item": {},
     "unarchive_item": {},
-    "search":{}
+    "search":{},
+    "send_direct_message": {}
 }
