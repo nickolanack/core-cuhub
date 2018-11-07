@@ -396,7 +396,7 @@ class ProjectHub extends \Plugin implements
 			}
 
 			$mirrorDiscussion=$discussion->getDiscussionForItem($mirrorTo, $itemType, $channel);
-			$discussion->post($mirrorDiscussion->id, $args->text, $metadata=array(
+			$discussion->post($mirrorDiscussion->id, $args->text, array(
 				'originalPost'=>$args->id,
 				'originalDiscussion'=>$args->discussion
 			));

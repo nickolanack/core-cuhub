@@ -25,7 +25,7 @@ class DocumentMetadata{
 		HtmlDocument()->META($image=$this->getImage(), "og:image",  array("name" => "property"));
 		HtmlDocument()->META($this->getImage('/'), "og:image:alt",  array("name" => "property"));
 		
-		HtmlDocument()->META(\Core::SiteName(), "og:site_name",  array("name" => "property"));
+		HtmlDocument()->META(\HtmlDocument()->getSiteName(), "og:site_name",  array("name" => "property"));
 		HtmlDocument()->META($type=$this->getType(), "og:type",  array("name" => "property"));
 		
 		HtmlDocument()->META("843902265812603", "fb:app_id",  array("name" => "property"));
