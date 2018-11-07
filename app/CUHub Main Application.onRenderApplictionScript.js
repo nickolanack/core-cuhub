@@ -31,8 +31,8 @@ $projectHub->printFeedItemLinksHtml();
 
 
 
-(new \core\AsyncDisplay())->display(function()use($targetInstance){
+//(new \core\AsyncDisplay())->display(function()use($targetInstance){
 
 GetWidget('dependencies')->display($targetInstance);
 
-});
+//});
