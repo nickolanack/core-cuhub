@@ -110,7 +110,11 @@
     "plugin.12": {
         "name": "Upgrade",
         "instance": "Upgrade",
-        "parameters": {}
+        "parameters": {
+            "releaseServer": "https:\/\/release.geolive.ca",
+            "releasePackage": "master",
+            "autoUpdate": false
+        }
     },
     "plugin.13": {
         "name": "User Interface",
