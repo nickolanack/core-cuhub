@@ -110,18 +110,6 @@ span.ui-navigation-menu ul.menu-main li {
 
 
 
-.btn-action {
-    border: none;
-    border-radius: 100%;
-    margin: 2px;
-    background-color: #00d8ff;
-    height: 20px;
-    width: 20px;
-  
-    background-size: 60% auto;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 
 <?php foreach(array('connection', 'profile', 'project', 'request', 'myprofile', 'event') as $type){
