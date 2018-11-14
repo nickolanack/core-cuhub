@@ -817,6 +817,16 @@ active.expandable.feed-item:hover {
     left: -33px;
     top: 10px;
 }
+
+
+.feed-item-list button.btn-action.action-unpin{
+        
+    transform: rotate(-45deg);
+        
+}
+
+
+
 .feed-item-list button.btn-action.action-archive,
 .feed-item-list button.btn-action.action-unarchive{
     top: 46px;
