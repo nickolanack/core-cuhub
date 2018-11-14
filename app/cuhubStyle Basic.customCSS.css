@@ -1581,3 +1581,20 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-new label {
     display:block;
     margin-bottom:10px;
 }
+
+
+.added-pin, .removed-pin {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: limegreen;
+    border-radius: 100%;
+    left: -35px;
+    transition: top linear 0.5s, opacity linear 0.5s;
+    opacity: 1;
+    top: 10px;
+}
+
+.removed-pin {
+      background: gray;
+}
