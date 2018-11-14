@@ -1034,6 +1034,22 @@ span.event-date-from-now {
     color: #b03b3c;
 }
 
+
+
+.btn-action {
+    border: none;
+    border-radius: 100%;
+    margin: 2px;
+    background-color: #00d8ff;
+    height: 20px;
+    width: 20px;
+  
+    background-size: 60% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
 .ui-view.myprofile-feed-item .btn-action{
     position:relative;
     right: 85px;
