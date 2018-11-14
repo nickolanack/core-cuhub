@@ -1615,3 +1615,12 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-new label {
 .added-pin:after, .removed-pin:after {
     content: attr(data-label);
 }
+
+.pinned-label:before {
+    content: attr(data-count-pins);
+    color: white;
+    position: absolute;
+    left: 11px;
+    width: 30px;
+    text-align: center;
+}
