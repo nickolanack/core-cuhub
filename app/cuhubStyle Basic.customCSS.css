@@ -1598,3 +1598,20 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-new label {
 .removed-pin {
       background: gray;
 }
+
+.added-pin:after, .removed-pin:after {
+    content: "Pinned an item";
+    color: limegreen;
+    position: relative;
+    left: 35px;
+    white-space: nowrap;
+}
+
+.removed-pin:after {
+     content: "Unpinned an item";
+     color: gray;
+}
+
+.added-pin:after, .removed-pin:after {
+    content: attr(data-label);
+}
