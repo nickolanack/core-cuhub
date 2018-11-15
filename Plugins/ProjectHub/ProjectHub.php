@@ -525,7 +525,7 @@ class ProjectHub extends \Plugin implements
 
 	private function _getPinsForRecord($record){
 
-		$result=array('pinned'=>false);
+		//$result=array('pinned'=>false);
 
 		$pins=$this->getDatabase()->getWatchs(array(
 			"uid"=>GetClient()->getUserId(),
@@ -534,12 +534,12 @@ class ProjectHub extends \Plugin implements
 			"watchType"=>"pin"
 		));
 		if($pins){
-			$result["pinned"]=true;
+			//$result["pinned"]=true;
 		}
 
-		$result['pinnedby']=array_map(function($u){
+		$result['pinnedby']=array_map(function($watcher){
 
-			return $u->id;
+			return $watcher->id;
 			
 
 		}, $this->getDatabase()->getWatchs(array(
