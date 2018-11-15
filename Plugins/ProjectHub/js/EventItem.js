@@ -420,7 +420,7 @@ var EventItem = new Class({
 	},
 	isPinned: function() {
 		var me = this;
-		return !!(me.config && me.config.pinned);
+		return !!(me.config && me.config.pinnedby &&  me.config.pinnedby.indexOf(AppClient.getId()+"")>=0);
 	},
 	isArchived: function() {
 		var me = this;
@@ -892,86 +892,96 @@ EventItem.CreateFeedItemButtons=function(item, application, labels){
 // 	        ?>
 EventItem.CreateConnectionButton = function(item, application, defaultLabel) {
 
-	if (!item.canCreateConnectionFrom(EventList.SharedInstance().getClientProfile())) {
-		return null;
-	}
 
-	var hasConnection=item.hasConnectionFrom(EventList.SharedInstance().getClientProfile());
-	
+	var fn=function(){
 
-	var form='connectionForm';
-	var className="action-connection";
-	var name = "Connected with "+item.getTypeName();
+		if (!item.canCreateConnectionFrom(EventList.SharedInstance().getClientProfile())) {
+			return null;
+		}
 
-	var label = defaultLabel.replace('{type}', item.getTypeName());
-	if (item instanceof ProfileItem) {
-		label = hasConnection?"You Are Connected ":"Connect With " + item.getName();
-		form='connectWithUserForm';
-		className="action-profile";
-
-	}
-
-	if (item instanceof ProjectItem) {
-		label = hasConnection?"You are Following ":"Follow " + item.getName();
-		className="action-project";
-		name = "Following "+item.getTypeName();
-	}
-
-	if (item.getType() == "ProjectHub.event") {
-		label = hasConnection?"You are Volunteering":"Volunteer for this event";
-		className="action-event";
-		form='connectWithEventForm';
-		name = "Volunteering for "+item.getTypeName();
-	}
-
-
-
-
-
-	if (AppClient.getUserType() == "guest") {
+		var hasConnection=item.hasConnectionFrom(EventList.SharedInstance().getClientProfile());
 		
-		return (new ModalFormButtonModule(application, AppClient, {
-			"label": label,
-			"formName": "loginForm",
-			"formOptions": {
-				"template": "form",
-			},
-			"className": className+" action-user action-for-"+item.getTypeName()
-		}));
 
-		return;
-	}
+		var form='connectionForm';
+		var className="action-connection";
+		var name = "Connected with "+item.getTypeName();
+
+		var label = defaultLabel.replace('{type}', item.getTypeName());
+		if (item instanceof ProfileItem) {
+			label = hasConnection?"You Are Connected ":"Connect With " + item.getName();
+			form='connectWithUserForm';
+			className="action-profile";
+
+		}
+
+		if (item instanceof ProjectItem) {
+			label = hasConnection?"You are Following ":"Follow " + item.getName();
+			className="action-project";
+			name = "Following "+item.getTypeName();
+		}
+
+		if (item.getType() == "ProjectHub.event") {
+			label = hasConnection?"You are Volunteering":"Volunteer for this event";
+			className="action-event";
+			form='connectWithEventForm';
+			name = "Volunteering for "+item.getTypeName();
+		}
 
 
 
-	if(hasConnection){
-		return new ElementModule('button', {
-			"class":className+" form-btn disabled action-user action-for-"+item.getTypeName(),
-			"html":label
-		});
-	}
 
 
-	return (new ModalFormButtonModule(application,
-		new ConnectionItem({
-			"item": EventList.SharedInstance().getClientProfile(),
-			"itemB": item,
-			"name":name
-		}).addEvent("save", function() {
-			var item = this;
-			EventList.SharedInstance(function(el) {
-				el.addItem(item);
+		if (AppClient.getUserType() == "guest") {
+			
+			return (new ModalFormButtonModule(application, AppClient, {
+				"label": label,
+				"formName": "loginForm",
+				"formOptions": {
+					"template": "form",
+				},
+				"className": className+" action-user action-for-"+item.getTypeName()
+			}));
+
+		}
+
+
+
+		if(hasConnection){
+			return new ElementModule('button', {
+				"class":className+" form-btn disabled action-user action-for-"+item.getTypeName(),
+				"html":label
 			});
-		}), {
-			"label": label,
-			"formName": form,
-			"formOptions": {
-				"template": "form",
-				"className": "connection-form "+(item.getTypeName().toLowerCase())+"-form"
-			},
-			"className": className+" action-user action-for-"+item.getTypeName()
-		}));
+		}
 
+
+		return (new ModalFormButtonModule(application,
+			new ConnectionItem({
+				"item": EventList.SharedInstance().getClientProfile(),
+				"itemB": item,
+				"name":name
+			}).addEvent("save", function() {
+				var item = this;
+				EventList.SharedInstance(function(el) {
+					el.addItem(item);
+					connections.redraw();
+				});
+			}), {
+				"label": label,
+				"formName": form,
+				"formOptions": {
+					"template": "form",
+					"className": "connection-form "+(item.getTypeName().toLowerCase())+"-form"
+				},
+				"className": className+" action-user action-for-"+item.getTypeName()
+			}
+		));
+
+
+	};
+
+
+	var connections =new ModuleArray([fn]);	
+	return connections;
 
 };
 
@@ -1129,11 +1139,11 @@ EventItem.CreateActionButtons = function(item, application) {
 
 	}
 
-	return item.getActions().map(function(action) {
+	var fn=function(){ return new ModuleArray(item.getActions().map(function(action) {
 
 
 
-		return new Element('button', {
+		return new ElementModule('button', {
 			"class": "btn-action action-" + action + (action == "delete-disabled" ? " action-delete" : ""),
 			title: action,
 			events: {
@@ -1152,9 +1162,14 @@ EventItem.CreateActionButtons = function(item, application) {
 							return;
 						}
 
-
-
-						item[action]();
+						actions.addWeakEvent(item, action+":once",function(){
+							actions.redraw();
+						});
+				
+						item[action](function(){
+							
+						});
+						
 						return;
 					}
 
@@ -1217,7 +1232,14 @@ EventItem.CreateActionButtons = function(item, application) {
 				}
 			}
 		});
-	});
+	}))};
+
+	
+	var actions=new ModuleArray([fn]);
+
+	var container=new Element('span');
+	actions.load(null, container, null);
+	return [container];
 
 };
 
@@ -1412,13 +1434,42 @@ EventItem.CreateAuthorLabel = function(owner, application) {
 
 EventItem.FormatItemLabel = function(item, el, valueEl, application) {
 
-	el.addClass('feed-item-label')
+	el.addClass('feed-item-label');
+
+
+	if (item instanceof ConnectionItem) {
+
+		if (item.isConnected()) {
+			var connectedTo = item.getConnectionTo();
+			valueEl.appendChild(new Element('span', {
+				"class": "item-connection-to",
+				html: " " + connectedTo.getName()
+			}));
+
+
+			item=connectedTo;
+
+		} else {
+			valueEl.appendChild(new Element('span', {
+				"class": "item-connection-to",
+				html: " {not connected}"
+			}));
+		}
+
+
+
+
+	}
 
 
 
 	if (item instanceof MyProfileItem && AppClient.getUserType() == "guest") {
 		return;
 	}
+
+
+
+
 
 	if (item.getType() === "ProjectHub.event") {
 
@@ -1433,23 +1484,9 @@ EventItem.FormatItemLabel = function(item, el, valueEl, application) {
 
 	}
 
-	if (item instanceof ConnectionItem) {
 
-		if (item.isConnected()) {
-			var connectedTo = item.getConnectionTo();
-			valueEl.appendChild(new Element('span', {
-				"class": "item-connection-to",
-				html: " " + connectedTo.getName()
-			}));
 
-		} else {
-			valueEl.appendChild(new Element('span', {
-				"class": "item-connection-to",
-				html: " {not connected}"
-			}));
-		}
-
-	}
+	
 
 
 
@@ -1463,8 +1500,6 @@ EventItem.FormatItemLabel = function(item, el, valueEl, application) {
 		
 	
 	}
-
-
 
 
 

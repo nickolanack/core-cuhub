@@ -66,6 +66,26 @@ class ProjectHub extends \Plugin implements
 		}, json_decode(file_get_contents(__DIR__ . '/samplePinned.json'), true));
 	}
 
+	private function triggerAjaxCacheRefresh(){
+		Emit('onTriggerAjaxCacheRefresh', array());
+	}
+
+	protected function onTriggerAjaxCacheRefresh(){
+
+		$this->analyze('async.cache.feeditem.list', function () {
+
+			$response=$this->listFeedItemsAjax();
+			HtmlDocument()->setCachedPage('feeditems.ajax.json', json_encode($response['results']));
+
+			
+		});
+
+	
+		Emit('onAsyncAjaxCacheRefresh', array(
+			'profileData'=>$this->getLastAnalysis()
+		));
+
+	}
 
 	public function listFeedItemsAjaxCache(){
 
@@ -89,7 +109,9 @@ class ProjectHub extends \Plugin implements
 	            );
 	        }
 
-	         return $response;
+	        $this->triggerAjaxCacheRefresh();
+
+	        return $response;
 
 		}
 
@@ -233,6 +255,8 @@ class ProjectHub extends \Plugin implements
 
 	
 
+
+
 		$client=GetClient();
 		$userid=$client->getUserId();
 		if($client->isGuest()){
@@ -246,6 +270,9 @@ class ProjectHub extends \Plugin implements
 		}
 
 		if(!$profile){
+
+			$automaticallyPublish=true;
+
 			$profileId=$this->getDatabase()->createProfile($fields=array(
 
 	            'itemType'=>"user",
@@ -259,7 +286,7 @@ class ProjectHub extends \Plugin implements
 	            'modifiedDate'=>$now,
 	            "readAccess"=>"public",
 	            "writeAccess"=>"registered",
-	            "published"=>false,
+	            "published"=>$automaticallyPublish,
 	            'publishedDate'=>$now,
 
 	        ));
@@ -510,11 +537,16 @@ class ProjectHub extends \Plugin implements
 			$result["pinned"]=true;
 		}
 
-		$result['numberofpins']=$this->getDatabase()->countWatchs(array(
+		$result['pinnedby']=array_map(function($u){
+
+			return $u->id;
+			
+
+		}, $this->getDatabase()->getWatchs(array(
 			"itemType"=>$record["type"],
 			"itemId"=>$record['id'],
 			"watchType"=>"pin"
-		));
+		)));
 
 
 		return $result;

@@ -253,7 +253,7 @@ var EventList = (function() {
 				throw 'Event feed not loaded yet';
 			}
 			return this._events.filter(function(e) {
-				return (!e.isPinned()) && (!e.isArchived());
+				return (!e.isArchived());
 			});
 		},
 		getPinnedEvents: function() {
@@ -431,11 +431,58 @@ EventList.FormatFieldLabel = function(el, application, view) {
 				return;
 					
 			}
-
+			
 		}
 
 		application.getNamedValue('navigationController').navigateTo(view, "Main");
 	});
+
+
+	if(view=="Pinned"){
+
+
+		EventList.SharedInstance(function(elist){
+			el.setAttribute('data-count-pins', elist.getPinnedEvents().length);
+		});
+
+		
+
+		new WeakEvent(el, EventList.SharedInstance(), 'pinnedItem', function(feedItem){
+			var item=el.appendChild(new Element('div',{"class":"added-pin"}));
+
+			item.setAttribute('data-label',"Pinned "+feedItem.getName());
+			el.setAttribute('data-count-pins', EventList.SharedInstance().getPinnedEvents().length);
+			setTimeout(function(){
+				item.setStyles({
+					"top":-100,
+					"opacity":0
+				})
+			}, 50);
+			
+			setTimeout(function(){
+				el.removeChild(item);
+			}, 2000);
+		});
+
+		new WeakEvent(el, EventList.SharedInstance(), 'unpinnedItem', function(feedItem){
+			var item=el.appendChild(new Element('div',{"class":"removed-pin"}));
+
+			item.setAttribute('data-label',"Unpinned "+feedItem.getName());
+			el.setAttribute('data-count-pins', EventList.SharedInstance().getPinnedEvents().length);
+
+			setTimeout(function(){
+				item.setStyles({
+					"top":-100,
+					"opacity":0
+				})
+			}, 50);
+			setTimeout(function(){
+				el.removeChild(item);
+			}, 2000);
+		});
+
+	}
+
 
 }
 
@@ -447,17 +494,17 @@ EventList._AddWeakListRemoveEvents = function(childView, child, eventsList) {
 		});
 	});
 
-	childView.addWeakEvent(child, "archive", function() {
-		childView.remove();
-	});
+	// childView.addWeakEvent(child, "archive", function() {
+	// 	childView.remove();
+	// });
 
-	childView.addWeakEvent(child, "unpin", function() {
-		childView.remove();
-	});
+	// childView.addWeakEvent(child, "unpin", function() {
+	// 	childView.remove();
+	// });
 
-	childView.addWeakEvent(child, "remove", function() {
-		childView.remove();
-	});
+	// childView.addWeakEvent(child, "remove", function() {
+	// 	childView.remove();
+	// });
 
 }
 EventList._AddWeakListActivationEvents = function(childView, child) {

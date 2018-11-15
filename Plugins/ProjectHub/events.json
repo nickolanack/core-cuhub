@@ -1,5 +1,6 @@
 [
 	"onPost",
 	"onCreateUser",
-	"onVerifyDirectMessage"
+	"onVerifyDirectMessage",
+	"onTriggerAjaxCacheRefresh"
 ]
