@@ -1,8 +1,6 @@
 GetWidget('cuhubStyle')->display($targetInstance);
 GetWidget('calendarStyle')->display($targetInstance);
-if(UrlVar('tpl',false)){
-    GetWidget('cuhubDebugStyle')->display($targetInstance);
-}
+
 
 GetWidget('stickyRightPanelStyle')->display($targetInstance);
 
