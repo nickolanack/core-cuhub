@@ -11,20 +11,19 @@ GetWidget('emptyListView')->display($targetInstance);
 GetWidget('emptyPinnedListView')->display($targetInstance);
 GetWidget('cuhubGeneratedStyle')->display($targetInstance);
 
-
-GetWidget('guestExpandedDetail')->display($targetInstance);
-GetWidget('profileExpandedDetail')->display($targetInstance);
-
-GetWidget('loginForm')->display($targetInstance);
-GetWidget('forgotPasswordForm')->display($targetInstance);
-
-GetWidget('eventForm')->display($targetInstance);
-GetWidget('projectForm')->display($targetInstance);
-
-GetWidget('connectionForm')->display($targetInstance);
-GetWidget('connectWithUserForm')->display($targetInstance);
-GetWidget('connectWithEventForm')->display($targetInstance);
-
+(new core\WidgetLoader())->displayWidgets(array(
+    
+    'guestExpandedDetail',
+    'profileExpandedDetail',
+    'loginForm',
+    'forgotPasswordForm',
+    'eventForm',
+    'projectForm',
+    'connectionForm',
+    'connectWithUserForm',
+    'connectWithEventForm'
+    
+), $targetInstance);
 
 
 
