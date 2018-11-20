@@ -76,7 +76,7 @@
         "parameters": {
             "JSFileObfuscationEnabled": false,
             "JSInlineObfuscationEnabled": false,
-            "CSSFileObfuscationEnabled": true,
+            "CSSFileObfuscationEnabled": false,
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": true,
@@ -84,7 +84,7 @@
             "ExternalizeWidgetScripts": true,
             "PrettyPrintJson": true,
             "showFrontEndEditButtons": false,
-            "JSCacheObfuscationEnabled": true,
+            "JSCacheObfuscationEnabled": false,
             "phase": "production",
             "ForceHTTPS": false,
             "allowProxiesFrom": [
