@@ -81,7 +81,7 @@
             "PHPDebugEnabled": true,
             "JSDebugEnabled": true,
             "CachingEnabled": true,
-            "ExternalizeWidgetScripts": false,
+            "ExternalizeWidgetScripts": true,
             "PrettyPrintJson": true,
             "showFrontEndEditButtons": false,
             "JSCacheObfuscationEnabled": false,
