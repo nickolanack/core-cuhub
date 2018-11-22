@@ -71,6 +71,14 @@
     color: white;
     padding: 10px;
     cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    border-radius: 2px;
+    height: 50px;
+    box-sizing: border-box;
+}
+.section-item-icon.pinned-label:hover, .section-item-icon.calendar-label:hover {
+    
 }
 
 .banner-image .section-item-icon:after {
