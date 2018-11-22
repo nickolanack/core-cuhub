@@ -1697,3 +1697,30 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-new label {
     width: 30px;
     text-align: center;
 }
+
+
+
+
+.right-detail .tag-cloud span.tag-el.active {
+    background-color: white;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+.right-detail .tag-cloud span.tag-el.active:after {
+    content: "+";
+    float: left;
+    transform: rotate(45deg);
+    position: relative;
+    top: -28px;
+    left: -25px;
+    display: inline-block;
+    width: 10px;
+    font-size: 18px;
+    color: slategray;
+}
+
+
+
+
+
+/*end*/
