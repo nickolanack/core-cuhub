@@ -37,6 +37,27 @@ div.tip-title, .bubble>.title{
     border-right:10px solid #252525; 
 }
 
+
+.popover.onblack>.tip, .bubble{
+    background-color:white;
+    color:black;
+    text-shadow:none;
+    box-shadow:0 0 3px rgba(0,0,0,0.5)
+}
+
+.popover.onblack.arrow_top .tip:before {
+    border-bottom: 10px solid white;
+}
+.popover.onblack.arrow_bottom .tip:before {
+    border-top: 10px solid white;
+}
+.popover.onblack.arrow_right .tip:before {
+    border-left: 10px solid white;
+}
+.popover.onblack.arrow_left .tip:before {
+    border-right:10px solid white; 
+}
+
 .intro-text{
     text-align: center;
     
