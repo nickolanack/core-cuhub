@@ -1082,6 +1082,7 @@ span.event-date-from-now {
 
 .your-profile-label {
     overflow: visible;
+    cursor: pointer;
 }
 .your-profile-label .item-author{
     
@@ -1089,7 +1090,7 @@ span.event-date-from-now {
     left: 0px;
     top: 18px;
 }
-.your-profile-label .item-author:hover{
+.your-profile-label .item-author:hover, .your-profile-label:hover .item-author{
     color: #00d400;
 }
 .your-profile-label .item-author:before{
