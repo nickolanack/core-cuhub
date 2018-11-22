@@ -1065,6 +1065,10 @@ span.event-date-from-now,
     font-size: 13px;
 }
 
+.intro-text span.item-author {
+    font-size: inherit;
+}
+
 .ui-post-view .date-from-now,
 .ui-post-view .post-author{
     text-align: right;
