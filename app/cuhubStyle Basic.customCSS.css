@@ -13,6 +13,30 @@ body {
      
 }
 
+
+.popover>.tip, .bubble{
+    background-color:#252525;
+    
+}
+
+div.tip-title, .bubble>.title{
+    font-size:16px;
+    text-align:left;
+}
+
+.popover.arrow_top .tip:before {
+    border-bottom: 10px solid #252525;
+}
+.popover.arrow_bottom .tip:before {
+    border-top: 10px solid #252525;
+}
+.popover.arrow_right .tip:before {
+    border-left: 10px solid #252525;
+}
+.popover.arrow_left .tip:before {
+    border-right:10px solid #252525; 
+}
+
 .intro-text{
     text-align: center;
     
