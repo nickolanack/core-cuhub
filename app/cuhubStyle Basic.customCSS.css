@@ -1704,6 +1704,7 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-new label {
 .right-detail .tag-cloud span.tag-el.active {
     background-color: white;
     box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    color:black;
 }
 
 .right-detail .tag-cloud span.tag-el.active:after {
@@ -1726,6 +1727,7 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-new label {
 
     border: 1px solid rgba(0,0,0,0.3);
     box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    color:white;
 }
 
 
