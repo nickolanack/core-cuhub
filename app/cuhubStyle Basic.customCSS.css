@@ -625,6 +625,21 @@ active.expandable.feed-item:hover {
     left: 150px;
 }
 
+
+.ui-view.user-detail.top-right button.btn-action.action-login {
+    display: inline-block;
+    width: 187px;
+    background: #00d400;
+    border-radius: 2px;
+    color: black;
+    top: 0px;
+    left: 90px;
+    border: 1px solid rgba(255,255,255,0.4);
+    height: 50px;
+    z-index: 2;
+    font-size: 16px;
+}
+
 .ui-view.user-detail.top-right .ui-view.feed-item-expanded-detail {
     display: none;
 }
