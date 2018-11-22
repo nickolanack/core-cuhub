@@ -1718,6 +1718,16 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-new label {
     font-size: 18px;
     color: slategray;
 }
+.right-detail .tag-cloud span.tag-el{
+    border: 1px solid transparent;
+    border-radius:2px
+}
+.right-detail .tag-cloud span.tag-el:hover {
+
+    border: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
 
 
 
