@@ -6,9 +6,9 @@ mod.appendChild(p)
 
 application.getNamedValue('navigationController',function(nav){
     nav.addEvent('navigate', function(state){
-        p.innerHTML=EventList.PageDescription(state);
+       EventList.SetPageDescription(p, state);
     });
-    p.innerHTML=EventList.PageDescription(nav.getCurrentView());
+    EventList.SetPageDescription(p, nav.getCurrentView());
 });
 
 return mod;
