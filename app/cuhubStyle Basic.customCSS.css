@@ -628,8 +628,9 @@ active.expandable.feed-item:hover {
 }
 
 .ui-view.user-detail.top-right button.btn-action {
-    right: 130px;
-    color:white;
+    color: white;
+    position: absolute;
+    left: 84px;
 }
 
 .ui-view.user-detail.top-right .ui-view.feed-item-expanded-detail {
@@ -1104,29 +1105,24 @@ span.event-date-from-now {
 
 
 .ui-view.myprofile-feed-item .btn-action{
-    position:relative;
-    right: 85px;
+    background:none;
 }
 .ui-view.myprofile-feed-item .btn-action.action-edit:after {
     content: "Edit Your Profile";
-    position: absolute;
+
     white-space: nowrap;
-    top: 2px;
-    left: 25px;
+
 }
 .ui-view.myprofile-feed-item .btn-action.action-logout:after {
     content: "Log Out";
-    position: absolute;
     white-space: nowrap;
-    top: 2px;
-    right: 25px;
+
 }
 .ui-view.myprofile-feed-item .btn-action.action-login:after {
     content: "Log In";
-    position: absolute;
+
     white-space: nowrap;
-    top: 2px;
-    right: 25px;
+
 }
 
 
