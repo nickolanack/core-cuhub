@@ -629,7 +629,7 @@ active.expandable.feed-item:hover {
 .ui-view.user-detail.top-right button.btn-action.action-login {
     display: inline-block;
     width: 187px;
-    background: #00d400;
+    background: rgba(100, 149, 237,1);
     border-radius: 2px;
     color: black;
     top: 0px;
