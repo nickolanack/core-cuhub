@@ -77,8 +77,9 @@
     height: 50px;
     box-sizing: border-box;
 }
-.section-item-icon.pinned-label:hover, .section-item-icon.calendar-label:hover {
-    
+.section-item-icon.pinned-label:hover, .section-item-icon.calendar-label:hover{
+        right: 10px;
+        transition:right linear .1s;
 }
 
 .banner-image .section-item-icon:after {
