@@ -621,6 +621,9 @@ active.expandable.feed-item:hover {
     position: absolute;
     left: 84px;
 }
+.ui-view.user-detail.top-right button.btn-action.action-edit {
+    left: 150px;
+}
 
 .ui-view.user-detail.top-right .ui-view.feed-item-expanded-detail {
     display: none;
