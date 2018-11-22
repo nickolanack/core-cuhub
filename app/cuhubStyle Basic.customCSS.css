@@ -603,17 +603,6 @@ active.expandable.feed-item:hover {
     color:white;
 }
 
-.ui-view.myprofile-feed-item .btn-action.action-logout:before, .ui-view.myprofile-feed-item .btn-action.action-edit:before, .ui-view.myprofile-feed-item .btn-action.action-login:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    background-color: white;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
 
 
 
