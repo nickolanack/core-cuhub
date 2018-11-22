@@ -1080,6 +1080,23 @@ span.event-date-from-now {
 }
 
 
+.your-profile-label {
+    overflow: visible;
+}
+.your-profile-label .item-author{
+    
+    position: absolute;
+    left: 0px;
+    top: 18px;
+}
+.your-profile-label .item-author:hover{
+    color: #00d400;
+}
+.your-profile-label .item-author:before{
+    content:"go to"
+}
+
+
 
 .btn-action {
     border: none;
