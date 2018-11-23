@@ -1707,7 +1707,7 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-new label {
     
 }
 
-.right-detail .tag-cloud span.tag-el.active:after {
+.right-detail .tag-cloud span.tag-el.active:after, .intro-text .btn-tag:after {
     content: "+";
     float: left;
     transform: rotate(45deg);
@@ -1719,6 +1719,16 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-new label {
     font-size: 18px;
     color: slategray;
 }
+
+.intro-text .btn-tag:after {
+    float: left;
+    position: relative;
+    top: -3px;
+    height: 10px;
+    width: 10px;
+    left: 0;
+}
+
 .right-detail .tag-cloud span.tag-el{
     border: 1px solid transparent;
     border-radius:2px
