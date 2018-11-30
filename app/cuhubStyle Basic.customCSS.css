@@ -705,7 +705,7 @@ active.expandable.feed-item:hover {
     display: inline-block;
 }
 
-.btn-tag, .form-btn, .WizardButton, .t-btn, .uilist-pageination button{
+.btn-tag, .form-btn, .WizardButton, .t-btn, .uilist-pageination button, .tutorial-content a.btn{
     border: 1px solid rgba(0,0,0,0.3);
     border-radius: 2px;
     margin: 2px;
@@ -713,6 +713,16 @@ active.expandable.feed-item:hover {
     text-transform: capitalize;
     padding: 2px 7px;
     cursor:pointer;
+}
+
+.tutorial-content a.btn {
+    background-color: white;
+    color: black;
+    margin-right: 5px;
+    border-color: white;
+    margin-top: 13px;
+    display: inline-block;
+    text-shadow: none;
 }
 
 .uilist-pageination button {
