@@ -52,11 +52,18 @@ var EventList = (function() {
 			var me = this;
 			var listHandler = function(resp) {
 
-				me._events = resp.results.map(function(data) {
+				me._events=[]
+
+				resp.results.forEach(function(data) {
 
 					var item = me._instantiateItem(data);
+
+					if(me.hasItem(item)){
+						throw 'Already contains item';
+					}
+
 					me._addItemEvents(item);
-					return item;
+					me._events.push(item);
 				});
 
 				me._isLoaded = true;
@@ -309,17 +316,9 @@ var EventList = (function() {
 		},
 		getActiveItems: function() {
 			var me = this;
-			var items = me.getEvents().filter(function(e) {
+			var items = me.getAllEvents().filter(function(e) {
 				return e.isActive();
-			}).concat(
-				me.getPinnedEvents().filter(function(e) {
-					return e.isActive();
-				})
-			).concat(
-				me.getArchivedEvents().filter(function(e) {
-					return e.isActive();
-				})
-			)
+			})
 
 			return items;
 
@@ -387,12 +386,50 @@ EventList.SetInitialFilter = function(application) {
 EventList.FormatTagCloudModule=function(module, application){
 
 
+	var cloud=module.getCloud();
+	var popoverMap={};
+
+	var selection=[];
+	var singleSelection=true;
+
+
 	module.addEvent('selectWord',function(tag){
-	    
-	    application.setNamedValue('tagFilter',{tags:[tag]});
-		application.getNamedValue('navigationController').navigateTo("Tags", "Main");
-	    
-	    
+
+		var i=selection.indexOf(tag);
+		if(i>=0){
+
+			selection.splice(i,1);
+			cloud.getWordElement(tag).removeClass('active');
+			popoverMap[tag].setTitle("click to show all items tagged with: `"+tag+"`");
+
+		}else{
+
+
+			if(singleSelection){
+				selection.forEach(function(word){
+					cloud.getWordElement(word).removeClass('active');
+					popoverMap[word].setTitle("click to show all items tagged with: `"+word+"`");
+				});
+				selection=[];
+			}
+
+			selection.push(tag);
+			cloud.getWordElement(tag).addClass('active');
+			popoverMap[tag].setTitle("click to remove tag filter: `"+tag+"`");
+
+		}
+
+		application.setNamedValue('tagFilter', {tags:selection});
+
+		if(selection.length){
+			application.getNamedValue('navigationController').navigateTo("Tags", "Main");
+			return;
+		}
+
+		application.getNamedValue('navigationController').navigateTo("FeedItems", "Main");
+	   
+	   
+		
 	});
 
 	module.addEvent('addWord',function(tag, el){
@@ -404,9 +441,13 @@ EventList.FormatTagCloudModule=function(module, application){
 	    var current=application.getNamedValue('tagFilter');
 		
 		if(current&&current.tags&&current.tags.indexOf(tag)>=0){
-		     el.addClass('active');
+			selection.push(tag);
+		    el.addClass('active');
 		}
-	    
+
+		popoverMap[tag]=new UIPopover(el, {title:"click to show all items tagged with: `"+tag+"`", anchor:UIPopover.AnchorAuto()});
+	
+
 	})
 };
 
@@ -445,7 +486,7 @@ EventList.FormatFieldLabel = function(el, application, view) {
 			el.setAttribute('data-count-pins', elist.getPinnedEvents().length);
 		});
 
-		
+		new UIPopover(el, {title:"click this to view all the items you've pinned", anchor:UIPopover.AnchorAuto()});
 
 		new WeakEvent(el, EventList.SharedInstance(), 'pinnedItem', function(feedItem){
 			var item=el.appendChild(new Element('div',{"class":"added-pin"}));
@@ -481,6 +522,13 @@ EventList.FormatFieldLabel = function(el, application, view) {
 			}, 2000);
 		});
 
+
+
+
+	}
+
+	if(view=="Calendar"){
+		new UIPopover(el, {title:"click this to view items in a calender", anchor:UIPopover.AnchorAuto(), margin:20});
 	}
 
 
@@ -524,8 +572,20 @@ EventList._AddWeakListActivationEvents = function(childView, child) {
 }
 
 EventList._AddExpandable = function(childView, child) {
+
+	childView.getElement().addClass('expandable');
+
+	new UIPopover(childView.getElement(), {title:"click to view `"+child.getName()+"`", anchor:UIPopover.AnchorAuto()});
+
+	EventList._AddAttributes(childView, child);
+
+}
+
+EventList._AddActiveItem = function(childView, child) {
+
 	childView.getElement().addClass('expandable');
 	EventList._AddAttributes(childView, child);
+
 }
 
 EventList._AddClassNames = function(childView, child) {
@@ -595,7 +655,7 @@ EventList.FormatActiveItemFeedListChildModule = function(childView, child) {
 
 	EventList._AddClassNames(childView, child);
 	EventList._AddWeakListActivationEvents(childView, child);
-	EventList._AddExpandable(childView, child);
+	EventList._AddActiveItem(childView, child);
 
 	if (!child.isActive()) {
 
@@ -656,6 +716,7 @@ EventList.CreateTopNavigation=function(application){
         {
           "html":"All Events",
           "name":"Events",
+          "hover":"browse all events for all projects and members",
           "events":{
               "click":function(){
                   application.getNamedValue('navigationController').navigateTo("Events", "Main");
@@ -665,7 +726,8 @@ EventList.CreateTopNavigation=function(application){
         },
         {
           html:"All Projects",
-            name:"Projects",
+          name:"Projects",
+          "hover":"browse all project from all members",
           "events":{
               "click":function(){
                   application.getNamedValue('navigationController').navigateTo("Projects", "Main");
@@ -676,9 +738,111 @@ EventList.CreateTopNavigation=function(application){
         {
           html:"All Profiles",
            name:"Profiles",
+           "hover":"browse all members",
           "events":{
               "click":function(){
                   application.getNamedValue('navigationController').navigateTo("Profiles", "Main");
+              }
+          },
+          tagName:'span'
+        },
+        {
+          html:"Help",
+           name:"Help",
+           "hover":"Take a tour of the site",
+          "events":{
+              "click":function(){
+
+
+              		var elements=[
+                  		'.site-logo',
+                  		'.header-menu',
+                  		'.ui-view.user-detail.top-right',
+                  		'.template-content>.intro-text',
+
+                  		'.primary-navigation', 
+                  		'.create-buttons>li',
+
+                  		'.field-value-module.section-item-icon.pinned-label',
+                  		'.field-value-module.section-item-icon.calendar-label',
+                  		'.ui-view.tag-cloud-filter',
+
+                  		'.ui-view.main-content-detail'
+
+                  		];
+
+
+                 	 new UITutorial().addEvent('start',function(){
+
+
+                  	(elements).forEach(function(selector){
+
+                  		$$(selector).forEach(function(el){
+                  			el.setStyles({
+		                  		filter:"grayscale(90%) blur(0.5px)",
+		                  		"pointer-events":"none",
+		                  		"opacity":0.7
+	                  		});
+	                  	});
+                  	})
+
+                  	var main=$$('.ui-view.root-container')[0];
+                  	main.setStyles({"overflow":"hidden"});
+                  	main.scrollTo(0, 0);
+                  	
+
+                  }).addEvent('end',function(){
+
+                  	(elements).forEach(function(selector){
+
+                  		$$(selector).forEach(function(el){
+                  			el.setStyles({
+		                  		filter:null,
+		                  		"pointer-events":null,
+		                  		"opacity":null
+	                  		});
+	                  	});
+                  	})
+
+                  	$$('.ui-view.root-container')[0].setStyles({"overflow":null});
+
+                  }).addEvent('show',function(el){
+
+                  	el.setStyles({
+                  		filter:null,
+                  		//"pointer-events":null,
+                  		"opacity":null
+              		});
+
+
+                  }).addEvent('hide',function(el){
+
+                  	el.setStyles({
+                  		filter:"grayscale(90%) blur(0.5px)",
+                  		"pointer-events":"none",
+                  		"opacity":0.7
+              		});
+                  	
+
+                  }).addTutorialStep(
+                  		'.template-content>.intro-text', 
+                  		'This area contains a short description of the current page and the content that is displayed', 
+                  	{}).addTutorialStep(
+                  		'.field-value-module.section-item-icon.pinned-label',	
+                  		'This is your pins link and takes you to the page containing all the items you have pinned.', 
+                  	{}).addTutorialStep(
+                  		'.field-value-module.section-item-icon.calendar-label',
+                  		'This is the calender link it displays a calendar of all your recent activity', 
+                  	{}).addTutorialStep(
+                  		'.ui-view.tag-cloud-filter',
+                  		'These are quick filters to help you find projects and events', 
+                  	{}).addTutorialStep(
+                  		'.primary-navigation',
+                  		'These buttons link to all the people you are following and all the projects and events that you have created or engaged with', 
+                  	{}).addTutorialStep(
+                  		'.create-buttons>li',
+                  		'You can create your own projects and events', 
+                  	{}).start();
               }
           },
           tagName:'span'
@@ -686,7 +850,16 @@ EventList.CreateTopNavigation=function(application){
       ]   
         
     },{
-        manipulateHistory:false
+        manipulateHistory:false,
+        formatEl: function(li, button) {
+			
+			if(button && button.hover){
+
+				new UIPopover(li, {title:button.hover, anchor:UIPopover.AnchorTo(['bottom']), className: 'popover tip-wrap hoverable onblack'});
+
+			}
+
+		}
     });
 
 	return navigationController;
@@ -705,6 +878,97 @@ EventList.CreateTopNavigation=function(application){
 	// events.forEach(addView);
 
 	// return ul;
+}
+
+
+EventList.CreateCreationNavigation=function(application){
+
+
+	var navigationController=new NavigationMenuModule({
+      "Main":[
+        {
+				"html": "Create",
+				"name": "Create",
+				"class": "menu-main-feeditems create-new",
+				"namedView": "bottomDetail",
+				"labelContent": "Create",
+				"hover":"click to create new projects and events",
+				events:{
+					click:function(){
+
+
+						if (AppClient.getUserType() == "guest") {
+							var wizard = application.getDisplayController().displayPopoverForm(
+								"loginForm",
+								AppClient,
+								{
+									"template": "form"
+								}
+							);
+							return;
+						}
+
+
+						var item=EventList.SharedInstance().getClientProfile();
+						if(!item.isPublished()){
+			
+							var formName = item.getType().split('.').pop() + "Form";
+
+							var wizard = application.getDisplayController().displayPopoverForm(
+								formName,
+								item,
+								{
+									"template": "form",
+									"className": item.getType().split('.').pop() + "-form"
+								}
+							);
+							
+							return;
+						}
+
+						var formName = "createItemsMenuForm";
+
+						var wizard = application.getDisplayController().displayPopoverForm(
+							formName,
+							item,
+							{
+								"template": "form"
+							}
+						);
+
+
+					}
+				}
+			}
+		]
+        
+    },{
+        manipulateHistory:false,
+        sectionClass: function(section) { 
+			return "menu-" + section.toLowerCase() + ' no-vert-pad create-buttons'
+		},
+        buttonClass: function(button, section) {
+			return button["class"] || ("menu-" + section.toLowerCase() + "-" + (button.name||button.html).toLowerCase())
+		},
+        formatEl: function(li, button) {
+
+        	if (button && button.labelContent) {
+				li.appendChild(new Element('label', {
+					html: button.labelContent
+				}));
+			}
+			
+			if(button && button.hover){
+
+				new UIPopover(li, {title:button.hover, anchor:UIPopover.AnchorTo(['bottom']), className: 'popover tip-wrap hoverable'});
+
+			}
+
+		}
+    });
+
+	return navigationController;
+
 }
 
 EventList.CreateBottomNavigation=function(application){
@@ -747,7 +1011,16 @@ EventList.CreateBottomNavigation=function(application){
       ]   
         
     },{
-        manipulateHistory:false
+        manipulateHistory:false,
+        formatEl: function(li, button) {
+			
+			if(button && button.hover){
+
+				new UIPopover(li, {title:button.hover, anchor:UIPopover.AnchorAuto()});
+
+			}
+
+		}
     });
     
 	//application.setNamedValue('navigationController', navigationController);
@@ -854,7 +1127,20 @@ EventList.CreateNewFeedItemNavigation=function(application, parentWizard){
 	return navigationController;
 
 };
+EventList.SetPageDescription=function(el, state){
 
+	el.innerHTML="";
+	var inner=EventList.PageDescription(state);
+	if(typeof inner=="string"){
+		el.innerHTML=inner;
+		return;
+	}
+
+	if(inner){
+		el.appendChild(inner);
+	}
+
+}
 EventList.PageDescription=function(state){
 
 
@@ -902,60 +1188,9 @@ EventList.CreateNavigationController = function(labels, application) {
 
 	var navigationController = (new NavigationMenuModule({
 		"Main": [{
-				"html": "Create",
-				"name": "Create",
-				"class": "menu-main-feeditems create-new",
-				"namedView": "bottomDetail",
-				"labelContent": "Create",
-				events:{
-					click:function(){
-
-
-						if (AppClient.getUserType() == "guest") {
-							var wizard = application.getDisplayController().displayPopoverForm(
-								"loginForm",
-								AppClient,
-								{
-									"template": "form"
-								}
-							);
-							return;
-						}
-
-
-						var item=EventList.SharedInstance().getClientProfile();
-						if(!item.isPublished()){
-			
-							var formName = item.getType().split('.').pop() + "Form";
-
-							var wizard = application.getDisplayController().displayPopoverForm(
-								formName,
-								item,
-								{
-									"template": "form",
-									"className": item.getType().split('.').pop() + "-form"
-								}
-							);
-							
-							return;
-						}
-
-						var formName = "createItemsMenuForm";
-
-						var wizard = application.getDisplayController().displayPopoverForm(
-							formName,
-							item,
-							{
-								"template": "form"
-							}
-						);
-
-
-					}
-				}
-			},{
 				"html": "Activity",
 				"name": "FeedItems",
+				"hover":"click to clear any filters and display all projects and events",
 				"description":"Welcome to CUHub. We are pleased to create and share events, projects, connections, my communities",
 				"class": "menu-main-feeditems",
 				"namedView": "bottomDetail",
@@ -966,6 +1201,7 @@ EventList.CreateNavigationController = function(labels, application) {
 			}, loginGuest({
 				"html": "Your Events",
 				"name":"Events",
+				"hover":"click to show all of your events and events you're connected to",
 				"description":"These are the events taking place soon or took place recently",
 				"namedView": "bottomDetail",
 				"labelContent": labelContent['label-for-events'],
@@ -978,6 +1214,7 @@ EventList.CreateNavigationController = function(labels, application) {
 			}), loginGuest({
 				"html": "Your Projects",
 				"name":"Projects",
+				"hover":"click to show all of your projects and projects you're connected to",
 				"description":"These are the recent projects taking place in the community",
 				"namedView": "bottomDetail",
 				"labelContent": labelContent['label-for-projects'],
@@ -1003,6 +1240,7 @@ EventList.CreateNavigationController = function(labels, application) {
 			}),loginGuest({
 				"html": "Your Community",
 				"name":"Profiles",
+				"hover":"click to show all of the people your connected to",
 				"description":"These are your connections to community members",
 				"namedView": "bottomDetail",
 				"labelContent": labelContent['label-for-profiles'],
@@ -1071,6 +1309,37 @@ EventList.CreateNavigationController = function(labels, application) {
 				"html": "Tags",
 				"class": "menu-main-tags hidden",
 				"namedView": "bottomDetail",
+				"description":function(){ 
+
+					var btns=new Element('span', {"html":"filtering items matching tag: "});
+					application.getNamedValue('tagFilter').tags.forEach(function(tag){
+						btns.appendChild(EventItem.CreateTagBtn(tag, {events:{click:function(e){
+
+
+							e.stop();
+							var tags=application.getNamedValue('tagFilter').tags;
+							var i=tags.indexOf(tag);
+							if(i>=0){
+								tags.splice(i,1);
+								application.setNamedValue('tagFilter',{"tags":tags});
+							}
+							if(tags.length){
+								application.getNamedValue('navigationController').navigateTo("Tags", "Main");
+								return;
+							}
+
+							application.getNamedValue('navigationController').navigateTo("FeedItems", "Main");
+
+							
+
+						}}}));
+					})
+
+					return btns;
+					
+
+
+				},
 				filterItem: function(item) {
 					return EventList.SharedInstance().itemMatchesFilter(item, application.getNamedValue('tagFilter'));
 				},
@@ -1118,6 +1387,36 @@ EventList.CreateNavigationController = function(labels, application) {
 				"class": "menu-main-pinned hidden"
 			}, {
 				html: "Single",
+				"description":function(){ 
+
+					var item=EventItem.GetActiveItem();
+					if(!item){
+
+						return "loading error";
+					}
+
+					var label="This is the "+item.getTypeName()+" page for <span>'"+item.getName()+"'</span>";
+
+					if (item.hasOwner()) {
+						try{
+							var owner = item.getOwnersProfile();
+							var userEl = EventItem.CreateAuthorLabel(owner, application);
+							
+							var labelEl=new Element('span', {"html":label});
+							labelEl.appendChild(userEl);
+							return labelEl;
+
+						}catch(e){
+							console.error(e);
+						}
+						
+					
+					}
+
+					return label;
+
+
+				},
 				"class": "menu-main-single hidden",
 				urlComponent: function(stub, segments) {
 					if (segments && segments.length) {
@@ -1163,7 +1462,7 @@ EventList.CreateNavigationController = function(labels, application) {
 			return button["class"] || ("menu-" + section.toLowerCase() + "-" + (button.name||button.html).toLowerCase())
 		},
 		sectionClass: function(section) {
-			return "menu-" + section.toLowerCase()
+			return "menu-" + section.toLowerCase()+' primary-navigation'
 		},
 		formatEl: function(li, button) {
 			if (button && button.labelContent) {
@@ -1171,6 +1470,14 @@ EventList.CreateNavigationController = function(labels, application) {
 					html: button.labelContent
 				}));
 			}
+
+
+			if(button && button.hover){
+
+				new UIPopover(li, {title:button.hover, anchor:UIPopover.AnchorAuto()});
+
+			}
+
 		}
 	})).addEvent('navigationStart', function(button) {
 
@@ -1187,7 +1494,7 @@ EventList.CreateNavigationController = function(labels, application) {
 	application.setNamedValue('navigationController', navigationController);
 
 	EventList._navigationController=navigationController;
-	return navigationController;
+	return [EventList.CreateCreationNavigation(application), navigationController];
 
 
 

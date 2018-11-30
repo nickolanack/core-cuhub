@@ -188,7 +188,7 @@ class DocumentMetadata{
 		$url=$this->getUrl($url);
 		//TODO use url to get feed item list!
 		//
-		return GetPlugin('ProjectHub')->listFeedItemsAjax();
+		return GetPlugin('ProjectHub')->listFeedItemsAjaxCache();
 	}
 
 

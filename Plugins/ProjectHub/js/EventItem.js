@@ -243,7 +243,7 @@ var EventItem = new Class({
 
 		})).addEvent('success', function(response) {
 
-			me.config.pinned = true;
+			me.config.pinnedby.push(AppClient.getId()+"")
 			me.fireEvent('pin');
 
 		}).execute();
@@ -261,7 +261,11 @@ var EventItem = new Class({
 
 		})).addEvent('success', function(response) {
 
-			me.config.pinned = false;
+
+			var i=me.config.pinnedby.indexOf(AppClient.getId()+"");
+			if(i>-0){
+				me.config.pinnedby.splice(i,1);
+			}
 			me.fireEvent('unpin');
 
 		}).execute();
@@ -895,6 +899,10 @@ EventItem.CreateConnectionButton = function(item, application, defaultLabel) {
 
 	var fn=function(){
 
+		if (item instanceof ConnectionItem) {
+			item=item.getConnectionTo();
+		}
+
 		if (!item.canCreateConnectionFrom(EventList.SharedInstance().getClientProfile())) {
 			return null;
 		}
@@ -905,19 +913,32 @@ EventItem.CreateConnectionButton = function(item, application, defaultLabel) {
 		var form='connectionForm';
 		var className="action-connection";
 		var name = "Connected with "+item.getTypeName();
+		var hover = "click to create a new connection with "+item.getName();
+
+		var quickConnect=false;
 
 		var label = defaultLabel.replace('{type}', item.getTypeName());
+		
+
+
 		if (item instanceof ProfileItem) {
-			label = hasConnection?"You Are Connected ":"Connect With " + item.getName();
+
+			label = hasConnection?"You Are Following ":"Follow " + item.getName();
 			form='connectWithUserForm';
 			className="action-profile";
+			quickConnect=true;
+			hover = "click to follow "+item.getName();
 
 		}
+
+
 
 		if (item instanceof ProjectItem) {
 			label = hasConnection?"You are Following ":"Follow " + item.getName();
 			className="action-project";
 			name = "Following "+item.getTypeName();
+			hover = "click to follow "+item.getName();
+			quickConnect=true;
 		}
 
 		if (item.getType() == "ProjectHub.event") {
@@ -925,6 +946,7 @@ EventItem.CreateConnectionButton = function(item, application, defaultLabel) {
 			className="action-event";
 			form='connectWithEventForm';
 			name = "Volunteering for "+item.getTypeName();
+			hover = "click to volunteer for "+item.getName();
 		}
 
 
@@ -933,7 +955,7 @@ EventItem.CreateConnectionButton = function(item, application, defaultLabel) {
 
 		if (AppClient.getUserType() == "guest") {
 			
-			return (new ModalFormButtonModule(application, AppClient, {
+			var loginBtnModule = (new ModalFormButtonModule(application, AppClient, {
 				"label": label,
 				"formName": "loginForm",
 				"formOptions": {
@@ -941,31 +963,60 @@ EventItem.CreateConnectionButton = function(item, application, defaultLabel) {
 				},
 				"className": className+" action-user action-for-"+item.getTypeName()
 			}));
-
+			new UIPopover(loginBtnModule.getElement(), {title:hover, anchor:UIPopover.AnchorAuto()});
+			return loginBtnModule;
 		}
 
 
 
 		if(hasConnection){
-			return new ElementModule('button', {
+			var removeBtnModule = new ElementModule('button', {
 				"class":className+" form-btn disabled action-user action-for-"+item.getTypeName(),
-				"html":label
+				"html":label,
+				"events":{
+					"click":function(){
+						EventItem.Confirm("Are you sure you want to remove this connection", function(){
+							alert("todo!")
+						})
+					}
+				}
 			});
+
+			new UIPopover(removeBtnModule.getElement(), {title:hover, anchor:UIPopover.AnchorAuto()});
+			return removeBtnModule;
 		}
 
 
-		return (new ModalFormButtonModule(application,
-			new ConnectionItem({
-				"item": EventList.SharedInstance().getClientProfile(),
-				"itemB": item,
-				"name":name
-			}).addEvent("save", function() {
-				var item = this;
-				EventList.SharedInstance(function(el) {
-					el.addItem(item);
-					connections.redraw();
-				});
-			}), {
+		var newConnection=(new ConnectionItem({
+			"item": EventList.SharedInstance().getClientProfile(),
+			"itemB": item,
+			"name":name
+		})).addEvent("save", function() {
+			EventList.SharedInstance(function(el) {
+				el.addItem(newConnection);
+				connections.redraw();
+			});
+		})
+
+
+		if(quickConnect){
+			var quickBtnModule= new ElementModule('button', {
+				"class": className+" form-btn action-user action-for-"+item.getTypeName(),
+				"html":label,
+				"events":{
+					"click":function(){
+						newConnection.save()
+					}
+				}
+			});
+
+			new UIPopover(quickBtnModule.getElement(), {title:hover, anchor:UIPopover.AnchorAuto()});
+			return quickBtnModule;
+		}
+
+
+		var formBtnModule=new ModalFormButtonModule(application,
+			newConnection, {
 				"label": label,
 				"formName": form,
 				"formOptions": {
@@ -974,7 +1025,10 @@ EventItem.CreateConnectionButton = function(item, application, defaultLabel) {
 				},
 				"className": className+" action-user action-for-"+item.getTypeName()
 			}
-		));
+		)
+
+		new UIPopover(formBtnModule.getElement(), {title:hover, anchor:UIPopover.AnchorAuto()});
+		return formBtnModule;
 
 
 	};
@@ -986,6 +1040,10 @@ EventItem.CreateConnectionButton = function(item, application, defaultLabel) {
 };
 
 EventItem.CreateDirectChatButton = function(item, application, defaultLabel) {
+
+	if (item instanceof ConnectionItem) {
+		item=item.getConnectionTo();
+	}
 
 	if ((!item.canCreateConnectionFrom(EventList.SharedInstance().getClientProfile()))||!(item instanceof ProfileItem)) {
 		return null;
@@ -1276,37 +1334,54 @@ EventItem.DefaultTags = function(item, application) {
 
 
 }
+EventItem.CreateTagBtn=function(tag, options){
+
+	return new Element('button', Object.append({
+			"class": "btn-tag tag-" + tag,
+			"html": tag,
+			"title": tag
+		}, options));
+}
+
 EventItem.CreateTagFilterButtons = function(item, application) {
 
 	EventItem._application = application;
 
-	return item.getTags().map(function(tag) {
+	var tagList=item.getTags();
+
+	return tagList.map(function(tag) {
 
 		var current = application.getNamedValue('tagFilter');
-		isActive = '';
+		activeClass = '';
+		isActive=false;
 		if (current && current.tags && current.tags.indexOf(tag) >= 0) {
-			isActive = ' active';
+			activeClass = ' active';
+			isActive=true;
 		}
 
-		return new Element('button', {
-			"class": "btn-tag tag-" + tag + isActive,
-			html: tag,
-			title: tag,
-			events: {
-				click: function(e) {
+		var btn=EventItem.CreateTagBtn(tag, {events:{click:function(e){
 
-					application.setNamedValue('tagFilter', {
-						tags: [tag]
-					});
-					application.getNamedValue('navigationController').navigateTo("Tags", "Main");
+			application.setNamedValue('tagFilter', {
+				"tags": [tag]
+			});
+			application.getNamedValue('navigationController').navigateTo("Tags", "Main");
 
-					e.stop();
+			e.stop();
+
+		}}});
+		btn.addClass(activeClass);
 
 
+		if(isActive){
+			new UIPopover(btn, {title:"this tag matches the current filter: `"+tag+"`", anchor:UIPopover.AnchorAuto()});
+		}else{
+			new UIPopover(btn, {title:"click show all other items tagged with: `"+tag+"`", anchor:UIPopover.AnchorAuto()});
+		}
 
-				}
-			}
-		});
+		
+
+
+		 return btn;
 	});
 
 };
@@ -1406,6 +1481,10 @@ EventItem.CreateAuthorLabel = function(owner, application) {
 			html: " " +
 				(owner.isEqualTo(EventList.SharedInstance().getClientProfile()) ? "You" : owner.getName())
 		});
+
+
+		new UIPopover(userEl, {title:"click to go to "+(owner.isEqualTo(EventList.SharedInstance().getClientProfile()) ? "You" : owner.getName()+"'s")+" profile", anchor:UIPopover.AnchorAuto()});
+
 		userEl.addEvent('click',function(e){
 			e.stop();
 			var nav=application.getNamedValue('navigationController');
@@ -1468,6 +1547,32 @@ EventItem.FormatItemLabel = function(item, el, valueEl, application) {
 	}
 
 
+
+	if (item instanceof MyProfileItem ) {
+
+		valueEl.appendChild(new Element('span', {
+			"class": "item-author",
+			html: ' ' + "your profile"
+		}));
+		el.addClass('your-profile-label');
+
+		valueEl.addEvent('click',function(e){
+			e.stop();
+			var nav=application.getNamedValue('navigationController');
+			var profile = EventList.SharedInstance().getItem(item.getId(), item.getType());
+			if (profile.isActive() && nav.getCurrentView().view == "Single") {
+				return;
+			}
+
+			profile.activate();
+			nav.navigateTo("Single", "Main");
+		});
+
+		new UIPopover(valueEl, {title:"click to go to your profile", anchor:UIPopover.AnchorTo(["bottom"]), className: 'popover tip-wrap hoverable onblack'});
+
+		return;
+
+	}
 
 
 

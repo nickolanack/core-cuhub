@@ -322,9 +322,6 @@ class ProjectHub extends \Plugin implements
 
 		include_once __DIR__.'/lib/DocumentMetadata.php';
 		$documentMetadata=new \ProjectHub\DocumentMetadata();
-		
-
-
 		$documentMetadata->setPageMetadata();
 
 	}
@@ -338,6 +335,7 @@ class ProjectHub extends \Plugin implements
 		IncludeJS(__DIR__ . '/js/EventList.js');
 		IncludeJS(__DIR__ . '/js/EventItem.js');
 		IncludeJS('{core}/bower_components/moment/moment.js');
+		IncludeJS('{scripts}/Controls/UITutorial.js');
 
 	}
 
@@ -539,7 +537,7 @@ class ProjectHub extends \Plugin implements
 
 		$result['pinnedby']=array_map(function($watcher){
 
-			return $watcher->id;
+			return $watcher->uid;
 			
 
 		}, $this->getDatabase()->getWatchs(array(
