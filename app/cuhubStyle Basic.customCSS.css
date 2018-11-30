@@ -332,6 +332,13 @@ span.ui-navigation-menu ul li {
 }
 
 
+ul.menu-main.no-vert-pad.expand {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 
 span.ui-navigation-menu .site {
     margin-right: 10px;
