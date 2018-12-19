@@ -197,7 +197,7 @@
         "name": "Keen I O",
         "instance": "KeenIO",
         "parameters": {
-            "enabled": true,
+            "enabled": false,
             "projectId": "5b7c670cc9e77c00014ebd46",
             "writeKey": "XXXX-XXXX",
             "readKey": "XXXX-XXXX",
