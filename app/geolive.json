@@ -1001,7 +1001,7 @@
         "instance": "CSS",
         "parameters": {
             "cacheable": false,
-            "link": false,
+            "link": true,
             "widgetTitle": "calendarStyle",
             "target": "calendarStyle",
             "customCSS": "calendarStyle.customCSS.css",
