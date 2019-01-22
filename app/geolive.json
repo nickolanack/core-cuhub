@@ -13,6 +13,8 @@
         "name": "Email",
         "instance": "Email",
         "parameters": {
+            "fromEmail": "geolivemap.ca+cuhub@gmail.com",
+            "fromEmailName": "The CuHub",
             "useSmtp": true,
             "smtpHost": "smtp.gmail.com",
             "username": "XXXX-XXXX",
@@ -21,8 +23,9 @@
             "useMailgun": false,
             "domain": "",
             "apiKey": "",
-            "fromEmail": "geolivemap.ca+cuhub@gmail.com",
-            "fromEmailName": "The CuHub",
+            "validateSenderDomain": false,
+            "useGlobalMailTemplate": false,
+            "globalTemplate": "DefaultMailerTemplate",
             "recieveMail": false,
             "recieveMailSecretToken": "XXXX-XXXX"
         }
@@ -47,7 +50,16 @@
             "uploadViewInlineCss": "",
             "uploadViewPageScript": "",
             "enableFileAttributes": false,
-            "fileAttributesTableName": "filesystemAttributes"
+            "fileAttributesTableName": "filesystemAttributes",
+            "useS3Storage": false,
+            "bucket": "",
+            "folder": "",
+            "region": "us-west-2",
+            "version": "latest",
+            "key": "",
+            "secret": "",
+            "useCloudFront": false,
+            "cloudFrontDomain": ""
         }
     },
     "plugin.7": {
@@ -80,7 +92,7 @@
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": true,
-            "CachingEnabled": false,
+            "CachingEnabled": true,
             "ExternalizeWidgetScripts": true,
             "PrettyPrintJson": true,
             "showFrontEndEditButtons": false,
@@ -130,7 +142,18 @@
     "plugin.14": {
         "name": "Users",
         "instance": "Users",
-        "parameters": {}
+        "parameters": {
+            "customUserGroups": [],
+            "customUserScript": "",
+            "customGroupMemberOfGroupScript": "",
+            "defaultImage": [],
+            "userProfileImageScript": "return $defaultImage;",
+            "validateEmail": true,
+            "magicLinkUrl": "",
+            "useRecaptcha": false,
+            "recaptchaKey": false,
+            "recaptchaSecret": false
+        }
     },
     "plugin.15": {
         "name": "Monolog Plugin",
@@ -147,7 +170,8 @@
         "parameters": {
             "clientSecretUrl": "XXXX-XXXX",
             "clientPublicUrl": "https:\/\/37dd48bce18a414aa12b27105fa642d3@sentry.io\/293816",
-            "enabled": true
+            "enabled": true,
+            "enabledFrontEnd": false
         }
     },
     "plugin.17": {
@@ -588,9 +612,11 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "customCSS": "cuhubStyle Basic.customCSS.css",
+            "cacheable": false,
+            "link": false,
             "widgetTitle": "cuhubStyle Basic",
             "target": "cuhubStyle",
+            "customCSS": "cuhubStyle Basic.customCSS.css",
             "readAccess": "public"
         }
     },
@@ -676,9 +702,11 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "customCSS": "cuhubGeneratedStyle.customCSS.css",
+            "cacheable": false,
+            "link": false,
             "widgetTitle": "cuhubGeneratedStyle",
             "target": "cuhubGeneratedStyle",
+            "customCSS": "cuhubGeneratedStyle.customCSS.css",
             "readAccess": "public"
         }
     },
@@ -908,9 +936,11 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "customCSS": "cuhubDebugStyle.customCSS.css",
+            "cacheable": false,
+            "link": false,
             "widgetTitle": "cuhubDebugStyle",
             "target": "cuhubDebugStyle",
+            "customCSS": "cuhubDebugStyle.customCSS.css",
             "readAccess": "public"
         }
     },
@@ -970,9 +1000,11 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "customCSS": "calendarStyle.customCSS.css",
+            "cacheable": false,
+            "link": false,
             "widgetTitle": "calendarStyle",
             "target": "calendarStyle",
+            "customCSS": "calendarStyle.customCSS.css",
             "readAccess": "public"
         }
     },
@@ -3028,9 +3060,11 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
-            "customCSS": "Responsive Css.customCSS.css",
+            "cacheable": false,
+            "link": false,
             "widgetTitle": "Responsive Css",
             "target": "cuhubResponsiveStyle",
+            "customCSS": "Responsive Css.customCSS.css",
             "readAccess": "public"
         }
     },
@@ -4270,9 +4304,11 @@
         "name": "Stylesheet",
         "instance": "CSS",
         "parameters": {
+            "cacheable": false,
+            "link": false,
+            "widgetTitle": "Sticky Right Panel",
             "target": "stickyRightPanelStyle",
             "customCSS": "Sticky Right Panel.customCSS.css",
-            "widgetTitle": "Sticky Right Panel",
             "readAccess": "public"
         }
     },
