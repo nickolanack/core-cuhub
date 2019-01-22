@@ -3061,7 +3061,7 @@
         "instance": "CSS",
         "parameters": {
             "cacheable": false,
-            "link": false,
+            "link": true,
             "widgetTitle": "Responsive Css",
             "target": "cuhubResponsiveStyle",
             "customCSS": "Responsive Css.customCSS.css",
