@@ -613,7 +613,7 @@
         "instance": "CSS",
         "parameters": {
             "cacheable": false,
-            "link": false,
+            "link": true,
             "widgetTitle": "cuhubStyle Basic",
             "target": "cuhubStyle",
             "customCSS": "cuhubStyle Basic.customCSS.css",
