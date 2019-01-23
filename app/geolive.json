@@ -86,8 +86,8 @@
         "name": "System Parameters",
         "instance": "SystemParameters",
         "parameters": {
-            "JSFileObfuscationEnabled": false,
-            "JSInlineObfuscationEnabled": false,
+            "JSFileObfuscationEnabled": true,
+            "JSInlineObfuscationEnabled": true,
             "CSSFileObfuscationEnabled": false,
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
