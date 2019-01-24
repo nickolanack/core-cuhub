@@ -2,7 +2,7 @@
     "type": "UIListView",
     "config": {
         "listClassName": "",
-        "className": "",
+        "className": "post-author private-chat ui-view profile-feed-item expandable thin-layout-item feed-item",
         "viewType": "view",
         "namedView": "profileDiscussionItemDetail",
         "shouldRender": true,
