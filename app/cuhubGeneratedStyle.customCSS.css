@@ -55,7 +55,20 @@
         
         
         
-        
+        $notificationImage=$ui->getParameter('icon-for-notification-center', array());
+        if(!empty($notificationImage)){
+          
+            $notificationImage=$notificationImage[0];
+            ?>
+
+            .field-value-module.notification-center.has-notifications {
+                background-image: url("<?php echo UrlFrom($notificationImage."?tint=rgb(0, 210, 0)"); ?>");
+            }
+            .field-value-module.notification-center.has-notifications {
+                background-image: url("<?php echo UrlFrom($notificationImage."?tint=rgb(0, 210, 0)"); ?>");
+            }
+            <?php
+        }
         
         
         
