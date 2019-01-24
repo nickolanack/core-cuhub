@@ -536,12 +536,7 @@ active.expandable.feed-item:hover {
 }
 
 
-.ui-view.user-detail{
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    height: 110px;
-    flex-grow:0;
-}
+
 
 
 .main-content-detail .ui-view.user-detail {
@@ -598,8 +593,18 @@ active.expandable.feed-item:hover {
     border-bottom: none;
     width: 330px;
     z-index: 1;
-    overflow: hidden;
 }
+
+.field-value-module.notification-center {
+    position: absolute;
+    background: red;
+    width: 20px;
+    height: 20px;
+    top: 25px;
+    left: -25px;
+    z-index: 6;
+}
+
 
 .ui-view.user-detail.top-right .field-value-module.feed-item-label {
     position: absolute;
