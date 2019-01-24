@@ -4,16 +4,19 @@
         "className": "feed-item active myprofile-feed-item",
         "viewType": "view",
         "namedView": "feedItemDetail",
+        "shouldRender": true,
         "namedViewScript": "return namedView",
         "showInlineEdit": false,
         "namedFormView": "defaultFormView",
         "formOptions": "{}",
         "showDeleteButton": false,
         "deleteItemScript": "",
+        "initModuleScript": "",
         "formatModuleScript": "",
         "resolveItemScript": "EventList.SharedInstance(function(itemList){\n    callback(itemList.getClientProfile());\n})\n",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
-        "insertAtTop": false
+        "insertAtTop": false,
+        "targetName": ""
     }
 }

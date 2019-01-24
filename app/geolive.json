@@ -1183,7 +1183,16 @@
                     },
                     "content": {
                         "modules": [
-                            "userDetail.metadata.positions.content.modules.0.json"
+                            "userDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "userDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                }
+                            }
                         ]
                     },
                     "footer": {
