@@ -65,7 +65,7 @@
                 background-image: url("<?php echo UrlFrom($notificationImage."?tint=rgb(70, 70, 70)"); ?>");
             }
             .field-value-module.notification-center.has-notifications {
-                background-image: url("<?php echo UrlFrom($notificationImage."?tint=rgb(0, 210, 0)"); ?>");
+                background-image: url("<?php echo UrlFrom($notificationImage."?tint=rgb(0, 180,0)"); ?>");
             }
             <?php
         }
