@@ -1060,6 +1060,16 @@ span.item-author{
     cursor: pointer;
 }
 
+span.item-author {
+    padding: 2px;
+    margin: 0 3px;
+    background-color: transparent;
+    border-radius: 2px;
+}
+span.item-author:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
 span.item-author:hover {
     color: #47515a;
 }
