@@ -1027,6 +1027,13 @@ button.btn-action.action-focus {
 }
 
 
+
+.text-input[readonly] {
+    background-color: #f0f0f0;
+    font-style: italic;
+    color: darkgray;
+}
+
 .feed-item-icon.user-icon {
     background-size: cover;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
