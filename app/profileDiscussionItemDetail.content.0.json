@@ -4,6 +4,6 @@
         "loadAsync": false,
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": "EventItem.FormatPrivateDiscussion(el, valueEl, item);"
+        "formatElementScript": "EventItem.FormatPrivateDiscussion(el, valueEl, item, application);"
     }
 }
