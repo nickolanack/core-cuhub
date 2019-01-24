@@ -173,6 +173,16 @@ span.ui-navigation-menu ul.site button {
     text-align: center;
     min-height: 100px;
     padding: 100px 0;
+        background-color: rgba(0,0,0,0.05);
+}
+
+.ui-view.footer-detail .array-module {
+    padding: 10px;
+    max-width: 600px;
+    width: calc( 100% - 20px );
+    display: inline-block;
+    background-color: white;
+    border-radius: 3px;
 }
 
 span.ui-navigation-menu ul li.hidden {
