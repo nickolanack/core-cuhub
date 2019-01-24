@@ -155,7 +155,7 @@ button.menu-main-feeditems.create-new.new-project {
     z-index:1;
 }
 
-.static-map p.map-location {
+.static-map a.map-location {
     text-shadow: 1px 1px 2px white;
     margin-left: 10px;
     display: inline-block;
