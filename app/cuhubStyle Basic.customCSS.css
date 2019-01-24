@@ -1425,6 +1425,9 @@ input.discussion-textbox {
     padding: 0 14px;
 }
 
+.count-posts.has-posts {
+    overflow: visible;
+}
 
 .count-posts .field-value {
  
