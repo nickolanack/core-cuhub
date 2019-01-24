@@ -1688,6 +1688,17 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-new label {
     
 }
 
+.ui-view.left-detail {
+    position: fixed;
+}
+
+.ui-view.right-detail {
+    position: fixed;
+    right: 0;
+}
+
+
+
 .right-detail .share-links {
     position: relative;
     margin-top: 100px;
