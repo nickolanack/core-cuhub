@@ -165,6 +165,8 @@ button.menu-main-feeditems.create-new.new-project {
     position: relative;
     z-index: 10;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: 100;
 }
 
 
