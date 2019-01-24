@@ -2791,16 +2791,16 @@
                             "profileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 368,
-                            "y": 500
+                            "x": 168,
+                            "y": 79
                         },
                         "children": [
                             "profileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 328,
-                                    "y": 726
+                                    "x": 128,
+                                    "y": 305
                                 }
                             }
                         ],
@@ -2902,25 +2902,24 @@
                                             }
                                         },
                                         {
-                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "type": "FormTextField",
                                             "config": {
-                                                "attributeFields": [
-                                                    "profileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
-                                                ],
                                                 "className": "",
-                                                "label": "{field.label}",
-                                                "message": "",
+                                                "label": "Email",
+                                                "placeholder": "your email",
                                                 "lines": 1,
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
-                                                "autocomplete": true,
                                                 "muliTemplate": "lines",
-                                                "multiMessage": "",
+                                                "multiMessage": "add another value",
                                                 "formatter": "none",
-                                                "iconTint": "rgb(100, 149, 237)",
-                                                "onRenderTextFieldScript": "",
-                                                "formatValueScript": ""
+                                                "onRenderTextFieldScript": "inputElement.readonly=true;",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"get email\"",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
                                     ]
