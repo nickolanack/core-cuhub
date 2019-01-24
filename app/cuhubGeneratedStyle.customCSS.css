@@ -61,7 +61,7 @@
             $notificationImage=$notificationImage[0];
             ?>
 
-            .field-value-module.notification-center.has-notifications {
+            .field-value-module.notification-center {
                 background-image: url("<?php echo UrlFrom($notificationImage."?tint=rgb(0, 210, 0)"); ?>");
             }
             .field-value-module.notification-center.has-notifications {
