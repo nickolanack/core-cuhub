@@ -2791,16 +2791,16 @@
                             "profileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 168,
-                            "y": 79
+                            "x": 178,
+                            "y": 89
                         },
                         "children": [
                             "profileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 128,
-                                    "y": 305
+                                    "x": 138,
+                                    "y": 315
                                 }
                             }
                         ],
@@ -2914,7 +2914,7 @@
                                                 "muliTemplate": "lines",
                                                 "multiMessage": "add another value",
                                                 "formatter": "none",
-                                                "onRenderTextFieldScript": "inputElement.readonly=true;",
+                                                "onRenderTextFieldScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": "",
                                                 "getValueScript": " return \"get email\"",
                                                 "updateValueScript": " object.value=value ",
