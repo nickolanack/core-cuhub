@@ -1455,6 +1455,7 @@ input.discussion-textbox {
     top: -2px;
     line-height: 17px;
     text-align: center;
+    text-indent: 0;
 }
 
 .field-value-module.link-to-item:before {
