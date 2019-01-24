@@ -205,7 +205,7 @@
         "parameters": {
             "enableLayerSyncronization": true,
             "onlyShowMarkersInIconset": false,
-            "googleMapsServerApiKey": "",
+            "googleMapsServerApiKey": "XXXX-XXXX",
             "googleMapsVersion": "",
             "tileCachePath": "{site}\/..\/map-tiles",
             "layerDisplayFilterScript": "",
