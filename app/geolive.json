@@ -92,7 +92,7 @@
             "CSSInlineObfuscationEnabled": false,
             "PHPDebugEnabled": true,
             "JSDebugEnabled": true,
-            "CachingEnabled": true,
+            "CachingEnabled": false,
             "ExternalizeWidgetScripts": true,
             "PrettyPrintJson": true,
             "showFrontEndEditButtons": false,
@@ -205,7 +205,7 @@
         "parameters": {
             "enableLayerSyncronization": true,
             "onlyShowMarkersInIconset": false,
-            "googleMapsServerApiKey": "",
+            "googleMapsServerApiKey": "XXXX-XXXX",
             "googleMapsVersion": "",
             "tileCachePath": "{site}\/..\/map-tiles",
             "layerDisplayFilterScript": "",
@@ -1183,7 +1183,16 @@
                     },
                     "content": {
                         "modules": [
-                            "userDetail.metadata.positions.content.modules.0.json"
+                            "userDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "userDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                }
+                            }
                         ]
                     },
                     "footer": {
@@ -1652,6 +1661,15 @@
                     "limit": 1
                 },
                 {
+                    "type": "images",
+                    "name": "icon-for-notification-center",
+                    "default": [],
+                    "label": "icon-for-notification-center",
+                    "maxHeight": 64,
+                    "maxWidth": 64,
+                    "limit": 1
+                },
+                {
                     "type": "text",
                     "name": "label-for-events",
                     "label": "label-for-events",
@@ -1818,6 +1836,9 @@
             "show-background": false,
             "banner-image": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/FPQ_lJn_ErV_[G]_[ImAgE].jpeg"
+            ],
+            "icon-for-notification-center": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/V9_Nkh_[G]_BGC_[ImAgE].png"
             ]
         }
     },
@@ -2770,16 +2791,16 @@
                             "profileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 368,
-                            "y": 500
+                            "x": 188,
+                            "y": 99
                         },
                         "children": [
                             "profileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 328,
-                                    "y": 726
+                                    "x": 148,
+                                    "y": 325
                                 }
                             }
                         ],
@@ -2881,25 +2902,24 @@
                                             }
                                         },
                                         {
-                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "type": "FormTextField",
                                             "config": {
-                                                "attributeFields": [
-                                                    "profileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
-                                                ],
-                                                "className": "",
-                                                "label": "{field.label}",
-                                                "message": "",
+                                                "className": "readonly",
+                                                "label": "Email",
+                                                "placeholder": "your email",
                                                 "lines": 1,
                                                 "maxChars": 0,
                                                 "mandatory": false,
                                                 "multiEntry": false,
-                                                "autocomplete": true,
                                                 "muliTemplate": "lines",
-                                                "multiMessage": "",
+                                                "multiMessage": "add another value",
                                                 "formatter": "none",
-                                                "iconTint": "rgb(100, 149, 237)",
-                                                "onRenderTextFieldScript": "",
-                                                "formatValueScript": ""
+                                                "onRenderTextFieldScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.onRenderTextFieldScript.js",
+                                                "formatValueScript": "",
+                                                "getValueScript": " return \"get email\"",
+                                                "updateValueScript": " object.value=value ",
+                                                "submitValueScript": "",
+                                                "validateValueScript": " return defaultValidationFn() "
                                             }
                                         }
                                     ]
@@ -5103,7 +5123,16 @@
                     },
                     "content": {
                         "modules": [
-                            "profileDiscussionItemDetail.metadata.positions.content.modules.0.json"
+                            "profileDiscussionItemDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"\";",
+                                    "fieldValueScript": "return \"\";",
+                                    "formatElementScript": "profileDiscussionItemDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                }
+                            }
                         ]
                     },
                     "footer": {

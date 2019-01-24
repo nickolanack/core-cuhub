@@ -1,0 +1,1 @@
+inputElement.setAttribute("readonly",true);

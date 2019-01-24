@@ -1,0 +1,1 @@
+EventItem.FormatDiscussionCounters(el, valueEl, item, application);

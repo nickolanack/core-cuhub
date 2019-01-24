@@ -55,7 +55,20 @@
         
         
         
-        
+        $notificationImage=$ui->getParameter('icon-for-notification-center', array());
+        if(!empty($notificationImage)){
+          
+            $notificationImage=$notificationImage[0];
+            ?>
+
+            .field-value-module.notification-center {
+                background-image: url("<?php echo UrlFrom($notificationImage."?tint=rgb(70, 70, 70)"); ?>");
+            }
+            .field-value-module.notification-center.has-notifications {
+                background-image: url("<?php echo UrlFrom($notificationImage."?tint=rgb(0, 180,0)"); ?>");
+            }
+            <?php
+        }
         
         
         
@@ -65,8 +78,8 @@
             $discussionImage=$discussionImage[0];
             ?>
 
-            .count-posts.has-posts .field-value {
-                background-image: url("<?php echo UrlFrom($discussionImage); ?>?tint=rgb(200,200,200)");
+            .count-posts.has-posts .field-value:after {
+                background-image: url("<?php echo UrlFrom($discussionImage."?tint=rgb(0, 210, 0)"); ?>");
             }
             <?php
         }

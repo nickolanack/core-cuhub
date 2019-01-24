@@ -152,7 +152,24 @@ button.menu-main-feeditems.create-new.new-project {
     border-bottom: 1px solid #cccccc;
     border-top: 1px solid #cccccc;
     opacity: 1;
+    z-index:1;
 }
+
+.static-map a.map-location {
+    text-shadow: 1px 1px 2px white;
+    margin-left: 10px;
+    display: inline-block;
+    background-color: rgba(255,255,255,0.3);
+    padding: 4px 10px;
+    border-radius: 3px;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+
 .active .static-map:after {
     display:none;
 }
@@ -173,6 +190,16 @@ span.ui-navigation-menu ul.site button {
     text-align: center;
     min-height: 100px;
     padding: 100px 0;
+        background-color: rgba(0,0,0,0.05);
+}
+
+.ui-view.footer-detail .array-module {
+    padding: 10px;
+    max-width: 600px;
+    width: calc( 100% - 20px );
+    display: inline-block;
+    background-color: white;
+    border-radius: 3px;
 }
 
 span.ui-navigation-menu ul li.hidden {
@@ -536,12 +563,7 @@ active.expandable.feed-item:hover {
 }
 
 
-.ui-view.user-detail{
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    height: 110px;
-    flex-grow:0;
-}
+
 
 
 .main-content-detail .ui-view.user-detail {
@@ -598,8 +620,18 @@ active.expandable.feed-item:hover {
     border-bottom: none;
     width: 330px;
     z-index: 1;
-    overflow: hidden;
 }
+
+.field-value-module.notification-center {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 20px;
+    left: -30px;
+    z-index: 6;
+    background-size: 100%;
+}
+
 
 .ui-view.user-detail.top-right .field-value-module.feed-item-label {
     position: absolute;
@@ -1022,6 +1054,13 @@ button.btn-action.action-focus {
 }
 
 
+
+.text-input[readonly] {
+    background-color: #f0f0f0;
+    font-style: italic;
+    color: darkgray;
+}
+
 .feed-item-icon.user-icon {
     background-size: cover;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
@@ -1058,6 +1097,16 @@ span.item-author{
     z-index: 1;
     position: relative;
     cursor: pointer;
+}
+
+span.item-author {
+    padding: 2px;
+    margin: 0 3px;
+    background-color: transparent;
+    border-radius: 2px;
+}
+span.item-author:hover {
+    background-color: rgba(0,0,0,0.1);
 }
 
 span.item-author:hover {
@@ -1425,21 +1474,37 @@ input.discussion-textbox {
     padding: 0 14px;
 }
 
+.count-posts.has-posts {
+    overflow: visible;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
 
 .count-posts .field-value {
  
-    width: 20px;
+    color: slategrey;
+    font-style: italic;
+    font-size: 13px;
+  
+}
+
+.count-posts.has-new-posts .field-value:after {
     display: inline-block;
+    content: attr(data-posts-new);
+    width: 20px;
+    height: 17px;
+    background-size: auto 100%;
+    color: black;
+    font-size: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 4px;
+    position: relative;
+    top: -2px;
+    line-height: 17px;
     text-align: center;
     text-indent: 0;
-    height: 16px;
-    vertical-align: middle;
-    line-height: 16px;
-    font-size: 11px;
-    border-radius: 10px;
-    background-size: 100% auto;
-    background-position: center;
-  
 }
 
 .field-value-module.link-to-item:before {
@@ -1661,6 +1726,17 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-new label {
     
     
 }
+
+.ui-view.left-detail {
+    position: fixed;
+}
+
+.ui-view.right-detail {
+    position: fixed;
+    right: 0;
+}
+
+
 
 .right-detail .share-links {
     position: relative;
