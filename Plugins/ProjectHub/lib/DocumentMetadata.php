@@ -219,6 +219,8 @@ class DocumentMetadata{
 	private function getUrlItem($url){
 
 
+
+
 		$url=$this->getUrl($url);
 
 		
@@ -240,12 +242,15 @@ class DocumentMetadata{
 		}
 		$type=$parts[0];
 		$feedItemId=intval($parts[1]);
-		if(!in_array($type, GetPlugin('ProjectHub')->getFeedTypes())){
+
+		$projectHub=GetPlugin('ProjectHub');
+
+		if(!in_array($type, $projectHub->getFeedTypes())){
 			return false;
 		}
 
 		//$getType='get'.ucfirst($type);
-		if($item=GetPlugin('ProjectHub')->getFeedItemRecord($feedItemId, $type)){
+		if($projectHub->hasFeedItem($feedItemId, $type)&&($item=$projectHub->getFeedItemRecord($feedItemId, $type))){
 			$this->currentItem=$item;
 			$this->currentType=$type;
 			return $item;

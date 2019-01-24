@@ -245,6 +245,20 @@ class ProjectHub extends \Plugin implements
 
 	}
 
+	public function hasFeedItem($itemId, $itemType){
+		if(!in_array($itemType, $this->getFeedTypes())){
+			return false;
+		}
+
+		$method='get'.ucfirst($itemType);
+		if($records=$this->getDatabase()->$method($itemId)){
+			return true;
+		}
+
+		return false;
+
+	}
+
 	/**
 	 *   
 	 * returns a single formatted profile feeditem (current users profile). creating it if it does not exist
@@ -517,7 +531,16 @@ class ProjectHub extends \Plugin implements
 
 		$record["link"]="/Single/".$type."-".$record["id"];
 
-		return array_merge($record, $this->_getPinsForRecord($record), $this->_getArchivedForRecord($record), $this->_getAttributesForRecord($record));
+
+		if($type=="profile"){
+			
+		}
+
+		return array_merge(
+			$record, 
+			$this->_getPinsForRecord($record), 
+			$this->_getArchivedForRecord($record), 
+			$this->_getAttributesForRecord($record));
 
 	}	
 
