@@ -4,6 +4,6 @@
         "loadAsync": false,
         "fieldLabelScript": "return \"\";",
         "fieldValueScript": "return \"\";",
-        "formatElementScript": "el.addClass('post-author private-chat ui-view profile-feed-item expandable thin-layout-item feed-item')\n\nvar id=item.getId();\nel.addClass('user-id-'+id);\nif(id<=0){\n    return;\n}\nvar user=item;\nif(user){\n    valueEl.appendChild(EventItem.CreateAuthorLabel(user, application))\n}\n\n"
+        "formatElementScript": "EventItem.FormatPrivateDiscussion(el, valueEl, item);"
     }
 }
