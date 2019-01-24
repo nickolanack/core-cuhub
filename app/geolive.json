@@ -1661,6 +1661,15 @@
                     "limit": 1
                 },
                 {
+                    "type": "images",
+                    "name": "icon-for-notification-center",
+                    "default": [],
+                    "label": "icon-for-notification-center",
+                    "maxHeight": 64,
+                    "maxWidth": 64,
+                    "limit": 1
+                },
+                {
                     "type": "text",
                     "name": "label-for-events",
                     "label": "label-for-events",
@@ -1827,7 +1836,8 @@
             "show-background": false,
             "banner-image": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/FPQ_lJn_ErV_[G]_[ImAgE].jpeg"
-            ]
+            ],
+            "icon-for-notification-center": []
         }
     },
     "widget.25": {
