@@ -1428,18 +1428,27 @@ input.discussion-textbox {
 
 .count-posts .field-value {
  
-    width: 20px;
-    display: inline-block;
-    text-align: center;
-    text-indent: 0;
-    height: 16px;
-    vertical-align: middle;
-    line-height: 16px;
-    font-size: 11px;
-    border-radius: 10px;
-    background-size: 100% auto;
-    background-position: center;
+    color: slategrey;
+    font-style: italic;
+    font-size: 13px;
   
+}
+
+.count-posts.has-new-posts .field-value:after {
+    display: inline-block;
+    content: attr(data-posts-new);
+    width: 20px;
+    height: 17px;
+    background-size: auto 100%;
+    color: black;
+    font-size: 10px;
+    text-align: center;
+    background-position: 2px center;
+    background-repeat: no-repeat;
+    margin-left: 4px;
+    position: relative;
+    top: -2px;
+    line-height: 17px;
 }
 
 .field-value-module.link-to-item:before {
