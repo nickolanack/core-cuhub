@@ -5123,7 +5123,16 @@
                     },
                     "content": {
                         "modules": [
-                            "profileDiscussionItemDetail.metadata.positions.content.modules.0.json"
+                            "profileDiscussionItemDetail.metadata.positions.content.modules.0.json",
+                            {
+                                "type": "FieldValue",
+                                "config": {
+                                    "loadAsync": false,
+                                    "fieldLabelScript": "return \"Field Label Script\";",
+                                    "fieldValueScript": "return \"Field Value Script\";",
+                                    "formatElementScript": "profileDiscussionItemDetail.metadata.positions.content.modules.1.config.formatElementScript.js"
+                                }
+                            }
                         ]
                     },
                     "footer": {
