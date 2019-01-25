@@ -140,6 +140,11 @@ button.menu-main-feeditems.create-new.new-project {
     opacity: 0.4;
     z-index: -1;
 }
+
+.static-map.no-location {
+    height: 55px;
+}
+
 .static-map:after {
     content: "";
     position: absolute;
