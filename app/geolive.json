@@ -2791,16 +2791,16 @@
                             "profileForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 188,
-                            "y": 99
+                            "x": 198,
+                            "y": 109
                         },
                         "children": [
                             "profileForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 148,
-                                    "y": 325
+                                    "x": 158,
+                                    "y": 335
                                 }
                             }
                         ],
@@ -2916,7 +2916,7 @@
                                                 "formatter": "none",
                                                 "onRenderTextFieldScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.onRenderTextFieldScript.js",
                                                 "formatValueScript": "",
-                                                "getValueScript": " return \"get email\"",
+                                                "getValueScript": "profileForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.getValueScript.js",
                                                 "updateValueScript": " object.value=value ",
                                                 "submitValueScript": "",
                                                 "validateValueScript": " return defaultValidationFn() "
