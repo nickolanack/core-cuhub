@@ -4,4 +4,4 @@
  }
  
  
- return "get email"
+ return "query email address"
