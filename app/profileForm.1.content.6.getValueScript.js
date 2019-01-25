@@ -1,6 +1,6 @@
  
  if(item.getId()==EventList.SharedInstance().getClientProfile().getId()){
-     return AppClient.getEmail();
+     return AppClient.options.metadata.email;
  }
  
  
