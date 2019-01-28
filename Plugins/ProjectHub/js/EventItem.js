@@ -127,6 +127,26 @@ var EventItem = new Class({
 
 	},
 
+	getEventDateFormatted: function(dateFmt) {
+
+		if(!dateFmt){
+			dateFmt='MMMM Do YYYY, h:mm:ss a';
+		}
+
+		var me = this;
+
+		if (me.hasEventDate()) {
+
+			var timeStr = me.config.attributes.eventTime && me.config.attributes.eventTime !== "" ? me.config.attributes.eventTime : "00:00:00";
+			return moment((new Date(me.config.attributes.eventDate + " " + timeStr)).valueOf() + CoreServerDateOffset).format(dateFmt);
+
+		}
+
+		throw 'Does not have event date';
+
+
+	},
+
 
 	getMillisecondDateTime: function() {
 		return (new Date(this.config.publishedDate || this.config.createdDate)).valueOf() + CoreServerDateOffset;
@@ -982,6 +1002,7 @@ EventItem.FormatDiscussionCounters = function(el, valueEl, item) {
 		if (posts > 0) {
 			el.addClass('has-posts');
 			valueEl.setAttribute('data-posts-count', posts);
+			//valueEl.setAttribute('data-posts-last', moment((new Date(resp.metadata)).valueOf() + CoreServerDateOffset).fromNow()
 			valueEl.innerHTML = posts + " post" + (posts == 1 ? "" : "s");
 			valueEl.setAttribute('data-posts-new', newPosts);
 
@@ -1001,7 +1022,13 @@ EventItem.FormatDiscussionCounters = function(el, valueEl, item) {
 				//console.log(result);
 
 				posts++;
-				newPosts++;
+
+				if(AppClient.getId()!=result.user){
+					newPosts++;
+				}
+
+				
+
 				if (AppClient.getUserType()!=="guest"&&newPosts == 1) {
 					el.addClass('has-new-posts');
 				}
@@ -1310,18 +1337,23 @@ EventItem.CreateMapTileUrl = function(item) {
 
 	var setLocationData=function(){
 
+		staticMap.getElement().innerHTML='';
+		staticMap.getElement().addClass('no-location');
+
 		if (!(item.config.attributes && item.config.attributes.location)) {
 			staticMap.getElement().setStyle(
 			"background-image", null);
 			return;
 		}
+		staticMap.getElement().removeClass('no-location');
+
 
 		staticMap.getElement().setStyle(
 			"background-image", 
 				"url(//maps.googleapis.com/maps/api/staticmap?center=" + encodeURIComponent(item.config.attributes.location) + "&size=2000x2000&maptype=roadmap&key=AIzaSyDGrfhOSrI0ziT_1DoGPyu7Z1vJaz-v9pU)"
 			);
 
-		staticMap.getElement().innerHTML='';
+		
 		staticMap.getElement().appendChild(new Element('a', {
 			"class":"map-location",
 			"href":'https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(item.config.attributes.location),
@@ -1330,10 +1362,27 @@ EventItem.CreateMapTileUrl = function(item) {
 		}))
 	};
 
+	var setTimeData=function(){
+		staticMap.getElement().addClass('no-time');
+
+		if(item.hasEventDate()){
+			staticMap.getElement().removeClass('no-time');
+			staticMap.getElement().appendChild(new Element('p', {
+				"class":"event-time",
+				"html":item.getEventDateFormatted()
+			}));
+		}
+
+		
+
+	}
+
 	staticMap.addWeakEvent(item, 'save', function(){
 		setLocationData();
+		setTimeData();
 	});
 	setLocationData();
+	setTimeData();
 	
 	return staticMap;
 

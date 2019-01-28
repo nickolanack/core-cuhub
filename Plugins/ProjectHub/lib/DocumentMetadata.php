@@ -148,7 +148,7 @@ class DocumentMetadata{
 
 		if($this->isItemUrl($url)){
 			$item=$this->getUrlItem($url);
-			return strip_tags($item['description']+$item['attributes']['description']);
+			return strip_tags($item['description'].$item['attributes']['description']);
 		}
 		
 	

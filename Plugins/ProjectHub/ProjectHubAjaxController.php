@@ -115,7 +115,16 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 
 		if (key_exists('attributes', $json)) {
 
+			if (!in_array($itemType, $this->getPlugin()->getFeedTypes())) {
+				throw new \Exception('Invalid type: ' . $itemType);
+			}
+
+			$itemType = "ProjectHub." . $itemType;
+
+            GetPlugin('Attributes');
 			foreach ($json->attributes as $table => $fields) {
+
+
 				(new \attributes\Record($table))->setValues($itemId, $itemType, $fields);
 			}
 		}
@@ -124,150 +133,134 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 
 	protected function saveProject($json) {
 
-		if ($json->id > 0) {
+		$id = (int) $json->id;
 
+		if ($id > 0) {
 			$this->getPlugin()->getDatabase()->updateProject($fields = $this->defaultUpdateItemData($json));
-
-			Broadcast('eventlist', 'update', array(
-				'event' => 'updated',
-				'item' => $data = $this->getPlugin()->getFeedItemRecord($json->id, "project"),
-			));
-
-			return array('id' => $json->id, 'item' => $data);
-
 		}
 
-		$projectId = $this->getPlugin()->getDatabase()->createProject($fields = array_merge(array(
+		if ($id <= 0) {
+			$id = $this->getPlugin()->getDatabase()->createProject($fields = array_merge(array(
 
-			'itemType' => $json->itemType,
-			'itemId' => $json->itemId,
+				'itemType' => $json->itemType,
+				'itemId' => $json->itemId,
 
-		), $this->defaultItemData($json)));
+			), $this->defaultItemData($json)));
+		}
+
+        $this->setItemAttributes($id, "project", $json);
 
 		Broadcast('eventlist', 'update', array(
-			'event' => 'created',
-			'item' => $data = $this->getPlugin()->getFeedItemRecord($projectId, "project"),
+			'event' => 'updated',
+			'item' => $data = $this->getPlugin()->getFeedItemRecord($id, "project"),
 		));
 
-		return array_merge(array('id' => $projectId, 'item' => $data));
+		return array('id' => $id, 'item' => $data);
 
 	}
 
 	protected function saveConnection($json) {
 
-		if ($json->id > 0) {
+		$id = (int) $json->id;
 
+		if ($id > 0) {
 			$this->getPlugin()->getDatabase()->updateConnection($fields = $this->defaultUpdateItemData($json));
+		}
 
-			Broadcast('eventlist', 'update', array(
-				'event' => 'updated',
-				'item' => $data = $this->getPlugin()->getFeedItemRecord($json->id, "connection"),
-			));
+		if ($id <= 0) {
 
-			return array('id' => $json->id, 'item' => $data);
+			$id = $this->getPlugin()->getDatabase()->createConnection($fields = array_merge(array(
+
+				'itemTypeB' => $json->itemTypeB,
+				'itemIdB' => $json->itemIdB,
+
+				'itemTypeA' => $json->itemType,
+				'itemIdA' => $json->itemId,
+
+			), $this->defaultItemData($json)));
 
 		}
 
-		$connectionId = $this->getPlugin()->getDatabase()->createConnection($fields = array_merge(array(
-
-			'itemTypeB' => $json->itemTypeB,
-			'itemIdB' => $json->itemIdB,
-
-			'itemTypeA' => $json->itemType,
-			'itemIdA' => $json->itemId,
-
-		), $this->defaultItemData($json)));
+        $this->setItemAttributes($id, "connection", $json);
 
 		Broadcast('eventlist', 'update', array(
-			'event' => 'created',
-			'item' => $data = $this->getPlugin()->getFeedItemRecord($connectionId, "connection"),
+			'event' => 'updated',
+			'item' => $data = $this->getPlugin()->getFeedItemRecord($id, "connection"),
 		));
 
-		return array_merge(array('id' => $connectionId, 'item' => $data));
+		return array('id' => $id, 'item' => $data);
 
 	}
 
 	protected function saveEvent($json) {
 
-		if ($json->id > 0) {
+		$id = (int) $json->id;
 
+		if ($id > 0) {
 			$this->getPlugin()->getDatabase()->updateEvent($fields = $this->defaultUpdateItemData($json));
-
-			Broadcast('eventlist', 'update', array(
-				'event' => 'updated',
-				'item' => $data = $this->getPlugin()->getFeedItemRecord($json->id, "event"),
-			));
-
-			return array('id' => $json->id, 'item' => $data);
-
 		}
 
-		$eventId = $this->getPlugin()->getDatabase()->createEvent($fields = array_merge(array(
+		if ($id <= 0) {
+			$id = $this->getPlugin()->getDatabase()->createEvent($fields = array_merge(array(
 
-			'itemType' => $json->itemType,
-			'itemId' => $json->itemId,
+				'itemType' => $json->itemType,
+				'itemId' => $json->itemId,
 
-		), $this->defaultItemData($json)));
+			), $this->defaultItemData($json)));
+		}
+
+        $this->setItemAttributes($id, "event", $json);
 
 		Broadcast('eventlist', 'update', array(
-			'event' => 'created',
-			'item' => $data = $this->getPlugin()->getFeedItemRecord($eventId, "event"),
+			'event' => 'updated',
+			'item' => $data = $this->getPlugin()->getFeedItemRecord($id, "event"),
 		));
 
-		return array_merge(array('id' => $eventId, 'item' => $data));
+		return array('id' => $id, 'item' => $data);
 
 	}
 
 	protected function saveRequest($json) {
 
-		if ($json->id > 0) {
+		$id = (int) $json->id;
 
+		if ($id > 0) {
 			$this->getPlugin()->getDatabase()->updateRequest($fields = $this->defaultUpdateItemData($json));
+		}
 
-			if (key_exists('attributes', $json)) {
+		if ($id <= 0) {
 
-			}
+			$id = $this->getPlugin()->getDatabase()->createRequest($fields = array_merge(array(
 
-			Broadcast('eventlist', 'update', array(
-				'event' => 'updated',
-				'item' => $data = $this->getPlugin()->getFeedItemRecord($json->id, "request"),
-			));
+				'itemType' => $json->itemType,
+				'itemId' => $json->itemId,
 
-			return array('id' => $json->id, 'item' => $data);
+			), $this->defaultItemData($json)));
 
 		}
 
-		$requestId = $this->getPlugin()->getDatabase()->createRequest($fields = array_merge(array(
-
-			'itemType' => $json->itemType,
-			'itemId' => $json->itemId,
-
-		), $this->defaultItemData($json)));
+        $this->setItemAttributes($id, "request", $json);
 
 		Broadcast('eventlist', 'update', array(
-			'event' => 'created',
-			'item' => $data = $this->getPlugin()->getFeedItemRecord($requestId, "request"),
+			'event' => 'updated',
+			'item' => $data = $this->getPlugin()->getFeedItemRecord($id, "request"),
 		));
 
-		return array_merge(array('id' => $requestId, 'item' => $data));
+		return array('id' => $id, 'item' => $data);
 
 	}
 
 	protected function saveProfile($json) {
 
 		$now = date('Y-m-d H:i:s');
+		$id = (int) $json->id;
 
-		if ($json->id > 0) {
+		if ($id > 0) {
 
-			$fields = array(
-				'id' => $json->id,
-				'name' => $json->name,
-				'description' => $json->description,
-				'modifiedDate' => $now,
-			);
+			$fields = $this->defaultUpdateItemData($json);
 
 			if ($json->published) {
-				$profileRecord = $this->getPlugin()->getDatabase()->getProfile($json->id)[0];
+				$profileRecord = $this->getPlugin()->getDatabase()->getProfile($id)[0];
 				if (!boolval($profileRecord->published)) {
 					$fields['published'] = true;
 					$fields['publishedDate'] = $now;
@@ -276,31 +269,30 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 
 			$this->getPlugin()->getDatabase()->updateProfile($fields);
 
-			Broadcast('eventlist', 'update', array(
-				'event' => 'updated',
-				'item' => $data = $this->getPlugin()->getFeedItemRecord($json->id, "profile"),
-			));
+		}
 
-			return array('id' => $json->id, 'item' => $data);
+		if ($id <= 0) {
+
+			$id = $this->getPlugin()->getDatabase()->createProfile($fields = array_merge(array(
+
+				'itemType' => $json->itemType,
+				'itemId' => $json->itemId,
+
+				"published" => true,
+				'publishedDate' => $now,
+
+			), $this->defaultItemData($json)));
 
 		}
 
-		$profileId = $this->getPlugin()->getDatabase()->createProfile($fields = array_merge(array(
-
-			'itemType' => $json->itemType,
-			'itemId' => $json->itemId,
-
-			"published" => true,
-			'publishedDate' => $now,
-
-		), $this->defaultItemData($json)));
+        $this->setItemAttributes($id, "profile", $json);
 
 		Broadcast('eventlist', 'update', array(
-			'event' => 'created',
-			'item' => $data = $this->getPlugin()->getFeedItemRecord($profileId, "profile"),
+			'event' => 'updated',
+			'item' => $data = $this->getPlugin()->getFeedItemRecord($id, "profile"),
 		));
 
-		return array_merge(array('id' => $profileId, 'item' => $data));
+		return array('id' => $id, 'item' => $data);
 
 	}
 
