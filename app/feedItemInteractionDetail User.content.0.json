@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\nreturn EventItem.CreateConnectionToOwnerProfileButton(item, application, <?php \n        \n       echo json_encode(($ui=GetWidget('interfaceConfig'))->getParameter('label-for-item-owner-connect'));\n    \n        ?>);",
+        "script": "\nreturn CuhubDashboard.createConnectionToOwnerProfileButton(item);",
         "description": "Info about my custom script"
     }
 }
