@@ -346,6 +346,7 @@ class ProjectHub extends \Plugin implements
 	 */
 	public function includeScripts() {
 
+		IncludeJS(__DIR__ . '/js/DashboardController.js');
 		IncludeJS(__DIR__ . '/js/EventList.js');
 		IncludeJS(__DIR__ . '/js/EventItem.js');
 		IncludeJS('{core}/bower_components/moment/moment.js');
