@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "\nvar labelContent=<?php\n\n$ui=GetWidget('interfaceConfig');\n\n$labels=array_filter($ui->getConfigurationValues(),function($v,$k){ return strpos($k, 'label-')===0;}, ARRAY_FILTER_USE_BOTH);\n\n\necho json_encode($labels,JSON_PRETTY_PRINT);\n?>\n\nCuhubDashboard.setLabels(labelContent);\nreturn CuhubDashboard.createNavigationController();\n\n\n\n\n\n\n",
+        "script": "\n\nreturn CuhubDashboard.createNavigationController();\n\n\n\n\n\n\n",
         "description": "Info about my custom script"
     }
 }
