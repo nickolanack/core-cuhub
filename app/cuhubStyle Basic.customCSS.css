@@ -1334,7 +1334,12 @@ body.dragover .add-photo .empty.droppable:after, .add-photo .empty.droppable:aft
 
 
 
-.module-wizard.project-form:after, .module-wizard.event-form:after, .module-wizard.connection-form:after, .module-wizard.request-form:after, .module-wizard.profile-form:after {
+.module-wizard.project-form:after, 
+.module-wizard.event-form:after, 
+.module-wizard.connection-form:after, 
+.module-wizard.request-form:after, 
+.module-wizard.profile-form:after,
+.module-wizard.resource-form:after {
     content: "";
     width: 100px;
     height: 100px;
@@ -1351,7 +1356,12 @@ body.dragover .add-photo .empty.droppable:after, .add-photo .empty.droppable:aft
     background-size: 50%;
 }
 
-.module-wizard.project-form:before, .module-wizard.event-form:before, .module-wizard.connection-form:before, .module-wizard.request-form:before, .module-wizard.profile-form:before {
+.module-wizard.project-form:before, 
+.module-wizard.event-form:before, 
+.module-wizard.connection-form:before, 
+.module-wizard.request-form:before, 
+.module-wizard.profile-form:before,
+.module-wizard.resource-form:before {
     content: "";
     position: absolute;
     top: -1px;
