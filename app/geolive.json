@@ -2774,11 +2774,6 @@
             "readAccess": "public"
         }
     },
-    "widget.40": {
-        "name": "Javascript",
-        "instance": "CustomBehaviorScript",
-        "parameters": {}
-    },
     "widget.42": {
         "name": "Form View",
         "instance": "UserWizardBuilder",
