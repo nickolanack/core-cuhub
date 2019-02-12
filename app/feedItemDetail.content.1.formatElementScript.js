@@ -1,1 +1,1 @@
-EventItem.FormatItemLabel(item, el, valueEl, application);
+CuhubDashboard.formatItemLabel(item, el, valueEl);

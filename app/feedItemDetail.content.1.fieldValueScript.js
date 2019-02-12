@@ -1,13 +1,4 @@
 
 
-if(item instanceof MyProfileItem&&AppClient.getUserType()=="guest"){
-    return "You are not logged in"
-}
+return CuhubDashboard.getItemLabelValue(item);
 
-
-
-var str= (item.getName?item.getName():"{name}");
-
-
-
-return str;
