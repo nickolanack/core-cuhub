@@ -1675,6 +1675,21 @@
                 },
                 {
                     "type": "images",
+                    "name": "icon-for-feed-resource",
+                    "default": [],
+                    "label": "icon-for-feed-resource",
+                    "maxHeight": 128,
+                    "maxWidth": 128,
+                    "limit": 1
+                },
+                {
+                    "type": "color",
+                    "name": "color-for-resource",
+                    "default": "rgb(0,0,0)",
+                    "label": "color-for-resource"
+                },
+                {
+                    "type": "images",
                     "name": "icon-for-feed-event",
                     "default": [],
                     "label": "icon-for-feed-event",
@@ -2029,7 +2044,9 @@
             ],
             "icon-for-notification-center": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/V9_Nkh_[G]_BGC_[ImAgE].png"
-            ]
+            ],
+            "icon-for-feed-resource": [],
+            "color-for-resource": "rgb(0,0,0)"
         }
     },
     "widget.25": {
