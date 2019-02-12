@@ -1,1 +1,2 @@
-EventItem.FormatDiscussionCounters(el, valueEl, item);
+
+CuhubDashboard.formatDiscussionCounters(el, valueEl, item);
