@@ -1706,8 +1706,11 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-new label {
 span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-resource {
     background-color: rgba(88, 128, 88, 1);
     position: absolute;
-    top: -108px;
+    top: -100px;
     left: 250px;
+    width: 135px;
+    height: 35px;
+    padding: 2px;
 }
 span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-resource label {
     color: black;
