@@ -12,7 +12,7 @@
         "showDeleteButton": false,
         "deleteItemScript": "",
         "initModuleScript": "",
-        "formatModuleScript": "<?php\n\nif(!GetWidget('interfaceConfig')->getParameter('show-background')){\n    ?>\n    module.getElement().addClass('no-banner');\n\n    <?php\n}\n\n?>",
+        "formatModuleScript": "CuhubDashboard.setApplication(application);\n<?php\n\nif(!GetWidget('interfaceConfig')->getParameter('show-background')){\n    ?>\n    module.getElement().addClass('no-banner');\n\n    <?php\n}\n\n?>",
         "resolveItemScript": "",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
