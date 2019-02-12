@@ -1,1 +1,1 @@
-return EventList.DefaultTags(item, application);
+return CuhubDashboard.defaultItemTags(item);
