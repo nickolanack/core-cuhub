@@ -2,7 +2,7 @@
     "type": "WizardScriptElement",
     "config": {
         "name": "My Custom Script",
-        "script": "return [EventItem.CreateDirectChatButton(item, application), EventItem.CreateConnectionButton(item, application, <?php \n        \n       echo json_encode(($ui=GetWidget('interfaceConfig'))->getParameter('label-for-item-connect'));\n    \n        ?>)];",
+        "script": "return CuhubDashboard.getFeedItemBottomButtons(item);",
         "description": "Info about my custom script"
     }
 }
