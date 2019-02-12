@@ -1,1 +1,1 @@
-return EventItem.CreateFeedItemButtons(item, application);
+return CuhubDashboard.createFeedItemSubChildButtons(item);
