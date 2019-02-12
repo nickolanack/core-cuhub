@@ -20,9 +20,19 @@ $projectHub->setDocumentMetadata();
 $projectHub->includeScripts();
 
 
+$ui=GetWidget('interfaceConfig');
+$labels=array_filter($ui->getConfigurationValues(),function($v,$k){ return strpos($k, 'label-')===0;}, ARRAY_FILTER_USE_BOTH);
+
+
+
 IncludeJSBlock('
 
     window.FeedItemListResponse='.json_encode($feedItemList=$projectHub->listFeedItemsAjaxCache()).';
+
+    
+
+    CuhubDashboard.setLabels('.json_encode($labels,JSON_PRETTY_PRINT).');
+
 
 ');
 
