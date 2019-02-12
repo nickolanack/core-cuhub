@@ -2559,16 +2559,16 @@
                             "connectionForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 536,
-                            "y": 305
+                            "x": 261,
+                            "y": 106
                         },
                         "children": [
                             "connectionForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 496,
-                                    "y": 493
+                                    "x": 221,
+                                    "y": 294
                                 }
                             }
                         ],
@@ -2619,8 +2619,8 @@
                                                     "connectionForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
-                                                "showLabel": true,
-                                                "showAddWord": true,
+                                                "showLabel": false,
+                                                "showAddWord": false,
                                                 "label": "{field.label}",
                                                 "addWordPlaceholder": "add a keyword",
                                                 "fontColor": "rgb(0, 0, 0)",
