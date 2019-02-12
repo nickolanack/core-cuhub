@@ -2364,16 +2364,16 @@
                             "projectForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 294,
-                            "y": 342
+                            "x": 304,
+                            "y": 352
                         },
                         "children": [
                             "projectForm.metadata.children.1.children.0.json",
                             {
                                 "class": "InsertNode",
                                 "_diagramState": {
-                                    "x": 254,
-                                    "y": 568
+                                    "x": 264,
+                                    "y": 578
                                 }
                             }
                         ],
@@ -2490,8 +2490,8 @@
                                                     "projectForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
                                                 ],
                                                 "className": "",
-                                                "showLabel": true,
-                                                "showAddWord": true,
+                                                "showLabel": false,
+                                                "showAddWord": false,
                                                 "label": "{field.label}",
                                                 "addWordPlaceholder": "add custom tag",
                                                 "fontColor": "rgb(0, 0, 0)",
