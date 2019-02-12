@@ -1,0 +1,1 @@
+return CuhubDashboard.defaultItemTags(item);

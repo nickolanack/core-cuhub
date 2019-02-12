@@ -841,12 +841,11 @@
         "name": "Form View",
         "instance": "UserWizardBuilder",
         "parameters": {
-            "target": "none",
             "metadata": {
                 "class": "DecisionNode",
                 "_diagramState": {
-                    "x": -18,
-                    "y": 171
+                    "x": 91,
+                    "y": 251
                 },
                 "children": [
                     "resourceForm.metadata.children.0.json",
@@ -857,11 +856,18 @@
                             "resourceForm.metadata.children.1.fields.0.json"
                         ],
                         "_diagramState": {
-                            "x": 128,
-                            "y": 260
+                            "x": 304,
+                            "y": 352
                         },
                         "children": [
-                            "resourceForm.metadata.children.1.children.0.json"
+                            "resourceForm.metadata.children.1.children.0.json",
+                            {
+                                "class": "InsertNode",
+                                "_diagramState": {
+                                    "x": 264,
+                                    "y": 578
+                                }
+                            }
                         ],
                         "builderMetadata": {
                             "positions": {
@@ -874,9 +880,19 @@
                                     "modules": [
                                         "resourceForm.metadata.children.1.builderMetadata.positions.content.modules.0.json",
                                         {
+                                            "type": "WizardTitleField",
+                                            "config": {
+                                                "label": "Title",
+                                                "message": "add a title",
+                                                "className": "",
+                                                "maxChars": 0,
+                                                "textFormatScript": ""
+                                            }
+                                        },
+                                        {
                                             "type": "WizardDescriptionField",
                                             "config": {
-                                                "label": "Description",
+                                                "label": "Summary",
                                                 "message": "add a description",
                                                 "lines": 3,
                                                 "mandatory": false,
@@ -889,7 +905,94 @@
                                                 "showExpandInput": true,
                                                 "toolbarPosition": "bottom",
                                                 "textFormatScript": "",
-                                                "mediaIconTint": "rgb(100, 149, 237)"
+                                                "mediaIconTint": "rgb(100, 149, 237)",
+                                                "onRenderModuleFn": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardDescriptionAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "resourceForm.metadata.children.1.builderMetadata.positions.content.modules.3.config.attributeFields.0.json"
+                                                ],
+                                                "label": "{field.label}",
+                                                "message": "add a description",
+                                                "lines": 3,
+                                                "mandatory": true,
+                                                "showAudios": true,
+                                                "showImages": true,
+                                                "showDocuments": true,
+                                                "showVideos": true,
+                                                "className": "",
+                                                "maxChars": 0,
+                                                "showExpandInput": true,
+                                                "toolbarPosition": "bottom",
+                                                "textFormatScript": "",
+                                                "onRenderModuleFn": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "resourceForm.metadata.children.1.builderMetadata.positions.content.modules.4.config.attributeFields.0.json"
+                                                ],
+                                                "className": "col-2",
+                                                "label": "{field.label}",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "autocomplete": true,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "date",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTextAttribute",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "resourceForm.metadata.children.1.builderMetadata.positions.content.modules.5.config.attributeFields.0.json"
+                                                ],
+                                                "className": "col-2",
+                                                "label": "{field.label}",
+                                                "message": "",
+                                                "lines": 1,
+                                                "maxChars": 0,
+                                                "mandatory": false,
+                                                "multiEntry": false,
+                                                "autocomplete": true,
+                                                "muliTemplate": "lines",
+                                                "multiMessage": "",
+                                                "formatter": "date",
+                                                "iconTint": "rgb(100, 149, 237)",
+                                                "onRenderTextFieldScript": "",
+                                                "formatValueScript": ""
+                                            }
+                                        },
+                                        {
+                                            "type": "plugin.Attributes.WizardTagCloud",
+                                            "config": {
+                                                "attributeFields": [
+                                                    "resourceForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.attributeFields.0.json"
+                                                ],
+                                                "className": "",
+                                                "showLabel": false,
+                                                "showAddWord": false,
+                                                "label": "{field.label}",
+                                                "addWordPlaceholder": "add custom tag",
+                                                "fontColor": "rgb(0, 0, 0)",
+                                                "hoverColor": "rgb(143, 188, 143)",
+                                                "selectedColor": "rgb(143, 188, 143)",
+                                                "shuffleTags": false,
+                                                "tags": "[\n   \"tag one\",\n   \"tag two\"\n]",
+                                                "getItemTagsScript": "resourceForm.metadata.children.1.builderMetadata.positions.content.modules.6.config.getItemTagsScript.js",
+                                                "formatModule": ""
                                             }
                                         }
                                     ]
@@ -908,21 +1011,25 @@
                                 "content",
                                 "footer",
                                 "menu"
-                            ]
+                            ],
+                            "_diagramState": {
+                                "minimized": false
+                            }
                         }
                     }
                 ]
             },
-            "widgetTitle": "resourceForm",
-            "templateName": "none",
-            "requireTarget": true,
-            "resolveItemScript": "return item;",
             "beforeSubmitScript": "",
             "onCreateScript": "",
             "onUpdateScript": "",
             "onSaveScript": "",
             "onLoadScript": "",
-            "readAccess": "public"
+            "requireTarget": true,
+            "templateName": "resourceForm",
+            "widgetTitle": "resourceForm",
+            "target": "resourceForm",
+            "readAccess": "public",
+            "resolveItemScript": "return item;"
         }
     },
     "widget.12": {
