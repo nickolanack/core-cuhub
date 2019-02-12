@@ -2045,8 +2045,10 @@
             "icon-for-notification-center": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/V9_Nkh_[G]_BGC_[ImAgE].png"
             ],
-            "icon-for-feed-resource": [],
-            "color-for-resource": "rgb(0,0,0)"
+            "icon-for-feed-resource": [
+                "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[ImAgE]_Gv_CMd_[G]_jjv.png"
+            ],
+            "color-for-resource": "rgb(88, 128, 88)"
         }
     },
     "widget.25": {
