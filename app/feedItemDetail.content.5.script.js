@@ -1,1 +1,1 @@
-return EventItem.CreateMapTileUrl(item);
+return CuhubDashboard.createMapTileUrl(item);
