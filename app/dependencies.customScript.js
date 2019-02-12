@@ -12,6 +12,7 @@
     'forgotPasswordForm',
     'eventForm',
     'projectForm',
+    'resourceForm',
     'connectionForm',
     'connectWithUserForm',
     'connectWithEventForm',
