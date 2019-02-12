@@ -125,7 +125,7 @@ span.ui-navigation-menu ul.menu-main li {
 
 
 
-<?php foreach(array('connection', 'profile', 'project', 'request', 'event') as $type){
+<?php foreach(array('resource','connection', 'profile', 'project', 'request', 'event') as $type){
     ?>
     
     
