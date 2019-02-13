@@ -1582,16 +1582,15 @@ input.search-input:focus {
     border-color: rgb(6, 134, 180);
 }
 
+span.search-bar-btn.search {
+    display: none;
+}
 
-.search-bar-btn.search {
-    display: inline-block;
-    width: 80px;
-    text-align: right;
-    padding-right: 10px;
-    box-sizing: border-box;
-    color: #252525;
-    font-size: 20px;
-    font-weight: 200;
+span.search-container input.search-input{
+    display:none;
+}
+span.search-container.active input.search-input{
+    display:inline-block;
 }
 
 
