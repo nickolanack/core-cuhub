@@ -1,1 +1,1 @@
-EventList.FormatFieldLabel(el, application, 'Calendar');
+CuhubDashboard.formatStickyTabLabel(el, 'Calendar');
