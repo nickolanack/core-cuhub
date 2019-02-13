@@ -1,2 +1,2 @@
 
-return EventList.CreateTopNavigation(application);
+return CuhubDashboard.createTopNavigationController()
