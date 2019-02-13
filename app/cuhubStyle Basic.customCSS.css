@@ -1606,6 +1606,18 @@ span.search-container.active {
 }
 
 
+span.search-bar-btn.search-toggle {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    float: left;
+}
+
+span.search-bar-btn.search-toggle>span{
+    display:none;
+}
+
+
 .tag-cloud {
     margin: 20px 0;
     text-align: center;
