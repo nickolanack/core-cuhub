@@ -370,6 +370,10 @@
                                 }
                             },
                             {
+                                "type": "Search",
+                                "config": []
+                            },
+                            {
                                 "type": "UIView",
                                 "config": {
                                     "className": "left-detail",
@@ -420,7 +424,7 @@
                                     "viewType": "view",
                                     "namedView": "bottomDetail",
                                     "shouldRender": true,
-                                    "namedViewScript": "layoutDetail Main View.metadata.positions.content.modules.4.config.namedViewScript.js",
+                                    "namedViewScript": "layoutDetail Main View.metadata.positions.content.modules.5.config.namedViewScript.js",
                                     "showInlineEdit": false,
                                     "namedFormView": "defaultFormView",
                                     "formOptions": "{}",
