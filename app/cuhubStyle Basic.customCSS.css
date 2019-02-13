@@ -1661,6 +1661,14 @@ span.search-bar-btn.search-toggle:after {
     background-color: #e0e0e0;
 }
 
+.search-result-list .ui-view.feed-item-expanded-detail, 
+.search-result-list .static-map, 
+.search-result-list .ui-view.feed-item-bottom-detail,
+.search-result-list .feed-item-actions{
+    display: none;
+}
+
+
 
 .discussion>.toolbar-icons button.add_attachment {
     position: relative;
