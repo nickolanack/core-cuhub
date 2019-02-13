@@ -1621,6 +1621,19 @@ span.search-bar-btn.search-toggle>span{
     display:none;
 }
 
+span.search-bar-btn.search-toggle:after {
+    content: "Search";
+    position: absolute;
+    left: 30px;
+    line-height: 30px;
+    color: slategray;
+    font-style: italic;
+}
+
+.search-container.active span.search-bar-btn.search-toggle:after {
+    display: none;
+}
+
 
 .tag-cloud {
     margin: 20px 0;
