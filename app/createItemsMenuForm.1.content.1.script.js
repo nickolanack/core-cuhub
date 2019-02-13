@@ -1,1 +1,1 @@
-return EventList.CreateNewFeedItemNavigation(application, wizard);
+return CuhubDashboard.createNewFeedItemNavigationInWizard(wizard);
