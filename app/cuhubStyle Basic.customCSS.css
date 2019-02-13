@@ -1635,6 +1635,19 @@ span.search-bar-btn.search-toggle:after {
     display: none;
 }
 
+.search-container.active span.search-bar-btn.search-toggle:before {
+    content: "";
+    float: left;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    left: 555px;
+    top: 0px;
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 
 .tag-cloud {
     margin: 20px 0;
