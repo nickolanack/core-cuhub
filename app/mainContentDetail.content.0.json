@@ -2,7 +2,7 @@
     "type": "FieldValue",
     "config": {
         "loadAsync": false,
-        "fieldLabelScript": "return EventList.CurrentListLabel(application);",
+        "fieldLabelScript": "return CuhubDashboard.getPageLabel();",
         "fieldValueScript": "return \"\";",
         "formatElementScript": "el.addClass('section-item-icon')"
     }
