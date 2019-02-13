@@ -71,6 +71,16 @@
             <?php
         }
         
+        $closeIcon=$ui->getParameter('icon-close', array());
+        if(!empty($closeIcon)){  ?>
+        
+            span.search-bar-btn.search-toggle:before {
+                 background-image: url("<?php echo UrlFrom($closeIcon[0]); ?>");
+            }
+            
+            
+            <?php
+        }
         
         
         $notificationImage=$ui->getParameter('icon-for-notification-center', array());
