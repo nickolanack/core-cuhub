@@ -39,7 +39,7 @@ IncludeJSBlock('
 
 $projectHub->printFeedItemLinksHtml();
 
-
+Behavior('aggregator');
 
 //(new \core\AsyncDisplay())->display(function()use($targetInstance){
 
