@@ -1571,6 +1571,7 @@ span.search-container {
     top: 109px;
     right: 0;
     width: 600px;
+    transition: right 0.5s;
 }
 
 .search-bar-content {
@@ -1602,7 +1603,7 @@ span.search-container.active input.search-input{
 
 span.search-container.active {
     right: calc( 50% - 300px );
-    transition: right 0.5s;
+   
 }
 
 
