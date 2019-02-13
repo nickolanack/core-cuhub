@@ -1604,6 +1604,7 @@ span.search-container.active input.search-input{
 span.search-container.active {
     right: calc( 50% - 300px );
     width:600px;
+    z-index:99;
    
 }
 
