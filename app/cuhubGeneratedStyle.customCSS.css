@@ -54,6 +54,16 @@
         }
         
         
+        $searchIcon=$ui->getParameter('icon-search', array());
+        if(!empty($searchIcon)){  ?>
+        
+            span.search-bar-btn.search-toggle {
+                 background-image: url("<?php echo UrlFrom($searchIcon[0]); ?>");
+            }
+            <?php
+        }
+        
+        
         
         $notificationImage=$ui->getParameter('icon-for-notification-center', array());
         if(!empty($notificationImage)){
