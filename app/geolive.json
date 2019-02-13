@@ -371,7 +371,10 @@
                             },
                             {
                                 "type": "Search",
-                                "config": []
+                                "config": {
+                                    "getAggregatorsScript": "layoutDetail Main View.metadata.positions.content.modules.2.config.getAggregatorsScript.js",
+                                    "placeholder": "search items"
+                                }
                             },
                             {
                                 "type": "UIView",
