@@ -1,9 +1,0 @@
-{
-    "type": "FieldValue",
-    "config": {
-        "loadAsync": false,
-        "fieldLabelScript": "return \"Your Pinned Items\";",
-        "fieldValueScript": "return \"\";",
-        "formatElementScript": "\nEventList.FormatFieldLabel(el, application, 'Pinned');"
-    }
-}
