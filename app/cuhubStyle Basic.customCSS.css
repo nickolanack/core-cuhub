@@ -1559,12 +1559,19 @@ input.discussion-textbox {
 }
 
 
+.search-container {
+    position: absolute;
+    top: 109px;
+    right: 0;
+    width: 500px;
+}
+
 .search-bar-content {
     margin: 40px 0;
 }
 
 input.search-input {
-    width: calc(100% - 200px);
+    width: calc(100% - 120px);
     border-color: rgba(0,0,0,0.3);
     z-index: 2;
     border-radius: 1px;
@@ -1605,7 +1612,7 @@ input.search-input:focus {
 
 
 .search-container {
-    position: relative;
+    
 }
 
 
