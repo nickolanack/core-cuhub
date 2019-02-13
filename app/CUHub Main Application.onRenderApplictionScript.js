@@ -27,7 +27,7 @@ $labels=array_filter($ui->getConfigurationValues(),function($v,$k){ return strpo
 
 IncludeJSBlock('
 
-    window.FeedItemListResponse='.json_encode($feedItemList=$projectHub->listFeedItemsAjaxCache()).';
+    //window.FeedItemListResponse='.json_encode($feedItemList=$projectHub->listFeedItemsAjaxCache()).';
 
     
 
