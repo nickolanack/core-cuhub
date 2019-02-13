@@ -1637,6 +1637,15 @@
                 },
                 {
                     "type": "images",
+                    "name": "icon-search",
+                    "default": [],
+                    "label": "icon-search",
+                    "maxHeight": 64,
+                    "maxWidth": 64,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
                     "name": "icon-for-feed-profile",
                     "default": [],
                     "label": "icon-for-feed-profile",
@@ -2055,7 +2064,8 @@
             "icon-for-feed-resource": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/[ImAgE]_Gv_CMd_[G]_jjv.png"
             ],
-            "color-for-resource": "rgb(88, 128, 88)"
+            "color-for-resource": "rgb(88, 128, 88)",
+            "icon-search": []
         }
     },
     "widget.25": {
