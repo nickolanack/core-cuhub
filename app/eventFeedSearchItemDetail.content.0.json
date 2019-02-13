@@ -11,10 +11,12 @@
         "formOptions": "\"{}\"",
         "showDeleteButton": false,
         "deleteItemScript": "defaultBehaviorFn()",
-        "formatModuleScript": "",
+        "initModuleScript": "",
+        "formatModuleScript": "EventList.FormatGenericItemFeedListChildModule(module, item);",
         "resolveItemScript": "return EventList.SharedInstance().getItem(item.id, item.type);",
         "filterModulesScript": "return list",
         "itemButtonsScript": "return [];",
-        "insertAtTop": false
+        "insertAtTop": false,
+        "targetName": ""
     }
 }
