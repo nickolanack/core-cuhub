@@ -65,7 +65,7 @@
             }
             
             .search-container.active span.search-bar-btn.search-toggle {
-                 
+                 background-image: url("<?php echo UrlFrom($searchIcon[0]."?tint=rgb(0, 210, 0)"); ?>");
             }
             
             <?php
