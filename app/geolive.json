@@ -1646,6 +1646,15 @@
                 },
                 {
                     "type": "images",
+                    "name": "icon-close",
+                    "default": [],
+                    "label": "icon-close",
+                    "maxHeight": 64,
+                    "maxWidth": 64,
+                    "limit": 1
+                },
+                {
+                    "type": "images",
                     "name": "icon-for-feed-profile",
                     "default": [],
                     "label": "icon-for-feed-profile",
@@ -2067,7 +2076,8 @@
             "color-for-resource": "rgb(88, 128, 88)",
             "icon-search": [
                 "components\/com_geolive\/users_files\/user_files_527\/Uploads\/h4L_[ImAgE]_[G]_yBm_hax.png"
-            ]
+            ],
+            "icon-close": []
         }
     },
     "widget.25": {
