@@ -1,1 +1,1 @@
-return [new EventList.SearchAggregator(application, search, {})]
+return CuhubDashboard.getSearchAggregators(search);
