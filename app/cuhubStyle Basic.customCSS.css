@@ -1600,6 +1600,11 @@ span.search-container.active input.search-input{
     display:inline-block;
 }
 
+span.search-container.active {
+    right: calc( 50% - 250px );
+    transition: right 0.5s;
+}
+
 
 .tag-cloud {
     margin: 20px 0;
