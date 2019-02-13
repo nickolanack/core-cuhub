@@ -1559,7 +1559,7 @@ input.discussion-textbox {
 }
 
 
-.search-container {
+span..search-container {
     position: absolute;
     top: 109px;
     right: 0;
