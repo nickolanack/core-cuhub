@@ -82,6 +82,14 @@ div.tip-title, .bubble>.title{
         margin-bottom: 30px;
 }
 
+span.empty-tags {
+    display: block;
+    color: slategrey;
+    font-style: italic;
+    font-size: 13px;
+    padding: 3px 0;
+}
+
 .ui-template-form button.menu-main-feeditems.create-new {
     margin: 10px;
     width: 200px;
