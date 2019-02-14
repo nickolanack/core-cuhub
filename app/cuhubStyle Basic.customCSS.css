@@ -1890,6 +1890,14 @@ span.ui-navigation-menu .menu-main li.menu-main-feeditems.create-resource label 
 }
 
 
+span.count-followers:after {
+    content:"( " attr(data-follower-counter) " ) ";
+    color: slategrey;
+    font-style: italic;
+    font-size: 10px;
+
+}
+
 
 
 .right-detail .tag-cloud span.tag-el.active {
