@@ -19,7 +19,7 @@
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
-        "getItemListScript": "\/\/ var events=EventList.SharedInstance().getEvents();\n\n EventList.SharedInstance(function(el){\n        \n        var items=el.getActiveItems();\n        if(items.length){\n            var item=items[0];\n            if(item.showsOwner()){\n                items=el.getParentItems(item).concat(items);\n            }\n            items=items.concat(el.getChildItems(item));\n        }\n        \n        callback(items);\n    \n })\n \n  ",
+        "getItemListScript": "\/\/ var events=EventList.SharedInstance().getEvents();\nCuhubDashboard.getActiveItemDetailItemList(callback)\n",
         "formatItemListScript": "return list;",
         "formatListItemModuleScript": "\nEventList.FormatActiveItemFeedListChildModule(childView, child);",
         "emptyNamedView": "emptyListView",
