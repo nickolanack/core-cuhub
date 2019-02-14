@@ -159,6 +159,21 @@ class ProjectHub extends \Plugin implements
 	}
 
 	/**
+	 * returns the list of feeditems formatted for an ajax response. 
+	 * ie: ["results"=>array, "subscription"=>array];
+	 * @return array feeditem list ajax response
+	 */
+	public function listConnectionsAjax(){
+
+		$response=array('results'=>$this->listConnections());
+
+        return $response;
+
+
+
+	}
+
+	/**
 	 * returns the list of formatted (possibly filtered) feeditems
 	 * @return array feeditem list
 	 */
@@ -169,8 +184,9 @@ class ProjectHub extends \Plugin implements
 		$filter['ORDER BY'] = 'createdDate DESC';
 
 		$projects = $this->getDatabase()->getProjects($filter);
+		$resources = $this->getDatabase()->getResources($filter);
 		$events = $this->getDatabase()->getEvents($filter);
-		$connections = $this->getDatabase()->getConnections($filter);
+		//$connections = $this->getDatabase()->getConnections($filter);
 		$requests = $this->getDatabase()->getRequests($filter);
 		$profiles = $this->getDatabase()->getProfiles(array_merge(array(), $filter));
 
@@ -182,15 +198,17 @@ class ProjectHub extends \Plugin implements
 			}, $projects),
 			array_map(function ($record) {
 
+				return $this->_feedItem($record ,"resource");
+
+			}, $resources),
+			array_map(function ($record) {
+
 				return $this->_feedItem($record ,"event");
 
 			}, $events),
-			array_map(function ($record) {
-
-				return $this->_feedItem($record ,"connection");
-
-
-			}, $connections),
+			// array_map(function ($record) {
+			// 	return $this->_feedItem($record ,"connection");
+			// }, $connections),
 			array_map(function ($record) {
 
 				return $this->_feedItem($record ,"request");
@@ -213,12 +231,33 @@ class ProjectHub extends \Plugin implements
 	}
 
 	/**
+	 * returns the list of formatted (possibly filtered) feeditems
+	 * @return array feeditem list
+	 */
+	public function listConnections($filter=array()) {
+
+		GetPlugin('Attributes');
+
+		$filter['ORDER BY'] = 'createdDate DESC';
+
+	
+		$connections = $this->getDatabase()->getConnections($filter);
+		
+
+		return array_map(function ($record) {
+				return $this->_feedItem($record ,"connection");
+			}, $connections);
+			
+
+	}
+
+	/**
 	 * get the list of feeditem types
 	 * @return array types
 	 */
 	public function getFeedTypes(){
 
-		return array('project','event','connection','request','profile');
+		return array('project', 'resource','event','connection','request','profile');
 
 	}
 
@@ -539,11 +578,36 @@ class ProjectHub extends \Plugin implements
 
 		return array_merge(
 			$record, 
-			$this->_getPinsForRecord($record), 
+			$this->_getPinsForRecord($record),
+			$this->_getConnectionsForRecord($record), 
 			$this->_getArchivedForRecord($record), 
 			$this->_getAttributesForRecord($record));
 
 	}	
+
+	private function _getConnectionsForRecord($record){
+
+		
+
+		$connections=$this->getDatabase()->getConnections(array(
+			'itemTypeA'=>$record["type"],
+			'itemIdA'=>$record['id']
+		));
+
+
+		$connectionsToRecord=$this->getDatabase()->getConnections(array(
+			'itemTypeB'=>$record["type"],
+			'itemIdB'=>$record['id']
+		));
+
+
+
+
+		return array(
+			'connectionsToItem'=>$connectionsToRecord,
+			'connections'=>$connections
+		);
+	}
 
 	private function _getPinsForRecord($record){
 

@@ -1,5 +1,5 @@
 var DashboardController = new Class({
-
+	Implements:[Events],
 
 	setApplication: function(application) {
 
@@ -19,21 +19,30 @@ var DashboardController = new Class({
 
 	},
 
-	setLabels:function(labels){
+	getRootElement:function(){
+		return $$('.ui-view.root-container')[0];
+	},
+
+	getNavigationController:function(callback) {
 		var me=this;
+		return me.getApplication().getNamedValue('navigationController', callback);
+	},
+
+	setLabels: function(labels) {
+		var me = this;
 		me._labels = labels;
 	},
 
-	getLabel:function(key) {
-		var me=this;
-			if (me._labels && me._labels[key]) {
-				return me._labels[key];
-			}
-			return key;
+	getLabel: function(key) {
+		var me = this;
+		if (me._labels && me._labels[key]) {
+			return me._labels[key];
+		}
+		return key;
 	},
 
-	getLabels:function(){
-		var me=this;
+	getLabels: function() {
+		var me = this;
 		return me._labels;
 	},
 
@@ -43,11 +52,30 @@ var DashboardController = new Class({
 
 		return [
 			me.createDirectChatButton(item),
+			me.createPinnedCounter(item),
+			me.createConnectionCounter(item),
 			me.createConnectionButton(item)
 		];
 
 	},
-
+	createConnectionCounter:function(item){
+		var module = new ElementModule('span', {"class":"count-followers"});
+		var count=item.countConnectionsTo();
+		if(count==0){
+			module.getElement().addClass('empty');
+		}
+		module.getElement().setAttribute('data-follower-counter', count);
+		return module;
+	},
+	createPinnedCounter:function(item){
+		var module = new ElementModule('span', {"class":"count-pins"});
+		var count=item.countPins();
+		if(count==0){
+			module.getElement().addClass('empty');
+		}
+		module.getElement().setAttribute('data-pins-counter', count);
+		return module;
+	},
 	createConnectionButton: function(item) {
 
 
@@ -57,10 +85,21 @@ var DashboardController = new Class({
 		var fn = function() {
 
 			if (item instanceof ConnectionItem) {
-				item = item.getConnectionTo();
+			
+				try{
+					item = item.getConnectionTo();
+				}catch(e){
+					console.error(e);
+					return null;
+				}
+
 			}
 
 			if (!item.canCreateConnectionFrom(EventList.SharedInstance().getClientProfile())) {
+				return null;
+			}
+
+			if (item instanceof ResourceItem) {
 				return null;
 			}
 
@@ -76,45 +115,44 @@ var DashboardController = new Class({
 
 
 
-
 			var label = defaultLabel.replace('{type}', item.getTypeName());
-			var disconnectConfirm="Are you sure you want to remove this connection"
+			var disconnectConfirm = "Are you sure you want to remove this connection"
 
-			var ifConnection=function(a, b){
-				return hasConnection?a:b;
+			var ifConnection = function(a, b) {
+				return hasConnection ? a : b;
 			}
 
 			if (item instanceof ProfileItem) {
 
-				label = ifConnection("You Are Following ","Follow ") + item.getName();
+				label = ifConnection("You Are Following ", "Follow ") + item.getName();
 				form = 'connectWithUserForm';
 				className = "action-profile";
 				quickConnect = true;
-				hover = "click to "+ifConnection("stop following ", "follow ") + item.getName();
-				disconnectConfirm="Are you sure you want to stop following "+ item.getName();
+				hover = "click to " + ifConnection("stop following ", "follow ") + item.getName();
+				disconnectConfirm = "Are you sure you want to stop following " + item.getName();
 
 			}
 
 
 
 			if (item instanceof ProjectItem) {
-				label = ifConnection("You Are Following ","Follow ") + item.getName();
+				label = ifConnection("You Are Following ", "Follow ") + item.getName();
 				className = "action-project";
 				name = "Following " + item.getTypeName();
-				hover = "click to "+ifConnection("stop following ", "follow ") + item.getName();
+				hover = "click to " + ifConnection("stop following ", "follow ") + item.getName();
 				quickConnect = true;
-				disconnectConfirm="Are you sure you want to stop following "+ item.getName();
+				disconnectConfirm = "Are you sure you want to stop following " + item.getName();
 			}
 
 
 
 			if (item.getType() == "ProjectHub.event") {
-				label = ifConnection("You are Volunteering ","Volunteer ");
+				label = ifConnection("You are Volunteering ", "Volunteer ");
 				className = "action-event";
 				form = 'connectWithEventForm';
 				name = "Volunteering for " + item.getTypeName();
-				hover = "click to "+ifConnection("stop volunteering ","volunteer ")+" for " + item.getName();
-				disconnectConfirm="Are you sure you want to stop volunteering for"+ item.getName();
+				hover = "click to " + ifConnection("stop volunteering ", "volunteer ") + " for " + item.getName();
+				disconnectConfirm = "Are you sure you want to stop volunteering for" + item.getName();
 
 			}
 
@@ -146,13 +184,13 @@ var DashboardController = new Class({
 					"events": {
 						"click": function() {
 							EventItem.Confirm(disconnectConfirm, function(userAccepted) {
-								if(userAccepted){
+								if (userAccepted) {
 
-									var connection=item.getConnectionFrom(EventList.SharedInstance().getClientProfile());
-									connection.destroy(function(){
+									var connection = item.getConnectionFrom(EventList.SharedInstance().getClientProfile());
+									connection.destroy(function() {
 										connections.redraw();
 									});
-									
+
 								}
 							});
 						}
@@ -228,7 +266,7 @@ var DashboardController = new Class({
 
 	createDirectChatButton: function(item) {
 
-		var me=this;
+		var me = this;
 
 		if (item instanceof ConnectionItem) {
 			item = item.getConnectionTo();
@@ -309,9 +347,9 @@ var DashboardController = new Class({
 
 	},
 
-	createConnectionToOwnerProfileButton:function(item) {
+	createConnectionToOwnerProfileButton: function(item) {
 
-		var me=this;
+		var me = this;
 
 		if ((item instanceof ProfileItem) || (!item.canCreateConnectionFrom(EventList.SharedInstance().getClientProfile()))) {
 			return null;
@@ -340,93 +378,92 @@ var DashboardController = new Class({
 
 
 
-	createMapTileUrl:function(item) {
+	createMapTileUrl: function(item) {
 
 		if (item.getType() != "ProjectHub.event") {
 			return null;
 		}
 
-		
 
 
 		var staticMap = new ElementModule('div', {
 			"class": "static-map"
 		});
 
-		
 
-		var setLocationData=function(){
 
-			staticMap.getElement().innerHTML='';
+		var setLocationData = function() {
+
+			staticMap.getElement().innerHTML = '';
 			staticMap.getElement().addClass('no-location');
 
 			if (!(item.config.attributes && item.config.attributes.location)) {
 				staticMap.getElement().setStyle(
-				"background-image", null);
+					"background-image", null);
 				return;
 			}
 			staticMap.getElement().removeClass('no-location');
 
 
 			staticMap.getElement().setStyle(
-				"background-image", 
-					"url(//maps.googleapis.com/maps/api/staticmap?center=" + encodeURIComponent(item.config.attributes.location) + "&size=2000x2000&maptype=roadmap&key=AIzaSyDGrfhOSrI0ziT_1DoGPyu7Z1vJaz-v9pU)"
-				);
+				"background-image",
+				"url(//maps.googleapis.com/maps/api/staticmap?center=" + encodeURIComponent(item.config.attributes.location) + "&size=2000x2000&maptype=roadmap&key=AIzaSyDGrfhOSrI0ziT_1DoGPyu7Z1vJaz-v9pU)"
+			);
 
-			
+
 			staticMap.getElement().appendChild(new Element('a', {
-				"class":"map-location",
-				"href":'https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(item.config.attributes.location),
-				"html":item.config.attributes.location,
-				"target":"_blank"
+				"class": "map-location",
+				"href": 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(item.config.attributes.location),
+				"html": item.config.attributes.location,
+				"target": "_blank"
 			}))
 		};
 
-		var setTimeData=function(){
+		var setTimeData = function() {
 			staticMap.getElement().addClass('no-time');
 
-			if(item.hasEventDate()){
+			if (item.hasEventDate()) {
 				staticMap.getElement().removeClass('no-time');
 				staticMap.getElement().appendChild(new Element('p', {
-					"class":"event-time",
-					"html":item.getEventDateFormatted()
+					"class": "event-time",
+					"html": item.getEventDateFormatted()
 				}));
 			}
 
-			
+
 
 		}
 
-		staticMap.addWeakEvent(item, 'save', function(){
+		staticMap.addWeakEvent(item, 'save', function() {
 			setLocationData();
 			setTimeData();
 		});
 		setLocationData();
 		setTimeData();
-		
+
 		return staticMap;
 
 	},
 
-	appendFeedItemActions:function(el, item){
+	appendFeedItemActions: function(el, item) {
 
-		var me=this;
+		var me = this;
 
 		el.addClass('feed-item-actions')
 
-		me.createActionButtons(item).forEach(function(b){
-		    el.appendChild(b);
+		me.createActionButtons(item).forEach(function(b) {
+			el.appendChild(b);
 		});
 
 
 	},
 
-	createActionButtons:function(item) {
+	createActionButtons: function(item) {
 
 
-		var me=this;
+		var me = this;
 
-		
+
 
 		if (!EventItem.Confirm) {
 			EventItem.Confirm = function(question, callback) {
@@ -514,7 +551,9 @@ var DashboardController = new Class({
 									function(userAccepted) {
 
 										if (userAccepted) {
-											item.destroy();
+											item.destroy(function(){
+												me.getNavigationController().navigateTo("FeedItems", "Main");		
+											});
 										}
 
 									});
@@ -538,7 +577,7 @@ var DashboardController = new Class({
 
 							if (action === 'focus') {
 
-								me.getApplication().getNamedValue('navigationController').navigateTo("FeedItems", "Main");
+								me.getNavigationController().navigateTo("FeedItems", "Main");
 
 								return;
 							}
@@ -562,17 +601,17 @@ var DashboardController = new Class({
 
 
 
-	createFeedItemSubChildButtons:function(item) {
+	createFeedItemSubChildButtons: function(item) {
 
 
-		var me=this;
+		var me = this;
 
 		if (item.getType() == "ProjectHub.profile" && item.clientOwns() && !(item instanceof MyProfileItem)) {
 			item = EventList.SharedInstance().getClientProfile();
 		}
 
 		var buttonset = [];
-	
+
 
 		var isMyProfile = function() {
 			return !!(item instanceof MyProfileItem);
@@ -689,7 +728,7 @@ var DashboardController = new Class({
 
 	formatItemLabel: function(item, el, valueEl) {
 
-		var me=this;
+		var me = this;
 
 		el.addClass('feed-item-label');
 
@@ -697,7 +736,12 @@ var DashboardController = new Class({
 		if (item instanceof ConnectionItem) {
 
 			if (item.isConnected()) {
-				var connectedTo = item.getConnectionTo();
+				try{
+					var connectedTo = item.getConnectionTo();
+				}catch(e){
+					console.error(e);
+					return;
+				}
 				valueEl.appendChild(new Element('span', {
 					"class": "item-connection-to",
 					html: " " + connectedTo.getName()
@@ -735,7 +779,7 @@ var DashboardController = new Class({
 
 			valueEl.addEvent('click', function(e) {
 				e.stop();
-				var nav = me.getApplication().getNamedValue('navigationController');
+				var nav = me.getNavigationController();
 				var profile = EventList.SharedInstance().getItem(item.getId(), item.getType());
 				if (profile.isActive() && nav.getCurrentView().view == "Single") {
 					return;
@@ -772,7 +816,7 @@ var DashboardController = new Class({
 
 
 
-		if (item.hasOwner()) {
+		if (item.hasOwner() && item.showsOwner()) {
 			try {
 				var owner = item.getOwnersProfile();
 				var userEl = valueEl.appendChild(me.createAuthorLabel(owner));
@@ -794,59 +838,58 @@ var DashboardController = new Class({
 
 	},
 
-	getItemLabelValue:function(item){
-		if(item instanceof MyProfileItem&&AppClient.getUserType()=="guest"){
-		    return "You are not logged in"
+	getItemLabelValue: function(item) {
+		if (item instanceof MyProfileItem && AppClient.getUserType() == "guest") {
+			return "You are not logged in"
 		}
 
-		var str= (item.getName?item.getName():"{name}");
+		var str = (item.getName ? item.getName() : "{name}");
 
 		return str;
 	},
 
-	formatDefaultPost:function(item, el, valueEl){
+	formatDefaultPost: function(item, el, valueEl) {
 
-		var me=this;
+		var me = this;
 
 		el.addClass('post-author')
 
-			var id=item.getUserId();
-			el.addClass('user-id-'+id);
-			if(id<=0){
-			    return;
-			}
-			var user=EventList.SharedInstance().getProfileForUserId(id);
-			if(user){
-			    valueEl.appendChild(me.createAuthorLabel(user, me.getApplication()));
-			}
+		var id = item.getUserId();
+		el.addClass('user-id-' + id);
+		if (id <= 0) {
+			return;
+		}
+		var user = EventList.SharedInstance().getProfileForUserId(id);
+		if (user) {
+			valueEl.appendChild(me.createAuthorLabel(user, me.getApplication()));
+		}
 
 
 	},
 
 
-	formatPrivateDiscussion:function(el, valueEl, item){
+	formatPrivateDiscussion: function(el, valueEl, item) {
 
-		var me=this;
+		var me = this;
 
 		el.addClass('post-author private-chat feed-item-label')
 
-		var id=item.getId();
-		el.addClass('user-id-'+id);
-		if(id<=0){
-		    return;
+		var id = item.getId();
+		el.addClass('user-id-' + id);
+		if (id <= 0) {
+			return;
 		}
-		var user=item;
-		if(user){
-		    valueEl.appendChild(CuhubDashboard.createAuthorLabel(user))
+		var user = item;
+		if (user) {
+			valueEl.appendChild(CuhubDashboard.createAuthorLabel(user))
 		}
 
-		el.parentNode.addEvent("click",function(){
+		el.parentNode.addEvent("click", function() {
 
 
 			me.getApplication().getDisplayController().displayPopoverForm(
-				"directChatForm", 
-				user, 
-				{
+				"directChatForm",
+				user, {
 					"template": "form",
 					"className": "contact-form"
 				}
@@ -858,9 +901,9 @@ var DashboardController = new Class({
 
 	},
 
-	createAuthorLabel:function(owner) {
+	createAuthorLabel: function(owner) {
 
-		var me=this;
+		var me = this;
 
 		var userEl = new Element('span', {
 			"class": "item-author",
@@ -876,7 +919,7 @@ var DashboardController = new Class({
 
 		userEl.addEvent('click', function(e) {
 			e.stop();
-			var nav = me.getApplication().getNamedValue('navigationController');
+			var nav = me.getNavigationController();
 			if (owner.isActive() && nav.getCurrentView().view == "Single") {
 				return;
 			}
@@ -902,13 +945,12 @@ var DashboardController = new Class({
 
 
 
-	formatDiscussionCounters:function(el, valueEl, item) {
+	formatDiscussionCounters: function(el, valueEl, item) {
 
 
-		var me=this;
+		var me = this;
 
 		el.addClass('feed-item-label count-posts loading');
-
 
 
 
@@ -932,7 +974,7 @@ var DashboardController = new Class({
 				valueEl.innerHTML = ""
 			}
 
-			if (AppClient.getUserType()!=="guest"&&newPosts > 0) {
+			if (AppClient.getUserType() !== "guest" && newPosts > 0) {
 				el.addClass('has-new-posts');
 			}
 
@@ -945,13 +987,13 @@ var DashboardController = new Class({
 
 					posts++;
 
-					if(AppClient.getId()!=result.user){
+					if (AppClient.getId() != result.user) {
 						newPosts++;
 					}
 
-					
 
-					if (AppClient.getUserType()!=="guest"&&newPosts == 1) {
+
+					if (AppClient.getUserType() !== "guest" && newPosts == 1) {
 						el.addClass('has-new-posts');
 					}
 					el.addClass('has-posts');
@@ -977,12 +1019,12 @@ var DashboardController = new Class({
 	},
 
 
-	_getDiscussionChannel:function(item, defaultChannel){
+	_getDiscussionChannel: function(item, defaultChannel) {
 
 
-		if(item instanceof ProfileItem){
-		    var ids=([item.getId(), EventList.SharedInstance().getClientProfile().getId()]).sort();
-		    return "direct-"+ids.join("-");
+		if (item instanceof ProfileItem) {
+			var ids = ([item.getId(), EventList.SharedInstance().getClientProfile().getId()]).sort();
+			return "direct-" + ids.join("-");
 		}
 
 
@@ -991,9 +1033,9 @@ var DashboardController = new Class({
 
 
 
-	createItemIcon:function(item) {
+	createItemIcon: function(item) {
 
-		var me=this;
+		var me = this;
 
 		var icon = new ElementModule('div', {
 			"class": "feed-item-icon"
@@ -1060,7 +1102,7 @@ var DashboardController = new Class({
 				//resolve profile item!
 				//
 				var feeditem = EventList.SharedInstance().getItem(item.getId(), item.getType());
-				var nav = me.getApplication().getNamedValue('navigationController');
+				var nav = me.getNavigationController();
 				if (feeditem.isActive() && nav.getCurrentView().view == "Single") {
 					return;
 				}
@@ -1080,19 +1122,196 @@ var DashboardController = new Class({
 	},
 
 
-	appendTagFilterButtons:function(el, item) {
+	appendTagFilterButtons: function(el, item) {
 
-		var me=this
+		var me = this
 
 		el.addClass('feed-item-tags')
-		me.createTagFilterButtons(item).forEach(function(t){
-		    el.appendChild(t);
+		var empty=true;
+		me.createTagFilterButtons(item).forEach(function(t) {
+			el.appendChild(t);
+			empty=false;
+		});
+
+		if(empty&&(!(item instanceof ProfileItem))){
+			el.appendChild(new Element('span',{"class":"empty-tags", html:"there are no tags for this item"}));
+		}
+
+	},
+
+	
+
+	setActiveItem: function(item) {
+
+		var me = this
+
+		if (me._activeItem && item !== me._activeItem) {
+			me.clearActiveItem();
+		}
+		me.getNavigationController().addUrlSegment(item.getType().split('.').pop() + '-' + item.getId());
+		me._activeItem = item;
+	},
+	clearActiveItem: function() {
+
+		var me = this
+		if (me._activeItem) {
+			if (me._activeItem.isActive()) {
+
+				me.getNavigationController().removeUrlSegment(me._activeItem.getType().split('.').pop() + '-' + me._activeItem.getId());
+
+				me._activeItem.deactivate();
+			}
+			me._activeItem = null;
+		}
+	},
+
+	getActiveItem: function() {
+
+		var me = this
+		if (me._activeItem) {
+			return me._activeItem;
+		}
+		return null;
+	},
+
+
+
+	defaultItemTags: function(item) {
+
+		var me = this;
+
+
+		if (item && item instanceof ResourceItem) {
+			return [
+				"Grant writing",
+				"Research Ethics",
+				"Research Planning",
+				"Research Methods"
+			]
+		}
+
+		return [
+			'engagement',
+			'software',
+			'hub',
+			'students',
+			'social media',
+			'analysis',
+			'community',
+			'research',
+			'mobile',
+			'spatial'
+		];
+
+	},
+
+
+	createTagBtn: function(tag, options) {
+
+		return new Element('button', Object.append({
+			"class": "btn-tag tag-" + tag,
+			"html": tag,
+			"title": tag
+		}, options));
+	},
+
+	setTagFilter:function(tags){
+
+		var me=this;
+		var currentTags=me.getTags().slice(0).sort();
+
+		if(JSON.stringify(tags.sort())===JSON.stringify(currentTags)){
+			return;
+		}
+
+		me.getApplication().setNamedValue('tagFilter', {
+			"tags": tags
+		});
+
+		me.fireEvent('setTags', tags.slice(0));
+
+		if (tags.length) {
+			me.getNavigationController().navigateTo("Tags", "Main");
+			return;
+		}
+
+		me.getNavigationController().navigateTo("FeedItems", "Main");
+	},
+
+	addTagFilter:function(tags){
+		if(typeof tags=="string"){
+			tags=[tags];
+		}
+
+		var me=this;
+		var tagFilter = me.getTags().slice(0);
+		tags.forEach(function(tag){
+			if(!me.hasTagFilter(tag)){
+				tagFilter.push(tag);
+			}
+		});
+
+		me.setTagFilter(tagFilter);
+
+	},
+	removeTagFilter:function(tags){
+		if(typeof tags=="string"){
+			tags=[tags];
+		}
+
+		var me=this;
+		var tagFilter = me.getTags().slice(0);
+		tags.forEach(function(tag){
+			var i = tagFilter.indexOf(tag);
+			if (i >= 0) {
+				tagFilter.splice(i, 1);
+			}
+		});
+
+		me.setTagFilter(tagFilter);
+	},
+
+	getTags:function(){
+		var me=this;
+		var tagFilter = me.getApplication().getNamedValue('tagFilter');
+		if(tagFilter&&tagFilter.tags){
+			return tagFilter.tags;
+		}
+		return [];
+	},
+	countTags:function(){
+		return this.getTags().length;
+	},
+	hasTagFilter:function(tag){
+
+		var me=this;
+		var tags = me.getTags();
+		var i = tags.indexOf(tag);
+		if (i >= 0) {
+			return true;
+		}
+		return false;
+	},
+
+	createTagBtnsClearCurrent:function(btns){
+
+		var me=this;
+
+		me.getApplication().getNamedValue('tagFilter').tags.forEach(function(tag) {
+			btns.appendChild(CuhubDashboard.createTagBtn(tag, {
+				events: {
+					click: function(e) {
+						e.stop();
+						me.removeTagFilter(tag);
+					}
+				}
+			}));
 		})
 	},
 
-	createTagFilterButtons:function(item) {
+	createTagFilterButtons: function(item) {
 
-		var me=this;	
+		var me = this;
 
 		var tagList = item.getTags();
 
@@ -1109,14 +1328,8 @@ var DashboardController = new Class({
 			var btn = me.createTagBtn(tag, {
 				events: {
 					click: function(e) {
-
-						me.getApplication().setNamedValue('tagFilter', {
-							"tags": [tag]
-						});
-						me.getApplication().getNamedValue('navigationController').navigateTo("Tags", "Main");
-
 						e.stop();
-
+						me.addTagFilter(tag);
 					}
 				}
 			});
@@ -1143,79 +1356,96 @@ var DashboardController = new Class({
 	},
 
 
+	formatTagCloudModule:function(module) {
 
-	setActiveItem:function(item) {
 
-		var me=this
+		var me=this;
 
-		if (me._activeItem && item !== me._activeItem) {
-			me.clearActiveItem();
+		var cloud = module.getCloud();
+		var popoverMap = {};
+
+		var selection = [];
+		var singleSelection = true;
+
+
+		var activateTag=function(tag, el){
+
+			el.addClass('active');
+			setPopover(tag, "click to remove tag filter: `" + tag + "`");
+
 		}
-		CuhubDashboard.getApplication().getNamedValue('navigationController').addUrlSegment(item.getType().split('.').pop() + '-' + item.getId());
-		me._activeItem = item;
-	},
-	clearActiveItem:function() {
+		var deactivateTag=function(tag, el){
 
-		var me=this
-		if (me._activeItem) {
-			if (me._activeItem.isActive()) {
+			el.removeClass('active');
+			setPopover(tag, "click to show all items tagged with: `" + tag + "`", el);
+			
+		}
 
-				CuhubDashboard.getApplication().getNamedValue('navigationController').removeUrlSegment(me._activeItem.getType().split('.').pop() + '-' + me._activeItem.getId());
+		var setPopover=function(tag, value, el){
+			if(!popoverMap[tag]){
 
-				me._activeItem.deactivate();
+				if(!el){
+					throw 'need el';
+				}
+				popoverMap[tag] = new UIPopover(el, {
+					title: value,
+					anchor: UIPopover.AnchorAuto()
+				});
+
+				return;
 			}
-			me._activeItem = null;
+			popoverMap[tag].setTitle(value);
 		}
+
+
+		module.addEvent('selectWord', function(tag) {
+
+
+			if(me.hasTagFilter(tag)){
+				me.removeTagFilter(tag);
+				return;
+			}
+			me.addTagFilter(tag);
+			return;
+
+		});
+
+		module.addEvent('addWord', function(tag, el) {
+
+			//if matches current tag, then highlight
+			el.addClass('btn-tag');
+			deactivateTag(tag, el);
+			if(me.hasTagFilter(tag)){
+				activateTag(tag, el);
+			}
+
+		})
+
+		module.addWeakEvent(me, 'setTags', function(tags){
+			cloud.getWords().forEach(function(tag){
+				var el=cloud.getWordElement(tag);
+				if(!el){
+					return;
+				}
+				if(me.hasTagFilter(tag)){
+					activateTag(tag, el);
+					return;
+				}
+				deactivateTag(tag, el);
+			});
+		});
+
 	},
 
-	getActiveItem:function() {
-
-		var me=this
-		if (me._activeItem) {
-			return me._activeItem;
-		}
-		return null;
-	},
 
 
 
-	defaultItemTags:function(item) {
-
-		var me=this;
-
-		return [	
-			'engagement', 
-			'software', 
-			'hub', 
-			'students', 
-			'social media', 
-			'analysis', 
-			'community', 
-			'research', 
-			'mobile', 
-			'spatial'
-		];
-
-	},
+	createNavigationController: function() {
 
 
-	createTagBtn:function(tag, options) {
+		var me = this;
 
-		return new Element('button', Object.append({
-			"class": "btn-tag tag-" + tag,
-			"html": tag,
-			"title": tag
-		}, options));
-	},
-
-	
-
-	createNavigationController:function() {
-		
-
-		var me=this;
-
-		labelContent=me.getLabels();
+		labelContent = me.getLabels();
 
 		var loginGuest = function(config) {
 
@@ -1248,7 +1478,7 @@ var DashboardController = new Class({
 					"namedView": "bottomDetail",
 					"labelContent": "Show All Recent Activity Feed Items",
 					filterItem: function(item) {
-						return item.getType() !== "ProjectHub.connection";
+						return item.getType() !== "ProjectHub.connection" && item.getType() !== "ProjectHub.profile";
 					}
 				}, loginGuest({
 					"html": "Your Events",
@@ -1306,6 +1536,16 @@ var DashboardController = new Class({
 						return 'Profiles/Yours'
 					}
 				}), {
+					"html": "All Resources",
+					"name": "Resources",
+					"class": "menu-main-events hidden",
+					"description": "These are the available resources",
+					"namedView": "bottomDetail",
+					"labelContent": labelContent['label-for-resources'],
+					filterItem: function(item) {
+						return item.getType() === "ProjectHub.resource";
+					}
+				}, {
 					"html": "All Events",
 					"name": "Events",
 					"class": "menu-main-events hidden",
@@ -1364,36 +1604,10 @@ var DashboardController = new Class({
 					"description": function() {
 
 						var btns = new Element('span', {
-							"html": "filtering items matching tag: "
+							"html": "filtering items matching tag"+(me.countTags()==1?"":"s")+": "
 						});
-						me.getApplication().getNamedValue('tagFilter').tags.forEach(function(tag) {
-							btns.appendChild(CuhubDashboard.createTagBtn(tag, {
-								events: {
-									click: function(e) {
 
-
-										e.stop();
-										var tags = me.getApplication().getNamedValue('tagFilter').tags;
-										var i = tags.indexOf(tag);
-										if (i >= 0) {
-											tags.splice(i, 1);
-											me.getApplication().setNamedValue('tagFilter', {
-												"tags": tags
-											});
-										}
-										if (tags.length) {
-											me.getApplication().getNamedValue('navigationController').navigateTo("Tags", "Main");
-											return;
-										}
-
-										me.getApplication().getNamedValue('navigationController').navigateTo("FeedItems", "Main");
-
-
-
-									}
-								}
-							}));
-						})
+						me.createTagBtnsClearCurrent(btns)
 
 						return btns;
 
@@ -1456,12 +1670,12 @@ var DashboardController = new Class({
 						var item = CuhubDashboard.getActiveItem();
 						if (!item) {
 
-							return "loading error";
+							return "loading";
 						}
 
 						var label = "This is the " + item.getTypeName() + " page for <span>'" + item.getName() + "'</span>";
 
-						if (item.hasOwner()) {
+						if (item.hasOwner()&&item.showsOwner()) {
 							try {
 								var owner = item.getOwnersProfile();
 								var userEl = CuhubDashboard.createAuthorLabel(owner);
@@ -1496,8 +1710,9 @@ var DashboardController = new Class({
 								var item = segments[0].split('-');
 
 								if (el.hasItem(item[1], item[0])) {
-									
+
 									EventList.SharedInstance().getItem(item[1], item[0]).activate();
+									me.setPageDescription();
 								}
 							});
 						}
@@ -1562,13 +1777,901 @@ var DashboardController = new Class({
 
 		me.getApplication().setNamedValue('navigationController', navigationController);
 
-		EventList._navigationController = navigationController;
-		return [EventList.CreateCreationNavigation(me.getApplication()), navigationController];
+		return [me.createCreationNavigationController(), navigationController];
 
 
+
+	},
+
+
+
+	createTopNavigationController: function() {
+
+		var me = this;
+
+
+		var navigationController = new NavigationMenuModule({
+			"header-menu": [{
+				"html": "Resources",
+				"name": "Resources",
+				"hover": "browse available resources",
+				"events": {
+					"click": function() {
+						me.getNavigationController().navigateTo("Resources", "Main");
+					}
+				},
+				tagName: 'span'
+			}, {
+				"html": "All Events",
+				"name": "Events",
+				"hover": "browse all events for all projects and members",
+				"events": {
+					"click": function() {
+						me.getNavigationController().navigateTo("Events", "Main");
+					}
+				},
+				tagName: 'span'
+			}, {
+				html: "All Projects",
+				name: "Projects",
+				"hover": "browse all project from all members",
+				"events": {
+					"click": function() {
+						me.getNavigationController().navigateTo("Projects", "Main");
+					}
+				},
+				tagName: 'span'
+			}, {
+				html: "All Profiles",
+				name: "Profiles",
+				"hover": "browse all members",
+				"events": {
+					"click": function() {
+						me.getNavigationController().navigateTo("Profiles", "Main");
+					}
+				},
+				tagName: 'span'
+			}, {
+				html: "Help",
+				name: "Help",
+				"hover": "Take a tour of the site",
+				"events": {
+					"click": function() {
+
+
+						var elements = me._hiddenTutorialElementSelectors()
+
+
+						new UITutorial().addEvent('start', function() {
+
+
+							me.lightBlurElementSelectors(elements);
+							
+							var main = me.getRootElement();
+							main.setStyles({
+								"overflow": "hidden"
+							});
+							main.scrollTo(0, 0);
+
+
+						}).addEvent('end', function() {
+
+							me.unBlurElementSelectors(elements);
+
+							$$('.ui-view.root-container')[0].setStyles({
+								"overflow": null
+							});
+
+						}).addEvent('show', function(el) {
+
+							el.setStyles({
+								filter: null,
+								//"pointer-events":null,
+								"opacity": null
+							});
+
+
+						}).addEvent('hide', function(el) {
+
+							el.setStyles({
+								filter: "grayscale(90%) blur(0.5px)",
+								"pointer-events": "none",
+								"opacity": 0.7
+							});
+
+
+						}).addTutorialStep(
+							'.template-content>.intro-text',
+							'This area contains a short description of the current page and the content that is displayed', {}).addTutorialStep(
+							'.field-value-module.section-item-icon.pinned-label',
+							'This is your pins link and takes you to the page containing all the items you have pinned.', {}).addTutorialStep(
+							'.field-value-module.section-item-icon.calendar-label',
+							'This is the calender link it displays a calendar of all your recent activity', {}).addTutorialStep(
+							'.ui-view.tag-cloud-filter',
+							'These are quick filters to help you find projects and events', {}).addTutorialStep(
+							'.primary-navigation',
+							'These buttons link to all the people you are following and all the projects and events that you have created or engaged with', {}).addTutorialStep(
+							'.create-buttons>li',
+							'You can create your own projects and events', {}).start();
+					}
+				},
+				tagName: 'span'
+			}]
+
+		}, {
+			manipulateHistory: false,
+			formatEl: function(li, button) {
+
+				if (button && button.hover) {
+
+					new UIPopover(li, {
+						title: button.hover,
+						anchor: UIPopover.AnchorTo(['bottom']),
+						className: 'popover tip-wrap hoverable onblack'
+					});
+
+				}
+
+			}
+		});
+
+		return navigationController;
+
+	},
+
+	_hiddenTutorialElementSelectors:function(){
+		return [
+			'.site-logo',
+			'.header-menu',
+			'.ui-view.user-detail.top-right',
+			'.template-content>.intro-text',
+
+			'.primary-navigation',
+			'.create-buttons>li',
+
+			'.field-value-module.section-item-icon.pinned-label',
+			'.field-value-module.section-item-icon.calendar-label',
+			'.ui-view.tag-cloud-filter',
+
+			'.ui-view.main-content-detail'
+
+		];
+	},
+
+	createCreationNavigationController: function() {
+
+
+		var me = this;
+
+		var createMenuItems = [{
+			"html": "Create",
+			"name": "Create",
+			"class": "menu-main-feeditems create-new",
+			"namedView": "bottomDetail",
+			"labelContent": "Create",
+			"hover": "click to create new projects and events",
+			events: {
+				click: function() {
+
+
+					if (AppClient.getUserType() == "guest") {
+						var wizard = me.getApplication().getDisplayController().displayPopoverForm(
+							"loginForm",
+							AppClient, {
+								"template": "form"
+							}
+						);
+						return;
+					}
+
+
+					var item = EventList.SharedInstance().getClientProfile();
+					if (!item.isPublished()) {
+
+						var formName = item.getType().split('.').pop() + "Form";
+
+						var wizard = me.getApplication().getDisplayController().displayPopoverForm(
+							formName,
+							item, {
+								"template": "form",
+								"className": item.getType().split('.').pop() + "-form"
+							}
+						);
+
+						return;
+					}
+
+					var formName = "createItemsMenuForm";
+
+					var wizard = me.getApplication().getDisplayController().displayPopoverForm(
+						formName,
+						item, {
+							"template": "form"
+						}
+					);
+
+
+				}
+			}
+		}];
+
+
+		if (AppClient.getUserType() == "admin") {
+
+			createMenuItems.push({
+				"html": "Resource",
+				"name": "Resource",
+				"class": "menu-main-feeditems create-resource",
+				"namedView": "bottomDetail",
+				"labelContent": "Add Resource",
+				"hover": "click to create a new resource",
+				events: {
+					click: function() {
+
+
+						var formName = "resourceForm";
+
+						var wizard = me.getApplication().getDisplayController().displayPopoverForm(
+							formName,
+							(new ResourceItem({
+								item: EventList.SharedInstance().getClientProfile()
+							})), {
+								"template": "form",
+								"className": "resource-form"
+							}
+						);
+
+
+					}
+				}
+			});
+
+		}
+
+
+		var navigationController = new NavigationMenuModule({
+			"Main": createMenuItems
+
+		}, {
+			manipulateHistory: false,
+			sectionClass: function(section) {
+				return "menu-" + section.toLowerCase() + ' no-vert-pad create-buttons'
+			},
+			buttonClass: function(button, section) {
+				return button["class"] || ("menu-" + section.toLowerCase() + "-" + (button.name || button.html).toLowerCase())
+			},
+			formatEl: function(li, button) {
+
+				if (button && button.labelContent) {
+					li.appendChild(new Element('label', {
+						html: button.labelContent
+					}));
+				}
+
+				if (button && button.hover) {
+
+					new UIPopover(li, {
+						title: button.hover,
+						anchor: UIPopover.AnchorTo(['bottom']),
+						className: 'popover tip-wrap hoverable'
+					});
+
+				}
+
+			}
+		});
+
+		return navigationController;
+
+	},
+
+
+
+	createBottomNavigationController: function() {
+
+
+		var me = this;
+
+		var navigationController = new NavigationMenuModule({
+			"Site": [{
+				"html": "Portal",
+				"events": {
+					"click": function() {
+						me.getNavigationController().navigateTo("FeedItems", "Main");
+					}
+				}
+			}, {
+				html: "About",
+				"events": {
+					"click": function() {
+						me.getNavigationController().navigateTo("About", "Main");
+					}
+				}
+			}, {
+				html: "Contact",
+				"events": {
+					"click": function() {
+						me.getNavigationController().navigateTo("Contact", "Main");
+					}
+				}
+			}, {
+				html: "Archive",
+				"events": {
+					"click": function() {
+						me.getNavigationController().navigateTo("Archive", "Main");
+					}
+				}
+			}]
+
+		}, {
+			manipulateHistory: false,
+			formatEl: function(li, button) {
+
+				if (button && button.hover) {
+
+					new UIPopover(li, {
+						title: button.hover,
+						anchor: UIPopover.AnchorAuto()
+					});
+
+				}
+
+			}
+		});
+
+		//application.setNamedValue('navigationController', navigationController);
+		return navigationController;
+
+	},
+
+
+	getPageLabel:function() {
+
+		var me=this;
+
+		var menu = CuhubDashboard.getNavigationController();
+		if (menu) {
+			var view = menu.getCurrentView().view;
+			if ((['Events', 'Projects', 'Connections', 'Profiles']).indexOf(view) >= 0) {
+				return "Project Hub Portal " + view;
+			}
+			if (view == 'Tags') {
+				var tags = me.getApplication().getNamedValue('tagFilter').tags;
+				return "Project Hub Portal Items With Tag" + (tags.length > 1 ? "s" : "") + ": " + tags.join(", ");
+			}
+			return view;
+		}
+
+		return "Project Hub Portal Items";
+
+
+	},
+
+
+	setPageDescription:function(state) {
+
+
+		var me=this;
+		if(!state){
+			me.getNavigationController(function(nav){
+				me.setPageDescription(nav.getCurrentView())
+			});
+			return;
+		}
+		
+		var el=me._pageDescriptionEl;
+		
+		el.innerHTML = "loading";
+		var content = me._pageDescriptionForState(state, function(callbackContent){
+
+			if (typeof callbackContent == "string") {
+				el.innerHTML = callbackContent;
+				return;
+			}
+
+			if (callbackContent) {
+				el.innerHTML = "";
+				el.appendChild(callbackContent);
+			}
+
+
+		});
+		if (typeof content == "string") {
+			el.innerHTML = content;
+			return;
+		}
+
+		if (content) {
+			el.innerHTML = "";
+			el.appendChild(content);
+		}
+
+	},
+	_pageDescriptionForState:function(state, cb) {
+
+		var me=this;
+
+		var button =me.getNavigationController().getButton(state);
+		if (button.description) {
+			if (typeof button.description == 'function') {
+				return button.description(cb);
+			}
+			return button.description;
+		}
+		return JSON.stringify(state);
+
+	},
+
+	getPageDescriptionModule() {
+
+		var me=this;
+
+		var mod = new ElementModule("div", {
+			"class": "intro-text"
+		})
+		var p = new Element('p', {
+			html: "Welcome to CUHub ... and description of current page"
+		});
+
+		me._pageDescriptionEl=p;
+
+		mod.appendChild(p)
+
+		me.getNavigationController(function(nav) {
+			nav.addEvent('navigate', function(state) {
+				me.getRootElement().scrollTo(0, 0);
+				me.hideSearch();
+				me.showPageDescription();
+				me.setPageDescription();
+			});
+			me.setPageDescription();
+		});
+
+		me._pageDescriptionModule=mod;
+
+		return mod;
+
+	},
+
+	hidePageDescription:function(){
+		var me=this;
+		me._pageDescriptionModule.getElement().addClass('hidden');
+	},
+
+	showPageDescription:function(){
+		var me=this;
+		me._pageDescriptionModule.getElement().removeClass('hidden');
+	},
+	hideSearch:function(){
+		var me=this;
+		me._search.getElement().removeClass('active');
+		me.unBlurElementSelectors(me._hiddenSearchElementSelectors())
+		if(me._keyup){
+			document.removeEvent('keyup', me._keyup);
+			delete me._keyup;
+		}
+
+	},
+	heavyBlurElementSelectors:function(elements){
+		(elements).forEach(function(selector) {
+
+			$$(selector).forEach(function(el) {
+				el.setStyles({
+					filter: "grayscale(90%) blur(0.7px)",
+					"pointer-events": "none",
+					"opacity": 0.4
+				});
+			});
+		})
+	},
+	lightBlurElementSelectors:function(elements){
+		(elements).forEach(function(selector) {
+
+			$$(selector).forEach(function(el) {
+				el.setStyles({
+					filter: "grayscale(90%) blur(0.5px)",
+					"pointer-events": "none",
+					"opacity": 0.7
+				});
+			});
+		})
+	},
+	unBlurElementSelectors:function(elements){
+		(elements).forEach(function(selector) {
+
+			$$(selector).forEach(function(el) {
+				el.setStyles({
+					filter: null,
+					"pointer-events": null,
+					"opacity": null
+				});
+			});
+		})
+	},
+	_hiddenSearchElementSelectors:function(){
+		return [
+			'.site-logo',
+			'.header-menu',
+			'.ui-view.user-detail.top-right',
+			//'.template-content>.intro-text',
+
+			'.primary-navigation',
+			'.create-buttons>li',
+
+			'.field-value-module.section-item-icon.pinned-label',
+			'.field-value-module.section-item-icon.calendar-label',
+			'.ui-view.tag-cloud-filter',
+
+			'.ui-view.main-content-detail'
+		];
+	},
+
+	showSearch:function(){
+		var me=this;
+		me._search.getElement().addClass('active');
+		me.heavyBlurElementSelectors(me._hiddenSearchElementSelectors());
+		me._keyup=function(k){
+
+			if(k.key=='esc'){
+				me.hideSearch();
+			}
+		}
+		document.addEvent('keyup', me._keyup);
+
+	},
+
+	getSearchAggregators: function(search) {
+
+		var me = this;
+
+		me._search=search;
+
+		search.addButton('Search', function() {
+
+
+			var el = search.getElement();
+			if (el.hasClass('active')) {
+				me.showPageDescription();
+				me.hideSearch();
+				return;
+			}
+			me.hidePageDescription();
+			me.showSearch();
+
+		}, {
+			text: false, //ignored if button is set, if this is false and button is also false the name argument is used
+			button: false, //an image url to append using html image element
+			buttonClassName: "search-bar-btn search-toggle",
+		});
+
+
+		var FeeditemSearch = new Class({
+			Extends: UISearchListAggregator,
+			initialize: function(search, options) {
+				//var me = this;
+				this.parent(search, Object.append({
+
+					PreviousTemplate: UIListAggregator.PreviousTemplate,
+					MoreTemplate: UIListAggregator.MoreTemplate,
+					ResultTemplate: UIListAggregator.NamedViewTemplate(CuhubDashboard.getApplication(), {
+						namedView: "eventFeedSearchItemDetail",
+						events: {
+							click: function() {
+
+								CuhubDashboard.getNavigationController().navigateTo("Single", "Main");
+							}
+						}
+					})
+
+				}, options));
+			},
+			_getRequest: function(filters) {
+				var me = this;
+				var string = me.currentSearchString;
+
+				var args = {
+					search: string,
+					searchOptions: filters
+				};
+
+				return new AjaxControlQuery(CoreAjaxUrlRoot, 'search', Object.append({
+					'plugin': 'ProjectHub'
+				}, args));
+
+
+			}
+		});
+
+
+		return [new FeeditemSearch(search, {})];
+
+	},
+
+
+	createNewFeedItemNavigationInWizard:function(parentWizard) {
+
+		var me=this;
+
+		var navigationController = new NavigationMenuModule({
+			"Main": [{
+				"html": "Create Event",
+				"name": "Create",
+				"class": "menu-main-feeditems create-new new-event",
+				"namedView": "bottomDetail",
+				"labelContent": "Create a new calendar event",
+				events: {
+					click: function(e) {
+
+						e.stop();
+						parentWizard.close();
+
+						var item = EventList.SharedInstance().getClientProfile();
+						var formName = "eventForm";
+
+						var wizard = me.getApplication().getDisplayController().displayPopoverForm(
+							formName,
+							new EventItem({
+								"item": item,
+							}).addEvent("save", function() {
+								var item = this;
+								EventList.SharedInstance(function(el) {
+
+									el.addItem(item);
+
+								});
+							}), {
+								"template": "form",
+								"className": "event-form"
+							}
+						);
+
+					}
+				}
+			}, {
+				"html": "Create Project",
+				"name": "Create",
+				"class": "menu-main-feeditems create-new new-project",
+				"namedView": "bottomDetail",
+				"labelContent": "Create a new community/research project",
+				events: {
+					click: function(e) {
+
+						e.stop();
+						parentWizard.close();
+
+						var item = EventList.SharedInstance().getClientProfile();
+						var formName = "projectForm";
+
+						var wizard = me.getApplication().getDisplayController().displayPopoverForm(
+							formName,
+							new ProjectItem({
+								"item": item,
+							}).addEvent("save", function() {
+								var item = this;
+								EventList.SharedInstance(function(el) {
+
+									el.addItem(item);
+
+								});
+							}), {
+								"template": "form",
+								"className": "project-form"
+							}
+						);
+
+					}
+				}
+			}]
+
+		}, {
+
+			manipulateHistory: false,
+			formatEl: function(li, button) {
+				if (button && button.labelContent) {
+					li.appendChild(new Element('label', {
+						html: button.labelContent
+					}));
+				}
+			}
+		});
+
+		//application.setNamedValue('navigationController', navigationController);
+		return navigationController;
+
+	},
+
+
+
+	createFooterDetailMenus:function(){
+
+		var me=this;
+		return [
+		    me.createBottomNavigationController(),
+		    me.createBottomNavigationController(),
+		  	me.createBottomNavigationController()
+		];
+	},
+
+
+
+	formatStickyTabLabel:function(el, view) {
+
+
+		var me=this;
+
+		el.addClass("section-item-icon");
+		el.addClass(view.toLowerCase() + '-label');
+		el.addEvent('click', function(e) {
+
+			if (view == "Pinned") {
+				if (AppClient.getUserType() == "guest") {
+
+					e.stop();
+					var wizard = me.getApplication().getDisplayController().displayPopoverForm(
+						"loginForm",
+						AppClient, {
+							"template": "form"
+						}
+					);
+					return;
+
+				}
+
+			}
+
+			me.getApplication().getNamedValue('navigationController').navigateTo(view, "Main");
+		});
+
+
+		if (view == "Pinned") {
+
+
+			EventList.SharedInstance(function(elist) {
+				el.setAttribute('data-count-pins', elist.getPinnedEvents().length);
+			});
+
+			new UIPopover(el, {
+				title: "click this to view all the items you've pinned",
+				anchor: UIPopover.AnchorAuto()
+			});
+
+			new WeakEvent(el, EventList.SharedInstance(), 'pinnedItem', function(feedItem) {
+				var item = el.appendChild(new Element('div', {
+					"class": "added-pin"
+				}));
+
+				item.setAttribute('data-label', "Pinned " + feedItem.getName());
+				el.setAttribute('data-count-pins', EventList.SharedInstance().getPinnedEvents().length);
+				setTimeout(function() {
+					item.setStyles({
+						"top": -100,
+						"opacity": 0
+					})
+				}, 50);
+
+				setTimeout(function() {
+					el.removeChild(item);
+				}, 2000);
+			});
+
+			new WeakEvent(el, EventList.SharedInstance(), 'unpinnedItem', function(feedItem) {
+				var item = el.appendChild(new Element('div', {
+					"class": "removed-pin"
+				}));
+
+				item.setAttribute('data-label', "Unpinned " + feedItem.getName());
+				el.setAttribute('data-count-pins', EventList.SharedInstance().getPinnedEvents().length);
+
+				setTimeout(function() {
+					item.setStyles({
+						"top": -100,
+						"opacity": 0
+					})
+				}, 50);
+				setTimeout(function() {
+					el.removeChild(item);
+				}, 2000);
+			});
+
+
+
+		}
+
+		if (view == "Calendar") {
+			new UIPopover(el, {
+				title: "click this to view items in a calender",
+				anchor: UIPopover.AnchorAuto(),
+				margin: 20
+			});
+		}
+
+
+	},
+
+
+
+	getActiveItemDetailItemList:function(callback){
+
+		// var events=EventList.SharedInstance().getEvents();
+
+		 EventList.SharedInstance(function(el){
+		        
+		        var items=el.getActiveItems();
+		        if(items.length){
+		            var item=items[0];
+		            if(item.showsOwner()){
+		                items=el.getParentItems(item).concat(items);
+		            }
+		            items=items.concat(el.getChildItems(item));
+		        }
+		        
+		        callback(items);
+		    
+		 })
+
+
+	},
+
+
+	addFeedItemStyle:function(element, item) {
+
+		if(element instanceof Module){
+			element=element.getElement();
+		}
+
+		element.addClass((item.getType().split('.').pop()) + '-feed-item');
+		element.addClass('feed-item-' + item.getId());
+
+		if (item instanceof ConnectionItem) {
+			try{
+				element.addClass((item.getConnectionTo().getType().split('.').pop()) + '-feed-item');
+			}catch(e){
+				element.addClass('missing-feed-item');
+			}
+		}
+
+
+	},
+	addFeedItemEvents:function(module, item){
+
+		var me=this;
+
+		var nav=me.getNavigationController();
+
+		module.getElement().addEvent('click', function(e){
+		    
+		    var clickItem=item;
+		    if(item instanceof ConnectionItem){
+		    	try{
+		        	clickItem=item.getConnectionTo();
+		    	}catch(e){
+		    		console.error(e);
+		    		return;
+		    	}
+		    }
+		    
+		    if(clickItem.isActive()&&nav.getCurrentView().view=="Single"){
+		        return;
+		    }
+		    
+		    clickItem.activate();
+		    nav.navigateTo("Single", "Main");
+		   
+		});
+
+		if((item.isActive()&&nav.getCurrentView().view=="Single")||item instanceof MyProfileItem){
+		     module.draw();
+		}
+
+		module.addWeakEvent(item, 'deactivate', function(){
+		    module.empty();
+		});
+
+		module.addWeakEvent(item, 'activate', function(){
+		     //module.draw();
+		});
 
 	}
-
 
 
 

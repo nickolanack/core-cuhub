@@ -51,6 +51,22 @@ var EventItem = new Class({
 			}
 		})
 	},
+	countConnectionsTo:function(){
+
+		if(this.config&&this.config.connectionsToItem){
+			return this.config.connectionsToItem.length;
+		}
+
+		return 0;
+	},
+
+	countPins: function() {
+		var me = this;
+		if(me.config && me.config.pinnedby){
+			return me.config.pinnedby.length;
+		}
+		return 0;
+	},
 	activate: function() {
 		var me = this;
 		if (!me._active) {
@@ -59,16 +75,6 @@ var EventItem = new Class({
 			CuhubDashboard.setActiveItem(me);
 		}
 		return me;
-
-	},
-	toggleActive: function() {
-		var me = this;
-
-		if (me.isActive()) {
-			return me.deactivate();
-		}
-
-		return me.activate();
 
 	},
 	hasDate: function() {
@@ -310,7 +316,7 @@ var EventItem = new Class({
 
 
 			var i = me.config.pinnedby.indexOf(AppClient.getId() + "");
-			if (i > -0) {
+			if (i > -1) {
 				me.config.pinnedby.splice(i, 1);
 			}
 			me.fireEvent('unpin');
@@ -393,6 +399,9 @@ var EventItem = new Class({
 
 
 	},
+	showsOwner: function() {
+		return true;
+	},
 	getOwner: function() {
 		var me = this;
 
@@ -412,8 +421,13 @@ var EventItem = new Class({
 			return [];
 		}
 
-		var list = [me.getOwner()];
-		if (list[0].hasOwner()) {
+		var list=[];
+		try{
+			list.push(me.getOwner());
+		}catch(e){
+			console.error(e);
+		}
+		if (list.length&&list[0].hasOwner()) {
 			list = list[0].getOwners().concat(list);
 		}
 		return list;
@@ -638,9 +652,6 @@ var MyProfileItem = new Class({
 
 var ProjectItem = new Class({
 	Extends: EventItem,
-
-
-
 	getType: function() {
 		return 'ProjectHub.project';
 	},
@@ -651,7 +662,27 @@ var ProjectItem = new Class({
 		}
 		return false;
 	},
-})
+});
+
+
+var ResourceItem = new Class({
+	Extends: ProjectItem,
+	getType: function() {
+		return 'ProjectHub.resource';
+	},
+	canCreate: function(name) {
+		var me = this;
+		if (AppClient.getUserType() == "admin" || me.clientOwns()) {
+			return (['event']).indexOf(name) >= 0;
+		}
+		return false;
+	},
+	showsOwner:function(){
+		return false;
+	}
+});
+
+
 
 var ConnectionPlaceholderItem = new Class({
 	Extends: EventItem,
@@ -690,6 +721,7 @@ var ConnectionItem = new Class({
 		return parentItem
 
 	},
+	
 	hasOwner: function() {
 		var me = this;
 		if (me instanceof ProfileItem) {
@@ -794,6 +826,9 @@ var ConnectionItem = new Class({
 		}
 
 		if (me.config && me.config.itemIdA && me.config.itemTypeA) {
+			if(!EventList.SharedInstance().hasItem(me.config.itemIdA, me.config.itemTypeA)){
+				throw 'Connection missing itemA';
+			}
 			return EventList.SharedInstance().getItem(me.config.itemIdA, me.config.itemTypeA);
 		}
 
@@ -809,6 +844,9 @@ var ConnectionItem = new Class({
 		}
 
 		if (me.config && me.config.itemIdB && me.config.itemTypeB) {
+			if(!EventList.SharedInstance().hasItem(me.config.itemIdB, me.config.itemTypeB)){
+				throw 'Connection missing itemB';
+			}
 			return EventList.SharedInstance().getItem(me.config.itemIdB, me.config.itemTypeB);
 		}
 

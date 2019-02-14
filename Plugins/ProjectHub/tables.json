@@ -40,6 +40,47 @@
 		"type": "label",
 		"comment": "group that can post to discussion"
 	}],
+	"resource": [{
+		"name": "id",
+		"type": "id"
+	}, {
+		"name": "itemType",
+		"type": "label",
+		"comment": "probably user"
+	}, {
+		"name": "itemId",
+		"type": "int",
+		"comment": "probably a user id"
+	}, {
+		"name": "name",
+		"type": "label",
+		"comment": "optional name"
+	}, {
+		"name": "description",
+		"type": "description",
+		"comment": "optional description"
+	}, {
+		"name": "metadata",
+		"type": "json",
+		"comment": "additional json parameters"
+	}, {
+		"name": "createdDate",
+		"type": "date",
+		"comment": "discussion creation"
+	}, {
+		"name": "modifiedDate",
+		"type": "date",
+		"comment": "discussion modification date. not last post"
+	}, {
+		"name": "readAccess",
+		"type": "label",
+		"comment": "read access auth group"
+
+	}, {
+		"name": "writeAccess",
+		"type": "label",
+		"comment": "group that can post to discussion"
+	}],
 	"connection": [{
 		"name": "id",
 		"type": "id"

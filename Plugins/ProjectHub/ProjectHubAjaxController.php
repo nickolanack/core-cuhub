@@ -48,6 +48,11 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 		return $this->getPlugin()->listFeedItemsAjax();
 
 	}
+	protected function listConnections() {
+
+		return $this->getPlugin()->listConnectionsAjax();
+
+	}
 
 	protected function usersProfile() {
 
@@ -153,6 +158,34 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 		Broadcast('eventlist', 'update', array(
 			'event' => 'updated',
 			'item' => $data = $this->getPlugin()->getFeedItemRecord($id, "project"),
+		));
+
+		return array('id' => $id, 'item' => $data);
+
+	}
+
+	protected function saveResource($json) {
+
+		$id = (int) $json->id;
+
+		if ($id > 0) {
+			$this->getPlugin()->getDatabase()->updateResource($fields = $this->defaultUpdateItemData($json));
+		}
+
+		if ($id <= 0) {
+			$id = $this->getPlugin()->getDatabase()->createResource($fields = array_merge(array(
+
+				'itemType' => $json->itemType,
+				'itemId' => $json->itemId,
+
+			), $this->defaultItemData($json)));
+		}
+
+        $this->setItemAttributes($id, "resource", $json);
+
+		Broadcast('eventlist', 'update', array(
+			'event' => 'updated',
+			'item' => $data = $this->getPlugin()->getFeedItemRecord($id, "resource"),
 		));
 
 		return array('id' => $id, 'item' => $data);
@@ -301,6 +334,26 @@ class ProjectHubAjaxController extends core\AjaxController implements core\Plugi
 		$item = $this->getPlugin()->getFeedItemRecord($json->id, "project");
 
 		if ($this->getPlugin()->getDatabase()->deleteProject($json->id)) {
+
+
+
+
+			Broadcast('eventlist', 'update', array(
+				'event' => 'deleted',
+				'item' => $item,
+			));
+			return true;
+
+		}
+
+		return false;
+	}
+
+	protected function deleteResource($json) {
+
+		$item = $this->getPlugin()->getFeedItemRecord($json->id, "resource");
+
+		if ($this->getPlugin()->getDatabase()->deleteResource($json->id)) {
 
 			Broadcast('eventlist', 'update', array(
 				'event' => 'deleted',
