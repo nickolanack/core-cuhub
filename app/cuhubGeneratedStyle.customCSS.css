@@ -27,7 +27,12 @@
     cursor:pointer;
 }
 
+.AudioModule {
+    height: 32px;
+    width: 32px;
 
+    margin: 0;
+}
 AudioModule:after{
 					background-image:url("<?php echo  
                     UrlFrom('{assets}/Map Item Icons/sm_audio.png?tint=rgb(200, 200, 200)'); ?>");
