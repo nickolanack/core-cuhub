@@ -14,7 +14,7 @@
 				}
 
 
-.VideoModule:after {
+.VideoModule:after, .AudioModule:after {
     background-position: center;
     background-size: 20px;
     content: "";
@@ -24,7 +24,26 @@
     width: 20px;
     height: 20px;
     display: inline-block;
+    cursor:pointer;
 }
+
+
+AudioModule:after{
+					background-image:url("<?php echo  
+                    UrlFrom('{assets}/Map Item Icons/sm_audio.png?tint=rgb(200, 200, 200)'); ?>");
+				}
+
+				.AudioModule.hasAudio:after{
+					background-image:url("<?php echo 
+                    UrlFrom('{assets}/Map Item Icons/sm_audio.png?tint=rgb(48, 84, 107)'); ?>");
+				}
+
+				.AudioModule.hasAudio:hover:after {
+    				background-image: url("<?php echo
+                    UrlFrom('{assets}/Map Item Icons/sm_audio.png?tint=rgb(48, 207, 48)'); ?>");
+				}
+
+
 
 <?php 
 
