@@ -1,3 +1,19 @@
+.VideoModule{
+					background-image:url("<?php echo  
+                    UrlFrom('{assets}/Map Item Icons/sm_video.png?tint=rgb(200, 200, 200)'); ?>");
+				}
+
+				.VideoModule.hasVideo{
+					background-image:url("<?php echo 
+                    UrlFrom('{assets}/Map Item Icons/sm_video.png?tint=rgb(48, 84, 107)'); ?>");
+				}
+
+				.VideoModule.hasVideo:hover {
+    				background-image: url("<?php echo
+                    UrlFrom('{assets}/Map Item Icons/sm_video.png?tint=rgb(48, 207, 48)'); ?>");
+				}
+
+
 <?php 
 
     $ui=GetWidget('interfaceConfig');
