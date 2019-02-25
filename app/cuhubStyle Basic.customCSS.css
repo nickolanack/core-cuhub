@@ -30,7 +30,7 @@ div.tip-title, .bubble>.title{
 .popover.arrow_bottom .tip:before {
     border-top: 10px solid #252525;
 }
-.popover.arrow_right .tip:before {
+.popover.arrow_right .tip:before {me
     border-left: 10px solid #252525;
 }
 .popover.arrow_left .tip:before {
@@ -1398,6 +1398,7 @@ body.dragover .add-photo .empty.droppable:after, .add-photo .empty.droppable:aft
     margin-right: 15px;
     padding: 1px 5px;
     border-radius: 2px;
+    padding-top: 5px;
 }
 
 .media-item span.remove-btn {
