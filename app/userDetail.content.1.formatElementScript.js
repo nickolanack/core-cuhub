@@ -4,4 +4,7 @@ if(AppClient.getUserType()=="guest"){
 }
 
 el.addClass("notification-center");
-CuhubDashboard.formatNotificationCenter(el, item);
+
+EventList.SharedInstance(function(itemList){
+    CuhubDashboard.formatNotificationCenter(el, itemList.getClientProfile());
+})
