@@ -147,6 +147,30 @@ AudioModule:after{
             .field-value-module.notification-center.has-notifications {
                 background-image: url("<?php echo UrlFrom($notificationImage."?tint=rgb(0, 180,0)"); ?>");
             }
+            
+            
+            @keyframes withNotifications {
+  30% {
+      background-image:url("<?php echo UrlFrom($notificationImage."?tint=rgb(0, 180,0)"); ?>");
+
+      }
+  60% {
+    background-image:url("<?php echo UrlFrom($notificationImage."?tint=rgb(255, 255,0)"); ?>");
+    }
+  90% {
+      background-image:url("<?php echo UrlFrom($notificationImage."?tint=rgb(0, 180,0)"); ?>");
+
+   }
+}
+
+.field-value-module.notification-center.has-notifications {
+  animation-name: withNotifications;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;  
+}
+            
+            
+            
             <?php
         }
         
