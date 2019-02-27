@@ -19,7 +19,7 @@
         "itemButtonsScript": "return [];",
         "insertAtTop": false,
         "targetName": "",
-        "getItemListScript": "var myProfile=item;\nif(item.getType()==\"ProjectHub.profile\"&&item.clientOwns()&&!(item instanceof MyProfileItem)){\n    myProfile=EventList.SharedInstance().getClientProfile();\n}\n\n\nif(myProfile instanceof MyProfileItem){\n    (new DiscussionListRequest({\n            'item': item.getId(),\n            'itemtype': item.getType(),\n         \/\/   'channel':me.options.channel\n        })).addEvent('success',function(resp){\n            \/\/console.log(resp);\n            \/\/callback([]);\n            \n            callback(resp.discussions.filter(function(d){return parseInt(d.posts)>0&&d.name.indexOf('direct')===0;}).map(function(d){\n               var parts= d.name.split('-');\n               var id1=parts[1];\n               var id2=parts[2];\n               var id=id1;\n               if(myProfile.getId()+\"\"==id+\"\"){\n                   id=id2;\n               }\n               \n               return EventList.SharedInstance().getItem(id, \"ProjectHub.profile\")\n               \n            }))\n            \n        }).execute();\n        return;\n}\n\nreturn [];",
+        "getItemListScript": "\n\nDashboardController.getProfileDiscussions(item, callback);\n",
         "formatItemListScript": "return list;",
         "formatListItemModuleScript": "return item;",
         "emptyNamedView": "emptyListView",
