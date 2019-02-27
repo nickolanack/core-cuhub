@@ -4,3 +4,4 @@ if(AppClient.getUserType()=="guest"){
 }
 
 el.addClass("notification-center");
+CuhubDashboard.formatNotificationCenter(el);
